@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+/*
+  OptiRent brand palette — derived from the Réntlyn listing report:
+  deep navy headings, teal accent rule, warm-red severity tags, soft stat cards.
+*/
+@theme {
+  --color-brand-navy: #14304f;
+  --color-brand-navy-soft: #1d3a5f;
+  --color-brand-teal: #1a7f6b;
+  --color-brand-teal-soft: #2a9d83;
+  --color-brand-ink: #1f2937;
+  --color-brand-muted: #6b7280;
+  --color-brand-line: #e5e7eb;
+  --color-brand-card: #f6f7f8;
+  --color-sev-critical: #b91c1c;
+  --color-sev-critical-bg: #fde8e8;
+  --color-sev-high: #b45309;
+  --color-sev-high-bg: #fdf0e2;
+  --color-sev-medium: #4b5563;
+  --color-sev-medium-bg: #eef0f2;
+}
+
+html,
+body {
+  background: #ffffff;
+  color: var(--color-brand-ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* HTML → PDF: single-page A4 branded report (Build Pack §7). */
+@page {
+  size: A4;
+  margin: 14mm;
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: #ffffff;
+  }
+  /* Avoid splitting a fix card across pages. */
+  .pdf-block {
+    break-inside: avoid;
+  }
+}

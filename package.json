@@ -1,0 +1,29 @@
+{
+  "name": "optirent",
+  "version": "0.1.0",
+  "private": true,
+  "description": "OptiRent — Villa Listing Audit (a Réntlyn product)",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.104.1",
+    "@supabase/supabase-js": "^2.108.2",
+    "next": "^16.2.9",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "stripe": "^22.2.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.5",
+    "@types/node": "^20.17.0",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "tailwindcss": "^4.1.5",
+    "typescript": "^5.7.0"
+  }
+}
