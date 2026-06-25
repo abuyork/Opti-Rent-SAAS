@@ -1,28 +1,71 @@
-import type { ResolvedListing } from "@/lib/types";
+import type {
+  CompsInput,
+  ListingInput,
+  ResolvedListing,
+  ReviewSummary,
+} from "@/lib/types";
 import { config } from "@/lib/config";
 import { AirRoiError, type AirRoiProvider } from "./provider";
+import { parseAirbnbListingId } from "./url";
 
 /**
- * Live AirROI adapter.
+ * Live AirROI adapter (Build Pack §4 steps 2–4).
  *
- * STATUS: skeleton pending confirmed AirROI API access. The exact endpoints and
- * response shapes must be verified against the AirROI docs (Build Pack §3
- * "verify first"). The structure below shows where each Build Pack §4 step maps:
+ * Verified against the AirROI API (https://www.airroi.com/api/documentation):
+ *   1. URL → Airbnb room id (the id AirROI keys on — no resolve call needed).
+ *   2. GET /listings?id=&currency=native   → full content + performance.
+ *   3. GET /listings/comparables?...        → comp set; we aggregate the benchmark.
  *
- *   1. resolve Airbnb URL → AirROI listing id
- *   2. fetch listing content (title, description, ordered photos, amenities, reviews)
- *   3. fetch comparables → comp set + benchmark nightly rate
- *   4. (caller) underpricing = benchmark − listing rate
- *
- * If `/listings` lacks a full description / ordered photos, add a light content
- * scrape here and set `content_fallback = true`.
+ * `currency=native` returns IDR for Bali listings, which is what underpricing_idr
+ * expects. AirROI's /listings returns the full description + ordered photo_urls,
+ * so no content scrape is needed (content_fallback stays false). It does NOT
+ * return individual review text, so ReviewSummary.recent is left empty and the
+ * reviews band is scored from rating + count only.
  */
+
+// --- Subset of the AirROI response we consume ---
+interface AirRoiListing {
+  listing_info?: {
+    listing_id?: number | string;
+    listing_name?: string;
+    description?: string;
+    photo_urls?: string[];
+    photos_count?: number;
+  };
+  property_details?: {
+    guests?: number;
+    bedrooms?: number;
+    beds?: number;
+    baths?: number;
+    amenities?: string[];
+  };
+  ratings?: {
+    num_reviews?: number;
+    rating_overall?: number | null;
+  };
+  performance_metrics?: {
+    ttm_avg_rate?: number | null;
+    l90d_avg_rate?: number | null;
+    ttm_occupancy?: number | null;
+  };
+  location_info?: {
+    latitude?: number;
+    longitude?: number;
+    locality?: string;
+    district?: string;
+    region?: string;
+  };
+  pricing_info?: { currency?: string };
+}
+
+const POOL_RE = /pool/i;
+
 export class LiveAirRoiProvider implements AirRoiProvider {
   private readonly baseUrl: string;
   private readonly apiKey: string;
 
   constructor() {
-    this.baseUrl = config.airroi.baseUrl;
+    this.baseUrl = config.airroi.baseUrl.replace(/\/$/, "");
     this.apiKey = config.airroi.apiKey;
     if (!this.apiKey) {
       throw new AirRoiError(
@@ -31,23 +74,198 @@ export class LiveAirRoiProvider implements AirRoiProvider {
     }
   }
 
-  async resolve(_airbnbUrl: string): Promise<ResolvedListing> {
-    // TODO: implement against real AirROI endpoints once access is confirmed.
-    //   const listing = await this.get(`/listings/resolve?url=${enc(airbnbUrl)}`);
-    //   const content = await this.get(`/listings/${listing.id}`);
-    //   const comps   = await this.get(`/listings/${listing.id}/comparables`);
-    //   return mapToResolvedListing(content, comps);
-    throw new AirRoiError(
-      "LiveAirRoiProvider.resolve is not implemented yet — confirm AirROI API contract first (Build Pack §3).",
-    );
+  async resolve(airbnbUrl: string): Promise<ResolvedListing> {
+    const id = parseAirbnbListingId(airbnbUrl);
+
+    const subject = await this.get<AirRoiListing>("/listings", {
+      id,
+      currency: "native",
+    });
+    if (!subject.listing_info) {
+      throw new AirRoiError(
+        "AirROI returned no listing content for that URL (listing may not be in their system yet).",
+      );
+    }
+
+    const pd = subject.property_details ?? {};
+    const loc = subject.location_info ?? {};
+    const comps = await this.getComparables(loc, pd);
+
+    return this.map(id, airbnbUrl, subject, comps);
   }
 
-  // private async get<T>(path: string): Promise<T> {
-  //   const res = await fetch(`${this.baseUrl}${path}`, {
-  //     headers: { Authorization: `Bearer ${this.apiKey}` },
-  //     // Cache per listing ~24h is handled one layer up (airroi_snapshots).
-  //   });
-  //   if (!res.ok) throw new AirRoiError(`AirROI ${path} → ${res.status}`);
-  //   return (await res.json()) as T;
-  // }
+  // --- HTTP ---
+  private async get<T>(path: string, query: Record<string, string>): Promise<T> {
+    const qs = new URLSearchParams(query).toString();
+    const res = await fetch(`${this.baseUrl}${path}?${qs}`, {
+      headers: { "x-api-key": this.apiKey, "Content-Type": "application/json" },
+      // Per-listing ~24h caching (Build Pack §8) is layered on later via airroi_snapshots.
+      cache: "no-store",
+    });
+    const text = await res.text();
+    let json: unknown;
+    try {
+      json = JSON.parse(text);
+    } catch {
+      throw new AirRoiError(`AirROI ${path} returned non-JSON (HTTP ${res.status}).`);
+    }
+    if (!res.ok) {
+      const msg = (json as { message?: string })?.message ?? `HTTP ${res.status}`;
+      throw new AirRoiError(`AirROI ${path}: ${msg}`);
+    }
+    return json as T;
+  }
+
+  private async getComparables(
+    loc: AirRoiListing["location_info"],
+    pd: AirRoiListing["property_details"],
+  ): Promise<AirRoiListing[]> {
+    if (loc?.latitude == null || loc?.longitude == null) return [];
+    const query: Record<string, string> = {
+      latitude: String(loc.latitude),
+      longitude: String(loc.longitude),
+      bedrooms: String(pd?.bedrooms ?? 0),
+      baths: String(pd?.baths ?? 0),
+      guests: String(pd?.guests ?? 0),
+      currency: "native",
+    };
+    const data = await this.get<{ listings?: AirRoiListing[] }>(
+      "/listings/comparables",
+      query,
+    );
+    return data.listings ?? [];
+  }
+
+  // --- Mapping AirROI → our scoring inputs ---
+  private map(
+    id: string,
+    url: string,
+    s: AirRoiListing,
+    comps: AirRoiListing[],
+  ): ResolvedListing {
+    const info = s.listing_info ?? {};
+    const pd = s.property_details ?? {};
+    const ratings = s.ratings ?? {};
+    const perf = s.performance_metrics ?? {};
+    const loc = s.location_info ?? {};
+
+    const amenities = pd.amenities ?? [];
+    const area = loc.district || loc.locality || loc.region || "the area";
+
+    const reviews: ReviewSummary = {
+      count: ratings.num_reviews ?? 0,
+      rating: ratings.rating_overall ?? null,
+      recent: [], // AirROI does not expose review text
+    };
+
+    const nightlyRate = Math.round(perf.ttm_avg_rate ?? perf.l90d_avg_rate ?? 0);
+
+    const listing: ListingInput = {
+      title: info.listing_name ?? "",
+      description: stripHtml(info.description ?? ""),
+      photos: info.photo_urls ?? [],
+      amenities,
+      reviews,
+      beds: pd.bedrooms ?? 0,
+      baths: pd.baths ?? 0,
+      area,
+      pool: amenities.some((a) => POOL_RE.test(a)),
+      nightly_rate: nightlyRate,
+    };
+
+    const compsInput = aggregateComps(comps, area, pd.bedrooms ?? 0);
+
+    return {
+      // Use the URL-derived id (exact string). AirROI returns listing_id as a
+      // JSON number, which loses precision above 2^53 — don't read it back.
+      airroi_listing_id: id,
+      airbnb_url: url,
+      listing,
+      comps: compsInput,
+      content_fallback: false,
+    };
+  }
+}
+
+// --- Aggregation helpers ---
+
+function median(nums: number[]): number {
+  if (nums.length === 0) return 0;
+  const sorted = [...nums].sort((a, b) => a - b);
+  const mid = Math.floor(sorted.length / 2);
+  return sorted.length % 2 === 0
+    ? Math.round((sorted[mid - 1] + sorted[mid]) / 2)
+    : sorted[mid];
+}
+
+function aggregateComps(
+  comps: AirRoiListing[],
+  area: string,
+  bedCount: number,
+): CompsInput {
+  const rates = comps
+    .map((c) => c.performance_metrics?.ttm_avg_rate ?? c.performance_metrics?.l90d_avg_rate)
+    .filter((r): r is number => typeof r === "number" && r > 0);
+
+  const photoCounts = comps
+    .map((c) => c.listing_info?.photos_count ?? c.listing_info?.photo_urls?.length)
+    .filter((n): n is number => typeof n === "number" && n > 0);
+
+  // Amenities present in >= 50% of comps.
+  const counts = new Map<string, { n: number; label: string }>();
+  for (const c of comps) {
+    const seen = new Set<string>();
+    for (const a of c.property_details?.amenities ?? []) {
+      const key = a.trim().toLowerCase();
+      if (seen.has(key)) continue;
+      seen.add(key);
+      const entry = counts.get(key) ?? { n: 0, label: a };
+      entry.n += 1;
+      counts.set(key, entry);
+    }
+  }
+  const threshold = Math.max(1, Math.ceil(comps.length / 2));
+  const commonAmenities = [...counts.values()]
+    .filter((e) => e.n >= threshold)
+    .sort((a, b) => b.n - a.n)
+    .slice(0, 12)
+    .map((e) => e.label);
+
+  const poolShare = comps.length
+    ? comps.filter((c) =>
+        (c.property_details?.amenities ?? []).some((a) => POOL_RE.test(a)),
+      ).length / comps.length
+    : 0;
+  const poolTier =
+    poolShare >= 0.8
+      ? "almost all comps have a private pool"
+      : poolShare >= 0.4
+        ? "most comps have a private pool"
+        : "some comps have a private pool";
+
+  const avgPhotoCount = photoCounts.length
+    ? Math.round(photoCounts.reduce((a, b) => a + b, 0) / photoCounts.length)
+    : 0;
+
+  return {
+    comp_count: comps.length,
+    area,
+    bed_count: bedCount,
+    avg_photo_count: avgPhotoCount,
+    benchmark_nightly_rate: median(rates),
+    common_amenities: commonAmenities,
+    pool_tier: poolTier,
+  };
+}
+
+/** Strip Airbnb's HTML description to readable plain text. */
+function stripHtml(s: string): string {
+  return s
+    .replace(/<br\s*\/?>/gi, "\n")
+    .replace(/<\/(p|div|li)>/gi, "\n")
+    .replace(/<[^>]+>/g, "")
+    .replace(/&amp;/g, "&")
+    .replace(/&nbsp;/g, " ")
+    .replace(/\n{3,}/g, "\n\n")
+    .trim();
 }

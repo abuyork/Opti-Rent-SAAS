@@ -20,6 +20,7 @@ export default async function ResultPage({
   if (!audit) notFound();
 
   const priceLabel = formatUsdFromCents(config.reportPriceUsdCents);
+  const showFull = audit.paid || config.testingShowFullReport;
 
   return (
     <main className="mx-auto max-w-3xl px-6 py-12">
@@ -42,8 +43,14 @@ export default async function ResultPage({
         />
       </section>
 
-      {audit.paid ? (
+      {showFull ? (
         <>
+          {!audit.paid && config.testingShowFullReport && (
+            <div className="mt-8 rounded-lg border border-dashed border-brand-line bg-brand-card px-4 py-2 text-center text-xs text-brand-muted">
+              Testing mode — full report shown without payment
+              (OPTIRENT_TESTING_UNLOCK_ALL).
+            </div>
+          )}
           <section className="mt-10">
             <h2 className="mb-3 text-xs font-semibold uppercase tracking-widest text-brand-muted">
               Fix list

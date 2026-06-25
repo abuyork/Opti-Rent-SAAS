@@ -15,6 +15,11 @@ export const config = {
 
   reportLinkSecret: process.env.REPORT_LINK_SECRET ?? "dev-insecure-secret",
 
+  // TESTING ONLY: when true, the result screen reveals the full report (fixes +
+  // rewrites) without payment. Set via OPTIRENT_TESTING_UNLOCK_ALL=true in
+  // .env.local for local QA. Defaults false so production stays paywalled.
+  testingShowFullReport: process.env.OPTIRENT_TESTING_UNLOCK_ALL === "true",
+
   airroi: {
     mode: (process.env.AIRROI_MODE ?? "mock") as "mock" | "live",
     apiKey: process.env.AIRROI_API_KEY ?? "",
