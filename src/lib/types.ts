@@ -88,6 +88,10 @@ export interface ReviewSummary {
   rating: number | null;
   /** Representative recent review snippets the model can scan for recurring themes. */
   recent: string[];
+  /** Cleanliness sub-score 0–5 — Airbnb filters/sorts on this explicitly (v2). */
+  cleanliness?: number | null;
+  /** Location sub-score 0–5 — a low value can signal a false-proximity title claim. */
+  location?: number | null;
 }
 
 export interface ListingInput {
@@ -95,6 +99,8 @@ export interface ListingInput {
   description: string;
   /** Ordered photo references (URLs or short captions). Order matters for the hero. */
   photos: string[];
+  /** Total photo count (may exceed the returned `photos` array). */
+  photos_count?: number;
   amenities: string[];
   reviews: ReviewSummary;
   beds: number;
@@ -104,6 +110,14 @@ export interface ListingInput {
   pool: boolean;
   /** Listing's own nightly rate in IDR. */
   nightly_rate: number;
+  // --- v2 conversion/operational signals (from AirROI booking_settings/host_info) ---
+  /** Instant Book on? Materially lifts ranking (v2). null = unknown. */
+  instant_book?: boolean | null;
+  min_nights?: number | null;
+  cancellation_policy?: string;
+  superhost?: boolean;
+  /** Guest Favorite badge — the dominant 2026 quality signal (v2). */
+  guest_favorite?: boolean;
 }
 
 export interface CompsInput {
@@ -116,11 +130,17 @@ export interface CompsInput {
   common_amenities: string[];
   /** Qualitative pool tier across comps, e.g. "most have private pools". */
   pool_tier: string;
+  /** Qualitative quality tier of the comp set, e.g. "many are Guest Favorites". */
+  quality_tier?: string;
 }
 
 export interface ScoringInput {
   listing: ListingInput;
   comps: CompsInput;
+  /** Bali micro-market segment, e.g. "Canggu/Berawa" (drives segment-match scoring, v2). */
+  micro_market?: string;
+  /** Inferred target guest, e.g. "remote workers / long-stay" (v2). */
+  target_guest?: string;
 }
 
 // ---------------------------------------------------------------------------
@@ -132,6 +152,10 @@ export interface ResolvedListing {
   airbnb_url: string;
   listing: ListingInput;
   comps: CompsInput;
+  /** Bali micro-market segment inferred from location (v2). */
+  micro_market?: string;
+  /** Target guest inferred from micro-market + property shape (v2). */
+  target_guest?: string;
   /** True when content (description/photos) came from a fallback scrape, not AirROI. */
   content_fallback?: boolean;
 }

@@ -2,7 +2,7 @@ import Anthropic from "@anthropic-ai/sdk";
 import type { ScoringInput, ScoringResult } from "@/lib/types";
 import { config } from "@/lib/config";
 import type { Scorer } from "./scorer";
-import { SCORING_SYSTEM_PROMPT } from "./prompt";
+import { SCORING_SYSTEM_PROMPT, VISION_SYSTEM_ADDENDUM } from "./prompt";
 import { extractJson, validateScoringResult, ScoringParseError } from "./validate";
 
 /**
@@ -25,11 +25,16 @@ export class ClaudeScorer implements Scorer {
   }
 
   async score(input: ScoringInput): Promise<ScoringResult> {
-    const userMessage = JSON.stringify(input);
+    const useVision =
+      config.claude.vision && input.listing.photos.length > 0;
+    const system = useVision
+      ? SCORING_SYSTEM_PROMPT + VISION_SYSTEM_ADDENDUM
+      : SCORING_SYSTEM_PROMPT;
+    const content = this.buildUserContent(input, useVision);
 
     let lastErr: unknown;
     for (let attempt = 0; attempt < 2; attempt++) {
-      const raw = await this.call(userMessage, attempt > 0);
+      const raw = await this.call(content, system, attempt > 0);
       try {
         const result = validateScoringResult(extractJson(raw));
         // underpricing is deterministic; reconcile to the canonical formula so
@@ -49,15 +54,38 @@ export class ClaudeScorer implements Scorer {
     );
   }
 
-  private async call(userMessage: string, isRetry: boolean): Promise<string> {
+  /** Build the user message: the first N photos as images (when vision is on),
+   *  then the listing + comps JSON. */
+  private buildUserContent(
+    input: ScoringInput,
+    useVision: boolean,
+  ): Anthropic.ContentBlockParam[] {
+    const blocks: Anthropic.ContentBlockParam[] = [];
+    if (useVision) {
+      const photos = input.listing.photos.slice(0, config.claude.visionMaxImages);
+      photos.forEach((url, i) => {
+        blocks.push({ type: "text", text: `Photo ${i + 1}${i === 0 ? " (cover)" : ""}:` });
+        blocks.push({ type: "image", source: { type: "url", url } });
+      });
+    }
+    blocks.push({ type: "text", text: JSON.stringify(input) });
+    return blocks;
+  }
+
+  private async call(
+    content: Anthropic.ContentBlockParam[],
+    system: string,
+    isRetry: boolean,
+  ): Promise<string> {
     const msg = await this.client.messages.create({
       model: this.model,
       max_tokens: 2048,
-      temperature: 0,
+      // NB: Opus 4.8 deprecates `temperature` — do not send it. Determinism comes
+      // from the strict bands in the system prompt, not a sampling temperature.
       system: isRetry
-        ? `${SCORING_SYSTEM_PROMPT}\n\nYour previous reply was not valid JSON. Return ONLY the JSON object, no prose or backticks.`
-        : SCORING_SYSTEM_PROMPT,
-      messages: [{ role: "user", content: userMessage }],
+        ? `${system}\n\nYour previous reply was not valid JSON. Return ONLY the JSON object, no prose or backticks.`
+        : system,
+      messages: [{ role: "user", content }],
     });
 
     return msg.content

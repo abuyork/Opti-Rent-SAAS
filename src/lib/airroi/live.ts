@@ -6,7 +6,12 @@ import type {
 } from "@/lib/types";
 import { config } from "@/lib/config";
 import { AirRoiError, type AirRoiProvider } from "./provider";
-import { parseAirbnbListingId } from "./url";
+import { resolveAirbnbListingId } from "./url";
+
+/** Shown to owners when AirROI simply has no data for their (valid) listing. */
+const NO_DATA_MESSAGE =
+  "We don't have market data on this specific villa yet — this can happen with " +
+  "newer or less-active listings. Try another villa, or check back soon.";
 
 /**
  * Live AirROI adapter (Build Pack §4 steps 2–4).
@@ -31,6 +36,7 @@ interface AirRoiListing {
     description?: string;
     photo_urls?: string[];
     photos_count?: number;
+    guest_favorite?: boolean;
   };
   property_details?: {
     guests?: number;
@@ -42,6 +48,8 @@ interface AirRoiListing {
   ratings?: {
     num_reviews?: number;
     rating_overall?: number | null;
+    rating_cleanliness?: number | null;
+    rating_location?: number | null;
   };
   performance_metrics?: {
     ttm_avg_rate?: number | null;
@@ -54,6 +62,15 @@ interface AirRoiListing {
     locality?: string;
     district?: string;
     region?: string;
+  };
+  booking_settings?: {
+    instant_book?: boolean | null;
+    min_nights?: number | null;
+    cancellation_policy?: string;
+  };
+  host_info?: {
+    superhost?: boolean;
+    professional_management?: boolean;
   };
   pricing_info?: { currency?: string };
 }
@@ -75,16 +92,29 @@ export class LiveAirRoiProvider implements AirRoiProvider {
   }
 
   async resolve(airbnbUrl: string): Promise<ResolvedListing> {
-    const id = parseAirbnbListingId(airbnbUrl);
+    const id = await resolveAirbnbListingId(airbnbUrl);
 
-    const subject = await this.get<AirRoiListing>("/listings", {
-      id,
-      currency: "native",
-    });
+    let subject: AirRoiListing;
+    try {
+      subject = await this.get<AirRoiListing>("/listings", {
+        id,
+        currency: "native",
+      });
+    } catch (e) {
+      // AirROI 404 = the listing isn't in their database. Not our bug; show a
+      // friendly message instead of the raw API text.
+      if (e instanceof AirRoiError && e.status === 404) {
+        throw new AirRoiError(`AirROI has no data for listing ${id}`, {
+          status: 404,
+          userMessage: NO_DATA_MESSAGE,
+        });
+      }
+      throw e;
+    }
     if (!subject.listing_info) {
-      throw new AirRoiError(
-        "AirROI returned no listing content for that URL (listing may not be in their system yet).",
-      );
+      throw new AirRoiError(`AirROI returned empty content for listing ${id}`, {
+        userMessage: NO_DATA_MESSAGE,
+      });
     }
 
     const pd = subject.property_details ?? {};
@@ -111,7 +141,7 @@ export class LiveAirRoiProvider implements AirRoiProvider {
     }
     if (!res.ok) {
       const msg = (json as { message?: string })?.message ?? `HTTP ${res.status}`;
-      throw new AirRoiError(`AirROI ${path}: ${msg}`);
+      throw new AirRoiError(`AirROI ${path}: ${msg}`, { status: res.status });
     }
     return json as T;
   }
@@ -148,14 +178,20 @@ export class LiveAirRoiProvider implements AirRoiProvider {
     const ratings = s.ratings ?? {};
     const perf = s.performance_metrics ?? {};
     const loc = s.location_info ?? {};
+    const booking = s.booking_settings ?? {};
+    const host = s.host_info ?? {};
 
     const amenities = pd.amenities ?? [];
     const area = loc.district || loc.locality || loc.region || "the area";
+    const micro_market = microMarket(loc);
+    const target_guest = targetGuest(micro_market);
 
     const reviews: ReviewSummary = {
       count: ratings.num_reviews ?? 0,
       rating: ratings.rating_overall ?? null,
       recent: [], // AirROI does not expose review text
+      cleanliness: ratings.rating_cleanliness ?? null,
+      location: ratings.rating_location ?? null,
     };
 
     const nightlyRate = Math.round(perf.ttm_avg_rate ?? perf.l90d_avg_rate ?? 0);
@@ -164,6 +200,7 @@ export class LiveAirRoiProvider implements AirRoiProvider {
       title: info.listing_name ?? "",
       description: stripHtml(info.description ?? ""),
       photos: info.photo_urls ?? [],
+      photos_count: info.photos_count ?? info.photo_urls?.length ?? 0,
       amenities,
       reviews,
       beds: pd.bedrooms ?? 0,
@@ -171,6 +208,11 @@ export class LiveAirRoiProvider implements AirRoiProvider {
       area,
       pool: amenities.some((a) => POOL_RE.test(a)),
       nightly_rate: nightlyRate,
+      instant_book: booking.instant_book ?? null,
+      min_nights: booking.min_nights ?? null,
+      cancellation_policy: booking.cancellation_policy,
+      superhost: host.superhost,
+      guest_favorite: info.guest_favorite,
     };
 
     const compsInput = aggregateComps(comps, area, pd.bedrooms ?? 0);
@@ -182,8 +224,43 @@ export class LiveAirRoiProvider implements AirRoiProvider {
       airbnb_url: url,
       listing,
       comps: compsInput,
+      micro_market,
+      target_guest,
       content_fallback: false,
     };
+  }
+}
+
+// --- Bali micro-market inference (v2) ---
+
+/** Map an AirROI location to a Bali micro-market segment. */
+function microMarket(loc: AirRoiListing["location_info"]): string {
+  const hay = [loc?.district, loc?.locality, loc?.region]
+    .filter(Boolean)
+    .join(" ")
+    .toLowerCase();
+  if (/(canggu|berawa|pererenan|echo beach|umalas|kerobokan|tibubeneng)/.test(hay))
+    return "Canggu/Berawa";
+  if (/(uluwatu|pecatu|bukit|bingin|padang|ungasan)/.test(hay)) return "Uluwatu/Bukit";
+  if (/seminyak/.test(hay)) return "Seminyak";
+  if (/ubud/.test(hay)) return "Ubud";
+  if (/(sanur)/.test(hay)) return "Sanur";
+  return loc?.locality || loc?.region || "Bali";
+}
+
+/** Infer the dominant guest driver for a micro-market (v2 segment match). */
+function targetGuest(market: string): string {
+  switch (market) {
+    case "Canggu/Berawa":
+      return "digital nomads / surfers / long-stay remote workers";
+    case "Uluwatu/Bukit":
+      return "couples & groups chasing cliff/ocean views";
+    case "Seminyak":
+      return "design-forward luxury travellers";
+    case "Ubud":
+      return "wellness & nature seekers";
+    default:
+      return "couples, families and groups";
   }
 }
 
@@ -247,6 +324,16 @@ function aggregateComps(
     ? Math.round(photoCounts.reduce((a, b) => a + b, 0) / photoCounts.length)
     : 0;
 
+  const gfShare = comps.length
+    ? comps.filter((c) => c.listing_info?.guest_favorite).length / comps.length
+    : 0;
+  const qualityTier =
+    gfShare >= 0.5
+      ? "many comps are Guest Favorites — a high-quality set"
+      : gfShare >= 0.2
+        ? "a meaningful share of comps are Guest Favorites"
+        : "few comps hold the Guest Favorite badge";
+
   return {
     comp_count: comps.length,
     area,
@@ -255,6 +342,7 @@ function aggregateComps(
     benchmark_nightly_rate: median(rates),
     common_amenities: commonAmenities,
     pool_tier: poolTier,
+    quality_tier: qualityTier,
   };
 }
 

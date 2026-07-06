@@ -1,24 +1,44 @@
 # OptiRent — Project State
 
 _A Réntlyn product · MVP · Built to OptiRent Build Pack v3.0_
-_Last updated: 2026-06-25_
+_Last updated: 2026-07-06_
 
 ## TL;DR
 
-The **entire MVP flow is built and runs end-to-end**. **AirROI is now live** —
-paste a real Airbnb villa URL and you get real listing content, a real comp set,
-benchmark, and underpricing. The rest of the chain (scoring, payments, DB) still
-runs on mocks until their keys land. Flow: paste URL → email gate → free score →
-pay → unlocked fixes/rewrites → printable PDF report.
+The core product loop is **live and real end-to-end**: paste a real Airbnb villa
+URL → live AirROI data → **live Claude v2 scoring (now with vision — Claude sees
+the cover photo)** → **persisted to Supabase** → free result → full report + PDF.
+The only mock left in the chain is **payments** (Stripe not wired yet).
 
-Still needed to fully go live: **Claude, Supabase, Stripe** keys plus a
-**calibration pass**. None block local development — they swap in via config,
-not code changes. See [`HANDOFF-MAX.md`](HANDOFF-MAX.md) for the asks.
+> **What's real vs. mock now:** AirROI data, Claude scoring (score + fixes +
+> rewrites + vision), and Supabase persistence are all **LIVE**. **Payment is the
+> only piece still bypassed** — via the `OPTIRENT_TESTING_UNLOCK_ALL` testing flag
+> that reveals the paid report for free. Turn that off + wire Stripe to monetize.
 
-> **What's real vs. mock right now:** comp set, benchmark, underpricing, listing
-> title/description/photo counts = **live AirROI**. Overall score + fix text +
-> rewrites = **mock sample** until `ANTHROPIC_API_KEY` is set. Persistence =
-> in-memory (no Supabase yet). Payment = bypassed via a testing flag.
+## Overall completion — ~70% of a launchable MVP
+
+The build/technical spine is essentially done; what remains is monetization, an
+abuse/quality hardening pass, and calibration.
+
+| Area | Weight | Status | Done |
+|------|:------:|--------|:----:|
+| Foundation (Next.js/TS/Tailwind, config, types) | 10% | ✅ done | 10 |
+| AirROI integration (live, verified) | 12% | ✅ done | 12 |
+| Scoring engine — v2 prompt + Claude live + **vision** | 20% | ✅ done | 20 |
+| Public audit flow + result/report UI | 12% | ✅ done | 12 |
+| Persistence — Supabase live + RLS | 10% | ✅ done | 10 |
+| PDF report (browser print→PDF) | 5% | ✅ done | 5 |
+| **Stripe payments (live money flow)** | 12% | ❌ scaffold only | 0 |
+| **Paywall enforcement (turn off test unlock)** | 3% | ❌ pending | 0 |
+| **Abuse guardrails (AirROI 24h cache, rate-limit/IP-cap)** | 6% | ⚠️ partial | 1 |
+| **Email delivery (report link)** | 4% | ❌ not wired | 0 |
+| **Calibration (20–30 Canggu villas)** | 6% | ❌ pending | 0 |
+| Optional polish (server-side PDF, Apify reviews, verdict/quick-wins) | — | ⏳ nice-to-have | — |
+| **Total** | 100% | | **~70%** |
+
+Read: everything needed to *demo a real, accurate audit* works today. The ~30%
+left is what turns it into a *business that charges money safely* — payments,
+guardrails, email, and a scoring sanity-check.
 
 ---
 
@@ -27,9 +47,9 @@ not code changes. See [`HANDOFF-MAX.md`](HANDOFF-MAX.md) for the asks.
 | # | Build Pack step | Status | Key files |
 |---|-----------------|--------|-----------|
 | — | Foundation: Next.js 16 (App Router) + React 19 + Tailwind v4 + TS | ✅ builds clean | `src/app/`, `src/lib/types.ts`, `src/lib/config.ts` |
-| §5 | Data model: `audits`, `leads`, `payments`, `airroi_snapshots` | ✅ migration written | `supabase/migrations/0001_init.sql` |
-| §3/§4 | AirROI integration (resolve URL → listing + comps + benchmark) | ✅ **live implemented + verified** against real API; mock retained | `src/lib/airroi/` |
-| §6 | Claude scoring engine — system prompt **verbatim**, strict-JSON parse + 1 retry | ✅ mock + live | `src/lib/scoring/` |
+| §5 | Data model: `audits`, `leads`, `payments`, `airroi_snapshots` | ✅ **applied to live Supabase project + RLS on** | `supabase/migrations/0001_init.sql` |
+| §3/§4 | AirROI integration (resolve URL → listing + comps + benchmark) | ✅ **live + verified** against real API; mock retained | `src/lib/airroi/` |
+| §6 | Claude scoring engine — **v2 prompt** (funnel/2026-algorithm/micro-market) + **vision cover-photo** + strict-JSON + retry | ✅ **live (Claude Opus 4.8)** + mock | `src/lib/scoring/` |
 | §4/§7 | Public audit page: URL → email gate → loading → free result + locked preview | ✅ | `src/app/page.tsx`, `src/components/AuditForm.tsx`, `src/app/result/[id]/page.tsx` |
 | §7 | Stripe one-time payment → unlock | ✅ mock + live + webhook | `src/app/api/checkout/`, `src/app/api/unlock/`, `src/app/api/stripe/webhook/` |
 | §7 | Branded single-page A4 PDF report | ✅ HTML→PDF (print) | `src/app/report/[id]/page.tsx` |
@@ -59,10 +79,10 @@ implementation, selected by env:
 
 | System | Interface | Mock | Live | Switch |
 |--------|-----------|------|------|--------|
-| AirROI | `AirRoiProvider` | `MockAirRoiProvider` (Villa Seraya fixture) | `LiveAirRoiProvider` (**implemented + verified**) | `AIRROI_MODE=mock\|live` |
-| Claude | `Scorer` | `MockScorer` (sample report) | `ClaudeScorer` (Anthropic SDK) | `CLAUDE_MODE=mock\|live` |
-| DB | `AuditStore` | `MemoryAuditStore` | `SupabaseAuditStore` | presence of Supabase env |
-| Payments | — | signed local unlock URL | Stripe Checkout + webhook | presence of `STRIPE_SECRET_KEY` |
+| AirROI | `AirRoiProvider` | `MockAirRoiProvider` (Villa Seraya fixture) | `LiveAirRoiProvider` ✅ **LIVE** | `AIRROI_MODE=mock\|live` |
+| Claude | `Scorer` | `MockScorer` (sample report) | `ClaudeScorer` (Opus 4.8 + vision) ✅ **LIVE** | `CLAUDE_MODE=mock\|live` |
+| DB | `AuditStore` | `MemoryAuditStore` | `SupabaseAuditStore` ✅ **LIVE** (project `opti-rent`) | presence of Supabase env |
+| Payments | — | signed local unlock URL ⚠️ **mock only** | Stripe Checkout + webhook (scaffold) | presence of `STRIPE_SECRET_KEY` |
 
 ## How to run
 
@@ -72,19 +92,23 @@ cp .env.example .env.local      # then set the keys below
 npm run dev                     # http://localhost:3000
 ```
 
-Current `.env.local` (gitignored) for live-AirROI dev:
+Current `.env.local` (gitignored) — everything except Stripe is live:
 
 ```
-AIRROI_MODE=live
-AIRROI_API_KEY=<key>            # provided 2026-06-25
-CLAUDE_MODE=mock                # no Anthropic key yet
-OPTIRENT_TESTING_UNLOCK_ALL=true  # show full report without paying (QA only)
+AIRROI_MODE=live            AIRROI_API_KEY=<key>
+CLAUDE_MODE=live            ANTHROPIC_API_KEY=<key>   ANTHROPIC_MODEL=claude-opus-4-8
+OPTIRENT_VISION=true        OPTIRENT_VISION_MAX_IMAGES=6   # cover-photo vision
+NEXT_PUBLIC_SUPABASE_URL=…  NEXT_PUBLIC_SUPABASE_ANON_KEY=…  SUPABASE_SERVICE_ROLE_KEY=…
+OPTIRENT_TESTING_UNLOCK_ALL=true   # QA: full report without paying — turn OFF for launch
 ```
 
 Try it: paste a **real** Canggu villa URL (e.g. `https://www.airbnb.com/rooms/<id>`)
-→ enter any email → you get live AirROI metrics with the mock score/fixes. With
-`OPTIRENT_TESTING_UNLOCK_ALL=true` the result screen shows the full report
-(fixes + rewrites + PDF link) without payment.
+→ enter any email → you get a real Claude-scored audit (with cover-photo vision),
+persisted to Supabase. With `OPTIRENT_TESTING_UNLOCK_ALL=true` the result screen
+shows the full report (fixes + rewrites + PDF link) without payment.
+
+**Supabase project:** `opti-rent` (ref `ixdnnjckeqfpdgbkzdum`, region `ap-southeast-1`),
+org "Alex's Org". Schema applied, **RLS enabled on all tables** (service-role only).
 
 **Accessing from another device (phone / LAN IP):** the dev server must allow
 that origin or the page won't hydrate (forms silently reload to blank). LAN IPs
@@ -92,6 +116,21 @@ are whitelisted in `next.config.ts` → `allowedDevOrigins`; add new ones there.
 `localhost` is always allowed.
 
 ## Verification done
+
+**2026-07-06 — Claude v2 live, vision, Supabase persistence**
+- `CLAUDE_MODE=live` — real Opus 4.8 scoring end-to-end (removed the deprecated
+  `temperature` param that 400'd). Real villa scored **78–84/100** with
+  listing-specific v2 fixes (cancellation policy, Instant Book, micro-market).
+- **Vision on:** first 6 photos sent as images; top fix became a real visual
+  read — *"Cover photo is busy and reads as interior/walkway, not pool."*
+- **Title compliance + Title Case** enforced in prompt + deterministic validator
+  (strips middots/emoji/accents, ≤50 chars).
+- **Supabase live:** project created, migration applied (4 tables), keys wired.
+  Audit persisted and **survived a full server restart** (`/result` → 200).
+  **RLS enabled** on all tables — service-role only; public anon key locked out.
+- **PDF fixed:** `/report/[id]` now honors the testing flag (was redirecting) →
+  download/print works.
+- Friendly "listing not found" message + short-link (`abnb.me`) resolution.
 
 **2026-06-25 — live AirROI + cross-origin fix**
 - AirROI contract verified directly: `/listings?id=&currency=native`,
@@ -122,30 +161,30 @@ are whitelisted in `next.config.ts` → `allowedDevOrigins`; add new ones there.
 - `@supabase/supabase-js` `2.108.2`
 - Node 20
 
-## Open items / known gaps
+## Open items / known gaps (the ~30% left)
 
-1. **Scoring is still mock** — the overall score, category scores, fix text, and
-   rewrites come from `MockScorer` (the Villa Seraya sample) until
-   `ANTHROPIC_API_KEY` is set and `CLAUDE_MODE=live`. Live AirROI metrics already
-   flow through underneath. This is the single biggest "looks real but isn't" gap.
-2. **AirROI: no review text** — `/listings` returns rating + count only, not
-   individual reviews, so the §6 "recurring complaint" band is scored from
-   ratings alone until a review scrape is added. `ReviewSummary.recent` is empty
-   from the live adapter. (Everything else from AirROI is live and verified.)
-3. **Testing unlock is ON** — `OPTIRENT_TESTING_UNLOCK_ALL=true` reveals the full
-   report without payment for QA. **Turn this off** (and rely on Stripe) before
-   anything customer-facing. Defaults to off when the env var is unset.
-4. **No persistence without Supabase** — in mock mode the in-memory store resets
-   on server restart. Fine for demos; needs Supabase for anything real.
-5. **PDF is print-based HTML→PDF** (browser "Save as PDF"). A true server-side
-   PDF file (for email attachments) would need Puppeteer against the same
-   `/report/[id]` HTML — not yet added.
-6. **Guardrails partial** — free-tier field hiding, signed links, and server-side
-   keys are done. Still to add: AirROI 24h caching (`airroi_snapshots` table
-   exists but isn't wired), rate-limit / IP-cap / email-gate throttling on free
-   audits.
-7. **Not calibrated** — once Claude is live, scores need the §6 calibration run
-   on 20–30 real Canggu villas before anything customer-facing.
+1. **Stripe payments not wired** — checkout + `/api/unlock` + webhook are
+   scaffolded, but no real charge happens. This is the monetization core. Needs
+   Stripe keys + wiring `recordPayment` → `markAuditPaid`.
+2. **Testing unlock is ON** — `OPTIRENT_TESTING_UNLOCK_ALL=true` reveals the paid
+   report for free. **Turn this off** before anything customer-facing (defaults
+   off when unset). Until Stripe is live, turning it off means no one sees fixes.
+3. **Guardrails partial** — free-tier field hiding, signed links, server-side
+   keys, and **RLS** are done. Still to add: AirROI **24h caching**
+   (`airroi_snapshots` table exists but isn't wired — every audit re-hits AirROI
+   *and* re-pays for Claude vision), plus rate-limit / IP-cap on free audits.
+4. **No email delivery** — the spec emails a report link; no email provider is
+   wired yet. Leads are captured in Supabase.
+5. **Not calibrated** — scores are live but unaudited. Run the §6 calibration on
+   20–30 known Canggu villas and sanity-check before charging.
+6. **AirROI: no review text** — `/listings` gives rating + count only, so the
+   reviews band is scored without recurring-complaint text. `ReviewSummary.recent`
+   is empty until an Apify scrape is added.
+7. **PDF is print-based** — works (browser "Save as PDF"). A true server-side PDF
+   file (email attachments) would need Puppeteer against `/report/[id]`.
+8. **Cost note** — vision adds ~$0.05–0.15/audit (6 images). With no AirROI/Claude
+   caching yet, repeat audits of the same villa re-pay in full. Wire the snapshot
+   cache before any real traffic.
 
 ## Repo layout
 

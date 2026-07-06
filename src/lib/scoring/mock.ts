@@ -79,7 +79,7 @@ export class MockScorer implements Scorer {
       rewrites: {
         title: {
           before: listing.title,
-          after: "Private Pool Villa · 4 min walk to Echo Beach, Berawa",
+          after: "Private pool villa, 4 min walk to Echo Beach",
         },
         description_opening: {
           before: listing.description,

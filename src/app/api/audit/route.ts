@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { runAudit, toFreeView } from "@/lib/audit";
 import { getStore } from "@/lib/db";
+import { AirRoiError } from "@/lib/airroi";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -48,9 +49,12 @@ export async function POST(req: Request) {
 
     return NextResponse.json({ id: audit.id, free: toFreeView(audit.id, scoring, false) });
   } catch (e) {
-    return NextResponse.json(
-      { error: (e as Error).message ?? "We couldn't audit that listing. Try again." },
-      { status: 502 },
-    );
+    // Log the real error server-side; show the owner a clean, non-leaky message.
+    console.error("[/api/audit] failed:", e);
+    const message =
+      e instanceof AirRoiError
+        ? e.userMessage
+        : "We couldn't audit that listing right now. Please try again.";
+    return NextResponse.json({ error: message }, { status: 502 });
   }
 }

@@ -1,5 +1,6 @@
 import { notFound, redirect } from "next/navigation";
 import { getStore } from "@/lib/db";
+import { config } from "@/lib/config";
 import { verifyReportToken } from "@/lib/sign";
 import { ReportHeader } from "@/components/report/ReportHeader";
 import { StatCards } from "@/components/report/StatCards";
@@ -27,7 +28,10 @@ export default async function ReportPage({
   const audit = await getStore().getAudit(id);
   if (!audit) notFound();
 
-  const allowed = audit.paid || (t ? verifyReportToken(id, t) : false);
+  const allowed =
+    audit.paid ||
+    config.testingShowFullReport || // QA: view/print the PDF without paying
+    (t ? verifyReportToken(id, t) : false);
   if (!allowed) redirect(`/result/${id}`);
 
   return (

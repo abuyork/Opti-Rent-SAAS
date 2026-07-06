@@ -18,6 +18,8 @@ export async function runAudit(airbnbUrl: string): Promise<AuditRunResult> {
   const scoring = await getScorer().score({
     listing: resolved.listing,
     comps: resolved.comps,
+    micro_market: resolved.micro_market,
+    target_guest: resolved.target_guest,
   });
   return { resolved, scoring };
 }

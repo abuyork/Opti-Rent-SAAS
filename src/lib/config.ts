@@ -30,6 +30,11 @@ export const config = {
     mode: (process.env.CLAUDE_MODE ?? "mock") as "mock" | "live",
     apiKey: process.env.ANTHROPIC_API_KEY ?? "",
     model: process.env.ANTHROPIC_MODEL ?? "claude-opus-4-8",
+    // Vision: send the first N listing photos to Claude as images so it can
+    // judge the actual cover shot (the highest-leverage lever). Costs roughly
+    // 1.5–4.8k tokens per image — lower the count or disable to control spend.
+    vision: (process.env.OPTIRENT_VISION ?? "true") === "true",
+    visionMaxImages: Number(process.env.OPTIRENT_VISION_MAX_IMAGES ?? "6"),
   },
 
   supabase: {

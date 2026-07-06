@@ -56,6 +56,54 @@ function parseRewrite(v: unknown, label: string) {
 }
 
 /**
+ * Enforce Airbnb title policy deterministically (belt-and-suspenders on top of
+ * the prompt rules): de-accent, turn separators (·•|/–—) into commas, drop
+ * emojis/symbols, expand "&", collapse spacing, and hard-cap at 50 chars on a
+ * word boundary. Guarantees the paste-ready title we render is compliant.
+ */
+export function sanitizeTitle(raw: string): string {
+  let s = raw
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "") // strip combining accents (é -> e)
+    .replace(/\s*&\s*/g, " and ")
+    .replace(/\s*[·•|/–—]+\s*/g, ", ") // ·•|/–— separators -> comma
+    .replace(/[^\p{L}\p{N} ,'-]/gu, "") // drop emojis/other symbols
+    .replace(/\s+/g, " ")
+    .replace(/\s*,\s*/g, ", ")
+    .replace(/(,\s*)+,/g, ", ")
+    .replace(/^[\s,]+|[\s,]+$/g, "")
+    .trim();
+
+  if (s.length > 50) {
+    s = s.slice(0, 50);
+    const lastSpace = s.lastIndexOf(" ");
+    if (lastSpace > 24) s = s.slice(0, lastSpace);
+    s = s.replace(/[\s,]+$/g, "");
+  }
+  return toTitleCase(s);
+}
+
+// Small words stay lowercase unless they're the first word of the title.
+const TITLE_SMALL_WORDS = new Set([
+  "a", "an", "and", "at", "by", "for", "from", "in", "of", "on", "or",
+  "the", "to", "with", "vs", "via", "per", "near",
+]);
+
+/** Title Case: capitalize each significant word; keep short joiners lowercase. */
+export function toTitleCase(input: string): string {
+  let first = true;
+  return input.replace(/[A-Za-z0-9]+/g, (word) => {
+    const lower = word.toLowerCase();
+    const cased =
+      !first && TITLE_SMALL_WORDS.has(lower)
+        ? lower
+        : lower.charAt(0).toUpperCase() + lower.slice(1);
+    first = false;
+    return cased;
+  });
+}
+
+/**
  * Strip accidental markdown fences / leading prose and isolate the JSON object,
  * then JSON.parse. Tolerant first pass before structural validation.
  */
@@ -102,8 +150,10 @@ export function validateScoringResult(input: unknown): ScoringResult {
 
   const rw = input.rewrites;
   if (!isObject(rw)) throw new ScoringParseError("rewrites missing");
+  const titleRewrite = parseRewrite(rw.title, "rewrites.title");
+  titleRewrite.after = sanitizeTitle(titleRewrite.after); // enforce Airbnb title policy
   const rewrites: Rewrites = {
-    title: parseRewrite(rw.title, "rewrites.title"),
+    title: titleRewrite,
     description_opening: parseRewrite(rw.description_opening, "rewrites.description_opening"),
   };
 

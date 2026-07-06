@@ -14,12 +14,21 @@ export interface AirRoiProvider {
   resolve(airbnbUrl: string): Promise<ResolvedListing>;
 }
 
+export interface AirRoiErrorOptions {
+  /** Upstream HTTP status, when the error came from an AirROI response. */
+  status?: number;
+  /** Owner-facing message shown in the UI. Defaults to `message` (dev detail). */
+  userMessage?: string;
+}
+
 export class AirRoiError extends Error {
-  constructor(
-    message: string,
-    readonly cause?: unknown,
-  ) {
+  readonly status?: number;
+  readonly userMessage: string;
+
+  constructor(message: string, options: AirRoiErrorOptions = {}) {
     super(message);
     this.name = "AirRoiError";
+    this.status = options.status;
+    this.userMessage = options.userMessage ?? message;
   }
 }
