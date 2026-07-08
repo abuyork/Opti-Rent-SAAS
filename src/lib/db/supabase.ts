@@ -28,6 +28,8 @@ export class SupabaseAuditStore implements AuditStore {
       .insert({
         airbnb_url: input.airbnb_url,
         airroi_listing_id: input.airroi_listing_id,
+        listing_title: input.listing_title,
+        listing_photo: input.listing_photo,
         email: input.email,
         overall_score: s.overall_score,
         category_scores: s.category_scores,

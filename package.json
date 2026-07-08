@@ -2,7 +2,7 @@
   "name": "optirent",
   "version": "0.1.0",
   "private": true,
-  "description": "OptiRent — Villa Listing Audit (a Réntlyn product)",
+  "description": "OptiRent - Villa Listing Audit",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

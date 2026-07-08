@@ -1,6 +1,6 @@
 # OptiRent — Villa Listing Audit
 
-> A Réntlyn product. A villa owner pastes their Airbnb URL and gets a free
+> A villa owner pastes their Airbnb URL and gets a free
 > score, an underpricing estimate vs. comparable villas, and a problem count.
 > They pay once ($49) to unlock the full fix list, paste-ready rewrites, and a
 > branded PDF. STR data from **AirROI**; scoring from **Claude**.

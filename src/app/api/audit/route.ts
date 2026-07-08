@@ -32,9 +32,13 @@ export async function POST(req: Request) {
   try {
     const { resolved, scoring } = await runAudit(url);
     const store = getStore();
+    // Hero photo for the report header; mock-mode "photos" are captions, not URLs.
+    const heroPhoto = resolved.listing.photos.find((p) => /^https?:\/\//i.test(p)) ?? null;
     const audit = await store.createAudit({
       airbnb_url: url,
       airroi_listing_id: resolved.airroi_listing_id,
+      listing_title: resolved.listing.title || null,
+      listing_photo: heroPhoto,
       email,
       scoring,
     });

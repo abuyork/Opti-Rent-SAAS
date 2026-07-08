@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <main className="mx-auto flex min-h-screen max-w-3xl flex-col items-center justify-center px-6 py-16 text-center">
       <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-brand-teal">
-        OptiRent · a Réntlyn product
+        OptiRent
       </p>
 
       <h1 className="text-4xl font-bold leading-tight text-brand-navy sm:text-5xl">

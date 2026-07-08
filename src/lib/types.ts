@@ -168,6 +168,10 @@ export interface Audit {
   id: string;
   airbnb_url: string;
   airroi_listing_id: string | null;
+  /** Listing title at audit time — shown on the report so the owner sees what was analyzed. */
+  listing_title: string | null;
+  /** Hero photo URL at audit time (null in mock mode where photos are captions). */
+  listing_photo: string | null;
   email: string;
   created_at: string;
   overall_score: number;

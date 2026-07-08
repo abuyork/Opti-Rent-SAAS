@@ -24,6 +24,8 @@ export class MemoryAuditStore implements AuditStore {
       id: crypto.randomUUID(),
       airbnb_url: input.airbnb_url,
       airroi_listing_id: input.airroi_listing_id,
+      listing_title: input.listing_title,
+      listing_photo: input.listing_photo,
       email: input.email,
       created_at: new Date().toISOString(),
       overall_score: input.scoring.overall_score,

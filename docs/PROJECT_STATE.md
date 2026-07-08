@@ -1,6 +1,6 @@
 # OptiRent — Project State
 
-_A Réntlyn product · MVP · Built to OptiRent Build Pack v3.0_
+_OptiRent MVP · Built to OptiRent Build Pack v3.0_
 _Last updated: 2026-07-06_
 
 ## TL;DR

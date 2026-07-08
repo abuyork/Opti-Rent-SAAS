@@ -6,7 +6,7 @@ export function ReportHeader({ subtitle }: { subtitle?: string }) {
         <div>
           <div className="text-2xl font-bold text-brand-navy">OptiRent</div>
           <div className="text-sm text-brand-muted">
-            Villa listing audit · a Réntlyn product
+            Villa listing audit
           </div>
         </div>
         {subtitle && (

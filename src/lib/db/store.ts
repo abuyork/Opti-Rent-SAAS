@@ -3,6 +3,8 @@ import type { Audit, ScoringResult } from "@/lib/types";
 export interface CreateAuditInput {
   airbnb_url: string;
   airroi_listing_id: string | null;
+  listing_title: string | null;
+  listing_photo: string | null;
   email: string;
   scoring: ScoringResult;
 }

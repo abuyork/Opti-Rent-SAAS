@@ -3,6 +3,7 @@ import { getStore } from "@/lib/db";
 import { config } from "@/lib/config";
 import { formatUsdFromCents } from "@/lib/format";
 import { ReportHeader } from "@/components/report/ReportHeader";
+import { ListingIdentity } from "@/components/report/ListingIdentity";
 import { StatCards } from "@/components/report/StatCards";
 import { FixList, LockedFixPreview } from "@/components/report/FixList";
 import { RewritesView } from "@/components/report/RewritesView";
@@ -28,9 +29,13 @@ export default async function ResultPage({
 
       <section className="mt-6">
         <h1 className="text-2xl font-bold text-brand-navy">Your villa audit</h1>
-        <p className="mt-1 text-sm text-brand-muted">
-          Score {audit.overall_score}/100 · Compared against {audit.comp_basis}. Fixes
-          ordered by impact.
+        <ListingIdentity
+          title={audit.listing_title}
+          photo={audit.listing_photo}
+          airbnbUrl={audit.airbnb_url}
+        />
+        <p className="mt-3 text-sm text-brand-muted">
+          Compared against {audit.comp_basis}. Fixes ordered by impact.
         </p>
       </section>
 

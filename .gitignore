@@ -28,6 +28,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 
+# supabase cli
+supabase/.temp/
+
 # os / editor
 .vscode/
 .idea/
