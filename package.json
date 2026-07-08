@@ -9,7 +9,8 @@
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
-    "eval": "tsx src/lib/eval/run.ts"
+    "eval": "tsx src/lib/eval/run.ts",
+    "scan": "tsx src/lib/market/run.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.104.1",
