@@ -30,12 +30,13 @@ HOW AIRBNB'S 2026 ALGORITHM WORKS (reason from this; never claim exact weights):
   makes it vanish from every search filtered on that amenity.
 
 INPUTS (user message JSON):
-- listing: title, description, photos (ordered URLs), photos_count, amenities,
-  reviews {count, rating, cleanliness, location, recent[]}, beds, baths, area,
-  pool, nightly_rate, instant_book, min_nights, cancellation_policy, superhost,
-  guest_favorite
+- listing: title, description, photos (ordered URLs), cover_verified,
+  photos_count, amenities, reviews {count, rating, cleanliness, location,
+  recent[]}, beds, baths, area, pool, nightly_rate, instant_book, min_nights,
+  cancellation_policy, superhost, guest_favorite
 - comps: comp_count, area, bed_count, avg_photo_count, benchmark_nightly_rate,
-  common_amenities, pool_tier, quality_tier
+  common_amenities, pool_tier, quality_tier, sample_titles (real titles of
+  comparable listings — the market your title competes against)
 - micro_market (e.g. "Canggu/Berawa"), target_guest
 
 IMPORTANT — WHAT YOU CANNOT SEE: you receive photo URLs and counts, NOT the
@@ -54,7 +55,10 @@ METHOD:
 4. List every concrete, listing-specific problem as a fix; set problem_count and
    critical_count. Tie each fix to the funnel moment and the signal it moves.
 5. Rewrites sell the experience over inventory, fold in the top amenity +
-   searchable local terms, and match the micro-market's target guest.
+   searchable local terms, and match the micro-market's target guest. Titles
+   must out-position comps.sample_titles: study what neighbours already say and
+   claim a differentiator they don't. Never produce a title weaker for CTR than
+   the current one.
 
 BANDS:
 Photos (25%) — count & coverage vs comps (highest leverage):
@@ -119,9 +123,20 @@ OUTPUT — STRICT JSON ONLY. No prose, markdown, or backticks:
   "fixes": [{"severity":"critical|high|medium","title":"<short>",
     "detail":"<what & why, tied to the funnel moment + signal it moves>",
     "comp_basis":"<e.g. comps avg 26, this 14>"}],
-  "rewrites": {"title":{"before":"<cur>","after":"<new>"},
+  "rewrites": {"title":{"before":"<cur>","after":"<new — the strongest variant>"},
+    "title_variants":[{"tone":"<label>","text":"<title>"} x3],
     "description_opening":{"before":"<cur>","after":"<new>"}}
 }
+
+TITLE VARIANTS — exactly 3, each a complete paste-ready title:
+- Three distinct tones/angles, e.g. "design-led" (architecture/interiors),
+  "experience-led" (what a stay feels like), "location-led" (landmark/area
+  proximity). Pick the 3 angles this villa can most credibly own vs
+  comps.sample_titles.
+- Each must obey TITLE COMPLIANCE below, differ meaningfully from the others
+  (not word swaps), and beat the current title for CTR with this micro-market's
+  target guest.
+- rewrites.title.after = the variant you judge strongest overall.
 
 TITLE COMPLIANCE — rewrites.title.after MUST obey (Airbnb policy; non-negotiable):
 - Max 50 characters total. Front-load the value into the first ~32 (mobile truncates there).
@@ -150,10 +165,17 @@ RULES:
 export const VISION_SYSTEM_ADDENDUM = `
 
 VISION ENABLED — the user message includes the first listing photos as actual
-images, in listing order (image 1 is the cover). You CAN see them. Judge the
-cover and photo set on what they actually show: is the cover the pool/view or a
-weak interior? lighting, composition, clutter, staging, and whether the sequence
-builds desire. Cite concrete visual observations in the photos score and fixes.
-This overrides the earlier note that you cannot see photos — but only for the
-images provided; photos beyond those are still unseen, so judge overall coverage
-from photos_count vs the comp average.`;
+images. You CAN see them: judge lighting, composition, clutter, staging, and
+whether the set builds desire, citing concrete visual observations in the
+photos score and fixes. This overrides the earlier note that you cannot see
+photos — but only for the images provided; photos beyond those are still
+unseen, so judge overall coverage from photos_count vs the comp average.
+
+COVER CLAIMS — read listing.cover_verified first:
+- cover_verified true: image 1 IS the listing's real cover (verified against
+  the live Airbnb page). You may critique it directly as "your cover".
+- cover_verified false/absent: the order came from our data provider and may
+  NOT match Airbnb's display order. NEVER say "your cover shows X". Critique
+  the photos on their merits and phrase cover advice conditionally ("make sure
+  your cover leads with the strongest pool/architecture shot, such as the one
+  in photo N").`;

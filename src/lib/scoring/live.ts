@@ -25,12 +25,13 @@ export class ClaudeScorer implements Scorer {
   }
 
   async score(input: ScoringInput): Promise<ScoringResult> {
-    const useVision =
-      config.claude.vision && input.listing.photos.length > 0;
+    // Only real URLs can be attached as images (mock-mode photos are captions).
+    const photoUrls = input.listing.photos.filter((p) => /^https?:\/\//i.test(p));
+    const useVision = config.claude.vision && photoUrls.length > 0;
     const system = useVision
       ? SCORING_SYSTEM_PROMPT + VISION_SYSTEM_ADDENDUM
       : SCORING_SYSTEM_PROMPT;
-    const content = this.buildUserContent(input, useVision);
+    const content = this.buildUserContent(input, useVision ? photoUrls : []);
 
     let lastErr: unknown;
     for (let attempt = 0; attempt < 2; attempt++) {
@@ -58,16 +59,16 @@ export class ClaudeScorer implements Scorer {
    *  then the listing + comps JSON. */
   private buildUserContent(
     input: ScoringInput,
-    useVision: boolean,
+    photoUrls: string[],
   ): Anthropic.ContentBlockParam[] {
     const blocks: Anthropic.ContentBlockParam[] = [];
-    if (useVision) {
-      const photos = input.listing.photos.slice(0, config.claude.visionMaxImages);
-      photos.forEach((url, i) => {
-        blocks.push({ type: "text", text: `Photo ${i + 1}${i === 0 ? " (cover)" : ""}:` });
-        blocks.push({ type: "image", source: { type: "url", url } });
-      });
-    }
+    const coverKnown = input.listing.cover_verified === true;
+    photoUrls.slice(0, config.claude.visionMaxImages).forEach((url, i) => {
+      const label =
+        i === 0 ? (coverKnown ? " (verified cover)" : " (order unverified)") : "";
+      blocks.push({ type: "text", text: `Photo ${i + 1}${label}:` });
+      blocks.push({ type: "image", source: { type: "url", url } });
+    });
     blocks.push({ type: "text", text: JSON.stringify(input) });
     return blocks;
   }

@@ -4,6 +4,7 @@ import type {
   Rewrites,
   ScoringResult,
   Severity,
+  TitleVariant,
 } from "@/lib/types";
 
 /**
@@ -53,6 +54,21 @@ function str(v: unknown, label: string): string {
 function parseRewrite(v: unknown, label: string) {
   if (!isObject(v)) throw new ScoringParseError(`${label} missing`);
   return { before: str(v.before, `${label}.before`), after: str(v.after, `${label}.after`) };
+}
+
+/** Tolerant: variants are additive, so a missing/short array degrades to the single title. */
+function parseTitleVariants(v: unknown): TitleVariant[] | undefined {
+  if (!Array.isArray(v)) return undefined;
+  const variants = v
+    .filter(isObject)
+    .filter((o) => typeof o.tone === "string" && typeof o.text === "string")
+    .map((o) => ({
+      tone: (o.tone as string).trim(),
+      text: sanitizeTitle(o.text as string), // same Airbnb policy as the main title
+    }))
+    .filter((o) => o.text.length > 0)
+    .slice(0, 3);
+  return variants.length > 0 ? variants : undefined;
 }
 
 /**
@@ -154,6 +170,7 @@ export function validateScoringResult(input: unknown): ScoringResult {
   titleRewrite.after = sanitizeTitle(titleRewrite.after); // enforce Airbnb title policy
   const rewrites: Rewrites = {
     title: titleRewrite,
+    title_variants: parseTitleVariants(rw.title_variants),
     description_opening: parseRewrite(rw.description_opening, "rewrites.description_opening"),
   };
 

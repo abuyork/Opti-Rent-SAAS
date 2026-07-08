@@ -7,6 +7,7 @@ import type {
 import { config } from "@/lib/config";
 import { AirRoiError, type AirRoiProvider } from "./provider";
 import { resolveAirbnbListingId } from "./url";
+import { fetchAirbnbCoverUrl, reorderWithCover } from "./cover";
 
 /** Shown to owners when AirROI simply has no data for their (valid) listing. */
 const NO_DATA_MESSAGE =
@@ -119,9 +120,14 @@ export class LiveAirRoiProvider implements AirRoiProvider {
 
     const pd = subject.property_details ?? {};
     const loc = subject.location_info ?? {};
-    const comps = await this.getComparables(loc, pd);
+    // Comps and the true cover (AirROI photo order ≠ Airbnb display order) are
+    // independent fetches; cover failure just leaves the order unverified.
+    const [comps, coverUrl] = await Promise.all([
+      this.getComparables(loc, pd),
+      fetchAirbnbCoverUrl(airbnbUrl),
+    ]);
 
-    return this.map(id, airbnbUrl, subject, comps);
+    return this.map(id, airbnbUrl, subject, comps, coverUrl);
   }
 
   // --- HTTP ---
@@ -172,6 +178,7 @@ export class LiveAirRoiProvider implements AirRoiProvider {
     url: string,
     s: AirRoiListing,
     comps: AirRoiListing[],
+    coverUrl: string | null,
   ): ResolvedListing {
     const info = s.listing_info ?? {};
     const pd = s.property_details ?? {};
@@ -196,10 +203,13 @@ export class LiveAirRoiProvider implements AirRoiProvider {
 
     const nightlyRate = Math.round(perf.ttm_avg_rate ?? perf.l90d_avg_rate ?? 0);
 
+    const cover = reorderWithCover(info.photo_urls ?? [], coverUrl);
+
     const listing: ListingInput = {
       title: info.listing_name ?? "",
       description: stripHtml(info.description ?? ""),
-      photos: info.photo_urls ?? [],
+      photos: cover.photos,
+      cover_verified: cover.cover_verified,
       photos_count: info.photos_count ?? info.photo_urls?.length ?? 0,
       amenities,
       reviews,
@@ -324,6 +334,15 @@ function aggregateComps(
     ? Math.round(photoCounts.reduce((a, b) => a + b, 0) / photoCounts.length)
     : 0;
 
+  // Representative comp titles so rewrites can be positioned against the market.
+  const sampleTitles = [
+    ...new Set(
+      comps
+        .map((c) => c.listing_info?.listing_name?.trim())
+        .filter((t): t is string => !!t),
+    ),
+  ].slice(0, 8);
+
   const gfShare = comps.length
     ? comps.filter((c) => c.listing_info?.guest_favorite).length / comps.length
     : 0;
@@ -343,6 +362,7 @@ function aggregateComps(
     common_amenities: commonAmenities,
     pool_tier: poolTier,
     quality_tier: qualityTier,
+    sample_titles: sampleTitles,
   };
 }
 

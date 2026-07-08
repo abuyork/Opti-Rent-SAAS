@@ -55,8 +55,17 @@ export interface Rewrite {
   after: string;
 }
 
+/** One paste-ready title option, e.g. { tone: "design-led", text: "..." }. */
+export interface TitleVariant {
+  tone: string;
+  text: string;
+}
+
 export interface Rewrites {
+  /** Kept as the single strongest option (backward compatible with old audits). */
   title: Rewrite;
+  /** Three tone variants; absent on audits scored before this feature. */
+  title_variants?: TitleVariant[];
   description_opening: Rewrite;
 }
 
@@ -99,6 +108,12 @@ export interface ListingInput {
   description: string;
   /** Ordered photo references (URLs or short captions). Order matters for the hero. */
   photos: string[];
+  /**
+   * True when photos[0] is the listing's real Airbnb cover (verified via the
+   * page's og:image). Provider photo order can differ from display order, so
+   * cover-specific claims are only allowed when this is true.
+   */
+  cover_verified?: boolean;
   /** Total photo count (may exceed the returned `photos` array). */
   photos_count?: number;
   amenities: string[];
@@ -132,6 +147,8 @@ export interface CompsInput {
   pool_tier: string;
   /** Qualitative quality tier of the comp set, e.g. "many are Guest Favorites". */
   quality_tier?: string;
+  /** Representative comp titles — lets the model position rewrites against what neighbours already say. */
+  sample_titles?: string[];
 }
 
 export interface ScoringInput {

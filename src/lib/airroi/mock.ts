@@ -78,6 +78,12 @@ const VILLA_SERAYA: ResolvedListing = {
       "Pool towels",
     ],
     pool_tier: "most comps have a private pool",
+    sample_titles: [
+      "Designer 3BR Pool Villa, 5 min to Echo Beach",
+      "Tropical Family Villa, Private Pool, Berawa",
+      "Luxe Jungle Villa with Pool near Finns Beach",
+      "Modern 3BR Villa, Rooftop and Pool, Canggu",
+    ],
   },
 };
 

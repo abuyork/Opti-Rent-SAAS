@@ -81,6 +81,20 @@ export class MockScorer implements Scorer {
           before: listing.title,
           after: "Private pool villa, 4 min walk to Echo Beach",
         },
+        title_variants: [
+          {
+            tone: "location-led",
+            text: "Private Pool Villa, 4 Min Walk to Echo Beach",
+          },
+          {
+            tone: "experience-led",
+            text: "Surf, Swim, Work Fast Wifi, 3BR Pool Villa",
+          },
+          {
+            tone: "design-led",
+            text: "Tropical 3BR Retreat, Private Pool, Berawa",
+          },
+        ],
         description_opening: {
           before: listing.description,
           after:
