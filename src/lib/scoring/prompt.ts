@@ -38,6 +38,12 @@ INPUTS (user message JSON):
   common_amenities, pool_tier, quality_tier, sample_titles (real titles of
   comparable listings — the market your title competes against)
 - micro_market (e.g. "Canggu/Berawa"), target_guest
+- market_evidence (optional; present for Greater-Canggu listings): MEASURED
+  winner benchmarks for this listing's bedroom cohort, from a scan of the local
+  market — winner vs loser median photos, winner vs loser median description
+  chars, winner median title chars, winner median ADR (IDR) + occupancy, winner
+  Superhost/Guest-Favorite share, top_amenities that over-index in winners (with
+  winner vs loser share), title_keywords that over-index in winners, sample_size.
 
 IMPORTANT — WHAT YOU CANNOT SEE: you receive photo URLs and counts, NOT the
 images, and review counts/ratings, NOT review text. Never assert what a
@@ -146,6 +152,14 @@ TITLE COMPLIANCE — rewrites.title.after MUST obey (Airbnb policy; non-negotiab
 - Claim only what is literally true (do not write "walk to beach" unless it truly is a walk).
 
 RULES:
+- MARKET EVIDENCE FIRST: when market_evidence is present, it is the STRONGEST
+  basis for fixes — stronger than the comp set — because it is measured from the
+  highest-earning listings in this exact market and cohort. Ground every relevant
+  fix in a measured number and CITE it in the fix's comp_basis, e.g. "winners in
+  your 3BR Canggu cohort run 40 photos; you have 17" or "top villas tag 'pool
+  view' (75% of winners vs 0% of losers) — you don't". Use the winner medians as
+  concrete targets (photos, description length, amenities, title style). Never
+  contradict the measured evidence.
 - underpricing_idr is a benchmark ESTIMATE, never a guarantee. Frame as "you
   appear priced below comparable listings", not "raise your price and earn X".
 - Only claim what listing fixes influence; never promise specific earnings.

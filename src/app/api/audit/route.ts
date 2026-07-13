@@ -30,7 +30,7 @@ export async function POST(req: Request) {
   }
 
   try {
-    const { resolved, scoring } = await runAudit(url);
+    const { resolved, scoring, marketEvidence } = await runAudit(url);
     const store = getStore();
     // Hero photo for the report header; mock-mode "photos" are captions, not URLs.
     const heroPhoto = resolved.listing.photos.find((p) => /^https?:\/\//i.test(p)) ?? null;
@@ -41,6 +41,7 @@ export async function POST(req: Request) {
       listing_photo: heroPhoto,
       email,
       scoring,
+      market_evidence: marketEvidence,
     });
     await store.createLead({
       email,

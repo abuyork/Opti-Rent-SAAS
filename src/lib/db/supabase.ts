@@ -40,6 +40,7 @@ export class SupabaseAuditStore implements AuditStore {
         critical_count: s.critical_count,
         fixes: s.fixes,
         rewrites: s.rewrites,
+        market_evidence: input.market_evidence,
         paid: false,
       })
       .select()

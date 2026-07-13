@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { postJson } from "@/lib/http";
 
 /**
  * Starts a one-time Stripe Checkout for an audit (Build Pack §7). Posts to
@@ -21,13 +22,7 @@ export default function PayButton({
     setLoading(true);
     setError(null);
     try {
-      const res = await fetch("/api/checkout", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ auditId }),
-      });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error ?? "Checkout failed.");
+      const data = await postJson<{ url: string }>("/api/checkout", { auditId });
       window.location.href = data.url;
     } catch (e) {
       setError((e as Error).message);

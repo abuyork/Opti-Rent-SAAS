@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { postJson } from "@/lib/http";
 
 type Step = "url" | "email";
 
@@ -32,13 +33,10 @@ export default function AuditForm() {
     setError(null);
     setLoading(true);
     try {
-      const res = await fetch("/api/audit", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ url: url.trim(), email: email.trim() }),
+      const data = await postJson<{ id: string }>("/api/audit", {
+        url: url.trim(),
+        email: email.trim(),
       });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error ?? "Something went wrong.");
       router.push(`/result/${data.id}`);
     } catch (err) {
       setError((err as Error).message);

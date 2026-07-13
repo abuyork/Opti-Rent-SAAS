@@ -37,6 +37,7 @@ export class MemoryAuditStore implements AuditStore {
       critical_count: input.scoring.critical_count,
       fixes: input.scoring.fixes,
       rewrites: input.scoring.rewrites,
+      market_evidence: input.market_evidence,
       paid: false,
     };
     store.audits.set(audit.id, audit);

@@ -1,4 +1,4 @@
-import type { Audit, ScoringResult } from "@/lib/types";
+import type { Audit, AuditMarketEvidence, ScoringResult } from "@/lib/types";
 
 export interface CreateAuditInput {
   airbnb_url: string;
@@ -7,6 +7,7 @@ export interface CreateAuditInput {
   listing_photo: string | null;
   email: string;
   scoring: ScoringResult;
+  market_evidence: AuditMarketEvidence | null;
 }
 
 export interface LeadInput {

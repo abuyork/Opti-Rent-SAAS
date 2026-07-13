@@ -132,6 +132,13 @@ async function main(): Promise<void> {
   writeFileSync(outPath, md);
   console.log(`\nplaybook written: ${outPath}`);
 
+  // Regenerate the machine-readable benchmarks the audit consumes, so they never
+  // drift from the human playbook.
+  const { buildBenchmarks } = await import("./benchmarks");
+  const benchPath = resolve(process.cwd(), "src/lib/market", `benchmarks.${MARKET}.json`);
+  writeFileSync(benchPath, JSON.stringify(buildBenchmarks(MARKET, all), null, 2));
+  console.log(`benchmarks written: ${benchPath}`);
+
   // --- persist ---
   if (!args.dry) {
     const { persistScan } = await import("./db");

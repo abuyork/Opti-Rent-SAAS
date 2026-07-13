@@ -1,0 +1,568 @@
+{
+  "market": "greater-canggu",
+  "generated_from": 176,
+  "cohorts": {
+    "1BR": {
+      "market": "greater-canggu",
+      "cohort": "1BR",
+      "sample_size": 37,
+      "winner_n": 9,
+      "winner_median_photos": 30,
+      "winner_median_title_chars": 48,
+      "winner_median_description_chars": 2638,
+      "winner_median_adr_idr": 4025086,
+      "winner_median_occupancy": 0.638,
+      "winner_superhost_share": 0.8888888888888888,
+      "winner_guest_favorite_share": 0.5555555555555556,
+      "loser_median_photos": 17,
+      "loser_median_description_chars": 0,
+      "loser_instant_book_share": 0.2222222222222222,
+      "top_amenities": [
+        {
+          "amenity": "outdoor shower",
+          "winner_share": 0.7777777777777778,
+          "loser_share": 0,
+          "delta": 0.7777777777777778
+        },
+        {
+          "amenity": "hair dryer",
+          "winner_share": 1,
+          "loser_share": 0.3333333333333333,
+          "delta": 0.6666666666666667
+        },
+        {
+          "amenity": "laundromat nearby",
+          "winner_share": 0.7777777777777778,
+          "loser_share": 0.1111111111111111,
+          "delta": 0.6666666666666667
+        },
+        {
+          "amenity": "outdoor furniture",
+          "winner_share": 0.7777777777777778,
+          "loser_share": 0.1111111111111111,
+          "delta": 0.6666666666666667
+        },
+        {
+          "amenity": "cleaning products",
+          "winner_share": 0.6666666666666666,
+          "loser_share": 0,
+          "delta": 0.6666666666666666
+        },
+        {
+          "amenity": "body soap",
+          "winner_share": 0.7777777777777778,
+          "loser_share": 0.2222222222222222,
+          "delta": 0.5555555555555556
+        },
+        {
+          "amenity": "safe",
+          "winner_share": 0.7777777777777778,
+          "loser_share": 0.2222222222222222,
+          "delta": 0.5555555555555556
+        },
+        {
+          "amenity": "refrigerator",
+          "winner_share": 0.8888888888888888,
+          "loser_share": 0.3333333333333333,
+          "delta": 0.5555555555555556
+        }
+      ],
+      "title_keywords": [
+        {
+          "word": "romantic",
+          "delta": 0.2222222222222222
+        },
+        {
+          "word": "mediterranean",
+          "delta": 0.2222222222222222
+        },
+        {
+          "word": "pool",
+          "delta": 0.2222222222222222
+        },
+        {
+          "word": "view",
+          "delta": 0.2222222222222222
+        },
+        {
+          "word": "canggu",
+          "delta": 0.1111111111111111
+        },
+        {
+          "word": "private",
+          "delta": -0.1111111111111111
+        }
+      ],
+      "winner_covers": [
+        {
+          "listing_name": "Romantic Tropical Mediterranean 1BR Pool Villa",
+          "viral_score": 92.1,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-50016177/original/70b5ae3d-3af8-4db4-9e3a-3a1bd0fe4a28.jpeg",
+          "locality": "Pererenan",
+          "ttm_revpar": 2583698,
+          "ttm_occupancy": 0.701
+        },
+        {
+          "listing_name": "Gorgeous Calm Private 1BR Villa, Rooftop & 2 Pools",
+          "viral_score": 87.2,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6NTMxMzgwNTM3NDE1NDQyODgw/original/f69cbade-f6b9-46de-94da-1a349204d850.jpeg",
+          "locality": "Canggu",
+          "ttm_revpar": 2857571,
+          "ttm_occupancy": 0.589
+        },
+        {
+          "listing_name": "Mediterranean Villa - Ricefield view - Canggu",
+          "viral_score": 86.7,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTEwNDAwNDc5Mzk0NDQ1OTgyNw%3D%3D/original/ee87664d-23c3-4b4c-b588-4b8949ea277c.jpeg",
+          "locality": "Tibubeneng",
+          "ttm_revpar": 2963811,
+          "ttm_occupancy": 0.638
+        }
+      ]
+    },
+    "2BR": {
+      "market": "greater-canggu",
+      "cohort": "2BR",
+      "sample_size": 36,
+      "winner_n": 9,
+      "winner_median_photos": 43,
+      "winner_median_title_chars": 45,
+      "winner_median_description_chars": 2797,
+      "winner_median_adr_idr": 5150266,
+      "winner_median_occupancy": 0.718,
+      "winner_superhost_share": 0.8888888888888888,
+      "winner_guest_favorite_share": 0.5555555555555556,
+      "loser_median_photos": 14,
+      "loser_median_description_chars": 0,
+      "loser_instant_book_share": 0.2222222222222222,
+      "top_amenities": [
+        {
+          "amenity": "dining table",
+          "winner_share": 1,
+          "loser_share": 0.2222222222222222,
+          "delta": 0.7777777777777778
+        },
+        {
+          "amenity": "building staff",
+          "winner_share": 0.7777777777777778,
+          "loser_share": 0.1111111111111111,
+          "delta": 0.6666666666666667
+        },
+        {
+          "amenity": "wine glasses",
+          "winner_share": 0.6666666666666666,
+          "loser_share": 0,
+          "delta": 0.6666666666666666
+        },
+        {
+          "amenity": "pool view",
+          "winner_share": 0.6666666666666666,
+          "loser_share": 0.1111111111111111,
+          "delta": 0.5555555555555556
+        },
+        {
+          "amenity": "hair dryer",
+          "winner_share": 1,
+          "loser_share": 0.4444444444444444,
+          "delta": 0.5555555555555556
+        },
+        {
+          "amenity": "dishes and silverware",
+          "winner_share": 1,
+          "loser_share": 0.4444444444444444,
+          "delta": 0.5555555555555556
+        },
+        {
+          "amenity": "sun loungers",
+          "winner_share": 0.6666666666666666,
+          "loser_share": 0.1111111111111111,
+          "delta": 0.5555555555555556
+        },
+        {
+          "amenity": "pool",
+          "winner_share": 1,
+          "loser_share": 0.4444444444444444,
+          "delta": 0.5555555555555556
+        }
+      ],
+      "title_keywords": [
+        {
+          "word": "jacuzzi",
+          "delta": 0.2222222222222222
+        },
+        {
+          "word": "beach",
+          "delta": 0.2222222222222222
+        },
+        {
+          "word": "canggu",
+          "delta": 0.11111111111111116
+        }
+      ],
+      "winner_covers": [
+        {
+          "listing_name": "Tropical Chic Villa w/ Rooftop Jacuzzi in Canggu",
+          "viral_score": 97.6,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1009682615872266999/original/03960101-aef1-432c-b55c-42d3a77f817d.jpeg",
+          "locality": "Canggu",
+          "ttm_revpar": 3832473,
+          "ttm_occupancy": 0.751
+        },
+        {
+          "listing_name": "Exotic Charm With Private Pool in Vibrant Canggu",
+          "viral_score": 94.1,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-943039238876312168/original/1d329b3c-a250-42a0-9e4b-7420a5635c0e.jpeg",
+          "locality": "Canggu",
+          "ttm_revpar": 4417710,
+          "ttm_occupancy": 0.723
+        },
+        {
+          "listing_name": "2BR Serene Villa II · Wellness Roof Terrace",
+          "viral_score": 91.9,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-961186239950283741/original/2c6169d6-b1fa-42ed-8c3b-cfd48984dbec.jpeg",
+          "locality": "Canggu",
+          "ttm_revpar": 3734799,
+          "ttm_occupancy": 0.732
+        }
+      ]
+    },
+    "3BR": {
+      "market": "greater-canggu",
+      "cohort": "3BR",
+      "sample_size": 33,
+      "winner_n": 8,
+      "winner_median_photos": 40,
+      "winner_median_title_chars": 41.5,
+      "winner_median_description_chars": 2666.5,
+      "winner_median_adr_idr": 9052205,
+      "winner_median_occupancy": 0.726,
+      "winner_superhost_share": 0.875,
+      "winner_guest_favorite_share": 0.5,
+      "loser_median_photos": 17.5,
+      "loser_median_description_chars": 0,
+      "loser_instant_book_share": 0.375,
+      "top_amenities": [
+        {
+          "amenity": "conditioner",
+          "winner_share": 1,
+          "loser_share": 0,
+          "delta": 1
+        },
+        {
+          "amenity": "oven",
+          "winner_share": 0.875,
+          "loser_share": 0,
+          "delta": 0.875
+        },
+        {
+          "amenity": "pool view",
+          "winner_share": 0.75,
+          "loser_share": 0,
+          "delta": 0.75
+        },
+        {
+          "amenity": "bathtub",
+          "winner_share": 0.875,
+          "loser_share": 0.125,
+          "delta": 0.75
+        },
+        {
+          "amenity": "ceiling fan",
+          "winner_share": 0.75,
+          "loser_share": 0,
+          "delta": 0.75
+        },
+        {
+          "amenity": "garden view",
+          "winner_share": 0.625,
+          "loser_share": 0,
+          "delta": 0.625
+        },
+        {
+          "amenity": "body soap",
+          "winner_share": 0.875,
+          "loser_share": 0.25,
+          "delta": 0.625
+        },
+        {
+          "amenity": "outdoor shower",
+          "winner_share": 0.875,
+          "loser_share": 0.25,
+          "delta": 0.625
+        }
+      ],
+      "title_keywords": [
+        {
+          "word": "tropical",
+          "delta": 0.25
+        },
+        {
+          "word": "luxury",
+          "delta": 0.125
+        },
+        {
+          "word": "canggu",
+          "delta": 0
+        }
+      ],
+      "winner_covers": [
+        {
+          "listing_name": "Lush Sanctuary near Canggu - Can Maestro",
+          "viral_score": 100,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/e9e9185c-1c97-496e-b41a-9e6b751c59da.jpg",
+          "locality": "Kerobokan",
+          "ttm_revpar": 9243696,
+          "ttm_occupancy": 0.74
+        },
+        {
+          "listing_name": "Pukara - Villa in Heart of Canggu",
+          "viral_score": 92.2,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-46606582/original/5be61d1e-f31c-4032-be29-3fff912536a5.jpeg",
+          "locality": "Canggu",
+          "ttm_revpar": 5362072,
+          "ttm_occupancy": 0.723
+        },
+        {
+          "listing_name": "Villa Morena - 5 Star Luxury in Berawa / Canggu",
+          "viral_score": 90.3,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1030274998823322683/original/27a29a7b-218c-47d7-a32a-40e0ca37ff9b.jpeg",
+          "locality": "Tibubeneng",
+          "ttm_revpar": 4967340,
+          "ttm_occupancy": 0.729
+        }
+      ]
+    },
+    "4BR": {
+      "market": "greater-canggu",
+      "cohort": "4BR",
+      "sample_size": 37,
+      "winner_n": 9,
+      "winner_median_photos": 61,
+      "winner_median_title_chars": 50,
+      "winner_median_description_chars": 3546,
+      "winner_median_adr_idr": 8747972,
+      "winner_median_occupancy": 0.71,
+      "winner_superhost_share": 0.8888888888888888,
+      "winner_guest_favorite_share": 0.5555555555555556,
+      "loser_median_photos": 31,
+      "loser_median_description_chars": 0,
+      "loser_instant_book_share": 0.1111111111111111,
+      "top_amenities": [
+        {
+          "amenity": "coffee",
+          "winner_share": 0.8888888888888888,
+          "loser_share": 0.1111111111111111,
+          "delta": 0.7777777777777777
+        },
+        {
+          "amenity": "shower gel",
+          "winner_share": 1,
+          "loser_share": 0.3333333333333333,
+          "delta": 0.6666666666666667
+        },
+        {
+          "amenity": "clothing storage",
+          "winner_share": 0.8888888888888888,
+          "loser_share": 0.2222222222222222,
+          "delta": 0.6666666666666666
+        },
+        {
+          "amenity": "coffee maker",
+          "winner_share": 0.8888888888888888,
+          "loser_share": 0.2222222222222222,
+          "delta": 0.6666666666666666
+        },
+        {
+          "amenity": "wine glasses",
+          "winner_share": 0.8888888888888888,
+          "loser_share": 0.2222222222222222,
+          "delta": 0.6666666666666666
+        },
+        {
+          "amenity": "room-darkening shades",
+          "winner_share": 0.6666666666666666,
+          "loser_share": 0.1111111111111111,
+          "delta": 0.5555555555555556
+        },
+        {
+          "amenity": "fire extinguisher",
+          "winner_share": 0.8888888888888888,
+          "loser_share": 0.3333333333333333,
+          "delta": 0.5555555555555556
+        },
+        {
+          "amenity": "stove",
+          "winner_share": 0.8888888888888888,
+          "loser_share": 0.3333333333333333,
+          "delta": 0.5555555555555556
+        }
+      ],
+      "title_keywords": [
+        {
+          "word": "new",
+          "delta": 0.2222222222222222
+        },
+        {
+          "word": "luxury",
+          "delta": 0.2222222222222222
+        },
+        {
+          "word": "beach",
+          "delta": 0.2222222222222222
+        },
+        {
+          "word": "beachside",
+          "delta": 0.2222222222222222
+        },
+        {
+          "word": "chic",
+          "delta": 0.2222222222222222
+        },
+        {
+          "word": "berawa",
+          "delta": 0.1111111111111111
+        },
+        {
+          "word": "canggu",
+          "delta": 0
+        }
+      ],
+      "winner_covers": [
+        {
+          "listing_name": "Stunning New 4BR, Ensuites, Daily Serv, Cafes/Rest",
+          "viral_score": 95.6,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-624237325073433476/original/59422012-8fef-4c90-8711-1abd7d92486a.jpeg",
+          "locality": "Tibubeneng",
+          "ttm_revpar": 6426127,
+          "ttm_occupancy": 0.71
+        },
+        {
+          "listing_name": "Luxury Tropical 4BR Villa Next to Beach in Berawa",
+          "viral_score": 94.3,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1189447592659912895/original/273d37c1-13ea-4596-b620-bcc440e6c24a.jpeg",
+          "locality": "Canggu",
+          "ttm_revpar": 9515058,
+          "ttm_occupancy": 0.737
+        },
+        {
+          "listing_name": "Brand New Classy 4BR Villa in Canggu",
+          "viral_score": 91.4,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1132882041001951622/original/7b701198-8cac-4419-b4e3-1fe7d74e845f.jpeg",
+          "locality": "Canggu",
+          "ttm_revpar": 6568916,
+          "ttm_occupancy": 0.748
+        }
+      ]
+    },
+    "5+BR": {
+      "market": "greater-canggu",
+      "cohort": "5+BR",
+      "sample_size": 33,
+      "winner_n": 8,
+      "winner_median_photos": 127.5,
+      "winner_median_title_chars": 50,
+      "winner_median_description_chars": 4319.5,
+      "winner_median_adr_idr": 29241517,
+      "winner_median_occupancy": 0.6125,
+      "winner_superhost_share": 1,
+      "winner_guest_favorite_share": 0.625,
+      "loser_median_photos": 32.5,
+      "loser_median_description_chars": 313,
+      "loser_instant_book_share": 0.375,
+      "top_amenities": [
+        {
+          "amenity": "wine glasses",
+          "winner_share": 0.875,
+          "loser_share": 0.125,
+          "delta": 0.75
+        },
+        {
+          "amenity": "stove",
+          "winner_share": 1,
+          "loser_share": 0.375,
+          "delta": 0.625
+        },
+        {
+          "amenity": "coffee maker",
+          "winner_share": 1,
+          "loser_share": 0.375,
+          "delta": 0.625
+        },
+        {
+          "amenity": "toaster",
+          "winner_share": 0.75,
+          "loser_share": 0.125,
+          "delta": 0.625
+        },
+        {
+          "amenity": "cleaning before checkout",
+          "winner_share": 0.75,
+          "loser_share": 0.125,
+          "delta": 0.625
+        },
+        {
+          "amenity": "pool view",
+          "winner_share": 0.625,
+          "loser_share": 0,
+          "delta": 0.625
+        },
+        {
+          "amenity": "oven",
+          "winner_share": 0.75,
+          "loser_share": 0.125,
+          "delta": 0.625
+        },
+        {
+          "amenity": "bathtub",
+          "winner_share": 0.875,
+          "loser_share": 0.375,
+          "delta": 0.5
+        }
+      ],
+      "title_keywords": [
+        {
+          "word": "huge",
+          "delta": 0.25
+        },
+        {
+          "word": "8br",
+          "delta": 0.25
+        },
+        {
+          "word": "6br",
+          "delta": 0.25
+        },
+        {
+          "word": "canggu",
+          "delta": 0
+        }
+      ],
+      "winner_covers": [
+        {
+          "listing_name": "HUGE 8BR, 21max, 3Pools, Sauna, Gym, BBQ, Rooftop!",
+          "viral_score": 93.1,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTI5ODExNzgxOTc3ODE1MTI0Mw%3D%3D/original/c78d7ff3-828a-40be-9f5f-0ff81c01b975.jpeg",
+          "locality": "Pererenan",
+          "ttm_revpar": 17175520,
+          "ttm_occupancy": 0.625
+        },
+        {
+          "listing_name": "Huge 11BR Villa, Sleeps 41, Prime Area, Near Beach",
+          "viral_score": 91.2,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-39481836/original/07877c22-f4ec-477f-ae60-21bfbb2181e9.jpeg",
+          "locality": "Canggu",
+          "ttm_revpar": 12145531,
+          "ttm_occupancy": 0.682
+        },
+        {
+          "listing_name": "Casa Infinito: Resort Style 8 Bedroom Canggu Villa",
+          "viral_score": 90.9,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6OTg4Njc5MjgwMjY0OTY0MTg0/original/8bcb7a91-5e34-46ac-ba9f-0e28d3ef4c76.jpeg",
+          "locality": "Kerobokan",
+          "ttm_revpar": 16924384,
+          "ttm_occupancy": 0.753
+        }
+      ]
+    }
+  }
+}

@@ -7,6 +7,7 @@ import { ListingIdentity } from "@/components/report/ListingIdentity";
 import { StatCards } from "@/components/report/StatCards";
 import { FixList, LockedFixPreview } from "@/components/report/FixList";
 import { RewritesView } from "@/components/report/RewritesView";
+import { MarketEvidence } from "@/components/report/MarketEvidence";
 import PayButton from "@/components/PayButton";
 
 export const dynamic = "force-dynamic";
@@ -62,6 +63,8 @@ export default async function ResultPage({
             </h2>
             <FixList fixes={audit.fixes} />
           </section>
+
+          {audit.market_evidence && <MarketEvidence evidence={audit.market_evidence} />}
 
           <section className="mt-10">
             <h2 className="mb-3 text-xs font-semibold uppercase tracking-widest text-brand-muted">

@@ -151,6 +151,43 @@ export interface CompsInput {
   sample_titles?: string[];
 }
 
+/** A real winning listing shown in the report as a visual reference. */
+export interface MarketCoverExample {
+  listing_name: string;
+  viral_score: number;
+  cover_photo_url: string;
+  locality: string;
+  ttm_revpar: number;
+  ttm_occupancy: number;
+}
+
+/**
+ * Measured market evidence for a listing's Greater-Canggu bedroom cohort,
+ * distilled from the scan (top-quartile winners vs bottom-quartile losers).
+ * Fed to the scorer so fixes cite proof, and stored on the audit so the report
+ * can show the same numbers + winner cover examples.
+ */
+export interface AuditMarketEvidence {
+  market: string;
+  cohort: string;
+  sample_size: number;
+  winner_median_photos: number;
+  loser_median_photos: number;
+  winner_median_title_chars: number;
+  winner_median_description_chars: number;
+  loser_median_description_chars: number;
+  winner_median_adr_idr: number;
+  winner_median_occupancy: number;
+  winner_superhost_share: number;
+  winner_guest_favorite_share: number;
+  /** Amenities that over-index in winners (winner share vs loser share). */
+  top_amenities: { amenity: string; winner_share: number; loser_share: number }[];
+  /** Title words that over-index in winners. */
+  title_keywords: string[];
+  /** Real winning covers to display as visual references. */
+  winner_covers: MarketCoverExample[];
+}
+
 export interface ScoringInput {
   listing: ListingInput;
   comps: CompsInput;
@@ -158,6 +195,8 @@ export interface ScoringInput {
   micro_market?: string;
   /** Inferred target guest, e.g. "remote workers / long-stay" (v2). */
   target_guest?: string;
+  /** Measured winner benchmarks for this cohort — fixes must cite these when present. */
+  market_evidence?: AuditMarketEvidence;
 }
 
 // ---------------------------------------------------------------------------
@@ -200,6 +239,8 @@ export interface Audit {
   critical_count: number;
   fixes: Fix[];
   rewrites: Rewrites;
+  /** Measured Canggu-cohort evidence + winner cover examples (null off-market). */
+  market_evidence: AuditMarketEvidence | null;
   paid: boolean;
 }
 
