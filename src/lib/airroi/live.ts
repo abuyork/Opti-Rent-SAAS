@@ -304,9 +304,12 @@ function median(nums: number[]): number {
   if (nums.length === 0) return 0;
   const sorted = [...nums].sort((a, b) => a - b);
   const mid = Math.floor(sorted.length / 2);
+  // Round BOTH branches: AirROI rates are floats (e.g. 4489194.7) and this
+  // benchmark feeds underpricing_idr, a bigint column — a fractional median
+  // from an odd-sized comp set fails the DB write.
   return sorted.length % 2 === 0
     ? Math.round((sorted[mid - 1] + sorted[mid]) / 2)
-    : sorted[mid];
+    : Math.round(sorted[mid]);
 }
 
 function aggregateComps(

@@ -5,7 +5,8 @@ import { SupabaseAuditStore } from "./supabase";
 
 export type {
   AuditStore,
-  CreateAuditInput,
+  PendingAuditInput,
+  CompleteAuditInput,
   LeadInput,
   PaymentInput,
 } from "./store";

@@ -3,9 +3,10 @@ import type { Audit } from "@/lib/types";
 import { config } from "@/lib/config";
 import type {
   AuditStore,
-  CreateAuditInput,
+  CompleteAuditInput,
   LeadInput,
   PaymentInput,
+  PendingAuditInput,
 } from "./store";
 
 /**
@@ -21,16 +22,32 @@ export class SupabaseAuditStore implements AuditStore {
     });
   }
 
-  async createAudit(input: CreateAuditInput): Promise<Audit> {
-    const s = input.scoring;
+  async createPendingAudit(input: PendingAuditInput): Promise<Audit> {
     const { data, error } = await this.db
       .from("audits")
       .insert({
+        status: "processing",
         airbnb_url: input.airbnb_url,
+        airroi_listing_id: input.airroi_listing_id,
+        email: input.email,
+        paid: false,
+      })
+      .select()
+      .single();
+    if (error) throw new Error(`createPendingAudit failed: ${error.message}`);
+    return data as Audit;
+  }
+
+  async completeAudit(id: string, input: CompleteAuditInput): Promise<void> {
+    const s = input.scoring;
+    const { error } = await this.db
+      .from("audits")
+      .update({
+        status: "complete",
+        error_message: null,
         airroi_listing_id: input.airroi_listing_id,
         listing_title: input.listing_title,
         listing_photo: input.listing_photo,
-        email: input.email,
         overall_score: s.overall_score,
         category_scores: s.category_scores,
         underpricing_idr: s.underpricing_idr,
@@ -41,12 +58,17 @@ export class SupabaseAuditStore implements AuditStore {
         fixes: s.fixes,
         rewrites: s.rewrites,
         market_evidence: input.market_evidence,
-        paid: false,
       })
-      .select()
-      .single();
-    if (error) throw new Error(`createAudit failed: ${error.message}`);
-    return data as Audit;
+      .eq("id", id);
+    if (error) throw new Error(`completeAudit failed: ${error.message}`);
+  }
+
+  async failAudit(id: string, errorMessage: string): Promise<void> {
+    const { error } = await this.db
+      .from("audits")
+      .update({ status: "failed", error_message: errorMessage })
+      .eq("id", id);
+    if (error) throw new Error(`failAudit failed: ${error.message}`);
   }
 
   async getAudit(id: string): Promise<Audit | null> {

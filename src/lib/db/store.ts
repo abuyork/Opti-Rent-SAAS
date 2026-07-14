@@ -1,11 +1,17 @@
 import type { Audit, AuditMarketEvidence, ScoringResult } from "@/lib/types";
 
-export interface CreateAuditInput {
+/** Creates the instant 'processing' row (before any scoring exists). */
+export interface PendingAuditInput {
   airbnb_url: string;
+  airroi_listing_id: string | null;
+  email: string;
+}
+
+/** Fills a processing row in once the background scorer finishes. */
+export interface CompleteAuditInput {
   airroi_listing_id: string | null;
   listing_title: string | null;
   listing_photo: string | null;
-  email: string;
   scoring: ScoringResult;
   market_evidence: AuditMarketEvidence | null;
 }
@@ -29,10 +35,14 @@ export interface PaymentInput {
 
 /**
  * Persistence contract for audits, leads and payments (Build Pack §5).
+ * Audits are async (Netlify's function cap vs 30-70s scoring): a pending row is
+ * created instantly, then completed or failed by the background job.
  * Implemented by an in-memory adapter (dev) and a Supabase adapter (prod).
  */
 export interface AuditStore {
-  createAudit(input: CreateAuditInput): Promise<Audit>;
+  createPendingAudit(input: PendingAuditInput): Promise<Audit>;
+  completeAudit(id: string, input: CompleteAuditInput): Promise<void>;
+  failAudit(id: string, errorMessage: string): Promise<void>;
   getAudit(id: string): Promise<Audit | null>;
   markAuditPaid(id: string): Promise<void>;
   createLead(input: LeadInput): Promise<void>;

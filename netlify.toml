@@ -1,0 +1,7 @@
+# Netlify config. Next.js is handled by Netlify's Next runtime automatically;
+# this block covers the plain functions in netlify/functions (the async audit
+# scorer). esbuild resolves our "@/..." imports via tsconfig paths and inlines
+# the benchmarks JSON files.
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"

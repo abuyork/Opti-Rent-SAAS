@@ -40,6 +40,41 @@ export async function runAudit(airbnbUrl: string): Promise<AuditRunResult> {
   return { resolved, scoring, marketEvidence };
 }
 
+/**
+ * Full background job for one audit: run the pipeline, then complete or fail
+ * the pending row. Never throws — every failure lands on the row so the
+ * polling UI always has something truthful to show. Shared by the dev
+ * in-process runner and the Netlify background function.
+ */
+export async function processAuditJob(auditId: string, airbnbUrl: string): Promise<void> {
+  const { getStore } = await import("@/lib/db");
+  const store = getStore();
+  try {
+    const { resolved, scoring, marketEvidence } = await runAudit(airbnbUrl);
+    const heroPhoto =
+      resolved.listing.photos.find((p) => /^https?:\/\//i.test(p)) ?? null;
+    await store.completeAudit(auditId, {
+      airroi_listing_id: resolved.airroi_listing_id,
+      listing_title: resolved.listing.title || null,
+      listing_photo: heroPhoto,
+      scoring,
+      market_evidence: marketEvidence,
+    });
+  } catch (e) {
+    console.error(`[processAuditJob] audit ${auditId} failed:`, e);
+    const { AirRoiError } = await import("@/lib/airroi");
+    const message =
+      e instanceof AirRoiError
+        ? e.userMessage
+        : "We couldn't finish analyzing this listing. Please try again.";
+    try {
+      await store.failAudit(auditId, message);
+    } catch (persistErr) {
+      console.error(`[processAuditJob] failAudit also failed:`, persistErr);
+    }
+  }
+}
+
 /** Reduce a full scoring result to the FREE-tier view (no fixes/rewrites). §1, §4.6 */
 export function toFreeView(id: string, scoring: ScoringResult, paid: boolean): FreeAuditView {
   return {

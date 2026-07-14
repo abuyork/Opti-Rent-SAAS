@@ -29,6 +29,8 @@ export default async function ReportPage({
 
   const audit = await getStore().getAudit(id);
   if (!audit) notFound();
+  // Async flow: no PDF until the background scorer has finished.
+  if (audit.status !== "complete") redirect(`/result/${id}`);
 
   const allowed =
     audit.paid ||

@@ -222,8 +222,14 @@ export interface ResolvedListing {
 // Persisted audit (mirrors the `audits` table, Build Pack §5)
 // ---------------------------------------------------------------------------
 
+/** Lifecycle of an audit row: created instantly, scored in the background. */
+export type AuditStatus = "processing" | "complete" | "failed";
+
 export interface Audit {
   id: string;
+  /** "processing" until the background scorer finishes; "failed" carries error_message. */
+  status: AuditStatus;
+  error_message?: string | null;
   airbnb_url: string;
   airroi_listing_id: string | null;
   /** Listing title at audit time — shown on the report so the owner sees what was analyzed. */

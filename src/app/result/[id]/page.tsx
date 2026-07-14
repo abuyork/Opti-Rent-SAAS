@@ -9,6 +9,7 @@ import { FixList, LockedFixPreview } from "@/components/report/FixList";
 import { RewritesView } from "@/components/report/RewritesView";
 import { MarketEvidence } from "@/components/report/MarketEvidence";
 import PayButton from "@/components/PayButton";
+import AuditProgress from "@/components/AuditProgress";
 
 export const dynamic = "force-dynamic";
 
@@ -20,6 +21,20 @@ export default async function ResultPage({
   const { id } = await params;
   const audit = await getStore().getAudit(id);
   if (!audit) notFound();
+
+  // Async flow: while the background scorer runs (or if it failed), show the
+  // progress screen instead of an empty report.
+  if (audit.status !== "complete") {
+    return (
+      <main className="mx-auto max-w-3xl px-6 py-12">
+        <ReportHeader subtitle="Listing intelligence" />
+        <section className="mt-6">
+          <h1 className="text-2xl font-bold text-brand-navy">Your villa audit</h1>
+        </section>
+        <AuditProgress auditId={audit.id} />
+      </main>
+    );
+  }
 
   const priceLabel = formatUsdFromCents(config.reportPriceUsdCents);
   const showFull = audit.paid || config.testingShowFullReport;

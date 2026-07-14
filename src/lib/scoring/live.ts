@@ -40,9 +40,10 @@ export class ClaudeScorer implements Scorer {
         const result = validateScoringResult(extractJson(raw));
         // underpricing is deterministic; reconcile to the canonical formula so
         // the displayed figure always matches benchmark − rate (Build Pack §4.4).
-        result.underpricing_idr = Math.max(
-          0,
-          input.comps.benchmark_nightly_rate - input.listing.nightly_rate,
+        // Round: this overwrite runs AFTER validation, and a fractional value
+        // fails the bigint column on write.
+        result.underpricing_idr = Math.round(
+          Math.max(0, input.comps.benchmark_nightly_rate - input.listing.nightly_rate),
         );
         return result;
       } catch (e) {
