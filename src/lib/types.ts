@@ -212,6 +212,8 @@ export interface ResolvedListing {
   micro_market?: string;
   /** Target guest inferred from micro-market + property shape (v2). */
   target_guest?: string;
+  /** Scanned-market key ("greater-canggu" | "dubai" | "london") or null if unscanned. */
+  market_key?: string | null;
   /** True when content (description/photos) came from a fallback scrape, not AirROI. */
   content_fallback?: boolean;
 }

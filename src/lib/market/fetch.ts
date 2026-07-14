@@ -1,40 +1,17 @@
 import { config } from "@/lib/config";
+import type { MarketDef } from "./markets";
 import type { CohortDef, MarketSearchListing, ScannedListing, Stratum } from "./types";
 
 /**
- * Stratified Greater-Canggu sampler over AirROI `POST /listings/search/radius`.
+ * Stratified market sampler over AirROI `POST /listings/search/radius`.
  *
  * Each search call returns full listing content + TTM performance (verified
- * live 2026-07-08), so a scan is search calls only. The API caps page_size at
- * 10, so per bedroom cohort we page the top and the bottom of the RevPAR
- * distribution — winners mean nothing without laggards to contrast against.
- * 2 pages × 2 strata = 4 calls/cohort ≈ $2/cohort.
+ * live 2026-07-08 for Canggu, 2026-07-13 for Dubai/London), so a scan is
+ * search calls only. The API caps page_size at 10, so per bedroom cohort we
+ * page the top and the bottom of the RevPAR distribution — winners mean
+ * nothing without laggards to contrast against. Market geometry, locality
+ * filters and cohorts come from the MarketDef (markets.ts).
  */
-
-// Canggu centre; 3 miles spans Berawa→Pererenan/Munggu (verified via probe).
-const CANGGU = { latitude: -8.6478, longitude: 115.1385, radius_miles: 3 };
-
-/** Greater-Canggu localities (AirROI `locality` values seen in probes). */
-const LOCALITY_ALLOW = [
-  "canggu",
-  "berawa",
-  "pererenan",
-  "munggu",
-  "tibubeneng",
-  "kuta utara",
-  "umalas",
-  "kerobokan",
-  "babakan",
-  "cemagi",
-];
-
-export const COHORTS: CohortDef[] = [
-  { label: "1BR", bedrooms: { eq: 1 } },
-  { label: "2BR", bedrooms: { eq: 2 } },
-  { label: "3BR", bedrooms: { eq: 3 } },
-  { label: "4BR", bedrooms: { eq: 4 } },
-  { label: "5+BR", bedrooms: { gte: 5 } },
-];
 
 interface SearchResponse {
   pagination: { total_count: number; page_size: number; offset: number };
@@ -52,7 +29,18 @@ async function search(
     headers: { "x-api-key": config.airroi.apiKey, "Content-Type": "application/json" },
     body: JSON.stringify(body),
   });
-  const json = (await res.json()) as SearchResponse & { message?: string; errors?: string[] };
+  // Airbnb ids are 18-19 digits — beyond Number.MAX_SAFE_INTEGER — and AirROI
+  // returns listing_id as a JSON number. A plain res.json() silently rounds the
+  // last digits (verified: every rounded id then 404s on /listings). Quote the
+  // long ids in the raw text BEFORE parsing so they survive as exact strings.
+  const text = await res.text();
+  const safe = text.replace(/"listing_id":\s*(\d{10,})/g, '"listing_id":"$1"');
+  let json: SearchResponse & { message?: string; errors?: string[] };
+  try {
+    json = JSON.parse(safe);
+  } catch {
+    throw new Error(`AirROI search returned non-JSON (HTTP ${res.status}).`);
+  }
   if (!res.ok) {
     const detail = json.message ?? json.errors?.join("; ") ?? `HTTP ${res.status}`;
     throw new Error(`AirROI search: ${detail}`);
@@ -60,9 +48,10 @@ async function search(
   return json;
 }
 
-function isGreaterCanggu(l: MarketSearchListing): boolean {
+function inMarket(l: MarketSearchListing, def: MarketDef): boolean {
+  if (!def.localityAllow) return true; // radius is the geofence
   const hay = `${l.location_info?.locality ?? ""} ${l.location_info?.district ?? ""}`.toLowerCase();
-  return LOCALITY_ALLOW.some((a) => hay.includes(a));
+  return def.localityAllow.some((a) => hay.includes(a));
 }
 
 function flatten(l: MarketSearchListing, cohort: string, stratum: Stratum): ScannedListing | null {
@@ -103,6 +92,7 @@ function flatten(l: MarketSearchListing, cohort: string, stratum: Stratum): Scan
  * the exact total.
  */
 export async function fetchCohort(
+  def: MarketDef,
   cohort: CohortDef,
   pagesPerStratum: number,
   log: (msg: string) => void,
@@ -115,7 +105,13 @@ export async function fetchCohort(
     // (often brand-new or effectively dormant) carry no signal to learn from.
     ttm_revpar: { gte: 1 },
   };
-  const base = { ...CANGGU, filter, currency: "native" };
+  const base = {
+    latitude: def.center.latitude,
+    longitude: def.center.longitude,
+    radius_miles: def.radiusMiles,
+    filter,
+    currency: "native",
+  };
 
   const pages = async (order: "desc" | "asc") => {
     const out: SearchResponse[] = [];
@@ -137,7 +133,7 @@ export async function fetchCohort(
   const out: ScannedListing[] = [];
   const take = (results: MarketSearchListing[], stratum: Stratum) => {
     for (const r of results) {
-      if (!isGreaterCanggu(r)) continue;
+      if (!inMarket(r, def)) continue;
       const flat = flatten(r, cohort.label, stratum);
       if (!flat || seen.has(flat.listing_id)) continue;
       seen.add(flat.listing_id);
@@ -150,7 +146,7 @@ export async function fetchCohort(
   log(
     `${cohort.label}: ${total} in market, sampled ${out.length} ` +
       `(top ${out.filter((o) => o.stratum === "top").length}, ` +
-      `bottom ${out.filter((o) => o.stratum === "bottom").length}) after Greater-Canggu filter`,
+      `bottom ${out.filter((o) => o.stratum === "bottom").length}) after ${def.title} filter`,
   );
   return out;
 }

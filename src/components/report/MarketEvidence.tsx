@@ -2,6 +2,13 @@ import type { AuditMarketEvidence } from "@/lib/types";
 
 const pct = (v: number) => `${Math.round(v * 100)}%`;
 
+const MARKET_TITLES: Record<string, string> = {
+  "greater-canggu": "Greater Canggu",
+  dubai: "Dubai",
+  london: "London",
+};
+const marketTitle = (key: string) => MARKET_TITLES[key] ?? key;
+
 /**
  * Visual reference section: the real top-earning covers in the owner's exact
  * Canggu bedroom cohort, plus the measured winner benchmarks. This is the
@@ -13,7 +20,7 @@ export function MarketEvidence({ evidence: e }: { evidence: AuditMarketEvidence 
   return (
     <section className="mt-10">
       <h2 className="mb-1 text-xs font-semibold uppercase tracking-widest text-brand-muted">
-        What wins in your market — {e.cohort} villas in Greater Canggu
+        What wins in your market — {e.cohort} listings in {marketTitle(e.market)}
       </h2>
       <p className="mb-4 text-sm text-brand-muted">
         Measured from {e.sample_size} listings. The top earners in your size class

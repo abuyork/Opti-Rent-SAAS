@@ -10,8 +10,8 @@ import type { CohortStats, PlaybookFindings, ScannedListing } from "./types";
  * angle, positioning). Every finding must cite its evidence.
  */
 
-const PATTERNS_SYSTEM = `You are OptiRent's Bali short-term-rental market analyst.
-You receive, for the Greater Canggu villa market:
+const patternsSystem = (marketTitle: string) => `You are OptiRent's short-term-rental market analyst.
+You receive, for the ${marketTitle} entire-home market:
 1. DETERMINISTIC STATS — measured winners-vs-losers contrasts per bedroom
    cohort (top vs bottom viral-score quartile). These numbers are ground truth.
 2. WINNERS and LOSERS — the actual listings: title, description opening,
@@ -19,7 +19,9 @@ You receive, for the Greater Canggu villa market:
 3. COVER IMAGES for a subset, labelled "[winner]" or "[loser]" with cohort.
 
 Extract what the highest-earning listings do differently, to eliminate
-guesswork for villa owners. Rules:
+guesswork for hosts in ${marketTitle}. Anchor every pattern in THIS market's
+guest context (who books here, what they filter for) — do not import
+assumptions from other markets. Rules:
 - Every finding MUST cite evidence: a stat from the data, named listings, or
   what you see in specific cover images. No generic Airbnb advice that could
   be written without this data.
@@ -66,7 +68,40 @@ function pickCovers(winners: ScannedListing[], losers: ScannedListing[], max: nu
   ];
 }
 
+/**
+ * Anthropic downloads url-source images itself and 400s the WHOLE request if
+ * any single URL is dead (CDN photos rot as hosts re-upload). Pre-validate
+ * each cover and drop unreachable ones instead of letting one stale URL kill
+ * the pattern pass.
+ */
+type TaggedCover = { l: ScannedListing; tag: "winner" | "loser" };
+
+async function validateCovers(covers: TaggedCover[]): Promise<TaggedCover[]> {
+  const checks = await Promise.all(
+    covers.map(async (c): Promise<TaggedCover | null> => {
+      try {
+        const controller = new AbortController();
+        const timer = setTimeout(() => controller.abort(), 5000);
+        const res = await fetch(c.l.cover_photo_url!, {
+          method: "HEAD",
+          signal: controller.signal,
+        });
+        clearTimeout(timer);
+        return res.ok ? c : null;
+      } catch {
+        return null;
+      }
+    }),
+  );
+  const ok = checks.filter((c): c is TaggedCover => c !== null);
+  if (ok.length < covers.length) {
+    console.log(`[patterns] dropped ${covers.length - ok.length} dead cover URLs`);
+  }
+  return ok;
+}
+
 export async function extractPatterns(
+  marketTitle: string,
   stats: CohortStats[],
   winners: ScannedListing[],
   losers: ScannedListing[],
@@ -75,7 +110,8 @@ export async function extractPatterns(
   const client = new Anthropic({ apiKey: config.claude.apiKey });
 
   const content: Anthropic.ContentBlockParam[] = [];
-  for (const { l, tag } of pickCovers(winners, losers, maxCoverImages)) {
+  const covers = await validateCovers(pickCovers(winners, losers, maxCoverImages));
+  for (const { l, tag } of covers) {
     content.push({
       type: "text",
       text: `Cover [${tag}] ${l.cohort} "${l.listing_name.slice(0, 60)}" (viral ${l.viral_score}):`,
@@ -95,7 +131,7 @@ export async function extractPatterns(
     // Findings for 6 sections + evidence run long; a truncated reply is
     // unparseable JSON, so leave generous headroom.
     max_tokens: 16384,
-    system: PATTERNS_SYSTEM,
+    system: patternsSystem(marketTitle),
     messages: [{ role: "user", content }],
   });
 

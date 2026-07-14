@@ -1,0 +1,636 @@
+{
+  "market": "dubai",
+  "generated_from": 200,
+  "cohorts": {
+    "1BR": {
+      "market": "dubai",
+      "cohort": "1BR",
+      "sample_size": 40,
+      "winner_n": 10,
+      "winner_median_photos": 23,
+      "winner_median_title_chars": 47.5,
+      "winner_median_description_chars": 1581.5,
+      "winner_median_adr_idr": 3829,
+      "winner_median_occupancy": 0.36,
+      "winner_superhost_share": 0.4,
+      "winner_guest_favorite_share": 0.3,
+      "loser_median_photos": 23,
+      "loser_median_description_chars": 0,
+      "loser_instant_book_share": 0.6,
+      "top_amenities": [
+        {
+          "amenity": "bidet",
+          "winner_share": 0.6,
+          "loser_share": 0.1,
+          "delta": 0.5
+        },
+        {
+          "amenity": "long term stays allowed",
+          "winner_share": 0.8,
+          "loser_share": 0.3,
+          "delta": 0.5
+        },
+        {
+          "amenity": "hot water",
+          "winner_share": 0.8,
+          "loser_share": 0.4,
+          "delta": 0.4
+        },
+        {
+          "amenity": "dedicated workspace",
+          "winner_share": 0.5,
+          "loser_share": 0.1,
+          "delta": 0.4
+        },
+        {
+          "amenity": "drying rack for clothing",
+          "winner_share": 0.7,
+          "loser_share": 0.3,
+          "delta": 0.39999999999999997
+        },
+        {
+          "amenity": "essentials",
+          "winner_share": 0.8,
+          "loser_share": 0.5,
+          "delta": 0.30000000000000004
+        },
+        {
+          "amenity": "dishes and silverware",
+          "winner_share": 0.8,
+          "loser_share": 0.5,
+          "delta": 0.30000000000000004
+        },
+        {
+          "amenity": "stove",
+          "winner_share": 0.8,
+          "loser_share": 0.5,
+          "delta": 0.30000000000000004
+        }
+      ],
+      "title_keywords": [
+        {
+          "word": "beach",
+          "delta": 0.2
+        },
+        {
+          "word": "access",
+          "delta": 0.2
+        },
+        {
+          "word": "seaview",
+          "delta": 0.2
+        },
+        {
+          "word": "pool",
+          "delta": 0.2
+        },
+        {
+          "word": "aliving",
+          "delta": 0.2
+        },
+        {
+          "word": "view",
+          "delta": 0.2
+        },
+        {
+          "word": "dubai",
+          "delta": 0.19999999999999998
+        },
+        {
+          "word": "cozy",
+          "delta": 0.1
+        }
+      ],
+      "winner_covers": [
+        {
+          "listing_name": "Modern 1BR Oasis in Beach Isle with Beach Access",
+          "viral_score": 95.4,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1013470839214403541/original/14105487-311c-415a-83d4-2e3a36bd6b88.jpeg",
+          "locality": "Dubai",
+          "ttm_revpar": 2282,
+          "ttm_occupancy": 0.567
+        },
+        {
+          "listing_name": "Cozy 1BR Haven in The Cove, Dubai Creek Harbour",
+          "viral_score": 89.7,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-881607903490025972/original/a6fc5275-4a42-4396-87cd-1a0b31fe203e.jpeg",
+          "locality": "Dubai",
+          "ttm_revpar": 1620,
+          "ttm_occupancy": 0.46
+        },
+        {
+          "listing_name": "Elegant SeaView 1 BDR, Private Beach & Pool Access",
+          "viral_score": 85.6,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTQyOTU1MzA5NDkxNDAzOTI2Ng==/original/58ab3961-a524-47bc-9739-2868f4ff6c90.png",
+          "locality": "Dubai",
+          "ttm_revpar": 1391,
+          "ttm_occupancy": 0.666
+        }
+      ]
+    },
+    "2BR": {
+      "market": "dubai",
+      "cohort": "2BR",
+      "sample_size": 40,
+      "winner_n": 10,
+      "winner_median_photos": 42.5,
+      "winner_median_title_chars": 45.5,
+      "winner_median_description_chars": 3003.5,
+      "winner_median_adr_idr": 3076,
+      "winner_median_occupancy": 0.5275000000000001,
+      "winner_superhost_share": 0.6,
+      "winner_guest_favorite_share": 0.3,
+      "loser_median_photos": 28,
+      "loser_median_description_chars": 0,
+      "loser_instant_book_share": 0.3,
+      "top_amenities": [
+        {
+          "amenity": "wine glasses",
+          "winner_share": 0.9,
+          "loser_share": 0.3,
+          "delta": 0.6000000000000001
+        },
+        {
+          "amenity": "coffee maker",
+          "winner_share": 0.9,
+          "loser_share": 0.4,
+          "delta": 0.5
+        },
+        {
+          "amenity": "bathtub",
+          "winner_share": 0.9,
+          "loser_share": 0.5,
+          "delta": 0.4
+        },
+        {
+          "amenity": "safe",
+          "winner_share": 0.8,
+          "loser_share": 0.4,
+          "delta": 0.4
+        },
+        {
+          "amenity": "smoke alarm",
+          "winner_share": 1,
+          "loser_share": 0.6,
+          "delta": 0.4
+        },
+        {
+          "amenity": "fire extinguisher",
+          "winner_share": 1,
+          "loser_share": 0.6,
+          "delta": 0.4
+        },
+        {
+          "amenity": "dishwasher",
+          "winner_share": 0.8,
+          "loser_share": 0.4,
+          "delta": 0.4
+        },
+        {
+          "amenity": "beach access",
+          "winner_share": 0.5,
+          "loser_share": 0.1,
+          "delta": 0.4
+        }
+      ],
+      "title_keywords": [
+        {
+          "word": "sea",
+          "delta": 0.3
+        },
+        {
+          "word": "views",
+          "delta": 0.2
+        },
+        {
+          "word": "homes",
+          "delta": 0.2
+        },
+        {
+          "word": "beyond",
+          "delta": 0.2
+        },
+        {
+          "word": "guestready",
+          "delta": 0.2
+        },
+        {
+          "word": "five",
+          "delta": 0.2
+        },
+        {
+          "word": "palm",
+          "delta": 0.2
+        },
+        {
+          "word": "view",
+          "delta": 0.19999999999999998
+        }
+      ],
+      "winner_covers": [
+        {
+          "listing_name": "833 keys | 2BR | Bath Tub & Marina Panorama",
+          "viral_score": 93.8,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1404127596965849990/original/4cd7429a-8be4-451d-822e-353cf854f7b2.jpeg",
+          "locality": "Dubai",
+          "ttm_revpar": 2384,
+          "ttm_occupancy": 0.63
+        },
+        {
+          "listing_name": "Ultimate Living w/ Burj Khalifa & Fountains Views",
+          "viral_score": 89.1,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTI5ODQ4MjM3MjYwOTA3Njg4Mg%3D%3D/original/55a96263-1e13-4492-ba24-b129a2f237d8.jpeg",
+          "locality": "Dubai",
+          "ttm_revpar": 1662,
+          "ttm_occupancy": 0.529
+        },
+        {
+          "listing_name": "Homes Beyond | Elegant 2BR with Wide Sea Views",
+          "viral_score": 86.4,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1323115209686085665/original/c41993d6-97db-4033-978f-3f15537ebc42.jpeg",
+          "locality": "Emaar Beachfront",
+          "ttm_revpar": 1922,
+          "ttm_occupancy": 0.526
+        }
+      ]
+    },
+    "3BR": {
+      "market": "dubai",
+      "cohort": "3BR",
+      "sample_size": 40,
+      "winner_n": 10,
+      "winner_median_photos": 49.5,
+      "winner_median_title_chars": 46,
+      "winner_median_description_chars": 3669.5,
+      "winner_median_adr_idr": 2748,
+      "winner_median_occupancy": 0.6134999999999999,
+      "winner_superhost_share": 0.9,
+      "winner_guest_favorite_share": 0.5,
+      "loser_median_photos": 31.5,
+      "loser_median_description_chars": 2234,
+      "loser_instant_book_share": 0.6,
+      "top_amenities": [
+        {
+          "amenity": "coffee maker",
+          "winner_share": 1,
+          "loser_share": 0.3,
+          "delta": 0.7
+        },
+        {
+          "amenity": "wine glasses",
+          "winner_share": 0.9,
+          "loser_share": 0.3,
+          "delta": 0.6000000000000001
+        },
+        {
+          "amenity": "body soap",
+          "winner_share": 0.9,
+          "loser_share": 0.4,
+          "delta": 0.5
+        },
+        {
+          "amenity": "ethernet connection",
+          "winner_share": 0.6,
+          "loser_share": 0.1,
+          "delta": 0.5
+        },
+        {
+          "amenity": "toaster",
+          "winner_share": 1,
+          "loser_share": 0.5,
+          "delta": 0.5
+        },
+        {
+          "amenity": "coffee",
+          "winner_share": 0.5,
+          "loser_share": 0,
+          "delta": 0.5
+        },
+        {
+          "amenity": "sun loungers",
+          "winner_share": 0.6,
+          "loser_share": 0.1,
+          "delta": 0.5
+        },
+        {
+          "amenity": "cleaning products",
+          "winner_share": 0.7,
+          "loser_share": 0.2,
+          "delta": 0.49999999999999994
+        }
+      ],
+      "title_keywords": [
+        {
+          "word": "pool",
+          "delta": 0.4
+        },
+        {
+          "word": "views",
+          "delta": 0.3
+        },
+        {
+          "word": "3bdr",
+          "delta": 0.2
+        },
+        {
+          "word": "access",
+          "delta": 0.2
+        },
+        {
+          "word": "burj",
+          "delta": 0.2
+        },
+        {
+          "word": "five",
+          "delta": 0.2
+        },
+        {
+          "word": "jbr",
+          "delta": 0.19999999999999998
+        },
+        {
+          "word": "address",
+          "delta": 0.19999999999999998
+        }
+      ],
+      "winner_covers": [
+        {
+          "listing_name": "Luxury 3BDR in JVC with Free Pool and Gym",
+          "viral_score": 96.2,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTQ1Nzc1NTEwNDk2NDIxNzQ2MA==/original/c1aa05b7-2876-4aa7-a0d8-42c12d7f296b.png",
+          "locality": "Dubai",
+          "ttm_revpar": 1912,
+          "ttm_occupancy": 0.649
+        },
+        {
+          "listing_name": "Coastal JBR Apt w/ Sweeping Sea & Bluewaters Views",
+          "viral_score": 94.9,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1127421344389669505/original/6b1714be-9950-4f32-bbae-07bc87cfb77e.jpeg",
+          "locality": "Dubai",
+          "ttm_revpar": 2117,
+          "ttm_occupancy": 0.638
+        },
+        {
+          "listing_name": "Wonderful SeaView 3BDR, Pool & Beach Access",
+          "viral_score": 92.2,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTM0NTUzODI4MDk4NzM0MjM5MQ==/original/aa54103a-76a4-4905-a2ec-b7f611ec4889.png",
+          "locality": "Dubai",
+          "ttm_revpar": 1639,
+          "ttm_occupancy": 0.699
+        }
+      ]
+    },
+    "4BR": {
+      "market": "dubai",
+      "cohort": "4BR",
+      "sample_size": 40,
+      "winner_n": 10,
+      "winner_median_photos": 63,
+      "winner_median_title_chars": 49,
+      "winner_median_description_chars": 2910.5,
+      "winner_median_adr_idr": 3377,
+      "winner_median_occupancy": 0.5695,
+      "winner_superhost_share": 0.9,
+      "winner_guest_favorite_share": 0.5,
+      "loser_median_photos": 54.5,
+      "loser_median_description_chars": 0,
+      "loser_instant_book_share": 0.7,
+      "top_amenities": [
+        {
+          "amenity": "cleaning before checkout",
+          "winner_share": 0.7,
+          "loser_share": 0,
+          "delta": 0.7
+        },
+        {
+          "amenity": "beach access",
+          "winner_share": 0.8,
+          "loser_share": 0.2,
+          "delta": 0.6000000000000001
+        },
+        {
+          "amenity": "beach essentials",
+          "winner_share": 0.7,
+          "loser_share": 0.1,
+          "delta": 0.6
+        },
+        {
+          "amenity": "crib",
+          "winner_share": 1,
+          "loser_share": 0.5,
+          "delta": 0.5
+        },
+        {
+          "amenity": "freezer",
+          "winner_share": 0.9,
+          "loser_share": 0.4,
+          "delta": 0.5
+        },
+        {
+          "amenity": "high chair",
+          "winner_share": 0.8,
+          "loser_share": 0.3,
+          "delta": 0.5
+        },
+        {
+          "amenity": "resort access",
+          "winner_share": 0.5,
+          "loser_share": 0,
+          "delta": 0.5
+        },
+        {
+          "amenity": "outdoor dining area",
+          "winner_share": 0.5,
+          "loser_share": 0,
+          "delta": 0.5
+        }
+      ],
+      "title_keywords": [
+        {
+          "word": "pool",
+          "delta": 0.4
+        },
+        {
+          "word": "beach",
+          "delta": 0.4
+        },
+        {
+          "word": "access",
+          "delta": 0.4
+        },
+        {
+          "word": "private",
+          "delta": 0.4
+        },
+        {
+          "word": "five",
+          "delta": 0.3
+        },
+        {
+          "word": "palm",
+          "delta": 0.3
+        },
+        {
+          "word": "penthouse",
+          "delta": 0.2
+        },
+        {
+          "word": "3bdr",
+          "delta": 0.2
+        }
+      ],
+      "winner_covers": [
+        {
+          "listing_name": "New 4BR Penthouse |Burj Khalifa View |Opera Grand",
+          "viral_score": 98.1,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-1172916211259675309/original/00813208-a03b-4613-9b60-c8066aebad61.jpeg",
+          "locality": "Business Bay",
+          "ttm_revpar": 1906,
+          "ttm_occupancy": 0.677
+        },
+        {
+          "listing_name": "Luxury 3BDR at FIVE Palm | Pool & Beach Access",
+          "viral_score": 90.6,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTI4ODM4NTA2OTcxNjQyNDQwMA==/original/43533a94-2756-42af-99e7-9588cfd8400a.png",
+          "locality": "Dubai",
+          "ttm_revpar": 1661,
+          "ttm_occupancy": 0.74
+        },
+        {
+          "listing_name": "Oceana Luxury 4BR with Resort Access and Sea Views",
+          "viral_score": 89.6,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-1144972440880912903/original/929cf2a8-04e0-473a-b07a-46968f1631ae.jpeg",
+          "locality": "Dubai",
+          "ttm_revpar": 1769,
+          "ttm_occupancy": 0.499
+        }
+      ]
+    },
+    "5+BR": {
+      "market": "dubai",
+      "cohort": "5+BR",
+      "sample_size": 40,
+      "winner_n": 10,
+      "winner_median_photos": 52,
+      "winner_median_title_chars": 50,
+      "winner_median_description_chars": 3607.5,
+      "winner_median_adr_idr": 7996,
+      "winner_median_occupancy": 0.345,
+      "winner_superhost_share": 0.7,
+      "winner_guest_favorite_share": 0.4,
+      "loser_median_photos": 48.5,
+      "loser_median_description_chars": 233.5,
+      "loser_instant_book_share": 0.1,
+      "top_amenities": [
+        {
+          "amenity": "bbq grill",
+          "winner_share": 1,
+          "loser_share": 0,
+          "delta": 1
+        },
+        {
+          "amenity": "backyard",
+          "winner_share": 0.9,
+          "loser_share": 0.2,
+          "delta": 0.7
+        },
+        {
+          "amenity": "outdoor furniture",
+          "winner_share": 0.9,
+          "loser_share": 0.3,
+          "delta": 0.6000000000000001
+        },
+        {
+          "amenity": "safe",
+          "winner_share": 0.8,
+          "loser_share": 0.3,
+          "delta": 0.5
+        },
+        {
+          "amenity": "private entrance",
+          "winner_share": 0.5,
+          "loser_share": 0,
+          "delta": 0.5
+        },
+        {
+          "amenity": "host greets you",
+          "winner_share": 0.5,
+          "loser_share": 0,
+          "delta": 0.5
+        },
+        {
+          "amenity": "dedicated workspace",
+          "winner_share": 0.5,
+          "loser_share": 0.1,
+          "delta": 0.4
+        },
+        {
+          "amenity": "essentials",
+          "winner_share": 1,
+          "loser_share": 0.6,
+          "delta": 0.4
+        }
+      ],
+      "title_keywords": [
+        {
+          "word": "pool",
+          "delta": 0.8
+        },
+        {
+          "word": "private",
+          "delta": 0.5
+        },
+        {
+          "word": "palm",
+          "delta": 0.4
+        },
+        {
+          "word": "beach",
+          "delta": 0.30000000000000004
+        },
+        {
+          "word": "beachfront",
+          "delta": 0.30000000000000004
+        },
+        {
+          "word": "maid",
+          "delta": 0.2
+        },
+        {
+          "word": "6br",
+          "delta": 0.2
+        },
+        {
+          "word": "luxury",
+          "delta": 0.19999999999999998
+        }
+      ],
+      "winner_covers": [
+        {
+          "listing_name": "FIVE Palm Beach Villa -Pool & Jacuzzi, 3-Level",
+          "viral_score": 91.9,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-22310925/original/40db8e74-0aea-4939-9053-a5d6f437f8f8.jpeg",
+          "locality": "Dubai",
+          "ttm_revpar": 3667,
+          "ttm_occupancy": 0.318
+        },
+        {
+          "listing_name": "Stunning Palm Villa with Roof Garden, Pool, Beach",
+          "viral_score": 91.2,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-1039570926864383500/original/171040c7-5184-4433-9643-ddef65558da9.jpeg",
+          "locality": "Dubai",
+          "ttm_revpar": 2741,
+          "ttm_occupancy": 0.553
+        },
+        {
+          "listing_name": "FIVE Palm Beachfront Villa -Private Pool & Jacuzzi",
+          "viral_score": 90.3,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-46759293/original/d4ced985-185a-45dd-b8b5-6c133553772b.jpeg",
+          "locality": "Dubai",
+          "ttm_revpar": 3676,
+          "ttm_occupancy": 0.31
+        }
+      ]
+    }
+  }
+}

@@ -23,11 +23,10 @@ export interface AuditRunResult {
 export async function runAudit(airbnbUrl: string): Promise<AuditRunResult> {
   const resolved = await getAirRoiProvider().resolve(airbnbUrl);
 
-  // Attach measured winner benchmarks for the listing's cohort — but only for
-  // Greater Canggu, the market we've actually scanned. Off-market → no evidence.
-  const isCanggu = resolved.micro_market === "Canggu/Berawa";
-  const benchmark = isCanggu
-    ? getMarketBenchmark(cohortForBeds(resolved.listing.beds))
+  // Attach measured winner benchmarks for the listing's cohort — for any market
+  // we've actually scanned (Canggu, Dubai, London). Unscanned market → no evidence.
+  const benchmark = resolved.market_key
+    ? getMarketBenchmark(resolved.market_key, cohortForBeds(resolved.listing.beds))
     : null;
   const marketEvidence = benchmark ? toAuditEvidence(benchmark) : null;
 

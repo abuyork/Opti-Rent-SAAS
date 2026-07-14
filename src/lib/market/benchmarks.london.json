@@ -1,0 +1,616 @@
+{
+  "market": "london",
+  "generated_from": 200,
+  "cohorts": {
+    "1BR": {
+      "market": "london",
+      "cohort": "1BR",
+      "sample_size": 40,
+      "winner_n": 10,
+      "winner_median_photos": 22.5,
+      "winner_median_title_chars": 42.5,
+      "winner_median_description_chars": 1949,
+      "winner_median_adr_idr": 551,
+      "winner_median_occupancy": 0.6805,
+      "winner_superhost_share": 0.6,
+      "winner_guest_favorite_share": 0.7,
+      "loser_median_photos": 12,
+      "loser_median_description_chars": 286,
+      "loser_instant_book_share": 0.3,
+      "top_amenities": [
+        {
+          "amenity": "body soap",
+          "winner_share": 0.8,
+          "loser_share": 0.1,
+          "delta": 0.7000000000000001
+        },
+        {
+          "amenity": "toaster",
+          "winner_share": 1,
+          "loser_share": 0.4,
+          "delta": 0.6
+        },
+        {
+          "amenity": "laundromat nearby",
+          "winner_share": 0.6,
+          "loser_share": 0,
+          "delta": 0.6
+        },
+        {
+          "amenity": "paid parking off premises",
+          "winner_share": 0.7,
+          "loser_share": 0.1,
+          "delta": 0.6
+        },
+        {
+          "amenity": "microwave",
+          "winner_share": 1,
+          "loser_share": 0.5,
+          "delta": 0.5
+        },
+        {
+          "amenity": "wine glasses",
+          "winner_share": 0.9,
+          "loser_share": 0.4,
+          "delta": 0.5
+        },
+        {
+          "amenity": "hair dryer",
+          "winner_share": 1,
+          "loser_share": 0.6,
+          "delta": 0.4
+        },
+        {
+          "amenity": "bed linens",
+          "winner_share": 1,
+          "loser_share": 0.6,
+          "delta": 0.4
+        }
+      ],
+      "title_keywords": [
+        {
+          "word": "double",
+          "delta": 0.3
+        },
+        {
+          "word": "kentish",
+          "delta": 0.3
+        },
+        {
+          "word": "town",
+          "delta": 0.3
+        },
+        {
+          "word": "light",
+          "delta": 0.2
+        },
+        {
+          "word": "trafalgar",
+          "delta": 0.2
+        },
+        {
+          "word": "sq",
+          "delta": 0.2
+        },
+        {
+          "word": "studio",
+          "delta": 0.19999999999999998
+        },
+        {
+          "word": "luxurious",
+          "delta": 0.1
+        }
+      ],
+      "winner_covers": [
+        {
+          "listing_name": "Luxury Buckingham Palace Apartment with Terrace",
+          "viral_score": 95,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-628141259438347130/original/60293505-3df8-4adb-ba0f-d20956408c1f.jpeg",
+          "locality": "London",
+          "ttm_revpar": 396,
+          "ttm_occupancy": 0.671
+        },
+        {
+          "listing_name": "Light-Filled, Contemporary Retreat near The Ritz",
+          "viral_score": 91.7,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/5f61343e-0f98-404a-9738-6ae8f903866b.jpg",
+          "locality": "London",
+          "ttm_revpar": 376,
+          "ttm_occupancy": 0.723
+        },
+        {
+          "listing_name": "Light & Bright, Small Double Studio, Kentish Town",
+          "viral_score": 87.9,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1241889368821327108/original/fb06ca50-e589-4e31-bd05-fa7c68f5c301.jpeg",
+          "locality": "London",
+          "ttm_revpar": 612,
+          "ttm_occupancy": 0.69
+        }
+      ]
+    },
+    "2BR": {
+      "market": "london",
+      "cohort": "2BR",
+      "sample_size": 40,
+      "winner_n": 10,
+      "winner_median_photos": 23,
+      "winner_median_title_chars": 47,
+      "winner_median_description_chars": 3395.5,
+      "winner_median_adr_idr": 973,
+      "winner_median_occupancy": 0.6795,
+      "winner_superhost_share": 0.6,
+      "winner_guest_favorite_share": 0.8,
+      "loser_median_photos": 21,
+      "loser_median_description_chars": 566.5,
+      "loser_instant_book_share": 0,
+      "top_amenities": [
+        {
+          "amenity": "pack ’n play/travel crib",
+          "winner_share": 0.9,
+          "loser_share": 0,
+          "delta": 0.9
+        },
+        {
+          "amenity": "luggage dropoff allowed",
+          "winner_share": 1,
+          "loser_share": 0.1,
+          "delta": 0.9
+        },
+        {
+          "amenity": "body soap",
+          "winner_share": 1,
+          "loser_share": 0.2,
+          "delta": 0.8
+        },
+        {
+          "amenity": "crib",
+          "winner_share": 0.8,
+          "loser_share": 0,
+          "delta": 0.8
+        },
+        {
+          "amenity": "air conditioning",
+          "winner_share": 1,
+          "loser_share": 0.2,
+          "delta": 0.8
+        },
+        {
+          "amenity": "cleaning before checkout",
+          "winner_share": 1,
+          "loser_share": 0.2,
+          "delta": 0.8
+        },
+        {
+          "amenity": "high chair",
+          "winner_share": 0.7,
+          "loser_share": 0,
+          "delta": 0.7
+        },
+        {
+          "amenity": "babysitter recommendations",
+          "winner_share": 0.7,
+          "loser_share": 0,
+          "delta": 0.7
+        }
+      ],
+      "title_keywords": [
+        {
+          "word": "lift",
+          "delta": 0.2
+        },
+        {
+          "word": "street",
+          "delta": 0.2
+        },
+        {
+          "word": "37gs",
+          "delta": 0.2
+        },
+        {
+          "word": "residences",
+          "delta": 0.2
+        },
+        {
+          "word": "2bedroom",
+          "delta": 0.2
+        },
+        {
+          "word": "apt",
+          "delta": 0.2
+        },
+        {
+          "word": "piccadilly",
+          "delta": 0.2
+        },
+        {
+          "word": "luxury",
+          "delta": 0.19999999999999998
+        }
+      ],
+      "winner_covers": [
+        {
+          "listing_name": "The Soho STAR",
+          "viral_score": 98.1,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-853051483036916370/original/9d2ab0ef-cf8b-4e21-b5f6-273d3473b283.jpeg",
+          "locality": "City of Westminster",
+          "ttm_revpar": 715,
+          "ttm_occupancy": 0.748
+        },
+        {
+          "listing_name": "£12 million Buckingham Palace duplex with garden",
+          "viral_score": 96.8,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6NzE5NDM5MDIwNDY2NzkxNTA1/original/17710430-bab9-4bf7-8501-d6caa1b96c6b.jpeg",
+          "locality": "London",
+          "ttm_revpar": 898,
+          "ttm_occupancy": 0.655
+        },
+        {
+          "listing_name": "Stunning Single-level Knightsbridge Flat w/lift",
+          "viral_score": 91.4,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1135225486963818715/original/7f31b705-e1ec-4898-811c-a97a278436ef.jpeg",
+          "locality": "London",
+          "ttm_revpar": 586,
+          "ttm_occupancy": 0.715
+        }
+      ]
+    },
+    "3BR": {
+      "market": "london",
+      "cohort": "3BR",
+      "sample_size": 40,
+      "winner_n": 10,
+      "winner_median_photos": 33.5,
+      "winner_median_title_chars": 49,
+      "winner_median_description_chars": 3804.5,
+      "winner_median_adr_idr": 1164,
+      "winner_median_occupancy": 0.6575,
+      "winner_superhost_share": 0.8,
+      "winner_guest_favorite_share": 0.9,
+      "loser_median_photos": 18.5,
+      "loser_median_description_chars": 0,
+      "loser_instant_book_share": 0.3,
+      "top_amenities": [
+        {
+          "amenity": "room-darkening shades",
+          "winner_share": 1,
+          "loser_share": 0.1,
+          "delta": 0.9
+        },
+        {
+          "amenity": "shower gel",
+          "winner_share": 0.8,
+          "loser_share": 0.1,
+          "delta": 0.7000000000000001
+        },
+        {
+          "amenity": "high chair",
+          "winner_share": 0.8,
+          "loser_share": 0.1,
+          "delta": 0.7000000000000001
+        },
+        {
+          "amenity": "babysitter recommendations",
+          "winner_share": 0.8,
+          "loser_share": 0.1,
+          "delta": 0.7000000000000001
+        },
+        {
+          "amenity": "hot water",
+          "winner_share": 1,
+          "loser_share": 0.3,
+          "delta": 0.7
+        },
+        {
+          "amenity": "air conditioning",
+          "winner_share": 0.9,
+          "loser_share": 0.2,
+          "delta": 0.7
+        },
+        {
+          "amenity": "stove",
+          "winner_share": 1,
+          "loser_share": 0.3,
+          "delta": 0.7
+        },
+        {
+          "amenity": "hot water kettle",
+          "winner_share": 1,
+          "loser_share": 0.3,
+          "delta": 0.7
+        }
+      ],
+      "title_keywords": [
+        {
+          "word": "spectacular",
+          "delta": 0.3
+        },
+        {
+          "word": "ac",
+          "delta": 0.3
+        },
+        {
+          "word": "covent",
+          "delta": 0.2
+        },
+        {
+          "word": "penthouse",
+          "delta": 0.2
+        },
+        {
+          "word": "iconic",
+          "delta": 0.2
+        },
+        {
+          "word": "views",
+          "delta": 0.2
+        },
+        {
+          "word": "mayfair",
+          "delta": 0.2
+        },
+        {
+          "word": "single",
+          "delta": 0.2
+        }
+      ],
+      "winner_covers": [
+        {
+          "listing_name": "Covent Garden Penthouse - Large Terrace *Central*",
+          "viral_score": 100,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-807818312956189136/original/38e3d47c-a6fd-48c5-8b85-9a21e48e6df4.jpeg",
+          "locality": "City of Westminster",
+          "ttm_revpar": 836,
+          "ttm_occupancy": 0.699
+        },
+        {
+          "listing_name": "Spectacular Penthouse with Iconic London Views",
+          "viral_score": 95.4,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1090651992631080118/original/7bc2eab7-a237-436c-87ce-79ec8c6de7f7.jpeg",
+          "locality": "City of Westminster",
+          "ttm_revpar": 875,
+          "ttm_occupancy": 0.753
+        },
+        {
+          "listing_name": "Spectacular Mayfair single level 3 bed flat w/AC",
+          "viral_score": 93.5,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-934848504805051285/original/61d59c03-50ef-4b4c-a7a5-54eff82a3533.jpeg",
+          "locality": "City of Westminster",
+          "ttm_revpar": 832,
+          "ttm_occupancy": 0.707
+        }
+      ]
+    },
+    "4BR": {
+      "market": "london",
+      "cohort": "4BR",
+      "sample_size": 40,
+      "winner_n": 10,
+      "winner_median_photos": 42.5,
+      "winner_median_title_chars": 42,
+      "winner_median_description_chars": 4383,
+      "winner_median_adr_idr": 1196,
+      "winner_median_occupancy": 0.6559999999999999,
+      "winner_superhost_share": 0.6,
+      "winner_guest_favorite_share": 0.8,
+      "loser_median_photos": 24.5,
+      "loser_median_description_chars": 0,
+      "loser_instant_book_share": 0.1,
+      "top_amenities": [
+        {
+          "amenity": "air conditioning",
+          "winner_share": 0.8,
+          "loser_share": 0.2,
+          "delta": 0.6000000000000001
+        },
+        {
+          "amenity": "dishwasher",
+          "winner_share": 0.9,
+          "loser_share": 0.5,
+          "delta": 0.4
+        },
+        {
+          "amenity": "drying rack for clothing",
+          "winner_share": 0.6,
+          "loser_share": 0.2,
+          "delta": 0.39999999999999997
+        },
+        {
+          "amenity": "fire extinguisher",
+          "winner_share": 0.7,
+          "loser_share": 0.3,
+          "delta": 0.39999999999999997
+        },
+        {
+          "amenity": "clothing storage",
+          "winner_share": 0.8,
+          "loser_share": 0.5,
+          "delta": 0.30000000000000004
+        },
+        {
+          "amenity": "sound system",
+          "winner_share": 0.4,
+          "loser_share": 0.1,
+          "delta": 0.30000000000000004
+        },
+        {
+          "amenity": "baby safety gates",
+          "winner_share": 0.4,
+          "loser_share": 0.1,
+          "delta": 0.30000000000000004
+        },
+        {
+          "amenity": "babysitter recommendations",
+          "winner_share": 0.4,
+          "loser_share": 0.1,
+          "delta": 0.30000000000000004
+        }
+      ],
+      "title_keywords": [
+        {
+          "word": "spectacular",
+          "delta": 0.2
+        },
+        {
+          "word": "mayfair",
+          "delta": 0.2
+        },
+        {
+          "word": "penthouse",
+          "delta": 0.2
+        }
+      ],
+      "winner_covers": [
+        {
+          "listing_name": "Spectacular single level 4BR 3BA Mayfair flat",
+          "viral_score": 97.8,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1379204003701816567/original/5c1fcb8b-4004-43ed-9f16-0700e7002df5.jpeg",
+          "locality": "Greater London",
+          "ttm_revpar": 1300,
+          "ttm_occupancy": 0.71
+        },
+        {
+          "listing_name": "Chelsea 4‑BR, 4 Ensuites | Roof Deck, Quiet Street",
+          "viral_score": 97.1,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-1268844400847145571/original/9a081c0a-29d2-40b6-a437-dd4ab33cdba2.png",
+          "locality": "London",
+          "ttm_revpar": 935,
+          "ttm_occupancy": 0.712
+        },
+        {
+          "listing_name": "Notting Hill family home 5 Bed",
+          "viral_score": 95.8,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-731266713255712349/original/5de7bb1d-950d-4ca0-b94b-6a607e2106d0.jpeg",
+          "locality": "London",
+          "ttm_revpar": 671,
+          "ttm_occupancy": 0.721
+        }
+      ]
+    },
+    "5+BR": {
+      "market": "london",
+      "cohort": "5+BR",
+      "sample_size": 40,
+      "winner_n": 10,
+      "winner_median_photos": 67.5,
+      "winner_median_title_chars": 39.5,
+      "winner_median_description_chars": 1511,
+      "winner_median_adr_idr": 1503,
+      "winner_median_occupancy": 0.667,
+      "winner_superhost_share": 0.7,
+      "winner_guest_favorite_share": 0.8,
+      "loser_median_photos": 39.5,
+      "loser_median_description_chars": 0,
+      "loser_instant_book_share": 0.2,
+      "top_amenities": [
+        {
+          "amenity": "pack ’n play/travel crib",
+          "winner_share": 0.8,
+          "loser_share": 0.1,
+          "delta": 0.7000000000000001
+        },
+        {
+          "amenity": "air conditioning",
+          "winner_share": 0.8,
+          "loser_share": 0.1,
+          "delta": 0.7000000000000001
+        },
+        {
+          "amenity": "patio or balcony",
+          "winner_share": 0.9,
+          "loser_share": 0.2,
+          "delta": 0.7
+        },
+        {
+          "amenity": "ethernet connection",
+          "winner_share": 0.6,
+          "loser_share": 0,
+          "delta": 0.6
+        },
+        {
+          "amenity": "hot water kettle",
+          "winner_share": 1,
+          "loser_share": 0.4,
+          "delta": 0.6
+        },
+        {
+          "amenity": "dedicated workspace",
+          "winner_share": 0.8,
+          "loser_share": 0.3,
+          "delta": 0.5
+        },
+        {
+          "amenity": "dishwasher",
+          "winner_share": 1,
+          "loser_share": 0.5,
+          "delta": 0.5
+        },
+        {
+          "amenity": "dryer",
+          "winner_share": 0.9,
+          "loser_share": 0.5,
+          "delta": 0.4
+        }
+      ],
+      "title_keywords": [
+        {
+          "word": "townhouse",
+          "delta": 0.2
+        },
+        {
+          "word": "knightsbridge",
+          "delta": 0.2
+        },
+        {
+          "word": "residence",
+          "delta": 0.2
+        },
+        {
+          "word": "retreat",
+          "delta": 0.2
+        },
+        {
+          "word": "luxury",
+          "delta": 0.1
+        },
+        {
+          "word": "park",
+          "delta": 0.1
+        },
+        {
+          "word": "central",
+          "delta": 0.1
+        },
+        {
+          "word": "house",
+          "delta": -0.09999999999999998
+        }
+      ],
+      "winner_covers": [
+        {
+          "listing_name": "Elegant Townhouse in Trafalgar Square",
+          "viral_score": 98.8,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-1041951010037410181/original/9a1f4662-ce30-4d73-b42d-d4868d1dc362.jpeg",
+          "locality": "City of Westminster",
+          "ttm_revpar": 1067,
+          "ttm_occupancy": 0.704
+        },
+        {
+          "listing_name": "Spectacular luxury Knightsbridge townhouse",
+          "viral_score": 95.8,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTI1NTE5NjU5NTIwNDk5MDgzMw%3D%3D/original/e0a99df9-fd42-4938-b0b7-61f5956202fb.png",
+          "locality": "London",
+          "ttm_revpar": 1150,
+          "ttm_occupancy": 0.627
+        },
+        {
+          "listing_name": "Large 6 bedroom Residence Retreat in Holland Park",
+          "viral_score": 93.1,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-1143381913498695454/original/4d1814f5-4ca2-49f7-b6a9-31c99b01ad3c.jpeg",
+          "locality": "London",
+          "ttm_revpar": 706,
+          "ttm_occupancy": 0.732
+        }
+      ]
+    }
+  }
+}

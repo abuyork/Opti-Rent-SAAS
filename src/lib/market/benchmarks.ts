@@ -13,7 +13,9 @@
 import { cohortStats, splitQuartiles } from "./stats";
 import type { ScannedListing } from "./types";
 import type { AuditMarketEvidence } from "@/lib/types";
-import benchmarksData from "./benchmarks.greater-canggu.json";
+import cangguData from "./benchmarks.greater-canggu.json";
+import dubaiData from "./benchmarks.dubai.json";
+import londonData from "./benchmarks.london.json";
 
 export interface CoverExample {
   listing_name: string;
@@ -124,13 +126,17 @@ export function buildBenchmarks(market: string, listings: ScannedListing[]): Ben
   return { market, generated_from: listings.length, cohorts };
 }
 
-// --- Load the static Greater-Canggu benchmarks + shape them for the audit ---
+// --- Load the static per-market benchmarks + shape them for the audit ---
 
-const CANGGU = benchmarksData as unknown as BenchmarksFile;
+const BENCHMARKS: Record<string, BenchmarksFile> = {
+  "greater-canggu": cangguData as unknown as BenchmarksFile,
+  dubai: dubaiData as unknown as BenchmarksFile,
+  london: londonData as unknown as BenchmarksFile,
+};
 
-/** Winner benchmark for a Greater-Canggu bedroom cohort ("3BR"), or null. */
-export function getMarketBenchmark(cohort: string): MarketBenchmark | null {
-  return CANGGU.cohorts[cohort] ?? null;
+/** Winner benchmark for a market + bedroom cohort (e.g. "dubai", "3BR"), or null. */
+export function getMarketBenchmark(marketKey: string, cohort: string): MarketBenchmark | null {
+  return BENCHMARKS[marketKey]?.cohorts[cohort] ?? null;
 }
 
 /**

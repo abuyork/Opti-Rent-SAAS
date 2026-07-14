@@ -63,6 +63,7 @@ interface AirRoiListing {
     locality?: string;
     district?: string;
     region?: string;
+    country_code?: string;
   };
   booking_settings?: {
     instant_book?: boolean | null;
@@ -192,6 +193,7 @@ export class LiveAirRoiProvider implements AirRoiProvider {
     const area = loc.district || loc.locality || loc.region || "the area";
     const micro_market = microMarket(loc);
     const target_guest = targetGuest(micro_market);
+    const market_key = marketKey(loc);
 
     const reviews: ReviewSummary = {
       count: ratings.num_reviews ?? 0,
@@ -236,9 +238,31 @@ export class LiveAirRoiProvider implements AirRoiProvider {
       comps: compsInput,
       micro_market,
       target_guest,
+      market_key,
       content_fallback: false,
     };
   }
+}
+
+// --- Market detection (which scanned benchmark set applies) ---
+
+/**
+ * Map a listing's location to one of our scanned markets ("greater-canggu",
+ * "dubai", "london") or null when we have no playbook for it. Keys must match
+ * markets.ts / the benchmarks.<key>.json files.
+ */
+function marketKey(loc: AirRoiListing["location_info"]): string | null {
+  const cc = (loc?.country_code ?? "").toUpperCase();
+  const hay = [loc?.district, loc?.locality, loc?.region]
+    .filter(Boolean)
+    .join(" ")
+    .toLowerCase();
+  if (cc === "AE" && /dubai/.test(hay)) return "dubai";
+  if (cc === "GB" && /london|westminster|camden|hackney|islington|kensington|chelsea|southwark|lambeth|tower hamlets/.test(hay))
+    return "london";
+  if (cc === "ID" && /(canggu|berawa|pererenan|echo beach|umalas|kerobokan|tibubeneng|munggu|babakan|cemagi)/.test(hay))
+    return "greater-canggu";
+  return null;
 }
 
 // --- Bali micro-market inference (v2) ---

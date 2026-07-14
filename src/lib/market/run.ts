@@ -1,19 +1,20 @@
 /**
- * Canggu market scanner — viral scores + the "what actually works" playbook
+ * Market scanner — viral scores + the "what actually works" playbook
  * (Manager feedback 2026-07: "eliminate the guess").
  *
- *   npm run scan                       # full scan: fetch + score + stats + AI pass + persist
- *   npm run scan -- --dry              # no Supabase writes
- *   npm run scan -- --no-ai            # deterministic layers only
- *   npm run scan -- --pages 3          # pages of 10 per stratum (default 2)
+ *   npm run scan                              # Greater Canggu (default)
+ *   npm run scan -- --market dubai            # any market in markets.ts
+ *   npm run scan -- --market london --pages 3 # pages of 10 per stratum (default 2)
+ *   npm run scan -- --dry                     # no Supabase writes
+ *   npm run scan -- --no-ai                   # deterministic layers only
+ *   npm run scan -- --cached                  # reuse last fetch (no AirROI spend)
  *
- * Output: docs/playbooks/greater-canggu-<date>.md + rows in market_listings.
- * Cost at defaults: 20 AirROI search calls (~$10) + one Claude pattern call (~$2-4).
+ * Output: docs/playbooks/<market>-<date>.md, src/lib/market/benchmarks.<market>.json,
+ * rows in market_listings. Cost at defaults: ~20 AirROI search calls (~$10) +
+ * one Claude vision pattern call (~$2-4).
  */
 import { readFileSync, mkdirSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
-
-const MARKET = "greater-canggu";
 
 function loadEnvLocal(): void {
   let raw: string;
@@ -34,32 +35,42 @@ interface Args {
   ai: boolean;
   pages: number;
   cached: boolean;
+  market: string;
 }
 
 function parseArgs(argv: string[]): Args {
-  const args: Args = { dry: false, ai: true, pages: 2, cached: false };
+  const args: Args = { dry: false, ai: true, pages: 2, cached: false, market: "greater-canggu" };
   for (let i = 0; i < argv.length; i++) {
     if (argv[i] === "--dry") args.dry = true;
     else if (argv[i] === "--no-ai") args.ai = false;
     else if (argv[i] === "--pages") args.pages = Math.max(1, Number(argv[++i] ?? 2));
     else if (argv[i] === "--cached") args.cached = true;
+    else if (argv[i] === "--market") args.market = String(argv[++i] ?? "greater-canggu");
   }
   return args;
 }
 
-/** Fetched samples are cached so a crash in a later stage never re-spends AirROI credits. */
-const CACHE_PATH = "node_modules/.cache/optirent/last-scan.json";
+/** Fetched samples are cached per market so a crash in a later stage never re-spends AirROI credits. */
+const cachePath = (market: string) => `node_modules/.cache/optirent/last-scan-${market}.json`;
 
 const fmtPct = (v: number) => `${Math.round(v * 100)}%`;
-const fmtIdr = (v: number) =>
-  v >= 1_000_000 ? `Rp ${(v / 1_000_000).toFixed(1)}M` : `Rp ${Math.round(v).toLocaleString()}`;
+
+/** Compact native-currency amount, e.g. "Rp 4.8M", "AED 2,282", "£612". */
+function moneyFormatter(currency: string): (v: number) => string {
+  const sym = currency === "IDR" ? "Rp" : currency === "GBP" ? "£" : currency;
+  return (v: number) =>
+    v >= 1_000_000
+      ? `${sym} ${(v / 1_000_000).toFixed(1)}M`.replace("£ ", "£")
+      : `${sym} ${Math.round(v).toLocaleString()}`.replace("£ ", "£");
+}
 
 async function main(): Promise<void> {
   loadEnvLocal();
   const args = parseArgs(process.argv.slice(2));
 
   const { config } = await import("@/lib/config");
-  const { COHORTS, fetchCohort } = await import("./fetch");
+  const { getMarketDef } = await import("./markets");
+  const { fetchCohort } = await import("./fetch");
   const { scoreCohort } = await import("./score");
   const { cohortStats, splitQuartiles } = await import("./stats");
   type Scanned = import("./types").ScannedListing;
@@ -70,7 +81,11 @@ async function main(): Promise<void> {
     throw new Error("Market scan needs AIRROI_MODE=live and AIRROI_API_KEY.");
   }
 
-  console.log(`\n=== OptiRent market scan: ${MARKET} ===\n`);
+  const def = getMarketDef(args.market);
+  const MARKET = def.key;
+  const CACHE_PATH = cachePath(MARKET);
+
+  console.log(`\n=== OptiRent market scan: ${def.title} (${MARKET}) ===\n`);
 
   // --- fetch + score per cohort (or reuse the cached sample) ---
   const all: Scanned[] = [];
@@ -78,14 +93,14 @@ async function main(): Promise<void> {
   if (args.cached) {
     const cached = JSON.parse(readFileSync(resolve(process.cwd(), CACHE_PATH), "utf8")) as Scanned[];
     all.push(...cached);
-    for (const cohort of COHORTS) {
+    for (const cohort of def.cohorts) {
       const listings = all.filter((l) => l.cohort === cohort.label);
       if (listings.length >= 20) stats.push(cohortStats(cohort.label, listings));
     }
     console.log(`loaded ${all.length} listings from cache (${CACHE_PATH})`);
   } else {
-    for (const cohort of COHORTS) {
-      const listings = await fetchCohort(cohort, args.pages, (m) => console.log(m));
+    for (const cohort of def.cohorts) {
+      const listings = await fetchCohort(def, cohort, args.pages, (m) => console.log(m));
       if (listings.length < 20) {
         console.log(`${cohort.label}: only ${listings.length} listings — skipping stats`);
         continue;
@@ -117,7 +132,7 @@ async function main(): Promise<void> {
       `\n[patterns] sending ${winners.length} winners + ${losers.length} losers to ${config.claude.model}…`,
     );
     const { extractPatterns } = await import("./patterns");
-    findings = await extractPatterns(stats, winners, losers);
+    findings = await extractPatterns(def.title, stats, winners, losers);
     console.log(`[patterns] done — ${findings.top_actions.length} top actions extracted`);
   } else {
     console.log(`\n[patterns] skipped (${args.ai ? "needs CLAUDE_MODE=live" : "--no-ai"})`);
@@ -125,7 +140,7 @@ async function main(): Promise<void> {
 
   // --- playbook markdown ---
   const date = new Date().toISOString().slice(0, 10);
-  const md = renderPlaybook(date, stats, all, findings);
+  const md = renderPlaybook(def.title, def.currency, date, stats, all, findings);
   const outDir = resolve(process.cwd(), "docs/playbooks");
   mkdirSync(outDir, { recursive: true });
   const outPath = resolve(outDir, `${MARKET}-${date}.md`);
@@ -152,13 +167,16 @@ async function main(): Promise<void> {
 }
 
 function renderPlaybook(
+  marketTitle: string,
+  currency: string,
   date: string,
   stats: import("./types").CohortStats[],
   all: import("./types").ScannedListing[],
   findings: import("./types").PlaybookFindings | null,
 ): string {
+  const fmtMoney = moneyFormatter(currency);
   const lines: string[] = [];
-  lines.push(`# Greater Canggu Market Playbook — ${date}`);
+  lines.push(`# ${marketTitle} Market Playbook — ${date}`);
   lines.push("");
   lines.push(
     `_${all.length} entire-home listings sampled across ${stats.length} bedroom cohorts ` +
@@ -193,8 +211,8 @@ function renderPlaybook(
     lines.push("", `### ${s.cohort} (sample ${s.sample_size})`, "");
     lines.push(`| Metric | Winners (n=${w.n}) | Losers (n=${l.n}) |`);
     lines.push(`|---|---|---|`);
-    lines.push(`| Median RevPAR | ${fmtIdr(w.median_revpar)} | ${fmtIdr(l.median_revpar)} |`);
-    lines.push(`| Median ADR | ${fmtIdr(w.median_adr)} | ${fmtIdr(l.median_adr)} |`);
+    lines.push(`| Median RevPAR | ${fmtMoney(w.median_revpar)} | ${fmtMoney(l.median_revpar)} |`);
+    lines.push(`| Median ADR | ${fmtMoney(w.median_adr)} | ${fmtMoney(l.median_adr)} |`);
     lines.push(`| Median occupancy | ${fmtPct(w.median_occupancy)} | ${fmtPct(l.median_occupancy)} |`);
     lines.push(`| Median photos | ${w.median_photos} | ${l.median_photos} |`);
     lines.push(`| Median title length | ${w.median_title_chars} chars | ${l.median_title_chars} chars |`);
@@ -234,7 +252,7 @@ function renderPlaybook(
     lines.push(`|---|---|---|---|---|---|`);
     for (const l of top) {
       lines.push(
-        `| ${l.viral_score} | ${l.listing_name.slice(0, 48).replace(/\|/g, "/")} | ${l.locality} | ${fmtIdr(l.ttm_revpar)} | ${fmtPct(l.ttm_occupancy)} | ${l.rating_overall ?? "—"} (${l.num_reviews}) |`,
+        `| ${l.viral_score} | ${l.listing_name.slice(0, 48).replace(/\|/g, "/")} | ${l.locality} | ${fmtMoney(l.ttm_revpar)} | ${fmtPct(l.ttm_occupancy)} | ${l.rating_overall ?? "—"} (${l.num_reviews}) |`,
       );
     }
     lines.push("");

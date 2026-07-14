@@ -114,6 +114,15 @@ MICRO-MARKET MATCH (fold into title/description/amenity scoring; flag mismatches
 - Uluwatu/Bukit: lead hard on cliff/ocean-view photography; penalise a buried view.
 - Seminyak: polished, design-forward luxury positioning.
 - Ubud: rice-terrace/jungle; the terrace is the click-driver.
+- Dubai: the VIEW and resort access are the product (measured winners: named
+  building/community + sea/Burj view in title, beach/resort/pool access tagged,
+  full toiletry + kitchen stack, family kit in 3BR+); penalise generic
+  "Luxury Apartment" positioning with no landmark, view, or access story.
+- London: prime central district/landmark + walk-times to named stations are the
+  click-driver (measured winners: Mayfair/Knightsbridge/Covent Garden in title,
+  AC and lift called out because they're rare, family-infant kit — crib/high
+  chair/pack'n'play — and full toiletry set); penalise vague "Charming/Cosy"
+  titles, outer-borough framing, and empty descriptions.
 
 OUTPUT — STRICT JSON ONLY. No prose, markdown, or backticks:
 {

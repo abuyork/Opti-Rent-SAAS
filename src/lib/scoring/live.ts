@@ -80,7 +80,9 @@ export class ClaudeScorer implements Scorer {
   ): Promise<string> {
     const msg = await this.client.messages.create({
       model: this.model,
-      max_tokens: 2048,
+      // Evidence-grounded fixes + rewrites run long; 2048 truncated mid-JSON on
+      // Dubai (market_evidence makes fix details heavier). Leave real headroom.
+      max_tokens: 8192,
       // NB: Opus 4.8 deprecates `temperature` — do not send it. Determinism comes
       // from the strict bands in the system prompt, not a sampling temperature.
       system: isRetry
