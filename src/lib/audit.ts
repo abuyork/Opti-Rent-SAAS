@@ -60,6 +60,20 @@ export async function processAuditJob(auditId: string, airbnbUrl: string): Promi
       scoring,
       market_evidence: marketEvidence,
     });
+
+    // "Report ready" email (manager ask 2026-07-14). Fire-and-forget within the
+    // job: an email failure must never fail a completed audit.
+    const audit = await store.getAudit(auditId);
+    if (audit?.email) {
+      const { sendReportReadyEmail } = await import("@/lib/email");
+      const { config } = await import("@/lib/config");
+      await sendReportReadyEmail({
+        to: audit.email,
+        auditId,
+        listingTitle: resolved.listing.title || null,
+        includePdfLink: audit.paid || config.testingShowFullReport,
+      });
+    }
   } catch (e) {
     console.error(`[processAuditJob] audit ${auditId} failed:`, e);
     const { AirRoiError } = await import("@/lib/airroi");

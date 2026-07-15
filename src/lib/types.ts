@@ -153,12 +153,16 @@ export interface CompsInput {
 
 /** A real winning listing shown in the report as a visual reference. */
 export interface MarketCoverExample {
+  /** Airbnb room id — makes the card an active link. Absent on pre-07-14 audits. */
+  listing_id?: string;
   listing_name: string;
   viral_score: number;
   cover_photo_url: string;
   locality: string;
   ttm_revpar: number;
   ttm_occupancy: number;
+  rating_overall?: number | null;
+  num_reviews?: number;
 }
 
 /**
@@ -184,6 +188,8 @@ export interface AuditMarketEvidence {
   top_amenities: { amenity: string; winner_share: number; loser_share: number }[];
   /** Title words that over-index in winners. */
   title_keywords: string[];
+  /** Native currency of the market's money figures (IDR/AED/GBP). */
+  currency?: string;
   /** Real winning covers to display as visual references. */
   winner_covers: MarketCoverExample[];
 }

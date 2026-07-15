@@ -11,6 +11,7 @@
  * `npm run scan` (and by `writeBenchmarksFile`), so it stays fresh with the market.
  */
 import { cohortStats, splitQuartiles } from "./stats";
+import { MARKETS } from "./markets";
 import type { ScannedListing } from "./types";
 import type { AuditMarketEvidence } from "@/lib/types";
 import cangguData from "./benchmarks.greater-canggu.json";
@@ -18,12 +19,15 @@ import dubaiData from "./benchmarks.dubai.json";
 import londonData from "./benchmarks.london.json";
 
 export interface CoverExample {
+  listing_id: string;
   listing_name: string;
   viral_score: number;
   cover_photo_url: string;
   locality: string;
   ttm_revpar: number;
   ttm_occupancy: number;
+  rating_overall: number | null;
+  num_reviews: number;
 }
 
 export interface AmenityEdge {
@@ -53,6 +57,8 @@ export interface MarketBenchmark {
   // what over-indexes in winners
   top_amenities: AmenityEdge[];
   title_keywords: { word: string; delta: number }[];
+  /** Native currency of the market's money figures (from markets.ts). */
+  currency: string;
   // visual references
   winner_covers: CoverExample[];
 }
@@ -82,22 +88,28 @@ export function buildBenchmarks(market: string, listings: ScannedListing[]): Ben
     if (group.length < 8) continue; // too small to contrast
     const s = cohortStats(cohort, group);
     const { winners } = splitQuartiles(group);
+    // Up to 10 winners per cohort (manager ask 2026-07-14): the report shows
+    // the whole winning set, each as an active Airbnb link with real numbers.
     const winner_covers: CoverExample[] = winners
       .filter((l) => l.cover_photo_url)
       .sort((a, b) => b.viral_score - a.viral_score)
-      .slice(0, 3)
+      .slice(0, 10)
       .map((l) => ({
+        listing_id: l.listing_id,
         listing_name: l.listing_name,
         viral_score: l.viral_score,
         cover_photo_url: l.cover_photo_url!,
         locality: l.locality,
         ttm_revpar: Math.round(l.ttm_revpar),
         ttm_occupancy: l.ttm_occupancy,
+        rating_overall: l.rating_overall,
+        num_reviews: l.num_reviews,
       }));
 
     cohorts[cohort] = {
       market,
       cohort,
+      currency: MARKETS[market]?.currency ?? "IDR",
       sample_size: s.sample_size,
       winner_n: s.winners.n,
       winner_median_photos: s.winners.median_photos,
@@ -164,6 +176,16 @@ export function toAuditEvidence(b: MarketBenchmark): AuditMarketEvidence {
       loser_share: a.loser_share,
     })),
     title_keywords: b.title_keywords.map((k) => k.word),
+    currency: b.currency,
     winner_covers: b.winner_covers,
+  };
+}
+
+/** Landing-page trust stats, computed from the real scan data (never hardcode). */
+export function getTrustStats(): { listings: number; markets: string[] } {
+  const files = Object.values(BENCHMARKS);
+  return {
+    listings: files.reduce((sum, f) => sum + (f.generated_from ?? 0), 0),
+    markets: files.map((f) => MARKETS[f.market]?.title ?? f.market),
   };
 }

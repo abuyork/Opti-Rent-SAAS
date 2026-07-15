@@ -5,6 +5,7 @@
     "1BR": {
       "market": "greater-canggu",
       "cohort": "1BR",
+      "currency": "IDR",
       "sample_size": 37,
       "winner_n": 9,
       "winner_median_photos": 30,
@@ -95,34 +96,110 @@
       ],
       "winner_covers": [
         {
+          "listing_id": "50016177",
           "listing_name": "Romantic Tropical Mediterranean 1BR Pool Villa",
           "viral_score": 92.1,
           "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-50016177/original/70b5ae3d-3af8-4db4-9e3a-3a1bd0fe4a28.jpeg",
           "locality": "Pererenan",
           "ttm_revpar": 2583698,
-          "ttm_occupancy": 0.701
+          "ttm_occupancy": 0.701,
+          "rating_overall": 4.93,
+          "num_reviews": 124
         },
         {
+          "listing_id": "531380537415442880",
           "listing_name": "Gorgeous Calm Private 1BR Villa, Rooftop & 2 Pools",
           "viral_score": 87.2,
           "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6NTMxMzgwNTM3NDE1NDQyODgw/original/f69cbade-f6b9-46de-94da-1a349204d850.jpeg",
           "locality": "Canggu",
           "ttm_revpar": 2857571,
-          "ttm_occupancy": 0.589
+          "ttm_occupancy": 0.589,
+          "rating_overall": 4.85,
+          "num_reviews": 171
         },
         {
+          "listing_id": "1104004793944459827",
           "listing_name": "Mediterranean Villa - Ricefield view - Canggu",
           "viral_score": 86.7,
           "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTEwNDAwNDc5Mzk0NDQ1OTgyNw%3D%3D/original/ee87664d-23c3-4b4c-b588-4b8949ea277c.jpeg",
           "locality": "Tibubeneng",
           "ttm_revpar": 2963811,
-          "ttm_occupancy": 0.638
+          "ttm_occupancy": 0.638,
+          "rating_overall": 4.67,
+          "num_reviews": 72
+        },
+        {
+          "listing_id": "1353957627324963734",
+          "listing_name": "1BR Architectural Gem Next To The Beach In Canggu",
+          "viral_score": 86.1,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTM1Mzk1NzYyNzMyNDk2MzczNA==/original/49de851c-4d7a-4f09-aada-58947376d6a1.jpeg",
+          "locality": "Canggu",
+          "ttm_revpar": 2740345,
+          "ttm_occupancy": 0.712,
+          "rating_overall": 4.77,
+          "num_reviews": 52
+        },
+        {
+          "listing_id": "1308308258167068089",
+          "listing_name": "Villa Ratu: Modern Getaway in the Heart of Canggu",
+          "viral_score": 82.2,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTMwODMwODI1ODE2NzA2ODA4OQ%3D%3D/original/1b90d8e0-c767-42c6-a0ef-8994a2c66541.jpeg",
+          "locality": "Canggu",
+          "ttm_revpar": 2458893,
+          "ttm_occupancy": 0.688,
+          "rating_overall": 4.92,
+          "num_reviews": 66
+        },
+        {
+          "listing_id": "1090304729291726481",
+          "listing_name": "Brand New Romantic 1BR Villa with Pool in Canggu",
+          "viral_score": 81.9,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1090304729291726481/original/486c0479-35e3-4542-9e7b-1dc5555b4655.jpeg",
+          "locality": "Canggu",
+          "ttm_revpar": 2157754,
+          "ttm_occupancy": 0.732,
+          "rating_overall": 4.93,
+          "num_reviews": 102
+        },
+        {
+          "listing_id": "42745444",
+          "listing_name": "Beachfront 1BR Villa with Pool & Ocean View",
+          "viral_score": 80.8,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/9e3618f9-5d0c-4f60-9c6f-b92b89ed8948.jpg",
+          "locality": "Kerobokan Kelod",
+          "ttm_revpar": 3244904,
+          "ttm_occupancy": 0.534,
+          "rating_overall": 4.87,
+          "num_reviews": 53
+        },
+        {
+          "listing_id": "1025706146596575847",
+          "listing_name": "Luxury Berawa Private 1BR Villa",
+          "viral_score": 80,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1025706146596575847/original/ad3a9b12-b02a-4ffd-a38d-d1d2a91ea72e.jpeg",
+          "locality": "Canggu",
+          "ttm_revpar": 2486338,
+          "ttm_occupancy": 0.6,
+          "rating_overall": 4.96,
+          "num_reviews": 45
+        },
+        {
+          "listing_id": "1080725529577997489",
+          "listing_name": "BELLA • Serene Hideaway • Large 1BR, Pool & Cinema",
+          "viral_score": 79.7,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTA4MDcyNTUyOTU3Nzk5NzQ4OQ==/original/d75c323e-05ce-49e6-9b97-4ebfb6b35567.jpeg",
+          "locality": "Canggu",
+          "ttm_revpar": 2742991,
+          "ttm_occupancy": 0.537,
+          "rating_overall": 4.97,
+          "num_reviews": 39
         }
       ]
     },
     "2BR": {
       "market": "greater-canggu",
       "cohort": "2BR",
+      "currency": "IDR",
       "sample_size": 36,
       "winner_n": 9,
       "winner_median_photos": 43,
@@ -201,34 +278,110 @@
       ],
       "winner_covers": [
         {
+          "listing_id": "1009682615872266999",
           "listing_name": "Tropical Chic Villa w/ Rooftop Jacuzzi in Canggu",
           "viral_score": 97.6,
           "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1009682615872266999/original/03960101-aef1-432c-b55c-42d3a77f817d.jpeg",
           "locality": "Canggu",
           "ttm_revpar": 3832473,
-          "ttm_occupancy": 0.751
+          "ttm_occupancy": 0.751,
+          "rating_overall": 4.88,
+          "num_reviews": 72
         },
         {
+          "listing_id": "943039238876312168",
           "listing_name": "Exotic Charm With Private Pool in Vibrant Canggu",
           "viral_score": 94.1,
           "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-943039238876312168/original/1d329b3c-a250-42a0-9e4b-7420a5635c0e.jpeg",
           "locality": "Canggu",
           "ttm_revpar": 4417710,
-          "ttm_occupancy": 0.723
+          "ttm_occupancy": 0.723,
+          "rating_overall": 4.91,
+          "num_reviews": 76
         },
         {
+          "listing_id": "961186239950283741",
           "listing_name": "2BR Serene Villa II · Wellness Roof Terrace",
           "viral_score": 91.9,
           "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-961186239950283741/original/2c6169d6-b1fa-42ed-8c3b-cfd48984dbec.jpeg",
           "locality": "Canggu",
           "ttm_revpar": 3734799,
-          "ttm_occupancy": 0.732
+          "ttm_occupancy": 0.732,
+          "rating_overall": 5,
+          "num_reviews": 49
+        },
+        {
+          "listing_id": "1399647014479191740",
+          "listing_name": "2BR Pererenan Oasis w/ Sauna, Ice Bath, Jacuzzi",
+          "viral_score": 87.9,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTM5OTY0NzAxNDQ3OTE5MTc0MA==/original/59c02a02-ac80-48c3-967f-d1bda32fc734.jpeg",
+          "locality": "Pererenan",
+          "ttm_revpar": 3732871,
+          "ttm_occupancy": 0.71,
+          "rating_overall": 4.96,
+          "num_reviews": 69
+        },
+        {
+          "listing_id": "46909062",
+          "listing_name": "Lovely 2 bdr villa close to the beach in Canggu !",
+          "viral_score": 84.1,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-46909062/original/d6ce6058-b36f-41fb-be98-bc2f4f6ef499.jpeg",
+          "locality": "Canggu",
+          "ttm_revpar": 3477385,
+          "ttm_occupancy": 0.723,
+          "rating_overall": 4.94,
+          "num_reviews": 191
+        },
+        {
+          "listing_id": "1064960656377789110",
+          "listing_name": "The Kalyna by Sujiva Villas 2",
+          "viral_score": 81.9,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-1064960656377789110/original/dbd52bfc-ae51-4283-8c0a-81140bb5af79.jpeg",
+          "locality": "Kecamatan Kuta Utara",
+          "ttm_revpar": 3593580,
+          "ttm_occupancy": 0.696,
+          "rating_overall": 4.98,
+          "num_reviews": 49
+        },
+        {
+          "listing_id": "1132929767448031576",
+          "listing_name": "Mediterranean Villa - Canggu",
+          "viral_score": 80.3,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTEzMjkyOTc2NzQ0ODAzMTU3Ng%3D%3D/original/b9e4a936-6a3d-4c8e-85f8-1d0c3c790eeb.jpeg",
+          "locality": "Tibubeneng",
+          "ttm_revpar": 3827137,
+          "ttm_occupancy": 0.685,
+          "rating_overall": 4.61,
+          "num_reviews": 57
+        },
+        {
+          "listing_id": "867054184354048486",
+          "listing_name": "Sea View 2BR Villa | 200m away from the beach",
+          "viral_score": 79.1,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-867054184354048486/original/f70a921d-c401-47b6-b12e-27f84d810785.jpeg",
+          "locality": "Pererenan",
+          "ttm_revpar": 3446845,
+          "ttm_occupancy": 0.718,
+          "rating_overall": 4.82,
+          "num_reviews": 83
+        },
+        {
+          "listing_id": "1100254425702095153",
+          "listing_name": "Modern & Stylish 2-bedroom villa in Canggu!",
+          "viral_score": 74.4,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTEwMDI1NDQyNTcwMjA5NTE1Mw%3D%3D/original/dec47b24-f50f-44d2-91e5-912800ca1738.jpeg",
+          "locality": "Canggu",
+          "ttm_revpar": 3036506,
+          "ttm_occupancy": 0.682,
+          "rating_overall": 4.89,
+          "num_reviews": 95
         }
       ]
     },
     "3BR": {
       "market": "greater-canggu",
       "cohort": "3BR",
+      "currency": "IDR",
       "sample_size": 33,
       "winner_n": 8,
       "winner_median_photos": 40,
@@ -307,34 +460,99 @@
       ],
       "winner_covers": [
         {
+          "listing_id": "932423077755790756",
           "listing_name": "Lush Sanctuary near Canggu - Can Maestro",
           "viral_score": 100,
           "cover_photo_url": "https://a0.muscache.com/im/pictures/e9e9185c-1c97-496e-b41a-9e6b751c59da.jpg",
           "locality": "Kerobokan",
           "ttm_revpar": 9243696,
-          "ttm_occupancy": 0.74
+          "ttm_occupancy": 0.74,
+          "rating_overall": 5,
+          "num_reviews": 99
         },
         {
+          "listing_id": "46606582",
           "listing_name": "Pukara - Villa in Heart of Canggu",
           "viral_score": 92.2,
           "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-46606582/original/5be61d1e-f31c-4032-be29-3fff912536a5.jpeg",
           "locality": "Canggu",
           "ttm_revpar": 5362072,
-          "ttm_occupancy": 0.723
+          "ttm_occupancy": 0.723,
+          "rating_overall": 4.96,
+          "num_reviews": 132
         },
         {
+          "listing_id": "1030274998823322683",
           "listing_name": "Villa Morena - 5 Star Luxury in Berawa / Canggu",
           "viral_score": 90.3,
           "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1030274998823322683/original/27a29a7b-218c-47d7-a32a-40e0ca37ff9b.jpeg",
           "locality": "Tibubeneng",
           "ttm_revpar": 4967340,
-          "ttm_occupancy": 0.729
+          "ttm_occupancy": 0.729,
+          "rating_overall": 4.99,
+          "num_reviews": 104
+        },
+        {
+          "listing_id": "932459364666954753",
+          "listing_name": "Tropical Oasis near Canggu - Villa Levante",
+          "viral_score": 88,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-932459364666954753/original/20a67d68-6c03-4406-babe-334b3e9d4622.jpeg",
+          "locality": "Kerobokan",
+          "ttm_revpar": 8057257,
+          "ttm_occupancy": 0.685,
+          "rating_overall": 4.93,
+          "num_reviews": 101
+        },
+        {
+          "listing_id": "1239607319731763224",
+          "listing_name": "Luxe & Stylish 3BR Villa Just Steps from the Beach",
+          "viral_score": 79.7,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTIzOTYwNzMxOTczMTc2MzIyNA%3D%3D/original/a4cfdc7b-cb23-40a5-ad21-6ae638165bce.jpeg",
+          "locality": "Kerobokan Kelod",
+          "ttm_revpar": 4895093,
+          "ttm_occupancy": 0.737,
+          "rating_overall": 4.8,
+          "num_reviews": 46
+        },
+        {
+          "listing_id": "2189027",
+          "listing_name": "Villa Sansil-Seseh Beachfront Paradise",
+          "viral_score": 78.8,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-2189027/original/3ec62369-522c-49d5-ba43-98e9056a42cf.jpeg",
+          "locality": "Canggu",
+          "ttm_revpar": 5491228,
+          "ttm_occupancy": 0.518,
+          "rating_overall": 4.93,
+          "num_reviews": 59
+        },
+        {
+          "listing_id": "901731898762320605",
+          "listing_name": "GAIA: Luxury Villa with Pool, Billiards Pererenan",
+          "viral_score": 78.6,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6OTAxNzMxODk4NzYyMzIwNjA1/original/7661903f-2e22-4e67-b33f-6d5c7069f4d8.jpeg",
+          "locality": "Pererenan",
+          "ttm_revpar": 4808586,
+          "ttm_occupancy": 0.734,
+          "rating_overall": 4.87,
+          "num_reviews": 68
+        },
+        {
+          "listing_id": "935630017713883668",
+          "listing_name": "Neo tropical eden near Canggu - Villa FEH",
+          "viral_score": 78.1,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6OTM1NjMwMDE3NzEzODgzNjY4/original/cf7cf5c3-1487-4a2e-9f76-d403f9804e6d.jpeg",
+          "locality": "Kerobokan",
+          "ttm_revpar": 6357379,
+          "ttm_occupancy": 0.485,
+          "rating_overall": 4.9,
+          "num_reviews": 89
         }
       ]
     },
     "4BR": {
       "market": "greater-canggu",
       "cohort": "4BR",
+      "currency": "IDR",
       "sample_size": 37,
       "winner_n": 9,
       "winner_median_photos": 61,
@@ -429,34 +647,110 @@
       ],
       "winner_covers": [
         {
+          "listing_id": "624237325073433476",
           "listing_name": "Stunning New 4BR, Ensuites, Daily Serv, Cafes/Rest",
           "viral_score": 95.6,
           "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-624237325073433476/original/59422012-8fef-4c90-8711-1abd7d92486a.jpeg",
           "locality": "Tibubeneng",
           "ttm_revpar": 6426127,
-          "ttm_occupancy": 0.71
+          "ttm_occupancy": 0.71,
+          "rating_overall": 4.94,
+          "num_reviews": 145
         },
         {
+          "listing_id": "1189447592659912895",
           "listing_name": "Luxury Tropical 4BR Villa Next to Beach in Berawa",
           "viral_score": 94.3,
           "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1189447592659912895/original/273d37c1-13ea-4596-b620-bcc440e6c24a.jpeg",
           "locality": "Canggu",
           "ttm_revpar": 9515058,
-          "ttm_occupancy": 0.737
+          "ttm_occupancy": 0.737,
+          "rating_overall": 4.84,
+          "num_reviews": 44
         },
         {
+          "listing_id": "1132882041001951622",
           "listing_name": "Brand New Classy 4BR Villa in Canggu",
           "viral_score": 91.4,
           "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1132882041001951622/original/7b701198-8cac-4419-b4e3-1fe7d74e845f.jpeg",
           "locality": "Canggu",
           "ttm_revpar": 6568916,
-          "ttm_occupancy": 0.748
+          "ttm_occupancy": 0.748,
+          "rating_overall": 4.81,
+          "num_reviews": 69
+        },
+        {
+          "listing_id": "50427819",
+          "listing_name": "PROMO Luxury 4bd Villa in HotSpot w/ Huge Pvt Pool",
+          "viral_score": 91.3,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/15966915-74aa-42e2-8fdf-2116fb0a0e2b.jpg",
+          "locality": "Kerobokan Klod",
+          "ttm_revpar": 5809095,
+          "ttm_occupancy": 0.737,
+          "rating_overall": 4.96,
+          "num_reviews": 194
+        },
+        {
+          "listing_id": "901732951333307312",
+          "listing_name": "Elegant 4BR Beachside Villa in Canggu !",
+          "viral_score": 86.7,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-901732951333307312/original/9d53b363-7bc1-4b32-b397-0a58b4aab90f.jpeg",
+          "locality": "Canggu",
+          "ttm_revpar": 6402718,
+          "ttm_occupancy": 0.674,
+          "rating_overall": 4.98,
+          "num_reviews": 61
+        },
+        {
+          "listing_id": "1049537153969980438",
+          "listing_name": "Berawa Breeze: Chic 4BR Beachside Oasis with Sauna",
+          "viral_score": 80.8,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1049537153969980438/original/30ab6126-9617-4b29-829a-471543cd667d.jpeg",
+          "locality": "Canggu",
+          "ttm_revpar": 6955083,
+          "ttm_occupancy": 0.652,
+          "rating_overall": 4.89,
+          "num_reviews": 61
+        },
+        {
+          "listing_id": "613520141002689477",
+          "listing_name": "Amazing 4-bdr Villa in Berawa ! PERFECT LOCATION !",
+          "viral_score": 78.9,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-613520141002689477/original/6b7151ba-be84-4977-8586-66671bb2f525.jpeg",
+          "locality": "Canggu",
+          "ttm_revpar": 5959238,
+          "ttm_occupancy": 0.666,
+          "rating_overall": 4.9,
+          "num_reviews": 115
+        },
+        {
+          "listing_id": "706701121649885574",
+          "listing_name": "Villa Bocce: Beach Club Concept Villa in Pererenan",
+          "viral_score": 78.6,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-706701121649885574/original/8882bb8b-6098-4952-9582-00c4b1ff7a48.jpeg",
+          "locality": "Pererenan",
+          "ttm_revpar": 5758598,
+          "ttm_occupancy": 0.712,
+          "rating_overall": 4.82,
+          "num_reviews": 66
+        },
+        {
+          "listing_id": "924275076524087725",
+          "listing_name": "Chic 4BR Villa, Canggu Hub, 800m to Beach Bliss",
+          "viral_score": 78.6,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-924275076524087725/original/97c20e17-760f-491c-a1e2-ef59cbab51ad.jpeg",
+          "locality": "Canggu",
+          "ttm_revpar": 5354628,
+          "ttm_occupancy": 0.701,
+          "rating_overall": 4.95,
+          "num_reviews": 73
         }
       ]
     },
     "5+BR": {
       "market": "greater-canggu",
       "cohort": "5+BR",
+      "currency": "IDR",
       "sample_size": 33,
       "winner_n": 8,
       "winner_median_photos": 127.5,
@@ -539,28 +833,92 @@
       ],
       "winner_covers": [
         {
+          "listing_id": "1298117819778151243",
           "listing_name": "HUGE 8BR, 21max, 3Pools, Sauna, Gym, BBQ, Rooftop!",
           "viral_score": 93.1,
           "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTI5ODExNzgxOTc3ODE1MTI0Mw%3D%3D/original/c78d7ff3-828a-40be-9f5f-0ff81c01b975.jpeg",
           "locality": "Pererenan",
           "ttm_revpar": 17175520,
-          "ttm_occupancy": 0.625
+          "ttm_occupancy": 0.625,
+          "rating_overall": 5,
+          "num_reviews": 27
         },
         {
+          "listing_id": "39481836",
           "listing_name": "Huge 11BR Villa, Sleeps 41, Prime Area, Near Beach",
           "viral_score": 91.2,
           "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-39481836/original/07877c22-f4ec-477f-ae60-21bfbb2181e9.jpeg",
           "locality": "Canggu",
           "ttm_revpar": 12145531,
-          "ttm_occupancy": 0.682
+          "ttm_occupancy": 0.682,
+          "rating_overall": 4.92,
+          "num_reviews": 62
         },
         {
+          "listing_id": "988679280264964184",
           "listing_name": "Casa Infinito: Resort Style 8 Bedroom Canggu Villa",
           "viral_score": 90.9,
           "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6OTg4Njc5MjgwMjY0OTY0MTg0/original/8bcb7a91-5e34-46ac-ba9f-0e28d3ef4c76.jpeg",
           "locality": "Kerobokan",
           "ttm_revpar": 16924384,
-          "ttm_occupancy": 0.753
+          "ttm_occupancy": 0.753,
+          "rating_overall": 4.84,
+          "num_reviews": 31
+        },
+        {
+          "listing_id": "1081470734755389463",
+          "listing_name": "Majestic Coastal Retreat 40 Guests incl. in Price",
+          "viral_score": 89.4,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1081470734755389463/original/73fdeae4-3c93-44ce-840d-1da30450433f.jpeg",
+          "locality": "Canggu",
+          "ttm_revpar": 21723238,
+          "ttm_occupancy": 0.658,
+          "rating_overall": 4.87,
+          "num_reviews": 15
+        },
+        {
+          "listing_id": "39232929",
+          "listing_name": "30% Off! 14Bed 2 Karaoke Rooms, Free Bikes, Berawa",
+          "viral_score": 86.6,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-39232929/original/83b325c4-909e-45a2-ba94-4a8767f4b33f.jpeg",
+          "locality": "Canggu",
+          "ttm_revpar": 18420348,
+          "ttm_occupancy": 0.4,
+          "rating_overall": 5,
+          "num_reviews": 13
+        },
+        {
+          "listing_id": "989499011465387552",
+          "listing_name": "8BR Architectural Masterpiece In Central Canggu",
+          "viral_score": 85.9,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6OTg5NDk5MDExNDY1Mzg3NTUy/original/8babaf2d-ee42-4bae-9b04-cdc7f297dcda.jpeg",
+          "locality": "Canggu",
+          "ttm_revpar": 16721367,
+          "ttm_occupancy": 0.438,
+          "rating_overall": 5,
+          "num_reviews": 17
+        },
+        {
+          "listing_id": "1156983460653452896",
+          "listing_name": "Impressive 6BR Villa w/ Jacuzzi, Ice Bath & Slide!",
+          "viral_score": 82.8,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-1156983460653452896/original/98d5dff2-31a7-461a-87b7-aa6b0dcc320b.jpeg",
+          "locality": "Tibubeneng",
+          "ttm_revpar": 13653828,
+          "ttm_occupancy": 0.6,
+          "rating_overall": 4.97,
+          "num_reviews": 33
+        },
+        {
+          "listing_id": "645240595915048773",
+          "listing_name": "6BR Canggu Villa w/ Pool, Chef & Theatre",
+          "viral_score": 73.1,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-645240595915048773/original/12d679c2-9054-4f06-bb4f-096b915534ce.jpeg",
+          "locality": "Canggu",
+          "ttm_revpar": 11360326,
+          "ttm_occupancy": 0.342,
+          "rating_overall": 5,
+          "num_reviews": 29
         }
       ]
     }

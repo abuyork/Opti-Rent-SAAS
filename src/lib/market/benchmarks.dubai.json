@@ -5,6 +5,7 @@
     "1BR": {
       "market": "dubai",
       "cohort": "1BR",
+      "currency": "AED",
       "sample_size": 40,
       "winner_n": 10,
       "winner_median_photos": 23,
@@ -103,34 +104,121 @@
       ],
       "winner_covers": [
         {
+          "listing_id": "1013470839214403541",
           "listing_name": "Modern 1BR Oasis in Beach Isle with Beach Access",
           "viral_score": 95.4,
           "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1013470839214403541/original/14105487-311c-415a-83d4-2e3a36bd6b88.jpeg",
           "locality": "Dubai",
           "ttm_revpar": 2282,
-          "ttm_occupancy": 0.567
+          "ttm_occupancy": 0.567,
+          "rating_overall": 4.65,
+          "num_reviews": 26
         },
         {
+          "listing_id": "881607903490025972",
           "listing_name": "Cozy 1BR Haven in The Cove, Dubai Creek Harbour",
           "viral_score": 89.7,
           "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-881607903490025972/original/a6fc5275-4a42-4396-87cd-1a0b31fe203e.jpeg",
           "locality": "Dubai",
           "ttm_revpar": 1620,
-          "ttm_occupancy": 0.46
+          "ttm_occupancy": 0.46,
+          "rating_overall": 4.55,
+          "num_reviews": 31
         },
         {
+          "listing_id": "1429612935892962895",
           "listing_name": "Elegant SeaView 1 BDR, Private Beach & Pool Access",
           "viral_score": 85.6,
           "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTQyOTU1MzA5NDkxNDAzOTI2Ng==/original/58ab3961-a524-47bc-9739-2868f4ff6c90.png",
           "locality": "Dubai",
           "ttm_revpar": 1391,
-          "ttm_occupancy": 0.666
+          "ttm_occupancy": 0.666,
+          "rating_overall": 4.65,
+          "num_reviews": 23
+        },
+        {
+          "listing_id": "1317908155535411247",
+          "listing_name": "SeaView Studio by St Regis 5*, Infinity Pool",
+          "viral_score": 85.3,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTMxNzkwODE1NTUzNTQxMTI0Nw==/original/894894df-d559-4566-8f3d-14b7dece0006.png",
+          "locality": "Dubai",
+          "ttm_revpar": 1299,
+          "ttm_occupancy": 0.636,
+          "rating_overall": 4.92,
+          "num_reviews": 37
+        },
+        {
+          "listing_id": "1430292792288045294",
+          "listing_name": "One Address | Chic Studio Binghatti Trillionaire",
+          "viral_score": 82.8,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-1430292792288045294/original/216cc9d2-a587-492d-87f7-c7b66196fb71.jpeg",
+          "locality": "Dubai",
+          "ttm_revpar": 1499,
+          "ttm_occupancy": 0.397,
+          "rating_overall": 4.77,
+          "num_reviews": 13
+        },
+        {
+          "listing_id": "1010797100100453390",
+          "listing_name": "Luxury One Bedroom Apartment",
+          "viral_score": 81.8,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1010797100100453390/original/3ad82c99-4827-4874-a5e5-9ea42557aa17.jpeg",
+          "locality": "Dubai",
+          "ttm_revpar": 2241,
+          "ttm_occupancy": 0.2,
+          "rating_overall": 4.71,
+          "num_reviews": 17
+        },
+        {
+          "listing_id": "883125340340726364",
+          "listing_name": "1 BR Apartment in Park Heights 2 Dubai Hills",
+          "viral_score": 79.7,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-883125340340726364/original/ab8e282b-7495-4729-815f-8c8b479065b1.jpeg",
+          "locality": "Dubai",
+          "ttm_revpar": 1514,
+          "ttm_occupancy": 0.323,
+          "rating_overall": 4.44,
+          "num_reviews": 16
+        },
+        {
+          "listing_id": "1127360142561991485",
+          "listing_name": "ALiving Classy 1BR IClose to Dubai Mall I Zada T",
+          "viral_score": 77.9,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1127360142561991485/original/5d5499a5-4287-4550-9f2d-d9da47350f5b.jpeg",
+          "locality": "Business Bay",
+          "ttm_revpar": 1750,
+          "ttm_occupancy": 0.26,
+          "rating_overall": 4.6,
+          "num_reviews": 10
+        },
+        {
+          "listing_id": "1045354941770126188",
+          "listing_name": "Stayis- Luxury 1BR Partial Burj Khalifa View",
+          "viral_score": 77.3,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-1045354941770126188/original/717d6ee6-a56f-4bfe-b867-fff5e0393177.jpeg",
+          "locality": "Dubai",
+          "ttm_revpar": 1386,
+          "ttm_occupancy": 0.159,
+          "rating_overall": 4.94,
+          "num_reviews": 32
+        },
+        {
+          "listing_id": "1208099056318124724",
+          "listing_name": "ALiving Cozy Studio I Canal view I DAMAC Prive B",
+          "viral_score": 76.3,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTIwODA5OTA1NjMxODEyNDcyNA%3D%3D/original/94b5ac0e-491f-4fad-9443-963d82974610.jpeg",
+          "locality": "Business Bay",
+          "ttm_revpar": 1493,
+          "ttm_occupancy": 0.296,
+          "rating_overall": 4.83,
+          "num_reviews": 6
         }
       ]
     },
     "2BR": {
       "market": "dubai",
       "cohort": "2BR",
+      "currency": "AED",
       "sample_size": 40,
       "winner_n": 10,
       "winner_median_photos": 42.5,
@@ -229,34 +317,121 @@
       ],
       "winner_covers": [
         {
+          "listing_id": "1404127596965849990",
           "listing_name": "833 keys | 2BR | Bath Tub & Marina Panorama",
           "viral_score": 93.8,
           "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1404127596965849990/original/4cd7429a-8be4-451d-822e-353cf854f7b2.jpeg",
           "locality": "Dubai",
           "ttm_revpar": 2384,
-          "ttm_occupancy": 0.63
+          "ttm_occupancy": 0.63,
+          "rating_overall": 4.85,
+          "num_reviews": 26
         },
         {
+          "listing_id": "1298482372609076882",
           "listing_name": "Ultimate Living w/ Burj Khalifa & Fountains Views",
           "viral_score": 89.1,
           "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTI5ODQ4MjM3MjYwOTA3Njg4Mg%3D%3D/original/55a96263-1e13-4492-ba24-b129a2f237d8.jpeg",
           "locality": "Dubai",
           "ttm_revpar": 1662,
-          "ttm_occupancy": 0.529
+          "ttm_occupancy": 0.529,
+          "rating_overall": 5,
+          "num_reviews": 20
         },
         {
+          "listing_id": "1323115209686085665",
           "listing_name": "Homes Beyond | Elegant 2BR with Wide Sea Views",
           "viral_score": 86.4,
           "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1323115209686085665/original/c41993d6-97db-4033-978f-3f15537ebc42.jpeg",
           "locality": "Emaar Beachfront",
           "ttm_revpar": 1922,
-          "ttm_occupancy": 0.526
+          "ttm_occupancy": 0.526,
+          "rating_overall": 4.81,
+          "num_reviews": 16
+        },
+        {
+          "listing_id": "958259264061876307",
+          "listing_name": "GuestReady - Majestic Ain Dubai from your balcony",
+          "viral_score": 85.3,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-958259264061876307/original/21cc1366-7566-41fa-9732-9827b4fb9b05.jpeg",
+          "locality": "Dubai",
+          "ttm_revpar": 1662,
+          "ttm_occupancy": 0.405,
+          "rating_overall": 4.86,
+          "num_reviews": 28
+        },
+        {
+          "listing_id": "1431190870442743568",
+          "listing_name": "FIVE PALM Oasis | Scenic View, Pool & Beach Access",
+          "viral_score": 81.4,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-1397653660215153058/original/cf2d6d6c-7795-4c8a-82ed-26fce753d741.jpeg",
+          "locality": "Dubai",
+          "ttm_revpar": 1491,
+          "ttm_occupancy": 0.614,
+          "rating_overall": 4.94,
+          "num_reviews": 31
+        },
+        {
+          "listing_id": "937560075364524006",
+          "listing_name": "Five Palm Luxury Apartment with Full Sea View",
+          "viral_score": 77.6,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/8afcf07f-ffd6-4dbb-bc38-206e97f09dc9.jpg",
+          "locality": "Dubai",
+          "ttm_revpar": 1437,
+          "ttm_occupancy": 0.614,
+          "rating_overall": 4.85,
+          "num_reviews": 74
+        },
+        {
+          "listing_id": "50436344",
+          "listing_name": "GuestReady - 2BR | Blue waters  - Sea view",
+          "viral_score": 76,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-50436344/original/d39cd214-881b-4eaa-b207-509497f68c90.jpeg",
+          "locality": "Dubai",
+          "ttm_revpar": 1439,
+          "ttm_occupancy": 0.353,
+          "rating_overall": 4.95,
+          "num_reviews": 59
+        },
+        {
+          "listing_id": "1342587333881288129",
+          "listing_name": "Homes Beyond | Stunning Oceanfront 2 BR Apartment",
+          "viral_score": 75.9,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTM0MjU4NzMzMzg4MTI4ODEyOQ%3D%3D/original/55e2c5e5-32e8-4775-8656-1c4ae5f91514.jpeg",
+          "locality": "Emaar Beachfront",
+          "ttm_revpar": 1505,
+          "ttm_occupancy": 0.455,
+          "rating_overall": 4.79,
+          "num_reviews": 19
+        },
+        {
+          "listing_id": "1379150765224228508",
+          "listing_name": "Skyline Crown 2BR Burj Khalifa-Fountain Views",
+          "viral_score": 75.9,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTM3OTE1MDc2NTIyNDIyODUwOA==/original/eee1c7c4-e4a7-4365-8a17-7a08a600090c.jpeg",
+          "locality": "Dubai",
+          "ttm_revpar": 1354,
+          "ttm_occupancy": 0.742,
+          "rating_overall": 4.9,
+          "num_reviews": 48
+        },
+        {
+          "listing_id": "1351334736519328168",
+          "listing_name": "Bellavista - 2 Bedroom Downtown Views II T2",
+          "viral_score": 74.1,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-1351334736519328168/original/0998baed-9c22-45c1-b038-704d86b26cfe.jpeg",
+          "locality": "Dubai",
+          "ttm_revpar": 1487,
+          "ttm_occupancy": 0.507,
+          "rating_overall": 4.47,
+          "num_reviews": 34
         }
       ]
     },
     "3BR": {
       "market": "dubai",
       "cohort": "3BR",
+      "currency": "AED",
       "sample_size": 40,
       "winner_n": 10,
       "winner_median_photos": 49.5,
@@ -355,34 +530,121 @@
       ],
       "winner_covers": [
         {
+          "listing_id": "1457755104964217460",
           "listing_name": "Luxury 3BDR in JVC with Free Pool and Gym",
           "viral_score": 96.2,
           "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTQ1Nzc1NTEwNDk2NDIxNzQ2MA==/original/c1aa05b7-2876-4aa7-a0d8-42c12d7f296b.png",
           "locality": "Dubai",
           "ttm_revpar": 1912,
-          "ttm_occupancy": 0.649
+          "ttm_occupancy": 0.649,
+          "rating_overall": 4.95,
+          "num_reviews": 20
         },
         {
+          "listing_id": "1127421344389669505",
           "listing_name": "Coastal JBR Apt w/ Sweeping Sea & Bluewaters Views",
           "viral_score": 94.9,
           "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1127421344389669505/original/6b1714be-9950-4f32-bbae-07bc87cfb77e.jpeg",
           "locality": "Dubai",
           "ttm_revpar": 2117,
-          "ttm_occupancy": 0.638
+          "ttm_occupancy": 0.638,
+          "rating_overall": 4.91,
+          "num_reviews": 43
         },
         {
+          "listing_id": "1345538280987342391",
           "listing_name": "Wonderful SeaView 3BDR, Pool & Beach Access",
           "viral_score": 92.2,
           "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTM0NTUzODI4MDk4NzM0MjM5MQ==/original/aa54103a-76a4-4905-a2ec-b7f611ec4889.png",
           "locality": "Dubai",
           "ttm_revpar": 1639,
-          "ttm_occupancy": 0.699
+          "ttm_occupancy": 0.699,
+          "rating_overall": 5,
+          "num_reviews": 32
+        },
+        {
+          "listing_id": "1131609407604890667",
+          "listing_name": "NEW | 3BR Burj Fountain View | Address",
+          "viral_score": 88.5,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-1131609407604890667/original/2b99f1d4-0304-494b-b63b-9da11cb596f8.jpeg",
+          "locality": "Dubai",
+          "ttm_revpar": 1624,
+          "ttm_occupancy": 0.597,
+          "rating_overall": 4.99,
+          "num_reviews": 89
+        },
+        {
+          "listing_id": "695963385836242013",
+          "listing_name": "Luxurious 3 Bed l Five Palm l Near to Atlantis",
+          "viral_score": 87.4,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-695963385836242013/original/2fa22d49-946d-45f3-ac3d-b4302bdee6a4.jpeg",
+          "locality": "Dubai",
+          "ttm_revpar": 1714,
+          "ttm_occupancy": 0.578,
+          "rating_overall": 4.83,
+          "num_reviews": 46
+        },
+        {
+          "listing_id": "943177215120296366",
+          "listing_name": "Picturesque Balcony and Beach Haven at Address JBR",
+          "viral_score": 86.3,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-943177215120296366/original/af2a671b-34cf-4884-9a37-fb1403ad61d3.jpeg",
+          "locality": "Dubai",
+          "ttm_revpar": 1641,
+          "ttm_occupancy": 0.518,
+          "rating_overall": 4.95,
+          "num_reviews": 42
+        },
+        {
+          "listing_id": "1412774131393140566",
+          "listing_name": "FIVE PALM Gateway | View + Pool & Beach Access",
+          "viral_score": 85.8,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-1397653660215153058/original/cf2d6d6c-7795-4c8a-82ed-26fce753d741.jpeg",
+          "locality": "Dubai",
+          "ttm_revpar": 1650,
+          "ttm_occupancy": 0.649,
+          "rating_overall": 4.5,
+          "num_reviews": 26
+        },
+        {
+          "listing_id": "1378683516977934713",
+          "listing_name": "Sky Palace|Burj Views &Downtown's Top Rooftop Pool",
+          "viral_score": 79.7,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTM3ODY4MzUxNjk3NzkzNDcxMw==/original/f063fa97-d785-450c-8b2b-ca1ae59df9f9.jpeg",
+          "locality": "Dubai",
+          "ttm_revpar": 1593,
+          "ttm_occupancy": 0.63,
+          "rating_overall": 4.88,
+          "num_reviews": 33
+        },
+        {
+          "listing_id": "1233233799272842968",
+          "listing_name": "Stunning View | Ultra-Luxe 3BR Retreat",
+          "viral_score": 76.9,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-1233233799272842968/original/07074154-bc98-4b69-9c6a-a0c7424aaab9.jpeg",
+          "locality": "Dubai",
+          "ttm_revpar": 1665,
+          "ttm_occupancy": 0.427,
+          "rating_overall": 4.86,
+          "num_reviews": 21
+        },
+        {
+          "listing_id": "1153360175520411532",
+          "listing_name": "Luxury Living w/ Superb Sea Views in Address JBR",
+          "viral_score": 76.4,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTE1MzM2MDE3NTUyMDQxMTUzMg%3D%3D/original/463c7733-06f1-4c32-9fc8-7a5f0670b577.jpeg",
+          "locality": "Dubai",
+          "ttm_revpar": 1621,
+          "ttm_occupancy": 0.449,
+          "rating_overall": 4.83,
+          "num_reviews": 23
         }
       ]
     },
     "4BR": {
       "market": "dubai",
       "cohort": "4BR",
+      "currency": "AED",
       "sample_size": 40,
       "winner_n": 10,
       "winner_median_photos": 63,
@@ -481,34 +743,121 @@
       ],
       "winner_covers": [
         {
+          "listing_id": "1172916211259675309",
           "listing_name": "New 4BR Penthouse |Burj Khalifa View |Opera Grand",
           "viral_score": 98.1,
           "cover_photo_url": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-1172916211259675309/original/00813208-a03b-4613-9b60-c8066aebad61.jpeg",
           "locality": "Business Bay",
           "ttm_revpar": 1906,
-          "ttm_occupancy": 0.677
+          "ttm_occupancy": 0.677,
+          "rating_overall": 4.94,
+          "num_reviews": 82
         },
         {
+          "listing_id": "1288385069716424400",
           "listing_name": "Luxury 3BDR at FIVE Palm | Pool & Beach Access",
           "viral_score": 90.6,
           "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTI4ODM4NTA2OTcxNjQyNDQwMA==/original/43533a94-2756-42af-99e7-9588cfd8400a.png",
           "locality": "Dubai",
           "ttm_revpar": 1661,
-          "ttm_occupancy": 0.74
+          "ttm_occupancy": 0.74,
+          "rating_overall": 4.97,
+          "num_reviews": 37
         },
         {
+          "listing_id": "1144972440880912903",
           "listing_name": "Oceana Luxury 4BR with Resort Access and Sea Views",
           "viral_score": 89.6,
           "cover_photo_url": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-1144972440880912903/original/929cf2a8-04e0-473a-b07a-46968f1631ae.jpeg",
           "locality": "Dubai",
           "ttm_revpar": 1769,
-          "ttm_occupancy": 0.499
+          "ttm_occupancy": 0.499,
+          "rating_overall": 4.94,
+          "num_reviews": 48
+        },
+        {
+          "listing_id": "1060703027992428822",
+          "listing_name": "Upscale Apt w/ Open Sea and Bluewaters Vws in JBR",
+          "viral_score": 87.4,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1060703027992428822/original/35179ed7-ebf2-4c87-88f5-0b1ea5bd639a.jpeg",
+          "locality": "Dubai",
+          "ttm_revpar": 2616,
+          "ttm_occupancy": 0.542,
+          "rating_overall": 4.74,
+          "num_reviews": 27
+        },
+        {
+          "listing_id": "1397145586479242112",
+          "listing_name": "[3 Bedrooms-Private Beach]Breathtaking Palma View",
+          "viral_score": 87.2,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTM5NzE0NTU4NjQ3OTI0MjExMg==/original/c7f32fb6-6c45-4ead-b4f1-58b21510575f.jpeg",
+          "locality": "Dubai",
+          "ttm_revpar": 1773,
+          "ttm_occupancy": 0.597,
+          "rating_overall": 4.89,
+          "num_reviews": 44
+        },
+        {
+          "listing_id": "1161389887280809853",
+          "listing_name": "Private Pool & Direct Beach Access-4BDR Villa",
+          "viral_score": 86.7,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTE2MTM4OTg4NzI4MDgwOTg1Mw==/original/24e3ebd3-4b5e-418d-8d43-603aeb2f0165.png",
+          "locality": "Dubai",
+          "ttm_revpar": 1910,
+          "ttm_occupancy": 0.46,
+          "rating_overall": 4.73,
+          "num_reviews": 48
+        },
+        {
+          "listing_id": "1355624531368624733",
+          "listing_name": "Daniels 4BR Penthouse | Five Palm | Private Pool",
+          "viral_score": 86.4,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTM1NTYyNDUzMTM2ODYyNDczMw==/original/1b2e3e14-06d9-4fca-ba39-3d9abd39cae4.jpeg",
+          "locality": "Dubai",
+          "ttm_revpar": 3013,
+          "ttm_occupancy": 0.54,
+          "rating_overall": 4.63,
+          "num_reviews": 19
+        },
+        {
+          "listing_id": "1071740900635987619",
+          "listing_name": "Designer Lux 4-bed | Amazing View on Private Beach",
+          "viral_score": 85,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTA3MTc0MDkwMDYzNTk4NzYxOQ%3D%3D/original/846dbe95-4cb0-4ebb-8ea3-077cb87f8a06.jpeg",
+          "locality": "Dubai",
+          "ttm_revpar": 1547,
+          "ttm_occupancy": 0.674,
+          "rating_overall": 5,
+          "num_reviews": 79
+        },
+        {
+          "listing_id": "1446865420685041892",
+          "listing_name": "Amazing 3BDR at FIVE Palm | Pool & Beach Access",
+          "viral_score": 80.3,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTQ0Njg2NTQyMDY4NTA0MTg5Mg==/original/4fd6f046-6753-4c90-8863-ec51f7f8c614.png",
+          "locality": "Dubai",
+          "ttm_revpar": 1652,
+          "ttm_occupancy": 0.638,
+          "rating_overall": 4.81,
+          "num_reviews": 37
+        },
+        {
+          "listing_id": "966520660696558534",
+          "listing_name": "Luxe 4BR Retreat — Eye of Dubai Views, Bluewaters",
+          "viral_score": 80.1,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6OTY2NTIwNjYwNjk2NTU4NTM0/original/2db2053e-7f54-469c-b0b0-43ce8db8a09b.jpeg",
+          "locality": "Dubai",
+          "ttm_revpar": 1729,
+          "ttm_occupancy": 0.301,
+          "rating_overall": 4.95,
+          "num_reviews": 39
         }
       ]
     },
     "5+BR": {
       "market": "dubai",
       "cohort": "5+BR",
+      "currency": "AED",
       "sample_size": 40,
       "winner_n": 10,
       "winner_median_photos": 52,
@@ -607,28 +956,114 @@
       ],
       "winner_covers": [
         {
+          "listing_id": "22310925",
           "listing_name": "FIVE Palm Beach Villa -Pool & Jacuzzi, 3-Level",
           "viral_score": 91.9,
           "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-22310925/original/40db8e74-0aea-4939-9053-a5d6f437f8f8.jpeg",
           "locality": "Dubai",
           "ttm_revpar": 3667,
-          "ttm_occupancy": 0.318
+          "ttm_occupancy": 0.318,
+          "rating_overall": 4.99,
+          "num_reviews": 81
         },
         {
+          "listing_id": "1039570926864383500",
           "listing_name": "Stunning Palm Villa with Roof Garden, Pool, Beach",
           "viral_score": 91.2,
           "cover_photo_url": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-1039570926864383500/original/171040c7-5184-4433-9643-ddef65558da9.jpeg",
           "locality": "Dubai",
           "ttm_revpar": 2741,
-          "ttm_occupancy": 0.553
+          "ttm_occupancy": 0.553,
+          "rating_overall": 4.83,
+          "num_reviews": 24
         },
         {
+          "listing_id": "46759293",
           "listing_name": "FIVE Palm Beachfront Villa -Private Pool & Jacuzzi",
           "viral_score": 90.3,
           "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-46759293/original/d4ced985-185a-45dd-b8b5-6c133553772b.jpeg",
           "locality": "Dubai",
           "ttm_revpar": 3676,
-          "ttm_occupancy": 0.31
+          "ttm_occupancy": 0.31,
+          "rating_overall": 4.98,
+          "num_reviews": 54
+        },
+        {
+          "listing_id": "998239232685953791",
+          "listing_name": "Luxury 5-bedroom Dubai Villa + Private Pool + BBQ + Maid",
+          "viral_score": 87.2,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-998239232685953791/original/80a7a858-233f-440e-8b21-6cd246420ef4.jpeg",
+          "locality": "Falcon City of Wonders 1",
+          "ttm_revpar": 2662,
+          "ttm_occupancy": 0.715,
+          "rating_overall": 4.95,
+          "num_reviews": 39
+        },
+        {
+          "listing_id": "1384649295138743749",
+          "listing_name": "Beachfront 6BR + Asst Room Villa with Private Pool",
+          "viral_score": 84.6,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-1384649295138743749/original/bbaca8ae-fbf2-484b-8c81-5db83640a169.jpeg",
+          "locality": "Dubai",
+          "ttm_revpar": 3481,
+          "ttm_occupancy": 0.507,
+          "rating_overall": 4.23,
+          "num_reviews": 13
+        },
+        {
+          "listing_id": "843855629541418263",
+          "listing_name": "Ultra-Luxury Villa w/ Private Pool & Beach on Palm",
+          "viral_score": 83.6,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-843855629541418263/original/d137b46c-08eb-4769-8a9d-eb0f75e8ff48.jpeg",
+          "locality": "Dubai",
+          "ttm_revpar": 2779,
+          "ttm_occupancy": 0.345,
+          "rating_overall": 5,
+          "num_reviews": 14
+        },
+        {
+          "listing_id": "981129081023996174",
+          "listing_name": "Luxury villa near Dubai Marina with maid service",
+          "viral_score": 83.1,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-981129081023996174/original/6f571ce4-dd16-493b-9385-c405c256c9ac.jpeg",
+          "locality": "Dubai",
+          "ttm_revpar": 2311,
+          "ttm_occupancy": 0.501,
+          "rating_overall": 4.82,
+          "num_reviews": 38
+        },
+        {
+          "listing_id": "650333668144806269",
+          "listing_name": "Resthouse-type Beachfront 6BR Villa w/ Own Pool",
+          "viral_score": 82.4,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-650333668144806269/original/d758de0e-b738-43e4-84bb-643963af21e3.jpeg",
+          "locality": "Dubai",
+          "ttm_revpar": 4519,
+          "ttm_occupancy": 0.334,
+          "rating_overall": 4.12,
+          "num_reviews": 17
+        },
+        {
+          "listing_id": "48163346",
+          "listing_name": "Resort-like Stay Beachfront & Skyline Views w/Pool",
+          "viral_score": 79,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/03ef0b2c-c438-48c4-ae74-daaf8c6dcd68.jpg",
+          "locality": "Dubai",
+          "ttm_revpar": 3105,
+          "ttm_occupancy": 0.342,
+          "rating_overall": 4.33,
+          "num_reviews": 15
+        },
+        {
+          "listing_id": "758528236780875964",
+          "listing_name": "Private Pool & Beach Access Villa w/ Cinematic Vws",
+          "viral_score": 77.8,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-758528236780875964/original/e47c257a-dd6b-4b5c-81ab-fe42f141b9a8.jpeg",
+          "locality": "Dubai",
+          "ttm_revpar": 3002,
+          "ttm_occupancy": 0.345,
+          "rating_overall": 4.38,
+          "num_reviews": 13
         }
       ]
     }

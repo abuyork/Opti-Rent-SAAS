@@ -5,6 +5,7 @@
     "1BR": {
       "market": "london",
       "cohort": "1BR",
+      "currency": "GBP",
       "sample_size": 40,
       "winner_n": 10,
       "winner_median_photos": 22.5,
@@ -103,34 +104,121 @@
       ],
       "winner_covers": [
         {
+          "listing_id": "628141259438347130",
           "listing_name": "Luxury Buckingham Palace Apartment with Terrace",
           "viral_score": 95,
           "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-628141259438347130/original/60293505-3df8-4adb-ba0f-d20956408c1f.jpeg",
           "locality": "London",
           "ttm_revpar": 396,
-          "ttm_occupancy": 0.671
+          "ttm_occupancy": 0.671,
+          "rating_overall": 4.99,
+          "num_reviews": 141
         },
         {
+          "listing_id": "23353889",
           "listing_name": "Light-Filled, Contemporary Retreat near The Ritz",
           "viral_score": 91.7,
           "cover_photo_url": "https://a0.muscache.com/im/pictures/5f61343e-0f98-404a-9738-6ae8f903866b.jpg",
           "locality": "London",
           "ttm_revpar": 376,
-          "ttm_occupancy": 0.723
+          "ttm_occupancy": 0.723,
+          "rating_overall": 4.79,
+          "num_reviews": 47
         },
         {
+          "listing_id": "1241889368821327108",
           "listing_name": "Light & Bright, Small Double Studio, Kentish Town",
           "viral_score": 87.9,
           "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1241889368821327108/original/fb06ca50-e589-4e31-bd05-fa7c68f5c301.jpeg",
           "locality": "London",
           "ttm_revpar": 612,
-          "ttm_occupancy": 0.69
+          "ttm_occupancy": 0.69,
+          "rating_overall": 4.42,
+          "num_reviews": 36
+        },
+        {
+          "listing_id": "857861362698136316",
+          "listing_name": "The Hanover Suite",
+          "viral_score": 86.5,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-857861362698136316/original/e6098702-31d6-4154-96a2-2b79da50a247.jpeg",
+          "locality": "London",
+          "ttm_revpar": 388,
+          "ttm_occupancy": 0.644,
+          "rating_overall": 5,
+          "num_reviews": 24
+        },
+        {
+          "listing_id": "963389649978057117",
+          "listing_name": "Trafalgar SQ 1 Bedr/3 Beds sleeps 6",
+          "viral_score": 86.3,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-963389649978057117/original/0400977e-dc5d-4e63-8c3f-272cdcf17f7e.jpeg",
+          "locality": "City of Westminster",
+          "ttm_revpar": 338,
+          "ttm_occupancy": 0.729,
+          "rating_overall": 5,
+          "num_reviews": 35
+        },
+        {
+          "listing_id": "1267164698094179886",
+          "listing_name": "Luxurious apartment Trafalgar Sq",
+          "viral_score": 84.6,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-1267164698094179886/original/f0881e66-657f-4274-a376-cd5fd42b78fa.jpeg",
+          "locality": "City of Westminster",
+          "ttm_revpar": 300,
+          "ttm_occupancy": 0.742,
+          "rating_overall": 4.92,
+          "num_reviews": 71
+        },
+        {
+          "listing_id": "1255641100227274949",
+          "listing_name": "Central | Quiet | Elegant Decor | Stocked Kitchen",
+          "viral_score": 83.2,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-1255641100227274949/original/4ed0883f-0bb3-44bc-aedd-efec76e4635f.jpeg",
+          "locality": "London",
+          "ttm_revpar": 308,
+          "ttm_occupancy": 0.707,
+          "rating_overall": 4.96,
+          "num_reviews": 90
+        },
+        {
+          "listing_id": "1236888303603379741",
+          "listing_name": "Convenient Double Studio, Kentish Town",
+          "viral_score": 82.8,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1236888303603379741/original/c4609ed2-643d-45a8-9dd2-b70a4a9f51ba.jpeg",
+          "locality": "London",
+          "ttm_revpar": 452,
+          "ttm_occupancy": 0.633,
+          "rating_overall": 4.17,
+          "num_reviews": 46
+        },
+        {
+          "listing_id": "15388905",
+          "listing_name": "Luxurious flat between Kensington and Notting Hill",
+          "viral_score": 82.4,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/a6c25c4f-b051-4414-9248-ccdc7b18913a.jpg",
+          "locality": "London",
+          "ttm_revpar": 329,
+          "ttm_occupancy": 0.663,
+          "rating_overall": 4.96,
+          "num_reviews": 69
+        },
+        {
+          "listing_id": "1239126039044784215",
+          "listing_name": "Chic Double Studio, Kentish Town",
+          "viral_score": 81,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1239126039044784215/original/e0b0c589-8a49-4467-be19-93c40e8e39d6.jpeg",
+          "locality": "London",
+          "ttm_revpar": 487,
+          "ttm_occupancy": 0.556,
+          "rating_overall": 4.21,
+          "num_reviews": 38
         }
       ]
     },
     "2BR": {
       "market": "london",
       "cohort": "2BR",
+      "currency": "GBP",
       "sample_size": 40,
       "winner_n": 10,
       "winner_median_photos": 23,
@@ -229,34 +317,121 @@
       ],
       "winner_covers": [
         {
+          "listing_id": "853051483036916370",
           "listing_name": "The Soho STAR",
           "viral_score": 98.1,
           "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-853051483036916370/original/9d2ab0ef-cf8b-4e21-b5f6-273d3473b283.jpeg",
           "locality": "City of Westminster",
           "ttm_revpar": 715,
-          "ttm_occupancy": 0.748
+          "ttm_occupancy": 0.748,
+          "rating_overall": 4.94,
+          "num_reviews": 70
         },
         {
+          "listing_id": "719439020466791505",
           "listing_name": "£12 million Buckingham Palace duplex with garden",
           "viral_score": 96.8,
           "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6NzE5NDM5MDIwNDY2NzkxNTA1/original/17710430-bab9-4bf7-8501-d6caa1b96c6b.jpeg",
           "locality": "London",
           "ttm_revpar": 898,
-          "ttm_occupancy": 0.655
+          "ttm_occupancy": 0.655,
+          "rating_overall": 4.98,
+          "num_reviews": 129
         },
         {
+          "listing_id": "1135225486963818715",
           "listing_name": "Stunning Single-level Knightsbridge Flat w/lift",
           "viral_score": 91.4,
           "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1135225486963818715/original/7f31b705-e1ec-4898-811c-a97a278436ef.jpeg",
           "locality": "London",
           "ttm_revpar": 586,
-          "ttm_occupancy": 0.715
+          "ttm_occupancy": 0.715,
+          "rating_overall": 5,
+          "num_reviews": 50
+        },
+        {
+          "listing_id": "1294344368005459192",
+          "listing_name": "Exquisite Cadogan Square Apartment with Lift",
+          "viral_score": 91.2,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1294344368005459192/original/8cf39822-8c6c-409a-955e-71d59248856d.jpeg",
+          "locality": "London",
+          "ttm_revpar": 563,
+          "ttm_occupancy": 0.742,
+          "rating_overall": 5,
+          "num_reviews": 42
+        },
+        {
+          "listing_id": "1096462211356658190",
+          "listing_name": "The Royal Sheperd / 2Bed 2Bath",
+          "viral_score": 87.1,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1096462211356658190/original/1bc55fcd-1fa3-4b2c-b1c3-14e400731514.jpeg",
+          "locality": "London",
+          "ttm_revpar": 715,
+          "ttm_occupancy": 0.699,
+          "rating_overall": 4.81,
+          "num_reviews": 37
+        },
+        {
+          "listing_id": "41528035",
+          "listing_name": "Luxury Townhouse by Hyde Park & Oxford Street",
+          "viral_score": 86.8,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-41528035/original/5be40719-e021-447f-b4a8-136db6b21bca.jpeg",
+          "locality": "London",
+          "ttm_revpar": 515,
+          "ttm_occupancy": 0.723,
+          "rating_overall": 4.94,
+          "num_reviews": 159
+        },
+        {
+          "listing_id": "12539741",
+          "listing_name": "Newly refurbished luxury 2 bedroom Sloane Street",
+          "viral_score": 86.3,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-12539741/original/2dbf9c40-a4fc-4d32-940f-fc5383b41671.jpeg",
+          "locality": "London",
+          "ttm_revpar": 550,
+          "ttm_occupancy": 0.66,
+          "rating_overall": 4.94,
+          "num_reviews": 104
+        },
+        {
+          "listing_id": "568577995191938004",
+          "listing_name": "37GS Residences | 2bedroom Apt 416 near Piccadilly",
+          "viral_score": 85.8,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-568577995191938004/original/9c97bb58-32a8-460f-a7e2-28105263d7de.jpeg",
+          "locality": "City of Westminster",
+          "ttm_revpar": 640,
+          "ttm_occupancy": 0.641,
+          "rating_overall": 4.94,
+          "num_reviews": 95
+        },
+        {
+          "listing_id": "1097901150010227215",
+          "listing_name": "Luxury Two Bedroom apartment with Two Bathrooms",
+          "viral_score": 81,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-1097901150010227215/original/e8c5c4b8-14fb-4d4b-9674-2699adf33740.jpeg",
+          "locality": "London",
+          "ttm_revpar": 738,
+          "ttm_occupancy": 0.652,
+          "rating_overall": 4.63,
+          "num_reviews": 27
+        },
+        {
+          "listing_id": "538244904922709242",
+          "listing_name": "37GS Residences | 2bedroom Apt 621 near Piccadilly",
+          "viral_score": 79.6,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-538244904922709242/original/b9ae2942-6e7e-4d82-b3c0-b070cec84df8.jpeg",
+          "locality": "City of Westminster",
+          "ttm_revpar": 706,
+          "ttm_occupancy": 0.592,
+          "rating_overall": 4.95,
+          "num_reviews": 22
         }
       ]
     },
     "3BR": {
       "market": "london",
       "cohort": "3BR",
+      "currency": "GBP",
       "sample_size": 40,
       "winner_n": 10,
       "winner_median_photos": 33.5,
@@ -355,34 +530,121 @@
       ],
       "winner_covers": [
         {
+          "listing_id": "807818312956189136",
           "listing_name": "Covent Garden Penthouse - Large Terrace *Central*",
           "viral_score": 100,
           "cover_photo_url": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-807818312956189136/original/38e3d47c-a6fd-48c5-8b85-9a21e48e6df4.jpeg",
           "locality": "City of Westminster",
           "ttm_revpar": 836,
-          "ttm_occupancy": 0.699
+          "ttm_occupancy": 0.699,
+          "rating_overall": 4.91,
+          "num_reviews": 130
         },
         {
+          "listing_id": "1090651992631080118",
           "listing_name": "Spectacular Penthouse with Iconic London Views",
           "viral_score": 95.4,
           "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1090651992631080118/original/7bc2eab7-a237-436c-87ce-79ec8c6de7f7.jpeg",
           "locality": "City of Westminster",
           "ttm_revpar": 875,
-          "ttm_occupancy": 0.753
+          "ttm_occupancy": 0.753,
+          "rating_overall": 5,
+          "num_reviews": 26
         },
         {
+          "listing_id": "934848504805051285",
           "listing_name": "Spectacular Mayfair single level 3 bed flat w/AC",
           "viral_score": 93.5,
           "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-934848504805051285/original/61d59c03-50ef-4b4c-a7a5-54eff82a3533.jpeg",
           "locality": "City of Westminster",
           "ttm_revpar": 832,
-          "ttm_occupancy": 0.707
+          "ttm_occupancy": 0.707,
+          "rating_overall": 5,
+          "num_reviews": 41
+        },
+        {
+          "listing_id": "23340313",
+          "listing_name": "Stunning Mayfair 3 Bed 3 Bath £8 million AC Wi-Fi",
+          "viral_score": 91.7,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/5894dbd7-6532-43b7-b18a-4c18415314a5.jpg",
+          "locality": "London",
+          "ttm_revpar": 747,
+          "ttm_occupancy": 0.66,
+          "rating_overall": 4.79,
+          "num_reviews": 85
+        },
+        {
+          "listing_id": "989919513743113535",
+          "listing_name": "Stunning Townhouse off Bond Street & Oxford Circus",
+          "viral_score": 88.1,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-989919513743113535/original/a6d57071-319d-4e0a-a049-d040cad47cfa.jpeg",
+          "locality": "London",
+          "ttm_revpar": 714,
+          "ttm_occupancy": 0.655,
+          "rating_overall": 4.97,
+          "num_reviews": 78
+        },
+        {
+          "listing_id": "37768372",
+          "listing_name": "Giant Leicester Square 3BR - Terrace, Netflix",
+          "viral_score": 83.5,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-37768372/original/2f0c132a-5b7c-46b1-aeda-eb86398573b8.jpeg",
+          "locality": "City of Westminster",
+          "ttm_revpar": 680,
+          "ttm_occupancy": 0.753,
+          "rating_overall": 4.77,
+          "num_reviews": 105
+        },
+        {
+          "listing_id": "563473051168883980",
+          "listing_name": "37GS Residences | 3bedroom Apt 413 near Piccadilly",
+          "viral_score": 82.4,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-563473051168883980/original/aca1511f-25be-4626-9453-1563f99c3036.jpeg",
+          "locality": "City of Westminster",
+          "ttm_revpar": 824,
+          "ttm_occupancy": 0.559,
+          "rating_overall": 4.95,
+          "num_reviews": 42
+        },
+        {
+          "listing_id": "1164354118756915575",
+          "listing_name": "Spectacular Cadogan Square single-level flat w/AC",
+          "viral_score": 81.7,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTE2NDM1NDExODc1NjkxNTU3NQ%3D%3D/original/5cf0b77c-c86f-41cf-bb37-42ec4b04c79c.jpeg",
+          "locality": "London",
+          "ttm_revpar": 716,
+          "ttm_occupancy": 0.578,
+          "rating_overall": 5,
+          "num_reviews": 54
+        },
+        {
+          "listing_id": "912865014773618681",
+          "listing_name": "Stunning Central London Townhouse by Oxford Street",
+          "viral_score": 79.6,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-912865014773618681/original/7b4645e1-3ef8-43e2-86e8-ada2591de3ac.jpeg",
+          "locality": "City of Westminster",
+          "ttm_revpar": 682,
+          "ttm_occupancy": 0.605,
+          "rating_overall": 4.97,
+          "num_reviews": 64
+        },
+        {
+          "listing_id": "1089546413091049761",
+          "listing_name": "Covent Garden Sky Villa with Iconic Views",
+          "viral_score": 79.4,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1089546413091049761/original/75acab66-7834-4ea6-b2a8-34b1db9dc036.jpeg",
+          "locality": "City of Westminster",
+          "ttm_revpar": 690,
+          "ttm_occupancy": 0.6,
+          "rating_overall": 4.95,
+          "num_reviews": 43
         }
       ]
     },
     "4BR": {
       "market": "london",
       "cohort": "4BR",
+      "currency": "GBP",
       "sample_size": 40,
       "winner_n": 10,
       "winner_median_photos": 42.5,
@@ -461,34 +723,121 @@
       ],
       "winner_covers": [
         {
+          "listing_id": "1379204003701816567",
           "listing_name": "Spectacular single level 4BR 3BA Mayfair flat",
           "viral_score": 97.8,
           "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1379204003701816567/original/5c1fcb8b-4004-43ed-9f16-0700e7002df5.jpeg",
           "locality": "Greater London",
           "ttm_revpar": 1300,
-          "ttm_occupancy": 0.71
+          "ttm_occupancy": 0.71,
+          "rating_overall": 4.97,
+          "num_reviews": 36
         },
         {
+          "listing_id": "1268844400847145571",
           "listing_name": "Chelsea 4‑BR, 4 Ensuites | Roof Deck, Quiet Street",
           "viral_score": 97.1,
           "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-1268844400847145571/original/9a081c0a-29d2-40b6-a437-dd4ab33cdba2.png",
           "locality": "London",
           "ttm_revpar": 935,
-          "ttm_occupancy": 0.712
+          "ttm_occupancy": 0.712,
+          "rating_overall": 4.9,
+          "num_reviews": 48
         },
         {
+          "listing_id": "731266713255712349",
           "listing_name": "Notting Hill family home 5 Bed",
           "viral_score": 95.8,
           "cover_photo_url": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-731266713255712349/original/5de7bb1d-950d-4ca0-b94b-6a607e2106d0.jpeg",
           "locality": "London",
           "ttm_revpar": 671,
-          "ttm_occupancy": 0.721
+          "ttm_occupancy": 0.721,
+          "rating_overall": 4.93,
+          "num_reviews": 127
+        },
+        {
+          "listing_id": "1432061321969248752",
+          "listing_name": "Spectacular Mayfair Penthouse with Sky Views",
+          "viral_score": 89.6,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTQzMjA2MTMyMTk2OTI0ODc1Mg==/original/6e5c3cc2-c30d-459d-849c-c6cd428b4972.jpeg",
+          "locality": "Greater London",
+          "ttm_revpar": 1052,
+          "ttm_occupancy": 0.605,
+          "rating_overall": 5,
+          "num_reviews": 24
+        },
+        {
+          "listing_id": "1327331043232826759",
+          "listing_name": "-Air con- Luxury Townhouse - High St Kensington!",
+          "viral_score": 87.7,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTMyNzMzMTA0MzIzMjgyNjc1OQ%3D%3D/original/c803a125-a096-425e-8e94-d9914e1a3cfb.jpeg",
+          "locality": "London",
+          "ttm_revpar": 609,
+          "ttm_occupancy": 0.742,
+          "rating_overall": 4.45,
+          "num_reviews": 89
+        },
+        {
+          "listing_id": "1452332609586775122",
+          "listing_name": "Harrod's Mansion",
+          "viral_score": 86.3,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1452332609586775122/original/cb4b6e0c-66c7-47c9-985d-af5b28cb21e9.jpeg",
+          "locality": "Greater London",
+          "ttm_revpar": 719,
+          "ttm_occupancy": 0.586,
+          "rating_overall": 4.9,
+          "num_reviews": 31
+        },
+        {
+          "listing_id": "857861551822165856",
+          "listing_name": "The Park Lane Penthouse",
+          "viral_score": 84.2,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-857861551822165856/original/87cf16c1-cb69-4ae1-9b8e-4c697bc366e8.jpeg",
+          "locality": "London",
+          "ttm_revpar": 911,
+          "ttm_occupancy": 0.501,
+          "rating_overall": 5,
+          "num_reviews": 33
+        },
+        {
+          "listing_id": "1379784101992465104",
+          "listing_name": "HUGE Knightsbridge 4BR Harrods HQ for 11",
+          "viral_score": 83.1,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-1379784101992465104/original/31d9be59-4f97-4eed-a3e3-1ac11136423c.jpeg",
+          "locality": "Greater London",
+          "ttm_revpar": 695,
+          "ttm_occupancy": 0.707,
+          "rating_overall": 4.47,
+          "num_reviews": 36
+        },
+        {
+          "listing_id": "15840243",
+          "listing_name": "The Harpy Houseboat, Tower Bridge",
+          "viral_score": 81.2,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-15840243/original/58d1f2d3-7a48-480b-9aeb-aee76a5bd133.jpeg",
+          "locality": "London",
+          "ttm_revpar": 569,
+          "ttm_occupancy": 0.548,
+          "rating_overall": 4.98,
+          "num_reviews": 86
+        },
+        {
+          "listing_id": "43880411",
+          "listing_name": "Belgravia Mews - Impeccably Stylish Retro-Chic",
+          "viral_score": 79.9,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/9b13eae0-54f9-42d5-b124-3890e798ab3d.jpg",
+          "locality": "London",
+          "ttm_revpar": 631,
+          "ttm_occupancy": 0.537,
+          "rating_overall": 5,
+          "num_reviews": 26
         }
       ]
     },
     "5+BR": {
       "market": "london",
       "cohort": "5+BR",
+      "currency": "GBP",
       "sample_size": 40,
       "winner_n": 10,
       "winner_median_photos": 67.5,
@@ -587,28 +936,114 @@
       ],
       "winner_covers": [
         {
+          "listing_id": "1041951010037410181",
           "listing_name": "Elegant Townhouse in Trafalgar Square",
           "viral_score": 98.8,
           "cover_photo_url": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-1041951010037410181/original/9a1f4662-ce30-4d73-b42d-d4868d1dc362.jpeg",
           "locality": "City of Westminster",
           "ttm_revpar": 1067,
-          "ttm_occupancy": 0.704
+          "ttm_occupancy": 0.704,
+          "rating_overall": 5,
+          "num_reviews": 52
         },
         {
+          "listing_id": "1255196595204990833",
           "listing_name": "Spectacular luxury Knightsbridge townhouse",
           "viral_score": 95.8,
           "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTI1NTE5NjU5NTIwNDk5MDgzMw%3D%3D/original/e0a99df9-fd42-4938-b0b7-61f5956202fb.png",
           "locality": "London",
           "ttm_revpar": 1150,
-          "ttm_occupancy": 0.627
+          "ttm_occupancy": 0.627,
+          "rating_overall": 4.94,
+          "num_reviews": 33
         },
         {
+          "listing_id": "1143381913498695454",
           "listing_name": "Large 6 bedroom Residence Retreat in Holland Park",
           "viral_score": 93.1,
           "cover_photo_url": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-1143381913498695454/original/4d1814f5-4ca2-49f7-b6a9-31c99b01ad3c.jpeg",
           "locality": "London",
           "ttm_revpar": 706,
-          "ttm_occupancy": 0.732
+          "ttm_occupancy": 0.732,
+          "rating_overall": 4.93,
+          "num_reviews": 113
+        },
+        {
+          "listing_id": "53905263",
+          "listing_name": "Classy 5BR Roof Terraced Fully AC Kensington House",
+          "viral_score": 91.8,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-53905263/original/6e44736d-f500-41d9-9839-dfbe6b373915.jpeg",
+          "locality": "London",
+          "ttm_revpar": 751,
+          "ttm_occupancy": 0.732,
+          "rating_overall": 4.82,
+          "num_reviews": 57
+        },
+        {
+          "listing_id": "1451271072613277670",
+          "listing_name": "Gem of Mayfair",
+          "viral_score": 90.9,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-1451271072613277670/original/f7b8aa8f-6095-4ca9-b9d8-6bc88e70f61b.jpeg",
+          "locality": "Greater London",
+          "ttm_revpar": 1016,
+          "ttm_occupancy": 0.655,
+          "rating_overall": 4.92,
+          "num_reviews": 13
+        },
+        {
+          "listing_id": "49361737",
+          "listing_name": "Central Home - Prime Zone 1-Discover London Easily",
+          "viral_score": 90.8,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-49361737/original/31fc4d94-fd48-4bfd-875e-c8be48d9844f.jpeg",
+          "locality": "London",
+          "ttm_revpar": 821,
+          "ttm_occupancy": 0.74,
+          "rating_overall": 4.77,
+          "num_reviews": 105
+        },
+        {
+          "listing_id": "34323639",
+          "listing_name": "Relax in the City",
+          "viral_score": 87.8,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/e8373312-34ee-4f88-a7f1-62d7a7227382.jpg",
+          "locality": "London",
+          "ttm_revpar": 608,
+          "ttm_occupancy": 0.679,
+          "rating_overall": 4.99,
+          "num_reviews": 134
+        },
+        {
+          "listing_id": "1314429981884100348",
+          "listing_name": "The Knightsbridge Residence",
+          "viral_score": 85,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTMxNDQyOTk4MTg4NDEwMDM0OA%3D%3D/original/41e268f1-9fcd-4534-b9a8-93188233bf19.jpeg",
+          "locality": "London",
+          "ttm_revpar": 925,
+          "ttm_occupancy": 0.518,
+          "rating_overall": 4.83,
+          "num_reviews": 18
+        },
+        {
+          "listing_id": "1245781801156019138",
+          "listing_name": "The Harrod's Next Door House",
+          "viral_score": 84.4,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1245781801156019138/original/a2dfcfbf-91e0-4a50-ba8b-317b26b14fed.jpeg",
+          "locality": "London",
+          "ttm_revpar": 982,
+          "ttm_occupancy": 0.499,
+          "rating_overall": 4.8,
+          "num_reviews": 44
+        },
+        {
+          "listing_id": "14882001",
+          "listing_name": "Hyde Park Luxury: 5-Star Retreat in Central London",
+          "viral_score": 81.7,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-14882001/original/1a3631cd-b40c-46b7-8480-311030b8fd4f.jpeg",
+          "locality": "London",
+          "ttm_revpar": 688,
+          "ttm_occupancy": 0.392,
+          "rating_overall": 4.97,
+          "num_reviews": 100
         }
       ]
     }
