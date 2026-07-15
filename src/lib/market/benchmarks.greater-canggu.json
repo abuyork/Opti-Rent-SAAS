@@ -193,6 +193,17 @@
           "ttm_occupancy": 0.537,
           "rating_overall": 4.97,
           "num_reviews": 39
+        },
+        {
+          "listing_id": "1193830294514925598",
+          "listing_name": "Luxury Escape at 1BR Villa Alma @ Bocoa Villas",
+          "viral_score": 79.7,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTE5MzgzMDI5NDUxNDkyNTU5OA%3D%3D/original/19c716c7-df65-4695-a7a5-063817ad09bf.jpeg",
+          "locality": "Pererenan",
+          "ttm_revpar": 2419563,
+          "ttm_occupancy": 0.641,
+          "rating_overall": 4.92,
+          "num_reviews": 74
         }
       ]
     },
@@ -375,6 +386,17 @@
           "ttm_occupancy": 0.682,
           "rating_overall": 4.89,
           "num_reviews": 95
+        },
+        {
+          "listing_id": "640460503659799579",
+          "listing_name": "Casa Diola | Private Pool Luxury Tropical Villa",
+          "viral_score": 73.9,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-640460503659799579/original/a6edb35f-c725-4673-a8e2-ae07b372d35b.jpeg",
+          "locality": "Canggu",
+          "ttm_revpar": 2882057,
+          "ttm_occupancy": 0.715,
+          "rating_overall": 4.92,
+          "num_reviews": 79
         }
       ]
     },
@@ -546,6 +568,28 @@
           "ttm_occupancy": 0.485,
           "rating_overall": 4.9,
           "num_reviews": 89
+        },
+        {
+          "listing_id": "1219139384516179612",
+          "listing_name": "Stay & Shoot at Adobe 3BR Villa @ Bocoa Villas",
+          "viral_score": 76.6,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTIxOTEzOTM4NDUxNjE3OTYxMg%3D%3D/original/e0a0dbd1-77de-472c-bca9-d715d3fcb522.jpeg",
+          "locality": "Pererenan",
+          "ttm_revpar": 4201554,
+          "ttm_occupancy": 0.74,
+          "rating_overall": 4.95,
+          "num_reviews": 66
+        },
+        {
+          "listing_id": "993831445583132579",
+          "listing_name": "Priviere Luxury Villa - Canggu",
+          "viral_score": 73.6,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-993831445583132579/original/d3632d73-9238-4d89-a726-5fcc1fab290f.jpeg",
+          "locality": "Canggu",
+          "ttm_revpar": 4484889,
+          "ttm_occupancy": 0.647,
+          "rating_overall": 4.93,
+          "num_reviews": 71
         }
       ]
     },
@@ -744,6 +788,17 @@
           "ttm_occupancy": 0.701,
           "rating_overall": 4.95,
           "num_reviews": 73
+        },
+        {
+          "listing_id": "20486985",
+          "listing_name": "Luxury Villa Kamehameha @ Seminyak Center",
+          "viral_score": 76.9,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MjA0ODY5ODU%3D/original/21798455-965b-421a-83e8-41d3a7758515.jpeg",
+          "locality": "Kerobokan Klod",
+          "ttm_revpar": 5980764,
+          "ttm_occupancy": 0.63,
+          "rating_overall": 4.96,
+          "num_reviews": 53
         }
       ]
     },
@@ -919,6 +974,28 @@
           "ttm_occupancy": 0.342,
           "rating_overall": 5,
           "num_reviews": 29
+        },
+        {
+          "listing_id": "33532201",
+          "listing_name": "3 Paradise  Villas, 15 BR, Seminyak beach .",
+          "viral_score": 72.5,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/aecec3ae-2272-4405-8ef5-1668844ff676.jpg",
+          "locality": "Kerobokan Klod",
+          "ttm_revpar": 12139297,
+          "ttm_occupancy": 0.364,
+          "rating_overall": 5,
+          "num_reviews": 7
+        },
+        {
+          "listing_id": "1227239724866777883",
+          "listing_name": "Unique Beachfront House *Serenity*Luxury*8BR*Chef*",
+          "viral_score": 70.6,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-1227239724866777883/original/4086ae2b-84a1-4117-a004-4fa4ae2af664.jpeg",
+          "locality": "Cemagi",
+          "ttm_revpar": 11989826,
+          "ttm_occupancy": 0.203,
+          "rating_overall": 5,
+          "num_reviews": 14
         }
       ]
     }
