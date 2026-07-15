@@ -7,6 +7,7 @@ import type {
 import { config } from "@/lib/config";
 import { AirRoiError, type AirRoiProvider } from "./provider";
 import { resolveAirbnbListingId } from "./url";
+import { MARKETS } from "@/lib/market/markets";
 import { fetchAirbnbCoverUrl, reorderWithCover } from "./cover";
 
 /** Shown to owners when AirROI simply has no data for their (valid) listing. */
@@ -248,8 +249,12 @@ export class LiveAirRoiProvider implements AirRoiProvider {
 
 /**
  * Map a listing's location to one of our scanned markets ("greater-canggu",
- * "dubai", "london") or null when we have no playbook for it. Keys must match
- * markets.ts / the benchmarks.<key>.json files.
+ * "dubai", "london") or null when we have no playbook for it.
+ *
+ * The Canggu locality list comes from markets.ts — the SAME allowlist the
+ * scanner samples with — so a listing inside the benchmarks can never be
+ * denied its own market evidence (a hand-copied regex drifted once: Kuta
+ * Utara villas were in the benchmarks but missed here).
  */
 function marketKey(loc: AirRoiListing["location_info"]): string | null {
   const cc = (loc?.country_code ?? "").toUpperCase();
@@ -260,8 +265,10 @@ function marketKey(loc: AirRoiListing["location_info"]): string | null {
   if (cc === "AE" && /dubai/.test(hay)) return "dubai";
   if (cc === "GB" && /london|westminster|camden|hackney|islington|kensington|chelsea|southwark|lambeth|tower hamlets/.test(hay))
     return "london";
-  if (cc === "ID" && /(canggu|berawa|pererenan|echo beach|umalas|kerobokan|tibubeneng|munggu|babakan|cemagi)/.test(hay))
-    return "greater-canggu";
+  if (cc === "ID") {
+    const allow = MARKETS["greater-canggu"]?.localityAllow ?? [];
+    if (allow.some((a) => hay.includes(a))) return "greater-canggu";
+  }
   return null;
 }
 
@@ -273,7 +280,7 @@ function microMarket(loc: AirRoiListing["location_info"]): string {
     .filter(Boolean)
     .join(" ")
     .toLowerCase();
-  if (/(canggu|berawa|pererenan|echo beach|umalas|kerobokan|tibubeneng)/.test(hay))
+  if (/(canggu|berawa|pererenan|echo beach|umalas|kerobokan|tibubeneng|kuta utara|munggu|babakan|cemagi)/.test(hay))
     return "Canggu/Berawa";
   if (/(uluwatu|pecatu|bukit|bingin|padang|ungasan)/.test(hay)) return "Uluwatu/Bukit";
   if (/seminyak/.test(hay)) return "Seminyak";
