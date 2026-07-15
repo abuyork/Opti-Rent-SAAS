@@ -37,7 +37,7 @@ export class MockScorer implements Scorer {
           severity: "critical",
           title: "Replace hero photo",
           detail:
-            "Currently an interior shot. Move the pool-at-sunset image to position 1 — every comp above you leads with pool or view.",
+            "Currently an interior shot. Move the pool-at-sunset image to position 1. Every comp above you leads with pool or view.",
           comp_basis: "hero is interior; comps lead with pool/view",
         },
         {
@@ -51,14 +51,14 @@ export class MockScorer implements Scorer {
           severity: "critical",
           title: "Address WiFi complaints",
           detail:
-            '2 of last 8 reviews mention slow WiFi. Fix the connection, then note "fibre WiFi" in amenities — it\'s now a recurring rating drag.',
+            '2 of last 8 reviews mention slow WiFi. Fix the connection, then note "fibre WiFi" in amenities. It\'s now a recurring rating drag.',
           comp_basis: "2 of 8 recent reviews cite slow WiFi",
         },
         {
           severity: "high",
           title: "Rewrite description opening",
           detail:
-            "First line lists bedrooms. Lead with the experience — pool, privacy, walk to Echo Beach. See rewrite below.",
+            "First line lists bedrooms. Lead with the experience: pool, privacy, walk to Echo Beach. See rewrite below.",
           comp_basis: "opening is an inventory list",
         },
         {
@@ -72,7 +72,7 @@ export class MockScorer implements Scorer {
           severity: "medium",
           title: "List 2 filtered amenities",
           detail:
-            'Comps list "dedicated workspace" and "AC in all bedrooms" — you have both but they\'re not tagged. Guests filter on these.',
+            'Comps list "dedicated workspace" and "AC in all bedrooms". You have both, but they\'re not tagged. Guests filter on these.',
           comp_basis: "2 filtered amenities untagged vs comps",
         },
       ],
@@ -98,7 +98,7 @@ export class MockScorer implements Scorer {
         description_opening: {
           before: listing.description,
           after:
-            "Wake to your own private pool, just a 4-minute walk from Echo Beach. Villa Seraya is a quiet 3-bedroom retreat in the heart of Berawa — open-plan living that opens straight onto the pool deck, fast fibre WiFi for remote work, and air-conditioned bedrooms for cool Bali nights. Surf at dawn, work by the pool, dine at Canggu's best a few minutes away.",
+            "Wake to your own private pool, just a 4-minute walk from Echo Beach. Villa Seraya is a quiet 3-bedroom retreat in the heart of Berawa, with open-plan living that opens straight onto the pool deck, fast fibre WiFi for remote work, and air-conditioned bedrooms for cool Bali nights. Surf at dawn, work by the pool, dine at Canggu's best a few minutes away.",
         },
       },
     };

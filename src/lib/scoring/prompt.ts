@@ -124,6 +124,9 @@ MICRO-MARKET MATCH (fold into title/description/amenity scoring; flag mismatches
   chair/pack'n'play — and full toiletry set); penalise vague "Charming/Cosy"
   titles, outer-borough framing, and empty descriptions.
 
+PUNCTUATION: never use em or en dashes (— or –) in any output text (fixes,
+comp_basis, rewrites). Use commas, periods, or plain hyphens instead.
+
 OUTPUT — STRICT JSON ONLY. No prose, markdown, or backticks:
 {
   "overall_score": <int>,

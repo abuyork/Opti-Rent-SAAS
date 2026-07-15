@@ -51,6 +51,14 @@ function str(v: unknown, label: string): string {
   return v;
 }
 
+/**
+ * Brand copy rule: no em/en dashes anywhere in the report. The prompt forbids
+ * them; this is the deterministic backstop for model-written text we render.
+ */
+export function plainDashes(s: string): string {
+  return s.replace(/\s*[—–]\s*/g, " - ");
+}
+
 function parseRewrite(v: unknown, label: string) {
   if (!isObject(v)) throw new ScoringParseError(`${label} missing`);
   return { before: str(v.before, `${label}.before`), after: str(v.after, `${label}.after`) };
@@ -158,9 +166,9 @@ export function validateScoringResult(input: unknown): ScoringResult {
       throw new ScoringParseError(`fixes[${i}].severity invalid: ${severity}`);
     return {
       severity,
-      title: str(f.title, `fixes[${i}].title`),
-      detail: str(f.detail, `fixes[${i}].detail`),
-      comp_basis: str(f.comp_basis, `fixes[${i}].comp_basis`),
+      title: plainDashes(str(f.title, `fixes[${i}].title`)),
+      detail: plainDashes(str(f.detail, `fixes[${i}].detail`)),
+      comp_basis: plainDashes(str(f.comp_basis, `fixes[${i}].comp_basis`)),
     };
   });
 
@@ -168,10 +176,12 @@ export function validateScoringResult(input: unknown): ScoringResult {
   if (!isObject(rw)) throw new ScoringParseError("rewrites missing");
   const titleRewrite = parseRewrite(rw.title, "rewrites.title");
   titleRewrite.after = sanitizeTitle(titleRewrite.after); // enforce Airbnb title policy
+  const descRewrite = parseRewrite(rw.description_opening, "rewrites.description_opening");
+  descRewrite.after = plainDashes(descRewrite.after); // "before" stays the owner's original
   const rewrites: Rewrites = {
     title: titleRewrite,
     title_variants: parseTitleVariants(rw.title_variants),
-    description_opening: parseRewrite(rw.description_opening, "rewrites.description_opening"),
+    description_opening: descRewrite,
   };
 
   return {
@@ -179,7 +189,7 @@ export function validateScoringResult(input: unknown): ScoringResult {
     category_scores,
     underpricing_idr: Math.max(0, toInt(input.underpricing_idr, "underpricing_idr")),
     comp_count: toInt(input.comp_count, "comp_count"),
-    comp_basis: str(input.comp_basis, "comp_basis"),
+    comp_basis: plainDashes(str(input.comp_basis, "comp_basis")),
     problem_count: toInt(input.problem_count, "problem_count"),
     critical_count: toInt(input.critical_count, "critical_count"),
     fixes,

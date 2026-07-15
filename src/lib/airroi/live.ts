@@ -12,8 +12,8 @@ import { fetchAirbnbCoverUrl, reorderWithCover } from "./cover";
 
 /** Shown to owners when AirROI simply has no data for their (valid) listing. */
 const NO_DATA_MESSAGE =
-  "We don't have market data on this specific villa yet — this can happen with " +
-  "newer or less-active listings. Try another villa, or check back soon.";
+  "We don't have market data on this villa yet. That happens with newer or " +
+  "less active listings. Try another villa, or check back soon.";
 
 /**
  * Live AirROI adapter (Build Pack §4 steps 2–4).
@@ -382,7 +382,7 @@ function aggregateComps(
     : 0;
   const qualityTier =
     gfShare >= 0.5
-      ? "many comps are Guest Favorites — a high-quality set"
+      ? "many comps are Guest Favorites, a high-quality set"
       : gfShare >= 0.2
         ? "a meaningful share of comps are Guest Favorites"
         : "few comps hold the Guest Favorite badge";

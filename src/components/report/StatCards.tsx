@@ -21,11 +21,11 @@ export function StatCards({
   return (
     <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
       {cards.map((c) => (
-        <div key={c.label} className="rounded-lg bg-brand-card px-4 py-4">
-          <div className="text-xs font-medium uppercase tracking-wide text-brand-muted">
+        <div key={c.label} className="rounded-2xl bg-cream px-5 py-5">
+          <div className="font-mono text-[11px] uppercase tracking-wide text-pewter">
             {c.label}
           </div>
-          <div className="mt-1 text-xl font-bold text-brand-navy">{c.value}</div>
+          <div className="mt-1.5 text-2xl tracking-[-0.02em] text-ink">{c.value}</div>
         </div>
       ))}
     </div>

@@ -1,30 +1,37 @@
 @import "tailwindcss";
 
 /*
-  OptiRent brand palette — derived from the Réntlyn listing report:
-  deep navy headings, teal accent rule, warm-red severity tags, soft stat cards.
+  OptiRent design system — docs/design-ref.md ("warm cream laboratory with a
+  black pill"): warm-white page, cream cards, near-black ink, fog/pewter grays,
+  one hairline border color, pill buttons, mono for technical labels. Color is
+  rationed; severity tags are the only functional accents.
 */
 @theme {
-  --color-brand-navy: #14304f;
-  --color-brand-navy-soft: #1d3a5f;
-  --color-brand-teal: #1a7f6b;
-  --color-brand-teal-soft: #2a9d83;
-  --color-brand-ink: #1f2937;
-  --color-brand-muted: #6b7280;
-  --color-brand-line: #e5e7eb;
-  --color-brand-card: #f6f7f8;
-  --color-sev-critical: #b91c1c;
-  --color-sev-critical-bg: #fde8e8;
-  --color-sev-high: #b45309;
-  --color-sev-high-bg: #fdf0e2;
-  --color-sev-medium: #4b5563;
-  --color-sev-medium-bg: #eef0f2;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --color-ink: #0a0a0a;
+  --color-charcoal: #151515;
+  --color-steel: #545454;
+  --color-fog: #858585;
+  --color-pewter: #9d9d9d;
+  --color-dove: #d5d9e2;
+  --color-cream: #f9f8f6;
+  --color-paper: #ffffff;
+  --color-sand: #f2ede5;
+
+  --color-sev-critical: #b42318;
+  --color-sev-critical-bg: #fdecea;
+  --color-sev-high: #935f0c;
+  --color-sev-high-bg: #fdf3e0;
+  --color-sev-medium: #545454;
+  --color-sev-medium-bg: #f2f2f0;
 }
 
 html,
 body {
-  background: #ffffff;
-  color: var(--color-brand-ink);
+  background: var(--color-paper);
+  color: var(--color-ink);
   -webkit-font-smoothing: antialiased;
 }
 

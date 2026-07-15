@@ -47,8 +47,8 @@ export default function AuditForm() {
   if (loading) {
     return (
       <div className="mt-10 flex w-full max-w-xl flex-col items-center gap-3">
-        <div className="h-8 w-8 animate-spin rounded-full border-2 border-brand-line border-t-brand-teal" />
-        <p className="text-sm text-brand-muted">
+        <div className="h-8 w-8 animate-spin rounded-full border-2 border-dove border-t-ink" />
+        <p className="text-sm text-fog">
           Scoring your villa against comparable listings…
         </p>
       </div>
@@ -65,19 +65,19 @@ export default function AuditForm() {
             onChange={(e) => setUrl(e.target.value)}
             required
             placeholder="https://www.airbnb.com/rooms/..."
-            className="flex-1 rounded-lg border border-brand-line bg-white px-4 py-3 text-base text-brand-ink outline-none focus:border-brand-teal focus:ring-2 focus:ring-brand-teal/30"
+            className="flex-1 rounded-md border border-dove bg-paper px-4 py-3 text-base text-ink outline-none placeholder:text-pewter focus:border-ink focus:ring-1 focus:ring-ink"
           />
           <button
             type="submit"
-            className="rounded-lg bg-brand-navy px-6 py-3 text-base font-semibold text-white transition-colors hover:bg-brand-navy-soft"
+            className="rounded-full bg-ink px-6 py-3 text-sm font-medium text-paper transition-colors hover:bg-charcoal"
           >
             Score my villa
           </button>
         </form>
       ) : (
         <form onSubmit={onEmailSubmit} className="flex flex-col gap-3">
-          <p className="text-left text-sm text-brand-muted">
-            Where should we send your report? You&apos;ll see your score on the next screen.
+          <p className="text-left text-sm text-fog">
+            Where should we send your report? Your score shows on the next screen.
           </p>
           <div className="flex flex-col gap-3 sm:flex-row">
             <input
@@ -87,11 +87,11 @@ export default function AuditForm() {
               required
               autoFocus
               placeholder="you@example.com"
-              className="flex-1 rounded-lg border border-brand-line bg-white px-4 py-3 text-base text-brand-ink outline-none focus:border-brand-teal focus:ring-2 focus:ring-brand-teal/30"
+              className="flex-1 rounded-md border border-dove bg-paper px-4 py-3 text-base text-ink outline-none placeholder:text-pewter focus:border-ink focus:ring-1 focus:ring-ink"
             />
             <button
               type="submit"
-              className="rounded-lg bg-brand-teal px-6 py-3 text-base font-semibold text-white transition-colors hover:bg-brand-teal-soft"
+              className="rounded-full bg-ink px-6 py-3 text-sm font-medium text-paper transition-colors hover:bg-charcoal"
             >
               Get my free score
             </button>
@@ -99,9 +99,9 @@ export default function AuditForm() {
           <button
             type="button"
             onClick={() => setStep("url")}
-            className="self-start text-xs text-brand-muted underline"
+            className="self-start font-mono text-[11px] uppercase tracking-wide text-fog hover:text-ink"
           >
-            ← change URL
+            ← Change URL
           </button>
         </form>
       )}

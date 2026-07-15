@@ -28,8 +28,10 @@ export default async function ResultPage({
     return (
       <main className="mx-auto max-w-3xl px-6 py-12">
         <ReportHeader subtitle="Listing intelligence" />
-        <section className="mt-6">
-          <h1 className="text-2xl font-bold text-brand-navy">Your villa audit</h1>
+        <section className="mt-8">
+          <h1 className="text-3xl font-normal tracking-[-0.025em] text-ink">
+            Your villa audit
+          </h1>
         </section>
         <AuditProgress auditId={audit.id} />
       </main>
@@ -43,19 +45,21 @@ export default async function ResultPage({
     <main className="mx-auto max-w-3xl px-6 py-12">
       <ReportHeader subtitle="Listing intelligence" />
 
-      <section className="mt-6">
-        <h1 className="text-2xl font-bold text-brand-navy">Your villa audit</h1>
+      <section className="mt-8">
+        <h1 className="text-3xl font-normal tracking-[-0.025em] text-ink">
+          Your villa audit
+        </h1>
         <ListingIdentity
           title={audit.listing_title}
           photo={audit.listing_photo}
           airbnbUrl={audit.airbnb_url}
         />
-        <p className="mt-3 text-sm text-brand-muted">
+        <p className="mt-3 text-sm text-fog">
           Compared against {audit.comp_basis}. Fixes ordered by impact.
         </p>
       </section>
 
-      <section className="mt-6">
+      <section className="mt-8">
         <StatCards
           score={audit.overall_score}
           underpricingIdr={audit.underpricing_idr}
@@ -67,13 +71,13 @@ export default async function ResultPage({
       {showFull ? (
         <>
           {!audit.paid && config.testingShowFullReport && (
-            <div className="mt-8 rounded-lg border border-dashed border-brand-line bg-brand-card px-4 py-2 text-center text-xs text-brand-muted">
-              Testing mode — full report shown without payment
+            <div className="mt-8 rounded-lg bg-sand px-4 py-2 text-center font-mono text-[11px] text-steel">
+              Testing mode: full report shown without payment
               (OPTIRENT_TESTING_UNLOCK_ALL).
             </div>
           )}
-          <section className="mt-10">
-            <h2 className="mb-3 text-xs font-semibold uppercase tracking-widest text-brand-muted">
+          <section className="mt-12">
+            <h2 className="mb-3 font-mono text-xs uppercase tracking-[0.15em] text-fog">
               Fix list
             </h2>
             <FixList fixes={audit.fixes} />
@@ -81,53 +85,53 @@ export default async function ResultPage({
 
           {audit.market_evidence && <MarketEvidence evidence={audit.market_evidence} />}
 
-          <section className="mt-10">
-            <h2 className="mb-3 text-xs font-semibold uppercase tracking-widest text-brand-muted">
+          <section className="mt-12">
+            <h2 className="mb-3 font-mono text-xs uppercase tracking-[0.15em] text-fog">
               Paste-ready rewrites
             </h2>
             <RewritesView rewrites={audit.rewrites} />
           </section>
 
-          <section className="mt-10 flex flex-col items-center gap-4 border-t border-brand-line pt-8">
+          <section className="mt-12 flex flex-col items-center gap-4 border-t border-dove pt-10">
             <a
               href={`/report/${audit.id}?print=1`}
-              className="rounded-lg bg-brand-teal px-6 py-3 text-sm font-semibold text-white hover:bg-brand-teal-soft"
+              className="rounded-full bg-ink px-6 py-3 text-sm font-medium text-paper hover:bg-charcoal"
             >
               Download PDF report
             </a>
-            <p className="text-center text-sm text-brand-muted">
+            <p className="text-center text-sm text-fog">
               Re-audit in 60 days at a discount to track your improvements.
             </p>
           </section>
         </>
       ) : (
-        <section className="mt-10">
-          <div className="rounded-lg bg-brand-card px-5 py-4 text-center">
-            <p className="text-lg font-semibold text-brand-navy">
+        <section className="mt-12">
+          <div className="rounded-2xl bg-cream px-8 py-6 text-center">
+            <p className="text-lg font-medium text-ink">
               {audit.problem_count} issues found, {audit.critical_count} critical.
             </p>
-            <p className="mt-1 text-sm text-brand-muted">
+            <p className="mt-1 text-sm text-fog">
               Unlock the full fix list, paste-ready rewrites, and a branded PDF.
             </p>
           </div>
 
-          <h2 className="mt-8 mb-3 text-xs font-semibold uppercase tracking-widest text-brand-muted">
+          <h2 className="mt-10 mb-3 font-mono text-xs uppercase tracking-[0.15em] text-fog">
             Fix list (locked)
           </h2>
           <LockedFixPreview fixes={audit.fixes} />
 
           <div className="mt-8 flex flex-col items-center gap-3">
             <PayButton auditId={audit.id} priceLabel={priceLabel} />
-            <p className="text-xs text-brand-muted">
+            <p className="text-xs text-fog">
               One-time payment · We&apos;ll email your report link.
             </p>
           </div>
         </section>
       )}
 
-      <footer className="mt-12 border-t border-brand-line pt-4 text-center text-xs text-brand-muted">
-        Figures benchmarked via AirROI comparable set. Estimates, not guarantees.
-        Listing-quality factors only.
+      <footer className="mt-14 border-t border-dove pt-4 text-center text-xs text-pewter">
+        Figures benchmarked from the AirROI comparable set. Estimates, not
+        guarantees. Listing-quality factors only.
       </footer>
     </main>
   );

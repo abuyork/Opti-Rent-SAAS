@@ -18,7 +18,7 @@ const VILLA_SERAYA: ResolvedListing = {
     description:
       "This home has 3 bedrooms, 2 bathrooms, a kitchen, and a pool. Located in Berawa.",
     photos: [
-      "Living room — interior (hero)",
+      "Living room, interior (hero)",
       "Bedroom 1",
       "Bedroom 2",
       "Kitchen",
@@ -28,7 +28,7 @@ const VILLA_SERAYA: ResolvedListing = {
       "Pool at sunset", // buried at position #8
       "Garden",
       "Bedroom 3",
-      "Living room — angle 2",
+      "Living room, angle 2",
       "Front entrance",
       "Street view",
       "Balcony",

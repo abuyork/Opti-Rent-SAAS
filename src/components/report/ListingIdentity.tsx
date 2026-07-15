@@ -18,18 +18,18 @@ export function ListingIdentity({
         <img
           src={photo}
           alt={title ?? "Listing hero photo"}
-          className="h-14 w-14 shrink-0 rounded-lg border border-brand-line object-cover"
+          className="h-14 w-14 shrink-0 rounded-lg border border-dove object-cover"
         />
       )}
       <div className="min-w-0">
         {title && (
-          <div className="truncate text-sm font-semibold text-brand-navy">{title}</div>
+          <div className="truncate text-sm font-medium text-ink">{title}</div>
         )}
         <a
           href={airbnbUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="block truncate text-xs text-brand-teal underline underline-offset-2"
+          className="block truncate font-mono text-[11px] text-fog underline decoration-dove underline-offset-2 hover:text-ink hover:decoration-ink"
         >
           {airbnbUrl}
         </a>

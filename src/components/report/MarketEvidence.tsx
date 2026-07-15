@@ -26,16 +26,16 @@ function WinnerRow({
       href={airbnbUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className="font-semibold text-brand-navy underline decoration-brand-line underline-offset-2 hover:text-brand-teal hover:decoration-brand-teal"
+      className="font-medium text-ink underline decoration-dove underline-offset-2 hover:decoration-ink"
     >
       {c.listing_name} ↗
     </a>
   ) : (
-    <span className="font-semibold text-brand-navy">{c.listing_name}</span>
+    <span className="font-medium text-ink">{c.listing_name}</span>
   );
 
   return (
-    <div className="pdf-block flex flex-col overflow-hidden rounded-lg border border-brand-line sm:flex-row">
+    <div className="pdf-block flex flex-col overflow-hidden rounded-2xl border border-dove sm:flex-row">
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={c.cover_photo_url}
@@ -43,27 +43,29 @@ function WinnerRow({
         className="h-44 w-full object-cover sm:h-auto sm:w-56 sm:shrink-0"
         loading="lazy"
       />
-      <div className="flex flex-1 flex-col justify-center gap-1.5 px-4 py-3">
+      <div className="flex flex-1 flex-col justify-center gap-1.5 px-5 py-4">
         <div className="flex items-start gap-2">
-          <span className="mt-0.5 shrink-0 rounded bg-brand-teal/10 px-1.5 py-0.5 text-xs font-semibold text-brand-teal">
+          <span className="mt-0.5 shrink-0 rounded-full bg-sand px-2 py-0.5 font-mono text-[11px] font-medium text-ink">
             #{rank} · Viral {c.viral_score}
           </span>
           <p className="text-sm leading-snug">{title}</p>
         </div>
-        <p className="text-xs text-brand-muted">{c.locality}</p>
-        <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm text-brand-ink">
+        <p className="font-mono text-[11px] uppercase tracking-wide text-pewter">
+          {c.locality}
+        </p>
+        <div className="flex flex-wrap gap-x-5 gap-y-1 text-sm text-ink">
           <span>
-            💰 <b>{formatMoney(currency, c.ttm_revpar)}</b>
-            <span className="text-brand-muted"> /available night</span>
+            <b className="font-medium">{formatMoney(currency, c.ttm_revpar)}</b>
+            <span className="text-fog"> per available night</span>
           </span>
           <span>
-            📅 <b>{pct(c.ttm_occupancy)}</b>
-            <span className="text-brand-muted"> booked</span>
+            <b className="font-medium">{pct(c.ttm_occupancy)}</b>
+            <span className="text-fog"> booked</span>
           </span>
           {c.rating_overall != null && (
             <span>
-              ⭐ <b>{c.rating_overall}</b>
-              <span className="text-brand-muted"> ({c.num_reviews ?? 0} reviews)</span>
+              <b className="font-medium">{c.rating_overall}★</b>
+              <span className="text-fog"> ({c.num_reviews ?? 0} reviews)</span>
             </span>
           )}
         </div>
@@ -81,13 +83,13 @@ export function MarketEvidence({ evidence: e }: { evidence: AuditMarketEvidence 
   const amenities = e.top_amenities.slice(0, 5);
 
   return (
-    <section className="mt-10">
-      <h2 className="mb-1 text-xs font-semibold uppercase tracking-widest text-brand-muted">
-        What wins in your market — {e.cohort} listings in {marketTitle(e.market)}
+    <section className="mt-12">
+      <h2 className="mb-1 font-mono text-xs uppercase tracking-[0.15em] text-fog">
+        What wins in your market: {e.cohort} in {marketTitle(e.market)}
       </h2>
-      <p className="mb-4 text-sm text-brand-muted">
-        Measured from {e.sample_size} listings. The top earners in your size class
-        share these traits — compare yourself against them, not guesswork.
+      <p className="mb-4 text-sm leading-relaxed text-fog">
+        Measured from {e.sample_size} listings in your size class. These are the
+        top earners your listing competes with.
       </p>
 
       {/* The winning set: one full-width row per winner, each an active Airbnb
@@ -101,32 +103,50 @@ export function MarketEvidence({ evidence: e }: { evidence: AuditMarketEvidence 
       )}
 
       {/* Measured benchmarks */}
-      <div className="mt-4 rounded-lg bg-brand-card px-4 py-3 text-sm text-brand-ink">
-        <p className="mb-2 font-semibold text-brand-navy">
-          What the winners do (measured, not guessed):
-        </p>
-        <ul className="grid grid-cols-1 gap-1.5 sm:grid-cols-2">
+      <div className="mt-4 rounded-2xl bg-cream px-6 py-5 text-sm text-ink">
+        <p className="mb-3 font-medium text-ink">What the winners have in common</p>
+        <ul className="grid grid-cols-1 gap-2 sm:grid-cols-2">
           <li>
-            📸 <b>{e.winner_median_photos} photos</b> (weak listings: {e.loser_median_photos})
+            <span className="font-mono text-[11px] uppercase tracking-wide text-pewter">
+              Photos{" "}
+            </span>
+            <b className="font-medium">{e.winner_median_photos}</b>{" "}
+            <span className="text-fog">(weak listings: {e.loser_median_photos})</span>
           </li>
           <li>
-            ✍️ <b>{e.winner_median_description_chars.toLocaleString()}-char descriptions</b>{" "}
-            (weak listings: {e.loser_median_description_chars})
+            <span className="font-mono text-[11px] uppercase tracking-wide text-pewter">
+              Description{" "}
+            </span>
+            <b className="font-medium">
+              {e.winner_median_description_chars.toLocaleString()} chars
+            </b>{" "}
+            <span className="text-fog">
+              (weak listings: {e.loser_median_description_chars})
+            </span>
           </li>
           <li>
-            🏷️ Titles ~<b>{e.winner_median_title_chars} chars</b>
+            <span className="font-mono text-[11px] uppercase tracking-wide text-pewter">
+              Title{" "}
+            </span>
+            around <b className="font-medium">{e.winner_median_title_chars} chars</b>
             {e.title_keywords.length > 0 && (
-              <> · words that win: {e.title_keywords.slice(0, 5).join(", ")}</>
+              <span className="text-fog">
+                {" "}
+                · words that win: {e.title_keywords.slice(0, 5).join(", ")}
+              </span>
             )}
           </li>
           <li>
-            ⭐ <b>{pct(e.winner_superhost_share)} Superhost</b>,{" "}
+            <span className="font-mono text-[11px] uppercase tracking-wide text-pewter">
+              Status{" "}
+            </span>
+            <b className="font-medium">{pct(e.winner_superhost_share)} Superhost</b>,{" "}
             {pct(e.winner_guest_favorite_share)} Guest Favorite
           </li>
         </ul>
         {amenities.length > 0 && (
-          <p className="mt-2 text-xs text-brand-muted">
-            Amenities winners tag that laggards don&apos;t:{" "}
+          <p className="mt-3 text-xs leading-relaxed text-fog">
+            Amenities winners list that weak listings miss:{" "}
             {amenities
               .map((a) => `${a.amenity} (${pct(a.winner_share)} vs ${pct(a.loser_share)})`)
               .join(" · ")}

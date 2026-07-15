@@ -17,9 +17,9 @@ export default function PrintButton({ auto }: { auto?: boolean }) {
   return (
     <button
       onClick={() => window.print()}
-      className="no-print rounded-lg bg-brand-teal px-6 py-3 text-sm font-semibold text-white hover:bg-brand-teal-soft"
+      className="no-print rounded-full bg-ink px-6 py-3 text-sm font-medium text-paper hover:bg-charcoal"
     >
-      Download / print PDF
+      Download or print PDF
     </button>
   );
 }

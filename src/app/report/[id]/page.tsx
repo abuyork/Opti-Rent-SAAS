@@ -42,19 +42,21 @@ export default async function ReportPage({
     <main className="mx-auto max-w-3xl px-8 py-10">
       <ReportHeader subtitle="Listing intelligence report" />
 
-      <section className="mt-6">
-        <h1 className="text-2xl font-bold text-brand-navy">Villa listing audit</h1>
+      <section className="mt-8">
+        <h1 className="text-3xl font-normal tracking-[-0.025em] text-ink">
+          Villa listing audit
+        </h1>
         <ListingIdentity
           title={audit.listing_title}
           photo={audit.listing_photo}
           airbnbUrl={audit.airbnb_url}
         />
-        <p className="mt-3 text-sm text-brand-muted">
+        <p className="mt-3 text-sm text-fog">
           Compared against {audit.comp_basis}. Fixes ordered by impact.
         </p>
       </section>
 
-      <section className="mt-6">
+      <section className="mt-8">
         <StatCards
           score={audit.overall_score}
           underpricingIdr={audit.underpricing_idr}
@@ -63,8 +65,8 @@ export default async function ReportPage({
         />
       </section>
 
-      <section className="mt-8">
-        <h2 className="mb-3 text-xs font-semibold uppercase tracking-widest text-brand-muted">
+      <section className="mt-10">
+        <h2 className="mb-3 font-mono text-xs uppercase tracking-[0.15em] text-fog">
           Fix list
         </h2>
         <FixList fixes={audit.fixes} />
@@ -72,19 +74,19 @@ export default async function ReportPage({
 
       {audit.market_evidence && <MarketEvidence evidence={audit.market_evidence} />}
 
-      <section className="mt-8">
-        <h2 className="mb-3 text-xs font-semibold uppercase tracking-widest text-brand-muted">
+      <section className="mt-10">
+        <h2 className="mb-3 font-mono text-xs uppercase tracking-[0.15em] text-fog">
           Paste-ready rewrites
         </h2>
         <RewritesView rewrites={audit.rewrites} />
       </section>
 
-      <div className="no-print mt-8 flex justify-center">
+      <div className="no-print mt-10 flex justify-center">
         <PrintButton auto={print === "1"} />
       </div>
 
-      <footer className="mt-10 border-t border-brand-line pt-4 text-center text-xs text-brand-muted">
-        OptiRent · Figures benchmarked via AirROI comparable set.
+      <footer className="mt-12 border-t border-dove pt-4 text-center text-xs text-pewter">
+        OptiRent · Figures benchmarked from the AirROI comparable set.
         Estimates, not guarantees. Listing-quality factors only.
       </footer>
     </main>

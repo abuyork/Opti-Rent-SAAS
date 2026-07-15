@@ -26,28 +26,28 @@ export async function sendReportReadyEmail(opts: {
 
   if (!config.email.resendApiKey) {
     console.log(
-      `[email] RESEND_API_KEY not set — skipped "report ready" email to ${opts.to} (${resultUrl})`,
+      `[email] RESEND_API_KEY not set - skipped "report ready" email to ${opts.to} (${resultUrl})`,
     );
     return false;
   }
 
   const html = `
-    <div style="font-family:-apple-system,Segoe UI,Roboto,sans-serif;max-width:560px;margin:0 auto;color:#1a2b42">
-      <h2 style="color:#0e2a47">Your OptiRent audit is ready</h2>
+    <div style="font-family:-apple-system,Segoe UI,Roboto,sans-serif;max-width:560px;margin:0 auto;color:#0a0a0a">
+      <h2 style="color:#0a0a0a;font-weight:500">Your OptiRent audit is ready</h2>
       <p>We finished analyzing <b>${escapeHtml(name)}</b> against the top earners in its market.</p>
       <p style="margin:24px 0">
         <a href="${resultUrl}"
-           style="background:#0e2a47;color:#fff;padding:12px 22px;border-radius:8px;text-decoration:none;font-weight:600">
+           style="background:#0a0a0a;color:#fff;padding:12px 22px;border-radius:9999px;text-decoration:none;font-weight:500">
           View your audit
         </a>
       </p>
       ${
         opts.includePdfLink
-          ? `<p>Your printable PDF report: <a href="${pdfUrl}">download / print</a> (this link is yours — keep it).</p>`
+          ? `<p>Your printable PDF report: <a href="${pdfUrl}" style="color:#0a0a0a">download or print</a>. Keep this link, it's yours.</p>`
           : ""
       }
-      <p style="color:#5b6b7f;font-size:13px;margin-top:28px">
-        Figures are benchmark estimates from comparable listings — not guarantees.
+      <p style="color:#858585;font-size:13px;margin-top:28px">
+        Figures are benchmark estimates from comparable listings, not guarantees.
         OptiRent · listing intelligence.
       </p>
     </div>`;
@@ -62,7 +62,7 @@ export async function sendReportReadyEmail(opts: {
       body: JSON.stringify({
         from: config.email.from,
         to: [opts.to],
-        subject: `Your listing audit is ready — ${truncate(name, 60)}`,
+        subject: `Your listing audit is ready: ${truncate(name, 60)}`,
         html,
       }),
     });

@@ -9,7 +9,7 @@ const STAGES: { at: number; label: string }[] = [
   { at: 14, label: "Benchmarking against your market's top earners…" },
   { at: 24, label: "AI is reviewing your photos and copy…" },
   { at: 45, label: "Writing your fix list and rewrites…" },
-  { at: 75, label: "Almost there — finalizing your report…" },
+  { at: 75, label: "Almost done. Finalizing your report…" },
 ];
 
 const POLL_MS = 3000;
@@ -66,14 +66,14 @@ export default function AuditProgress({ auditId }: { auditId: string }) {
 
   if (failed) {
     return (
-      <div className="mt-10 rounded-lg border border-brand-line bg-brand-card px-6 py-8 text-center">
-        <p className="text-lg font-semibold text-brand-navy">
+      <div className="mt-10 rounded-2xl bg-cream px-8 py-10 text-center">
+        <p className="text-lg font-medium text-ink">
           We hit a snag with this listing
         </p>
-        <p className="mx-auto mt-2 max-w-md text-sm text-brand-muted">{failed}</p>
+        <p className="mx-auto mt-2 max-w-md text-sm leading-relaxed text-fog">{failed}</p>
         <a
           href="/"
-          className="mt-6 inline-block rounded-lg bg-brand-navy px-6 py-3 text-sm font-semibold text-white hover:bg-brand-navy-soft"
+          className="mt-6 inline-block rounded-full bg-ink px-6 py-3 text-sm font-medium text-paper hover:bg-charcoal"
         >
           Try another listing
         </a>
@@ -83,13 +83,13 @@ export default function AuditProgress({ auditId }: { auditId: string }) {
 
   if (timedOut) {
     return (
-      <div className="mt-10 rounded-lg border border-brand-line bg-brand-card px-6 py-8 text-center">
-        <p className="text-lg font-semibold text-brand-navy">
+      <div className="mt-10 rounded-2xl bg-cream px-8 py-10 text-center">
+        <p className="text-lg font-medium text-ink">
           This is taking longer than usual
         </p>
-        <p className="mx-auto mt-2 max-w-md text-sm text-brand-muted">
-          Your audit is still being processed. Refresh this page in a minute —
-          your report link stays valid.
+        <p className="mx-auto mt-2 max-w-md text-sm leading-relaxed text-fog">
+          Your audit is still running. Refresh this page in a minute. Your
+          report link stays valid.
         </p>
       </div>
     );
@@ -98,12 +98,12 @@ export default function AuditProgress({ auditId }: { auditId: string }) {
   const stage = [...STAGES].reverse().find((s) => elapsed >= s.at) ?? STAGES[0];
 
   return (
-    <div className="mt-10 flex flex-col items-center gap-4 rounded-lg border border-brand-line bg-brand-card px-6 py-10 text-center">
-      <div className="h-10 w-10 animate-spin rounded-full border-2 border-brand-line border-t-brand-teal" />
-      <p className="text-base font-semibold text-brand-navy">{stage.label}</p>
-      <p className="max-w-md text-sm text-brand-muted">
-        A full audit takes about a minute — we compare your listing against the
-        top earners in your exact market. This page updates automatically.
+    <div className="mt-10 flex flex-col items-center gap-4 rounded-2xl bg-cream px-8 py-12 text-center">
+      <div className="h-10 w-10 animate-spin rounded-full border-2 border-dove border-t-ink" />
+      <p className="text-base font-medium text-ink">{stage.label}</p>
+      <p className="max-w-md text-sm leading-relaxed text-fog">
+        A full audit takes about a minute. We compare your listing against the
+        top earners in your market, and this page updates on its own.
       </p>
     </div>
   );
