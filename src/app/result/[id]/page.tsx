@@ -94,16 +94,13 @@ export default async function ResultPage({
             <RewritesView rewrites={audit.rewrites} />
           </section>
 
-          <section className="mt-12 flex flex-col items-center gap-4 border-t border-dove pt-10">
+          <section className="mt-12 flex justify-center">
             <a
               href={`/report/${audit.id}?print=1`}
               className="rounded-full bg-ink px-6 py-3 text-sm font-medium text-paper hover:bg-charcoal"
             >
               Download PDF report
             </a>
-            <p className="text-center text-sm text-fog">
-              Re-audit in 60 days at a discount to track your improvements.
-            </p>
           </section>
         </>
       ) : (
