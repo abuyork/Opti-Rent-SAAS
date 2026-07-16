@@ -152,6 +152,11 @@ export function getMarketBenchmark(marketKey: string, cohort: string): MarketBen
   return BENCHMARKS[marketKey]?.cohorts[cohort] ?? null;
 }
 
+/** Total listings scanned in a market (all cohorts), for "37 of 176" framing. */
+export function getMarketScanTotal(marketKey: string): number | null {
+  return BENCHMARKS[marketKey]?.generated_from ?? null;
+}
+
 /**
  * Shape a benchmark into the evidence stored on an audit + fed to the scorer:
  * the measured winner-vs-loser facts plus the winner cover examples the report

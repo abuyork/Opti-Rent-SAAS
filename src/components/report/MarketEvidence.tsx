@@ -1,6 +1,7 @@
 import Image from "next/image";
 import type { AuditMarketEvidence, MarketCoverExample } from "@/lib/types";
 import { formatMoney } from "@/lib/format";
+import { getMarketScanTotal } from "@/lib/market/benchmarks";
 
 const pct = (v: number) => `${Math.round(v * 100)}%`;
 
@@ -11,14 +12,46 @@ const MARKET_TITLES: Record<string, string> = {
 };
 const marketTitle = (key: string) => MARKET_TITLES[key] ?? key;
 
+/**
+ * One plain sentence on why this listing ranks, built only from measured
+ * facts: occupancy vs the cohort's winner median, measured winning title
+ * words it actually uses, and its review record (manager ask 2026-07-16).
+ */
+function whyItWins(c: MarketCoverExample, e: AuditMarketEvidence): string {
+  const clauses: string[] = [];
+  const occ = Math.round(c.ttm_occupancy * 100);
+  const medianOcc = Math.round(e.winner_median_occupancy * 100);
+  if (occ >= medianOcc) {
+    clauses.push(`fills ${occ}% of nights (typical winner here: ${medianOcc}%)`);
+  } else {
+    clauses.push("earns among the most per available night in this cohort");
+  }
+  const words = e.title_keywords
+    .filter((w) => c.listing_name.toLowerCase().includes(w.toLowerCase()))
+    .slice(0, 2);
+  if (words.length > 0) {
+    clauses.push(`its title uses measured winning words (${words.join(", ")})`);
+  }
+  if ((c.rating_overall ?? 0) >= 4.8 && (c.num_reviews ?? 0) >= 30) {
+    clauses.push(`${c.rating_overall}★ across ${c.num_reviews} reviews backs it up`);
+  }
+  const text =
+    clauses.length > 1
+      ? `${clauses.slice(0, -1).join(", ")}, and ${clauses[clauses.length - 1]}`
+      : clauses[0];
+  return `${text.charAt(0).toUpperCase()}${text.slice(1)}.`;
+}
+
 /** One winner: photo + full title (active Airbnb link) + its real numbers. */
 function WinnerRow({
   c,
   rank,
+  evidence,
   currency,
 }: {
   c: MarketCoverExample;
   rank: number;
+  evidence: AuditMarketEvidence;
   currency: string;
 }) {
   const airbnbUrl = c.listing_id ? `https://www.airbnb.com/rooms/${c.listing_id}` : null;
@@ -48,16 +81,16 @@ function WinnerRow({
           className="object-cover"
         />
       </div>
-      <div className="flex flex-1 flex-col justify-center gap-1.5 px-5 py-4">
-        <div className="flex items-start gap-2">
-          <span className="mt-0.5 shrink-0 rounded-full bg-sand px-2 py-0.5 font-mono text-[11px] font-medium text-ink">
-            #{rank} · Viral {c.viral_score}
+      <div className="flex min-w-0 flex-1 flex-col justify-center gap-1.5 px-5 py-4">
+        <div className="flex items-center gap-2.5">
+          <span className="shrink-0 rounded-full bg-sand px-2 py-0.5 font-mono text-[11px] font-medium text-ink">
+            #{rank} · Popularity {c.viral_score}
           </span>
-          <p className="text-sm leading-snug">{title}</p>
+          <span className="font-mono text-[11px] uppercase tracking-wide text-pewter">
+            {c.locality}
+          </span>
         </div>
-        <p className="font-mono text-[11px] uppercase tracking-wide text-pewter">
-          {c.locality}
-        </p>
+        <p className="text-sm leading-snug">{title}</p>
         <div className="flex flex-wrap gap-x-5 gap-y-1 text-sm text-ink">
           <span>
             <b className="font-medium">{formatMoney(currency, c.ttm_revpar)}</b>
@@ -74,6 +107,12 @@ function WinnerRow({
             </span>
           )}
         </div>
+        <p className="text-xs leading-relaxed text-fog">
+          <span className="mr-1.5 font-mono text-[10px] font-medium uppercase tracking-[0.15em] text-ink">
+            Why it wins
+          </span>
+          {whyItWins(c, evidence)}
+        </p>
       </div>
     </div>
   );
@@ -86,6 +125,7 @@ function WinnerRow({
  */
 export function MarketEvidence({ evidence: e }: { evidence: AuditMarketEvidence }) {
   const amenities = e.top_amenities.slice(0, 5);
+  const scanTotal = getMarketScanTotal(e.market);
 
   return (
     <section className="mt-12">
@@ -93,8 +133,10 @@ export function MarketEvidence({ evidence: e }: { evidence: AuditMarketEvidence 
         What wins in your market: {e.cohort} in {marketTitle(e.market)}
       </h2>
       <p className="mb-4 text-sm leading-relaxed text-fog">
-        Measured from {e.sample_size} listings in your size class. These are the
-        top earners your listing competes with.
+        {scanTotal
+          ? `We scanned ${scanTotal} live listings in ${marketTitle(e.market)}; ${e.sample_size} are ${e.cohort} like yours.`
+          : `Measured from ${e.sample_size} listings in your size class.`}{" "}
+        These are the top earners your listing competes with.
       </p>
 
       {/* The winning set: one full-width row per winner, each an active Airbnb
@@ -102,7 +144,13 @@ export function MarketEvidence({ evidence: e }: { evidence: AuditMarketEvidence 
       {e.winner_covers.length > 0 && (
         <div className="flex flex-col gap-3">
           {e.winner_covers.map((c, i) => (
-            <WinnerRow key={c.cover_photo_url} c={c} rank={i + 1} currency={e.currency ?? "IDR"} />
+            <WinnerRow
+              key={c.cover_photo_url}
+              c={c}
+              rank={i + 1}
+              evidence={e}
+              currency={e.currency ?? "IDR"}
+            />
           ))}
         </div>
       )}

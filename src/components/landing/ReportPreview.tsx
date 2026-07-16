@@ -80,7 +80,7 @@ export function ReportPreview() {
             <div className="flex min-w-0 flex-col justify-center gap-1 px-4 py-3">
               <div className="flex items-center gap-2">
                 <span className="shrink-0 rounded-full bg-sand px-2 py-0.5 font-mono text-[10px] font-medium text-ink">
-                  #1 · Viral {winner.viral_score}
+                  #1 · Popularity {winner.viral_score}
                 </span>
                 <p className="truncate text-xs font-medium text-ink sm:text-sm">
                   {winner.listing_name}
