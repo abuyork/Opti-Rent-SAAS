@@ -16,24 +16,31 @@ export function SeverityTag({ severity }: { severity: Severity }) {
   );
 }
 
-/** Full fix list (paid). Each fix shows severity, title, detail, and comp basis. */
+/**
+ * Full fix list (paid). Each fix shows severity, title, detail, and comp basis.
+ * Layout per manager QA 2026-07-16: severity tag on its own row so the title,
+ * detail, and basis all share one left edge; title is a heading; basis reads at
+ * body size behind a prominent mono BASIS label.
+ */
 export function FixList({ fixes }: { fixes: Fix[] }) {
   return (
     <div className="flex flex-col gap-3">
       {fixes.map((fix, i) => (
         <div
           key={i}
-          className="pdf-block rounded-lg border border-dove px-4 py-3 text-left"
+          className="pdf-block rounded-lg border border-dove px-5 py-4 text-left"
         >
-          <div className="flex items-start gap-2">
-            <SeverityTag severity={fix.severity} />
-            <p className="text-sm leading-relaxed text-ink">
-              <span className="font-medium">{fix.title}.</span> {fix.detail}
-            </p>
-          </div>
+          <SeverityTag severity={fix.severity} />
+          <h3 className="mt-2.5 text-base font-medium leading-snug text-ink">
+            {fix.title}
+          </h3>
+          <p className="mt-1.5 text-sm leading-relaxed text-steel">{fix.detail}</p>
           {fix.comp_basis && (
-            <p className="mt-2 pl-1 font-mono text-[11px] text-pewter">
-              Basis: {fix.comp_basis}
+            <p className="mt-3 border-t border-dove/60 pt-3 text-sm leading-relaxed text-fog">
+              <span className="mr-2 font-mono text-[11px] font-medium uppercase tracking-[0.15em] text-ink">
+                Basis
+              </span>
+              {fix.comp_basis}
             </p>
           )}
         </div>
@@ -51,12 +58,11 @@ export function LockedFixPreview({ fixes }: { fixes: Fix[] }) {
     <div className="relative">
       <div className="pointer-events-none flex select-none flex-col gap-3 blur-sm">
         {fixes.slice(0, 4).map((fix, i) => (
-          <div key={i} className="rounded-lg border border-dove px-4 py-3 text-left">
-            <div className="flex items-center gap-2">
-              <SeverityTag severity={fix.severity} />
-              <span className="h-3 w-48 rounded bg-dove" />
-            </div>
+          <div key={i} className="rounded-lg border border-dove px-5 py-4 text-left">
+            <SeverityTag severity={fix.severity} />
+            <span className="mt-2.5 block h-4 w-56 rounded bg-dove" />
             <span className="mt-2 block h-3 w-full rounded bg-dove" />
+            <span className="mt-1.5 block h-3 w-4/5 rounded bg-dove" />
           </div>
         ))}
       </div>
