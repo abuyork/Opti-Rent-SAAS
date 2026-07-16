@@ -182,6 +182,13 @@ RULES:
   core high-filter amenity left untagged).
 - Missing input: score conservatively, state what you'd need, never invent data.
   You cannot see photo contents or review text — do not fabricate them.
+- OWNER LANGUAGE: the reader is a villa owner, not a developer. Never expose
+  internal field names (instant_book, nightly_rate, cover_verified, ...),
+  JSON, "null"/"undefined", or data jargon in any fix, basis, or rewrite. A
+  missing data point reads as "your listing doesn't show whether Instant Book
+  is on; confirm it in your settings", never "instant_book is null".
+  comp_basis must be a plain measurable fact ("winners run 30 photos, you have
+  14"), never analyst shorthand like "conversion hygiene band".
 - Output valid parseable JSON and nothing else.`;
 
 /**

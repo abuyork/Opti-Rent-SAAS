@@ -59,6 +59,47 @@ export function plainDashes(s: string): string {
   return s.replace(/\s*[—–]\s*/g, " - ");
 }
 
+/**
+ * Owner-language backstop: the prompt forbids leaking internal field names and
+ * "null" into report text (a real leak shipped: "instant_book is null",
+ * manager QA 2026-07-16), but model output can slip. Map the known input-JSON
+ * field names to plain words, soften null-speak, and de-snake anything left.
+ */
+const FIELD_NAMES: [RegExp, string][] = [
+  [/\binstant_book\b/gi, "Instant Book"],
+  [/\bnightly_rate\b/gi, "nightly rate"],
+  [/\bmin_nights\b/gi, "minimum stay"],
+  [/\bphotos?_count\b/gi, "photo count"],
+  [/\bcover_verified\b/gi, "verified cover"],
+  [/\bguest_favorite\b/gi, "Guest Favorite"],
+  [/\brating_overall\b/gi, "overall rating"],
+  [/\bnum_reviews\b/gi, "review count"],
+  [/\bunderpricing_idr\b/gi, "underpricing estimate"],
+  [/\bcomp_(basis|count|set)\b/gi, "comparable set"],
+  // Prompt/benchmark vocabulary the model has leaked in real audits:
+  [/\bcomps?\.sample_titles\b/gi, "the comp titles"],
+  [/\bsample_titles\b/gi, "comp titles"],
+  [/\btitle_keywords\b/gi, "winning title words"],
+  [/\bviral_score\b/gi, "viral score"],
+  [/\bpool_tier\b/gi, "pool coverage"],
+];
+
+export function ownerLanguage(raw: string): string {
+  let s = raw;
+  for (const [re, human] of FIELD_NAMES) s = s.replace(re, human);
+  s = s
+    .replace(/\b(is|are)\s+null\b/gi, "$1 not shown on your listing")
+    .replace(/\bnull\b/gi, "missing")
+    // Any remaining lowercase snake_case identifier reads as words.
+    .replace(/\b([a-z]+)_([a-z][a-z_]*)\b/g, (m) => m.replace(/_/g, " "));
+  return s;
+}
+
+/** Full cleanup pass for model-written text the report renders. */
+export function cleanReportText(s: string): string {
+  return ownerLanguage(plainDashes(s));
+}
+
 function parseRewrite(v: unknown, label: string) {
   if (!isObject(v)) throw new ScoringParseError(`${label} missing`);
   return { before: str(v.before, `${label}.before`), after: str(v.after, `${label}.after`) };
@@ -166,9 +207,9 @@ export function validateScoringResult(input: unknown): ScoringResult {
       throw new ScoringParseError(`fixes[${i}].severity invalid: ${severity}`);
     return {
       severity,
-      title: plainDashes(str(f.title, `fixes[${i}].title`)),
-      detail: plainDashes(str(f.detail, `fixes[${i}].detail`)),
-      comp_basis: plainDashes(str(f.comp_basis, `fixes[${i}].comp_basis`)),
+      title: cleanReportText(str(f.title, `fixes[${i}].title`)),
+      detail: cleanReportText(str(f.detail, `fixes[${i}].detail`)),
+      comp_basis: cleanReportText(str(f.comp_basis, `fixes[${i}].comp_basis`)),
     };
   });
 
@@ -177,7 +218,7 @@ export function validateScoringResult(input: unknown): ScoringResult {
   const titleRewrite = parseRewrite(rw.title, "rewrites.title");
   titleRewrite.after = sanitizeTitle(titleRewrite.after); // enforce Airbnb title policy
   const descRewrite = parseRewrite(rw.description_opening, "rewrites.description_opening");
-  descRewrite.after = plainDashes(descRewrite.after); // "before" stays the owner's original
+  descRewrite.after = cleanReportText(descRewrite.after); // "before" stays the owner's original
   const rewrites: Rewrites = {
     title: titleRewrite,
     title_variants: parseTitleVariants(rw.title_variants),
@@ -189,7 +230,7 @@ export function validateScoringResult(input: unknown): ScoringResult {
     category_scores,
     underpricing_idr: Math.max(0, toInt(input.underpricing_idr, "underpricing_idr")),
     comp_count: toInt(input.comp_count, "comp_count"),
-    comp_basis: plainDashes(str(input.comp_basis, "comp_basis")),
+    comp_basis: cleanReportText(str(input.comp_basis, "comp_basis")),
     problem_count: toInt(input.problem_count, "problem_count"),
     critical_count: toInt(input.critical_count, "critical_count"),
     fixes,
