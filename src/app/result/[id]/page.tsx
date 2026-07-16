@@ -79,7 +79,7 @@ export default async function ResultPage({
             </div>
           )}
           <section className="mt-12">
-            <h2 className="mb-3 font-mono text-xs uppercase tracking-[0.15em] text-fog">
+            <h2 className="mb-4 text-2xl font-normal tracking-[-0.025em] text-ink">
               Fix list
             </h2>
             <FixList fixes={audit.fixes} />
@@ -88,7 +88,7 @@ export default async function ResultPage({
           {audit.market_evidence && <MarketEvidence evidence={audit.market_evidence} />}
 
           <section className="mt-12">
-            <h2 className="mb-3 font-mono text-xs uppercase tracking-[0.15em] text-fog">
+            <h2 className="mb-4 text-2xl font-normal tracking-[-0.025em] text-ink">
               Paste-ready rewrites
             </h2>
             <RewritesView rewrites={audit.rewrites} />
@@ -114,7 +114,7 @@ export default async function ResultPage({
             </p>
           </div>
 
-          <h2 className="mt-10 mb-3 font-mono text-xs uppercase tracking-[0.15em] text-fog">
+          <h2 className="mt-10 mb-4 text-2xl font-normal tracking-[-0.025em] text-ink">
             Fix list (locked)
           </h2>
           <LockedFixPreview fixes={audit.fixes} />
@@ -128,10 +128,6 @@ export default async function ResultPage({
         </section>
       )}
 
-      <footer className="mt-14 border-t border-dove pt-4 text-center text-xs text-pewter">
-        Figures benchmarked from the AirROI comparable set. Estimates, not
-        guarantees. Listing-quality factors only.
-      </footer>
     </main>
   );
 }

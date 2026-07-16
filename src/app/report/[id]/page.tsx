@@ -68,7 +68,7 @@ export default async function ReportPage({
       </section>
 
       <section className="mt-10">
-        <h2 className="mb-3 font-mono text-xs uppercase tracking-[0.15em] text-fog">
+        <h2 className="mb-4 text-2xl font-normal tracking-[-0.025em] text-ink">
           Fix list
         </h2>
         <FixList fixes={audit.fixes} />
@@ -77,7 +77,7 @@ export default async function ReportPage({
       {audit.market_evidence && <MarketEvidence evidence={audit.market_evidence} />}
 
       <section className="mt-10">
-        <h2 className="mb-3 font-mono text-xs uppercase tracking-[0.15em] text-fog">
+        <h2 className="mb-4 text-2xl font-normal tracking-[-0.025em] text-ink">
           Paste-ready rewrites
         </h2>
         <RewritesView rewrites={audit.rewrites} />
@@ -87,9 +87,8 @@ export default async function ReportPage({
         <PrintButton auto={print === "1"} />
       </div>
 
-      <footer className="mt-12 border-t border-dove pt-4 text-center text-xs text-pewter">
-        OptiRent · Figures benchmarked from the AirROI comparable set.
-        Estimates, not guarantees. Listing-quality factors only.
+      <footer className="mt-12 border-t border-dove pt-4 text-center font-mono text-[11px] uppercase tracking-[0.15em] text-pewter">
+        OptiRent · Listing intelligence
       </footer>
     </main>
   );

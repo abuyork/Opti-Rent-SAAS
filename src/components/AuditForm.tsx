@@ -46,7 +46,7 @@ export default function AuditForm() {
 
   if (loading) {
     return (
-      <div className="mt-10 flex w-full max-w-xl flex-col items-center gap-3">
+      <div className="mx-auto mt-10 flex w-full max-w-xl flex-col items-center gap-3">
         <div className="h-8 w-8 animate-spin rounded-full border-2 border-dove border-t-ink" />
         <p className="text-sm text-fog">
           Scoring your villa against comparable listings…
@@ -56,7 +56,7 @@ export default function AuditForm() {
   }
 
   return (
-    <div className="mt-10 w-full max-w-xl">
+    <div className="mx-auto mt-10 w-full max-w-xl">
       {step === "url" ? (
         <form onSubmit={onUrlSubmit} className="flex flex-col gap-3 sm:flex-row">
           <input

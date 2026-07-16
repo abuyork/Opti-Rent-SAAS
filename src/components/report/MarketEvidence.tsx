@@ -89,7 +89,7 @@ export function MarketEvidence({ evidence: e }: { evidence: AuditMarketEvidence 
 
   return (
     <section className="mt-12">
-      <h2 className="mb-1 font-mono text-xs uppercase tracking-[0.15em] text-fog">
+      <h2 className="mb-1 text-2xl font-normal tracking-[-0.025em] text-ink">
         What wins in your market: {e.cohort} in {marketTitle(e.market)}
       </h2>
       <p className="mb-4 text-sm leading-relaxed text-fog">
