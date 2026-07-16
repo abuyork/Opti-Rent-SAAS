@@ -34,3 +34,8 @@ export function formatMoney(currency: string, amount: number): string {
   const sym = currency === "GBP" ? "£" : `${currency} `;
   return `${sym}${v.toLocaleString("en-US")}`;
 }
+
+/** Monthly view of a nightly underpricing figure, in the market's currency. */
+export function formatMoneyMonthly(currency: string, nightly: number): string {
+  return `${formatMoney(currency, Math.max(0, nightly) * NIGHTS_PER_MONTH)}/mo`;
+}

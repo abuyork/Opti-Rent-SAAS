@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { getMarketBenchmark } from "@/lib/market/benchmarks";
 import { formatMoney, formatRupiahMonthly } from "@/lib/format";
 
@@ -67,13 +68,15 @@ export function ReportPreview() {
 
         {winner && b && (
           <div className="mt-3 flex overflow-hidden rounded-lg border border-dove">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={winner.cover_photo_url}
-              alt={`Winning cover: ${winner.listing_name}`}
-              className="h-24 w-28 shrink-0 object-cover sm:w-40"
-              loading="lazy"
-            />
+            <div className="relative h-24 w-28 shrink-0 sm:w-40">
+              <Image
+                src={winner.cover_photo_url}
+                alt={`Winning cover: ${winner.listing_name}`}
+                fill
+                sizes="160px"
+                className="object-cover"
+              />
+            </div>
             <div className="flex min-w-0 flex-col justify-center gap-1 px-4 py-3">
               <div className="flex items-center gap-2">
                 <span className="shrink-0 rounded-full bg-sand px-2 py-0.5 font-mono text-[10px] font-medium text-ink">

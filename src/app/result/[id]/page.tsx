@@ -65,6 +65,8 @@ export default async function ResultPage({
           underpricingIdr={audit.underpricing_idr}
           criticalCount={audit.critical_count}
           compCount={audit.comp_count}
+          currency={audit.market_evidence?.currency ?? "IDR"}
+          marketCohortSize={audit.market_evidence?.sample_size ?? null}
         />
       </section>
 

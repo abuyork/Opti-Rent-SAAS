@@ -5,3 +5,8 @@
 [functions]
   directory = "netlify/functions"
   node_bundler = "esbuild"
+
+# Netlify Image CDN allowlist for next/image remote sources (listing photos +
+# winner covers). Mirrors images.remotePatterns in next.config.ts.
+[images]
+  remote_images = ["https://.*\\.muscache\\.com/.*", "https://.*\\.airbnb\\.com/.*"]

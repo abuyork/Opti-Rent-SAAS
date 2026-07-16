@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { AuditMarketEvidence, MarketCoverExample } from "@/lib/types";
 import { formatMoney } from "@/lib/format";
 
@@ -36,13 +37,17 @@ function WinnerRow({
 
   return (
     <div className="pdf-block flex flex-col overflow-hidden rounded-2xl border border-dove sm:flex-row">
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src={c.cover_photo_url}
-        alt={`Winning cover: ${c.listing_name}`}
-        className="h-44 w-full object-cover sm:h-auto sm:w-56 sm:shrink-0"
-        loading="lazy"
-      />
+      {/* next/image serves covers from our origin — direct muscache.com images
+          get blocked by ad/privacy blockers on some devices. */}
+      <div className="relative h-44 w-full sm:h-auto sm:w-56 sm:shrink-0">
+        <Image
+          src={c.cover_photo_url}
+          alt={`Winning cover: ${c.listing_name}`}
+          fill
+          sizes="(min-width: 640px) 224px, 100vw"
+          className="object-cover"
+        />
+      </div>
       <div className="flex flex-1 flex-col justify-center gap-1.5 px-5 py-4">
         <div className="flex items-start gap-2">
           <span className="mt-0.5 shrink-0 rounded-full bg-sand px-2 py-0.5 font-mono text-[11px] font-medium text-ink">
