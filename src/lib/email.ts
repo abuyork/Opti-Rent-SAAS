@@ -47,8 +47,7 @@ export async function sendReportReadyEmail(opts: {
           : ""
       }
       <p style="color:#858585;font-size:13px;margin-top:28px">
-        Figures are benchmark estimates from comparable listings, not guarantees.
-        OptiRent · listing intelligence.
+        OptiRent · listing intelligence
       </p>
     </div>`;
 

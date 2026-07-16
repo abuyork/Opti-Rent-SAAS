@@ -325,10 +325,7 @@ export default function Home() {
               Villa listing audit · {marketList}
             </div>
           </div>
-          <p className="max-w-sm text-xs leading-relaxed text-pewter">
-            Figures are benchmark estimates from comparable listings, not
-            guarantees. Listing-quality factors only. © 2026 OptiRent.
-          </p>
+          <p className="text-xs text-pewter">© 2026 OptiRent</p>
         </div>
       </footer>
     </div>
