@@ -1,0 +1,1051 @@
+{
+  "market": "ubud",
+  "generated_from": 200,
+  "cohorts": {
+    "1BR": {
+      "market": "ubud",
+      "cohort": "1BR",
+      "currency": "IDR",
+      "sample_size": 40,
+      "winner_n": 10,
+      "winner_median_photos": 25,
+      "winner_median_title_chars": 45,
+      "winner_median_description_chars": 3892,
+      "winner_median_adr_idr": 4473678,
+      "winner_median_occupancy": 0.7025,
+      "winner_superhost_share": 1,
+      "winner_guest_favorite_share": 0.5,
+      "loser_median_photos": 22,
+      "loser_median_description_chars": 491,
+      "loser_instant_book_share": 0.1,
+      "top_amenities": [
+        {
+          "amenity": "self check-in",
+          "winner_share": 0.8,
+          "loser_share": 0.1,
+          "delta": 0.7000000000000001
+        },
+        {
+          "amenity": "hair dryer",
+          "winner_share": 0.8,
+          "loser_share": 0.1,
+          "delta": 0.7000000000000001
+        },
+        {
+          "amenity": "iron",
+          "winner_share": 0.8,
+          "loser_share": 0.1,
+          "delta": 0.7000000000000001
+        },
+        {
+          "amenity": "conditioner",
+          "winner_share": 0.7,
+          "loser_share": 0,
+          "delta": 0.7
+        },
+        {
+          "amenity": "wine glasses",
+          "winner_share": 0.7,
+          "loser_share": 0,
+          "delta": 0.7
+        },
+        {
+          "amenity": "sun loungers",
+          "winner_share": 0.7,
+          "loser_share": 0,
+          "delta": 0.7
+        },
+        {
+          "amenity": "fire extinguisher",
+          "winner_share": 0.9,
+          "loser_share": 0.3,
+          "delta": 0.6000000000000001
+        },
+        {
+          "amenity": "first aid kit",
+          "winner_share": 0.9,
+          "loser_share": 0.3,
+          "delta": 0.6000000000000001
+        }
+      ],
+      "title_keywords": [
+        {
+          "word": "jungle",
+          "delta": 0.4
+        },
+        {
+          "word": "bali",
+          "delta": 0.2
+        },
+        {
+          "word": "rice",
+          "delta": 0.2
+        },
+        {
+          "word": "pool",
+          "delta": 0.19999999999999998
+        },
+        {
+          "word": "ubud",
+          "delta": -0.10000000000000003
+        }
+      ],
+      "winner_covers": [
+        {
+          "listing_id": "989020487048284489",
+          "listing_name": "Bali Jungle Villa- Forest Haven",
+          "viral_score": 96.9,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-989020487048284489/original/41899f8f-ada8-4c88-b6c8-d4d8b0166192.jpeg",
+          "locality": "Mas",
+          "ttm_revpar": 3326927,
+          "ttm_occupancy": 0.751,
+          "rating_overall": 4.85,
+          "num_reviews": 203
+        },
+        {
+          "listing_id": "942234435803113456",
+          "listing_name": "Studio 3 Ubud, architecturally modern stylish",
+          "viral_score": 92.2,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-941563544487528239/original/42879bcd-7fac-4242-a0e0-caebb4463ad0.jpeg",
+          "locality": "Ubud",
+          "ttm_revpar": 2868917,
+          "ttm_occupancy": 0.753,
+          "rating_overall": 5,
+          "num_reviews": 93
+        },
+        {
+          "listing_id": "32388197",
+          "listing_name": "Look Out Across Beautiful Rice Fields From Love Ashram Villa",
+          "viral_score": 91.4,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/monet/Select-32388197/original/1cbfd1bd-b9d6-40f3-b526-74d37f05f546",
+          "locality": "Petulu",
+          "ttm_revpar": 2944617,
+          "ttm_occupancy": 0.622,
+          "rating_overall": 4.98,
+          "num_reviews": 282
+        },
+        {
+          "listing_id": "767948928806972676",
+          "listing_name": "Renjana Suite - Jungle Villa Near Ubud Center",
+          "viral_score": 87.7,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-767948928806972676/original/058c2e07-3043-45be-8501-2b786798f87b.jpeg",
+          "locality": "Petulu",
+          "ttm_revpar": 3312397,
+          "ttm_occupancy": 0.6,
+          "rating_overall": 4.88,
+          "num_reviews": 74
+        },
+        {
+          "listing_id": "1172170876045332037",
+          "listing_name": "Casa Koko, Konubi | Bamboo Oasis",
+          "viral_score": 84.9,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTE3MjE3MDg3NjA0NTMzMjAzNw==/original/69e25580-eaef-4cbd-9c55-a6e8e81dbeef.jpeg",
+          "locality": "Pejeng",
+          "ttm_revpar": 3040542,
+          "ttm_occupancy": 0.682,
+          "rating_overall": 4.86,
+          "num_reviews": 64
+        },
+        {
+          "listing_id": "922891318573130621",
+          "listing_name": "Jungleight Bali - The Nest",
+          "viral_score": 84.7,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6OTIyODkxMzE4NTczMTMwNjIx/original/20672b0d-fadc-493b-8a05-167395c6f237.jpeg",
+          "locality": "Tangkas",
+          "ttm_revpar": 3293383,
+          "ttm_occupancy": 0.416,
+          "rating_overall": 4.98,
+          "num_reviews": 52
+        },
+        {
+          "listing_id": "58045",
+          "listing_name": "Design-Led Teak Villa · Pool · Rice Paddy View",
+          "viral_score": 84.2,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-58045/original/feb6399b-7ada-4578-a1a0-0c9ec83aa364.jpeg",
+          "locality": "Penestanan",
+          "ttm_revpar": 2230942,
+          "ttm_occupancy": 0.742,
+          "rating_overall": 4.86,
+          "num_reviews": 441
+        },
+        {
+          "listing_id": "860406837270383669",
+          "listing_name": "Jungle River Villa w/ Pool Views @ VillaCellaBella",
+          "viral_score": 82.8,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-860406837270383669/original/9ed52ea9-8ab5-4a10-b6cb-f1c642fb9af5.jpeg",
+          "locality": "Ubud",
+          "ttm_revpar": 3377558,
+          "ttm_occupancy": 0.447,
+          "rating_overall": 4.94,
+          "num_reviews": 35
+        },
+        {
+          "listing_id": "1351955314954356586",
+          "listing_name": "Romantic villa w/ pool perfect for couple in Ubud",
+          "viral_score": 81.4,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1351955314954356586/original/56b5ed64-be7f-409d-bd0d-bfd01879efaa.jpeg",
+          "locality": "Kecamatan Ubud",
+          "ttm_revpar": 2591681,
+          "ttm_occupancy": 0.723,
+          "rating_overall": 5,
+          "num_reviews": 37
+        },
+        {
+          "listing_id": "1396144744855872443",
+          "listing_name": "The Last Paradise – Lost in the Jungle Villa",
+          "viral_score": 80.5,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTM5NjE0NDc0NDg1NTg3MjQ0Mw==/original/838c4b43-b526-4a70-941c-2680faab8dc4.jpeg",
+          "locality": "Ubud",
+          "ttm_revpar": 2567689,
+          "ttm_occupancy": 0.732,
+          "rating_overall": 4.78,
+          "num_reviews": 82
+        }
+      ]
+    },
+    "2BR": {
+      "market": "ubud",
+      "cohort": "2BR",
+      "currency": "IDR",
+      "sample_size": 40,
+      "winner_n": 10,
+      "winner_median_photos": 32.5,
+      "winner_median_title_chars": 44,
+      "winner_median_description_chars": 7276,
+      "winner_median_adr_idr": 4526349,
+      "winner_median_occupancy": 0.6845,
+      "winner_superhost_share": 1,
+      "winner_guest_favorite_share": 0.8,
+      "loser_median_photos": 21.5,
+      "loser_median_description_chars": 243,
+      "loser_instant_book_share": 0.2,
+      "top_amenities": [
+        {
+          "amenity": "fire extinguisher",
+          "winner_share": 1,
+          "loser_share": 0.1,
+          "delta": 0.9
+        },
+        {
+          "amenity": "first aid kit",
+          "winner_share": 1,
+          "loser_share": 0.2,
+          "delta": 0.8
+        },
+        {
+          "amenity": "sun loungers",
+          "winner_share": 0.8,
+          "loser_share": 0.1,
+          "delta": 0.7000000000000001
+        },
+        {
+          "amenity": "conditioner",
+          "winner_share": 0.8,
+          "loser_share": 0.2,
+          "delta": 0.6000000000000001
+        },
+        {
+          "amenity": "drying rack for clothing",
+          "winner_share": 0.8,
+          "loser_share": 0.2,
+          "delta": 0.6000000000000001
+        },
+        {
+          "amenity": "dedicated workspace",
+          "winner_share": 0.9,
+          "loser_share": 0.3,
+          "delta": 0.6000000000000001
+        },
+        {
+          "amenity": "coffee maker",
+          "winner_share": 0.8,
+          "loser_share": 0.2,
+          "delta": 0.6000000000000001
+        },
+        {
+          "amenity": "extra pillows and blankets",
+          "winner_share": 0.7,
+          "loser_share": 0.1,
+          "delta": 0.6
+        }
+      ],
+      "title_keywords": [
+        {
+          "word": "ubud",
+          "delta": 0.4
+        },
+        {
+          "word": "heart",
+          "delta": 0.2
+        },
+        {
+          "word": "retreat",
+          "delta": 0.2
+        },
+        {
+          "word": "pool",
+          "delta": 0.2
+        },
+        {
+          "word": "private",
+          "delta": 0.1
+        },
+        {
+          "word": "views",
+          "delta": 0
+        }
+      ],
+      "winner_covers": [
+        {
+          "listing_id": "1089402614996713946",
+          "listing_name": "Santana 2BR Nature Serenity in Ubud's Heart",
+          "viral_score": 100,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1089402614996713946/original/0ec801bf-d726-4a7b-b223-ab9757d72124.jpeg",
+          "locality": "Peliatan",
+          "ttm_revpar": 3433301,
+          "ttm_occupancy": 0.734,
+          "rating_overall": 4.92,
+          "num_reviews": 101
+        },
+        {
+          "listing_id": "5839932",
+          "listing_name": "Ki Ma Ya Retreat, Zen Sanctuary",
+          "viral_score": 91.9,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-5839932/original/753a18d8-1f63-457c-8abf-50fa5ca1e24a.jpeg",
+          "locality": "Bangkiang Sidem",
+          "ttm_revpar": 3380069,
+          "ttm_occupancy": 0.641,
+          "rating_overall": 4.94,
+          "num_reviews": 273
+        },
+        {
+          "listing_id": "822705413969045304",
+          "listing_name": "2BR Villa with Pool & Valley View in Ubud",
+          "viral_score": 86.5,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-822705413969045304/original/21986915-405c-41e2-8b3b-d99c68f39342.jpeg",
+          "locality": "Pejeng Kawan",
+          "ttm_revpar": 3136467,
+          "ttm_occupancy": 0.677,
+          "rating_overall": 4.93,
+          "num_reviews": 59
+        },
+        {
+          "listing_id": "6915786",
+          "listing_name": "Countryside Retreat in Ubud with Jungle Views",
+          "viral_score": 85.3,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-6915786/original/b82b3ec3-8851-4bea-ba8e-0820641ea029.jpeg",
+          "locality": "Pejeng Kawan",
+          "ttm_revpar": 3124897,
+          "ttm_occupancy": 0.542,
+          "rating_overall": 4.89,
+          "num_reviews": 85
+        },
+        {
+          "listing_id": "867667441107929292",
+          "listing_name": "Romantic Natural Villa | 2+BR Flex · Private Pool",
+          "viral_score": 82.6,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-867667441107929292/original/80a04881-82cf-4639-bc5c-88ea45f12164.jpeg",
+          "locality": "Penestanan",
+          "ttm_revpar": 3027088,
+          "ttm_occupancy": 0.715,
+          "rating_overall": 4.93,
+          "num_reviews": 138
+        },
+        {
+          "listing_id": "1151705789365516091",
+          "listing_name": "Villa Amore: 2BR w/Infinity Pool & Bathtub in Ubud",
+          "viral_score": 82.3,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-1151705789365516091/original/96f78e0f-af8c-4553-b218-c1e8b7dce236.jpeg",
+          "locality": "Petulu",
+          "ttm_revpar": 3167859,
+          "ttm_occupancy": 0.69,
+          "rating_overall": 4.81,
+          "num_reviews": 43
+        },
+        {
+          "listing_id": "1017244741296359418",
+          "listing_name": "Jungleight Bali - The Space",
+          "viral_score": 81.9,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1017244741296359418/original/316236ef-4ac3-47bb-88d8-e92182a330f8.jpeg",
+          "locality": "Tangkas",
+          "ttm_revpar": 3452181,
+          "ttm_occupancy": 0.367,
+          "rating_overall": 5,
+          "num_reviews": 27
+        },
+        {
+          "listing_id": "11043862",
+          "listing_name": "Luxurious 2 BR Villa with Private Pool & Views",
+          "viral_score": 80.6,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-11043862/original/2cf9ff5f-e7b1-4dba-af62-9612fa726a34.jpeg",
+          "locality": "Petulu",
+          "ttm_revpar": 2899188,
+          "ttm_occupancy": 0.753,
+          "rating_overall": 4.88,
+          "num_reviews": 325
+        },
+        {
+          "listing_id": "970524123069959739",
+          "listing_name": "Reva 2BR Enchanted Rice Grove Villa w/InfinityPool",
+          "viral_score": 79.2,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-970524123069959739/original/6878bbe8-b5c9-4c59-b8cf-f5b9c830e935.jpeg",
+          "locality": "Ubud",
+          "ttm_revpar": 3069961,
+          "ttm_occupancy": 0.679,
+          "rating_overall": 4.9,
+          "num_reviews": 79
+        },
+        {
+          "listing_id": "1160587355222895604",
+          "listing_name": "Villa Aman : 2BR Paradise near Ubud's Heart",
+          "viral_score": 79.1,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-1160587355222895604/original/d761657e-f9b5-4ff2-b6de-0cdc3f4cfa4d.jpeg",
+          "locality": "Petulu",
+          "ttm_revpar": 3036102,
+          "ttm_occupancy": 0.707,
+          "rating_overall": 4.95,
+          "num_reviews": 59
+        }
+      ]
+    },
+    "3BR": {
+      "market": "ubud",
+      "cohort": "3BR",
+      "currency": "IDR",
+      "sample_size": 40,
+      "winner_n": 10,
+      "winner_median_photos": 52,
+      "winner_median_title_chars": 46,
+      "winner_median_description_chars": 7093.5,
+      "winner_median_adr_idr": 5655005,
+      "winner_median_occupancy": 0.7024999999999999,
+      "winner_superhost_share": 0.9,
+      "winner_guest_favorite_share": 0.9,
+      "loser_median_photos": 29.5,
+      "loser_median_description_chars": 451,
+      "loser_instant_book_share": 0.1,
+      "top_amenities": [
+        {
+          "amenity": "iron",
+          "winner_share": 1,
+          "loser_share": 0.3,
+          "delta": 0.7
+        },
+        {
+          "amenity": "first aid kit",
+          "winner_share": 0.9,
+          "loser_share": 0.2,
+          "delta": 0.7
+        },
+        {
+          "amenity": "fire extinguisher",
+          "winner_share": 0.8,
+          "loser_share": 0.2,
+          "delta": 0.6000000000000001
+        },
+        {
+          "amenity": "stove",
+          "winner_share": 0.9,
+          "loser_share": 0.3,
+          "delta": 0.6000000000000001
+        },
+        {
+          "amenity": "oven",
+          "winner_share": 0.8,
+          "loser_share": 0.2,
+          "delta": 0.6000000000000001
+        },
+        {
+          "amenity": "coffee",
+          "winner_share": 0.8,
+          "loser_share": 0.2,
+          "delta": 0.6000000000000001
+        },
+        {
+          "amenity": "cleaning products",
+          "winner_share": 0.6,
+          "loser_share": 0,
+          "delta": 0.6
+        },
+        {
+          "amenity": "conditioner",
+          "winner_share": 0.6,
+          "loser_share": 0,
+          "delta": 0.6
+        }
+      ],
+      "title_keywords": [
+        {
+          "word": "jungle",
+          "delta": 0.2
+        },
+        {
+          "word": "view",
+          "delta": 0.2
+        },
+        {
+          "word": "3bd",
+          "delta": 0.2
+        },
+        {
+          "word": "infinity",
+          "delta": 0.2
+        },
+        {
+          "word": "oasis",
+          "delta": 0.1
+        },
+        {
+          "word": "private",
+          "delta": 0.1
+        },
+        {
+          "word": "pool",
+          "delta": 0
+        },
+        {
+          "word": "house",
+          "delta": -0.09999999999999998
+        }
+      ],
+      "winner_covers": [
+        {
+          "listing_id": "631673449499980657",
+          "listing_name": "Dream Home in Ubud: House of Lights",
+          "viral_score": 100,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/2ed000e9-52e4-4c7c-9465-9fd0ce5a027d.jpg",
+          "locality": "Sayan",
+          "ttm_revpar": 7898324,
+          "ttm_occupancy": 0.734,
+          "rating_overall": 4.99,
+          "num_reviews": 79
+        },
+        {
+          "listing_id": "1427276434983789789",
+          "listing_name": "Jungle Oasis view 3BD villa with infinity pool",
+          "viral_score": 94.7,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTQyNzI3NjQzNDk4Mzc4OTc4OQ==/original/c551c534-d2e1-415e-9562-8009cbd172e0.jpeg",
+          "locality": "Kecamatan Gianyar",
+          "ttm_revpar": 4416634,
+          "ttm_occupancy": 0.751,
+          "rating_overall": 5,
+          "num_reviews": 48
+        },
+        {
+          "listing_id": "1393990005053564210",
+          "listing_name": "3BD Modern villa, ricefield, sauna, infinity pool",
+          "viral_score": 92.9,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-1393990005053564210/original/407c6fd3-0ae6-4374-beaa-2e7ca688468f.jpeg",
+          "locality": "Ubud",
+          "ttm_revpar": 4103745,
+          "ttm_occupancy": 0.748,
+          "rating_overall": 5,
+          "num_reviews": 55
+        },
+        {
+          "listing_id": "755450014426297702",
+          "listing_name": "WK 3BR Family Friendly  Pool, & Scooter's provided",
+          "viral_score": 90.9,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-755450014426297702/original/fd4b1335-7b75-41f7-b882-300456a5ecc2.jpeg",
+          "locality": "Singakerta",
+          "ttm_revpar": 4806972,
+          "ttm_occupancy": 0.625,
+          "rating_overall": 4.9,
+          "num_reviews": 100
+        },
+        {
+          "listing_id": "1209200379928648841",
+          "listing_name": "Villa Sungai:3BRPeaceful Jungle Oasis InfinityPool",
+          "viral_score": 89.4,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-1209200379928648841/original/77d756de-5dec-4a30-8a90-93d61376ff11.jpeg",
+          "locality": "Sayan",
+          "ttm_revpar": 3871355,
+          "ttm_occupancy": 0.729,
+          "rating_overall": 4.95,
+          "num_reviews": 66
+        },
+        {
+          "listing_id": "1335982131030909598",
+          "listing_name": "Villa Aruna : 3BR with Pristine Jungle in Ubud",
+          "viral_score": 89,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-1335982131030909598/original/d1ff1309-3138-469a-8062-b41cc33e2662.jpeg",
+          "locality": "Ubud",
+          "ttm_revpar": 4158143,
+          "ttm_occupancy": 0.715,
+          "rating_overall": 4.79,
+          "num_reviews": 109
+        },
+        {
+          "listing_id": "42411798",
+          "listing_name": "Authored Teak Dwelling · 3BR · Private Pool",
+          "viral_score": 84.7,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-42411798/original/fbb903c6-e342-4b94-9254-735dbc6e32fd.jpeg",
+          "locality": "Ubud",
+          "ttm_revpar": 3545281,
+          "ttm_occupancy": 0.677,
+          "rating_overall": 4.91,
+          "num_reviews": 140
+        },
+        {
+          "listing_id": "1379389321075301046",
+          "listing_name": "Mowgli: Beautiful 3BR Villa next to the valley",
+          "viral_score": 82.4,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-1379389321075301046/original/76e3e44c-817c-4583-907b-9d1329277c9f.jpeg",
+          "locality": "Tampaksiring",
+          "ttm_revpar": 3559811,
+          "ttm_occupancy": 0.655,
+          "rating_overall": 4.82,
+          "num_reviews": 84
+        },
+        {
+          "listing_id": "1062732899494481067",
+          "listing_name": "Tropical private house with jungle view ubud",
+          "viral_score": 80.4,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-1062732899494481067/original/eaacf68b-9412-4ab9-9d5d-419158ecddd3.jpeg",
+          "locality": "Ubud",
+          "ttm_revpar": 3395093,
+          "ttm_occupancy": 0.69,
+          "rating_overall": 4.88,
+          "num_reviews": 173
+        },
+        {
+          "listing_id": "963314118620830758",
+          "listing_name": "Rumah Senja - Spacious 3 bedroom villa",
+          "viral_score": 77.1,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6OTYzMzE0MTE4NjIwODMwNzU4/original/d2275356-f53f-4806-adc2-2791c72355c0.jpeg",
+          "locality": "Kedewatan",
+          "ttm_revpar": 5097931,
+          "ttm_occupancy": 0.332,
+          "rating_overall": 5,
+          "num_reviews": 19
+        }
+      ]
+    },
+    "4BR": {
+      "market": "ubud",
+      "cohort": "4BR",
+      "currency": "IDR",
+      "sample_size": 40,
+      "winner_n": 10,
+      "winner_median_photos": 60.5,
+      "winner_median_title_chars": 48,
+      "winner_median_description_chars": 4728.5,
+      "winner_median_adr_idr": 7236849,
+      "winner_median_occupancy": 0.667,
+      "winner_superhost_share": 1,
+      "winner_guest_favorite_share": 0.5,
+      "loser_median_photos": 30,
+      "loser_median_description_chars": 120,
+      "loser_instant_book_share": 0.5,
+      "top_amenities": [
+        {
+          "amenity": "coffee maker",
+          "winner_share": 0.9,
+          "loser_share": 0.3,
+          "delta": 0.6000000000000001
+        },
+        {
+          "amenity": "microwave",
+          "winner_share": 0.9,
+          "loser_share": 0.3,
+          "delta": 0.6000000000000001
+        },
+        {
+          "amenity": "garden view",
+          "winner_share": 0.6,
+          "loser_share": 0.1,
+          "delta": 0.5
+        },
+        {
+          "amenity": "dining table",
+          "winner_share": 1,
+          "loser_share": 0.5,
+          "delta": 0.5
+        },
+        {
+          "amenity": "sun loungers",
+          "winner_share": 0.9,
+          "loser_share": 0.4,
+          "delta": 0.5
+        },
+        {
+          "amenity": "cleaning before checkout",
+          "winner_share": 0.9,
+          "loser_share": 0.4,
+          "delta": 0.5
+        },
+        {
+          "amenity": "conditioner",
+          "winner_share": 0.8,
+          "loser_share": 0.4,
+          "delta": 0.4
+        },
+        {
+          "amenity": "shower gel",
+          "winner_share": 1,
+          "loser_share": 0.6,
+          "delta": 0.4
+        }
+      ],
+      "title_keywords": [
+        {
+          "word": "infinity",
+          "delta": 0.4
+        },
+        {
+          "word": "jungle",
+          "delta": 0.30000000000000004
+        },
+        {
+          "word": "free",
+          "delta": 0.3
+        },
+        {
+          "word": "spa",
+          "delta": 0.3
+        },
+        {
+          "word": "new",
+          "delta": 0.2
+        },
+        {
+          "word": "ubud",
+          "delta": 0.09999999999999998
+        },
+        {
+          "word": "pool",
+          "delta": 0.09999999999999998
+        },
+        {
+          "word": "view",
+          "delta": 0.09999999999999998
+        }
+      ],
+      "winner_covers": [
+        {
+          "listing_id": "892085327423808080",
+          "listing_name": "Origami House, a paradise with concierge in Ubud!",
+          "viral_score": 95.5,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-892085327423808080/original/46ec1265-8b60-4d2b-b3ad-d41b3e3df50e.jpeg",
+          "locality": "Mas",
+          "ttm_revpar": 7054013,
+          "ttm_occupancy": 0.668,
+          "rating_overall": 4.94,
+          "num_reviews": 52
+        },
+        {
+          "listing_id": "876350666107238511",
+          "listing_name": "Brand NEW 4BR Villa Infinity Pool center of Ubud",
+          "viral_score": 95.4,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-876350666107238511/original/24b1f68d-abf9-4baa-89d8-d33cf31159cf.jpeg",
+          "locality": "Mas",
+          "ttm_revpar": 6189925,
+          "ttm_occupancy": 0.696,
+          "rating_overall": 4.93,
+          "num_reviews": 143
+        },
+        {
+          "listing_id": "986643898652328866",
+          "listing_name": "FREE SPA • 4BR Infinity Pool Jungle View Ubud",
+          "viral_score": 94.4,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-986643898652328866/original/41b614f9-daba-46cd-9a73-f943fda85362.jpeg",
+          "locality": "Ubud",
+          "ttm_revpar": 5520154,
+          "ttm_occupancy": 0.712,
+          "rating_overall": 4.92,
+          "num_reviews": 139
+        },
+        {
+          "listing_id": "1155458255238068119",
+          "listing_name": "FREE SPA • Insanely Vast 4BR Ubud • Villa Jenggala",
+          "viral_score": 90,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTE1NTQ1ODI1NTIzODA2ODExOQ%3D%3D/original/0a03b615-1aec-42e8-9461-f20edee7bcce.jpeg",
+          "locality": "Ubud",
+          "ttm_revpar": 5041156,
+          "ttm_occupancy": 0.745,
+          "rating_overall": 4.85,
+          "num_reviews": 74
+        },
+        {
+          "listing_id": "1049619598334148382",
+          "listing_name": "Luxurious 4BR Villa with Jungle view",
+          "viral_score": 85.3,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1049619598334148382/original/c36e2f29-f967-472f-8712-5e98c450f303.jpeg",
+          "locality": "Petulu",
+          "ttm_revpar": 4538345,
+          "ttm_occupancy": 0.647,
+          "rating_overall": 5,
+          "num_reviews": 39
+        },
+        {
+          "listing_id": "53726263",
+          "listing_name": "Ubud Jungle Retreat | Infinity Pool & Yoga Shala",
+          "viral_score": 85,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-53726263/original/0c6a594d-dd2d-4e75-907d-16cb0f301738.jpeg",
+          "locality": "Bedulu",
+          "ttm_revpar": 5451629,
+          "ttm_occupancy": 0.471,
+          "rating_overall": 4.93,
+          "num_reviews": 43
+        },
+        {
+          "listing_id": "53118646",
+          "listing_name": "4BDR king size new luxury vila Ubud. Infinity pool",
+          "viral_score": 82.2,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-53118646/original/9d1f7819-6532-4204-b5b5-359ecfdfa4a9.jpeg",
+          "locality": "Mas",
+          "ttm_revpar": 4529421,
+          "ttm_occupancy": 0.666,
+          "rating_overall": 4.89,
+          "num_reviews": 36
+        },
+        {
+          "listing_id": "1084436174224107414",
+          "listing_name": "FREE SPA • Hidden 4BR Gem in Ubud • Villa Talun",
+          "viral_score": 76.7,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-1084436174224107414/original/7df89898-0813-42eb-be74-d1296324191e.png",
+          "locality": "Petulu",
+          "ttm_revpar": 4449327,
+          "ttm_occupancy": 0.619,
+          "rating_overall": 4.93,
+          "num_reviews": 68
+        },
+        {
+          "listing_id": "1287365901958771568",
+          "listing_name": "Penelope 4BR Villa with Private Pool & Gym in Ubud",
+          "viral_score": 76.3,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1287365901958771568/original/8979aa1f-72c1-450c-9fa1-1b14558293fc.jpeg",
+          "locality": "Singakerta",
+          "ttm_revpar": 3763501,
+          "ttm_occupancy": 0.679,
+          "rating_overall": 5,
+          "num_reviews": 50
+        },
+        {
+          "listing_id": "17594831",
+          "listing_name": "Ubud Villa - 4br Jungle View",
+          "viral_score": 75.6,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-17594831/original/dc8b33cf-7502-4d30-9d4d-2e968a9c6e63.jpeg",
+          "locality": "Pejeng Kawan",
+          "ttm_revpar": 4309273,
+          "ttm_occupancy": 0.425,
+          "rating_overall": 4.81,
+          "num_reviews": 222
+        }
+      ]
+    },
+    "5+BR": {
+      "market": "ubud",
+      "cohort": "5+BR",
+      "currency": "IDR",
+      "sample_size": 40,
+      "winner_n": 10,
+      "winner_median_photos": 71,
+      "winner_median_title_chars": 48.5,
+      "winner_median_description_chars": 8935,
+      "winner_median_adr_idr": 15210312,
+      "winner_median_occupancy": 0.6415,
+      "winner_superhost_share": 0.9,
+      "winner_guest_favorite_share": 0.4,
+      "loser_median_photos": 32,
+      "loser_median_description_chars": 1504.5,
+      "loser_instant_book_share": 0.2,
+      "top_amenities": [
+        {
+          "amenity": "oven",
+          "winner_share": 1,
+          "loser_share": 0.1,
+          "delta": 0.9
+        },
+        {
+          "amenity": "smoke alarm",
+          "winner_share": 0.9,
+          "loser_share": 0.1,
+          "delta": 0.8
+        },
+        {
+          "amenity": "carbon monoxide alarm",
+          "winner_share": 0.8,
+          "loser_share": 0,
+          "delta": 0.8
+        },
+        {
+          "amenity": "luggage dropoff allowed",
+          "winner_share": 0.8,
+          "loser_share": 0.2,
+          "delta": 0.6000000000000001
+        },
+        {
+          "amenity": "iron",
+          "winner_share": 0.9,
+          "loser_share": 0.3,
+          "delta": 0.6000000000000001
+        },
+        {
+          "amenity": "stove",
+          "winner_share": 1,
+          "loser_share": 0.4,
+          "delta": 0.6
+        },
+        {
+          "amenity": "cooking basics",
+          "winner_share": 1,
+          "loser_share": 0.5,
+          "delta": 0.5
+        },
+        {
+          "amenity": "bathtub",
+          "winner_share": 0.8,
+          "loser_share": 0.3,
+          "delta": 0.5
+        }
+      ],
+      "title_keywords": [
+        {
+          "word": "6br",
+          "delta": 0.3
+        },
+        {
+          "word": "spa",
+          "delta": 0.2
+        },
+        {
+          "word": "estate",
+          "delta": 0.19999999999999998
+        },
+        {
+          "word": "10br",
+          "delta": 0.1
+        },
+        {
+          "word": "villas",
+          "delta": 0.1
+        },
+        {
+          "word": "infinity",
+          "delta": 0.1
+        },
+        {
+          "word": "ubud",
+          "delta": -0.09999999999999998
+        },
+        {
+          "word": "pool",
+          "delta": -0.2
+        }
+      ],
+      "winner_covers": [
+        {
+          "listing_id": "812004554122979999",
+          "listing_name": "Palm&Jungle Paradise 10BR Connecting Villa in Ubud",
+          "viral_score": 91.5,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-812004554122979999/original/988fcaed-eba1-41e4-aa17-ceb31c6dd438.jpeg",
+          "locality": "Mas",
+          "ttm_revpar": 11183006,
+          "ttm_occupancy": 0.74,
+          "rating_overall": 4.93,
+          "num_reviews": 44
+        },
+        {
+          "listing_id": "964765717553727403",
+          "listing_name": "12BR Ubud Family Villas| Home Gym,Spa & Yoga Shala",
+          "viral_score": 88.5,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-964765717553727403/original/aa328a9b-5881-443e-ba38-aa11223bb8e8.jpeg",
+          "locality": "Singakerta",
+          "ttm_revpar": 18508695,
+          "ttm_occupancy": 0.726,
+          "rating_overall": 4.72,
+          "num_reviews": 25
+        },
+        {
+          "listing_id": "53726270",
+          "listing_name": "Luxury 9br Pool Villas in Ubud | Private Estate",
+          "viral_score": 84.4,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-53726270/original/d031b153-fec3-419c-8f7e-c54e46c94b2d.jpeg",
+          "locality": "Bedulu",
+          "ttm_revpar": 13151421,
+          "ttm_occupancy": 0.597,
+          "rating_overall": 4.94,
+          "num_reviews": 35
+        },
+        {
+          "listing_id": "53597910",
+          "listing_name": "Veni Vidi Vici with Sports Facilities & Spectacular View",
+          "viral_score": 83.7,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-53597910/original/36dfe7ff-cdcc-4e74-bde2-b4fdd0be0c52.jpeg",
+          "locality": "Pejeng Kawan",
+          "ttm_revpar": 9444202,
+          "ttm_occupancy": 0.54,
+          "rating_overall": 4.98,
+          "num_reviews": 44
+        },
+        {
+          "listing_id": "1253470618334094468",
+          "listing_name": "10BR Villa Pair: Firepool & Waterfall, Near Ubud",
+          "viral_score": 81.3,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTI1MzQ3MDYxODMzNDA5NDQ2OA%3D%3D/original/47ecf795-dd64-4691-b9d0-142592988807.jpeg",
+          "locality": "Singakerta",
+          "ttm_revpar": 8169103,
+          "ttm_occupancy": 0.712,
+          "rating_overall": 4.68,
+          "num_reviews": 31
+        },
+        {
+          "listing_id": "1328566812418877164",
+          "listing_name": "Tropical Dream: 6BR Villa w/High Speed Internet",
+          "viral_score": 79.7,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-1328566812418877164/original/ada74611-bf4e-4737-9451-c6960c3f3472.jpeg",
+          "locality": "Pejeng",
+          "ttm_revpar": 9997419,
+          "ttm_occupancy": 0.636,
+          "rating_overall": 4.87,
+          "num_reviews": 23
+        },
+        {
+          "listing_id": "956196227405417049",
+          "listing_name": "Pearl Tranquil Haven 6BR Villa with Infinity Pool",
+          "viral_score": 78.5,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-956196227405417049/original/7ac140ac-faf9-487e-ade4-613721ab4f48.jpeg",
+          "locality": "Pejeng Kawan",
+          "ttm_revpar": 6860638,
+          "ttm_occupancy": 0.699,
+          "rating_overall": 4.95,
+          "num_reviews": 56
+        },
+        {
+          "listing_id": "16745414",
+          "listing_name": "The Manipura Estate & Spa, Full serviced, Own chef",
+          "viral_score": 77.6,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/bac3ca41-0be1-4d03-a466-877665a42de5.jpg",
+          "locality": "Ubud",
+          "ttm_revpar": 6904766,
+          "ttm_occupancy": 0.542,
+          "rating_overall": 4.89,
+          "num_reviews": 74
+        },
+        {
+          "listing_id": "968018014317129223",
+          "listing_name": "Hujan Estate House - 6 bedrooms",
+          "viral_score": 77.3,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6OTY4MDE4MDE0MzE3MTI5MjIz/original/f94d985c-c38a-45d8-b6cb-6027248d0eba.jpeg",
+          "locality": "Kedewatan",
+          "ttm_revpar": 12441692,
+          "ttm_occupancy": 0.419,
+          "rating_overall": 5,
+          "num_reviews": 8
+        },
+        {
+          "listing_id": "1299396004366221722",
+          "listing_name": "Wing Ubud - 6BR Boutique Villa - Concierge Service",
+          "viral_score": 73.2,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTI5OTM5NjAwNDM2NjIyMTcyMg==/original/f281f740-0c29-4765-ab79-eaa438be2e8e.jpeg",
+          "locality": "Mas",
+          "ttm_revpar": 6419266,
+          "ttm_occupancy": 0.622,
+          "rating_overall": 4.9,
+          "num_reviews": 40
+        }
+      ]
+    }
+  }
+}

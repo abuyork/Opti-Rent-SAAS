@@ -1,0 +1,1019 @@
+{
+  "market": "nusa-dua",
+  "generated_from": 180,
+  "cohorts": {
+    "1BR": {
+      "market": "nusa-dua",
+      "cohort": "1BR",
+      "currency": "IDR",
+      "sample_size": 38,
+      "winner_n": 9,
+      "winner_median_photos": 18,
+      "winner_median_title_chars": 47,
+      "winner_median_description_chars": 609,
+      "winner_median_adr_idr": 1789301,
+      "winner_median_occupancy": 0.362,
+      "winner_superhost_share": 0.4444444444444444,
+      "winner_guest_favorite_share": 0.3333333333333333,
+      "loser_median_photos": 21,
+      "loser_median_description_chars": 513,
+      "loser_instant_book_share": 0.2222222222222222,
+      "top_amenities": [
+        {
+          "amenity": "exterior security cameras on property",
+          "winner_share": 0.4444444444444444,
+          "loser_share": 0,
+          "delta": 0.4444444444444444
+        },
+        {
+          "amenity": "tv",
+          "winner_share": 1,
+          "loser_share": 0.6666666666666666,
+          "delta": 0.33333333333333337
+        },
+        {
+          "amenity": "kitchen",
+          "winner_share": 0.8888888888888888,
+          "loser_share": 0.6666666666666666,
+          "delta": 0.2222222222222222
+        },
+        {
+          "amenity": "refrigerator",
+          "winner_share": 0.6666666666666666,
+          "loser_share": 0.4444444444444444,
+          "delta": 0.2222222222222222
+        },
+        {
+          "amenity": "microwave",
+          "winner_share": 0.4444444444444444,
+          "loser_share": 0.2222222222222222,
+          "delta": 0.2222222222222222
+        },
+        {
+          "amenity": "freezer",
+          "winner_share": 0.4444444444444444,
+          "loser_share": 0.2222222222222222,
+          "delta": 0.2222222222222222
+        },
+        {
+          "amenity": "toaster",
+          "winner_share": 0.4444444444444444,
+          "loser_share": 0.2222222222222222,
+          "delta": 0.2222222222222222
+        },
+        {
+          "amenity": "free parking on premises",
+          "winner_share": 1,
+          "loser_share": 0.7777777777777778,
+          "delta": 0.2222222222222222
+        }
+      ],
+      "title_keywords": [
+        {
+          "word": "nusa",
+          "delta": 0.2222222222222222
+        },
+        {
+          "word": "dua",
+          "delta": 0.2222222222222222
+        },
+        {
+          "word": "luxury",
+          "delta": 0.2222222222222222
+        },
+        {
+          "word": "private",
+          "delta": 0.1111111111111111
+        },
+        {
+          "word": "bali",
+          "delta": 0.1111111111111111
+        },
+        {
+          "word": "pool",
+          "delta": 0
+        }
+      ],
+      "winner_covers": [
+        {
+          "listing_id": "16221548",
+          "listing_name": "Two bedrooms villa close to the beach in nusa dua",
+          "viral_score": 93,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-16221548/original/9b8d5c34-00b1-4a95-92fb-b3c9eb1f6ebe.jpeg",
+          "locality": "Benoa",
+          "ttm_revpar": 843863,
+          "ttm_occupancy": 0.534,
+          "rating_overall": 4.6,
+          "num_reviews": 15
+        },
+        {
+          "listing_id": "1498517136333467385",
+          "listing_name": "Levora by Kozystay | Studio | Large Pool Nusa Dua",
+          "viral_score": 87.7,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTQ5ODUxNzEzNjMzMzQ2NzM4NQ==/original/6c428ffb-d506-4d7f-b028-9717e024e016.jpeg",
+          "locality": "South Kuta",
+          "ttm_revpar": 306700,
+          "ttm_occupancy": 0.411,
+          "rating_overall": 4.95,
+          "num_reviews": 20
+        },
+        {
+          "listing_id": "1059939722039468442",
+          "listing_name": "Charming One Bedroom Private Pool Villa - Nusa Dua",
+          "viral_score": 86.2,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1059939722039468442/original/af16ad48-7be1-49db-ad72-55fd2cf623dd.jpeg",
+          "locality": "Benoa",
+          "ttm_revpar": 433524,
+          "ttm_occupancy": 0.247,
+          "rating_overall": 4.82,
+          "num_reviews": 38
+        },
+        {
+          "listing_id": "1459914388980521012",
+          "listing_name": "Khaya Luxury Villas - 1BR Ocean View Villa",
+          "viral_score": 85.7,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTQ1OTkxNDM4ODk4MDUyMTAxMg==/original/cb2bf955-31b8-4e94-93b2-4ff1be38e1b6.jpeg",
+          "locality": "South Kuta",
+          "ttm_revpar": 2150228,
+          "ttm_occupancy": 0.362,
+          "rating_overall": 5,
+          "num_reviews": 4
+        },
+        {
+          "listing_id": "1111099117181900133",
+          "listing_name": "1BR  Entire House Nusa Dua Bali",
+          "viral_score": 85.4,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-1111099117181900133/original/c2d724ad-d989-4c37-9252-7d7f4299034a.jpeg",
+          "locality": "Benoa",
+          "ttm_revpar": 374955,
+          "ttm_occupancy": 0.677,
+          "rating_overall": 4.69,
+          "num_reviews": 16
+        },
+        {
+          "listing_id": "1496119489153512971",
+          "listing_name": "Top Luxury Pool Villa Nusa Dua",
+          "viral_score": 84.5,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-1496119489153512971/original/c22196bf-5ab1-4994-8ec6-1dd4578aa6d7.jpeg",
+          "locality": "South Kuta",
+          "ttm_revpar": 622639,
+          "ttm_occupancy": 0.195,
+          "rating_overall": 4.82,
+          "num_reviews": 11
+        },
+        {
+          "listing_id": "1389064122102864257",
+          "listing_name": "1BR Peaceful Getaway in Nusa Dua w/Private Pool",
+          "viral_score": 79.5,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-1389064122102864257/original/5aebc2e1-302d-4724-81b9-b54c8c66fb8c.jpeg",
+          "locality": "Kecamatan Kuta Selatan",
+          "ttm_revpar": 785518,
+          "ttm_occupancy": 0.403,
+          "rating_overall": 4.33,
+          "num_reviews": 3
+        },
+        {
+          "listing_id": "1240205724338386912",
+          "listing_name": "Tirta Mumbul Bali Villa Nusa Dua",
+          "viral_score": 79.3,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1240205724338386912/original/0beb8ae6-d460-475d-b0be-9b18dc563442.jpeg",
+          "locality": "Benoa",
+          "ttm_revpar": 226247,
+          "ttm_occupancy": 0.304,
+          "rating_overall": 4.87,
+          "num_reviews": 30
+        },
+        {
+          "listing_id": "1466580536814052186",
+          "listing_name": "Private Villa 1 BR |Private carport| 1 Gate system",
+          "viral_score": 76.5,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-1466580536814052186/original/ac87352d-a28d-42ad-b32b-c5ec7771e012.jpeg",
+          "locality": "South Kuta",
+          "ttm_revpar": 386974,
+          "ttm_occupancy": 0.2,
+          "rating_overall": 4.71,
+          "num_reviews": 14
+        },
+        {
+          "listing_id": "1152509397480724634",
+          "listing_name": "1BR entire house Nusa Dua Bali",
+          "viral_score": 76.2,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-1111099117181900133/original/c2d724ad-d989-4c37-9252-7d7f4299034a.jpeg",
+          "locality": "Benoa",
+          "ttm_revpar": 310108,
+          "ttm_occupancy": 0.405,
+          "rating_overall": 4.67,
+          "num_reviews": 6
+        }
+      ]
+    },
+    "2BR": {
+      "market": "nusa-dua",
+      "cohort": "2BR",
+      "currency": "IDR",
+      "sample_size": 38,
+      "winner_n": 9,
+      "winner_median_photos": 37,
+      "winner_median_title_chars": 35,
+      "winner_median_description_chars": 2551,
+      "winner_median_adr_idr": 2764113,
+      "winner_median_occupancy": 0.584,
+      "winner_superhost_share": 0.6666666666666666,
+      "winner_guest_favorite_share": 0.7777777777777778,
+      "loser_median_photos": 13,
+      "loser_median_description_chars": 677,
+      "loser_instant_book_share": 0.2222222222222222,
+      "top_amenities": [
+        {
+          "amenity": "coffee maker",
+          "winner_share": 0.7777777777777778,
+          "loser_share": 0,
+          "delta": 0.7777777777777778
+        },
+        {
+          "amenity": "high chair",
+          "winner_share": 0.6666666666666666,
+          "loser_share": 0,
+          "delta": 0.6666666666666666
+        },
+        {
+          "amenity": "essentials",
+          "winner_share": 0.8888888888888888,
+          "loser_share": 0.3333333333333333,
+          "delta": 0.5555555555555556
+        },
+        {
+          "amenity": "private entrance",
+          "winner_share": 0.7777777777777778,
+          "loser_share": 0.2222222222222222,
+          "delta": 0.5555555555555556
+        },
+        {
+          "amenity": "patio or balcony",
+          "winner_share": 0.7777777777777778,
+          "loser_share": 0.2222222222222222,
+          "delta": 0.5555555555555556
+        },
+        {
+          "amenity": "toaster",
+          "winner_share": 0.6666666666666666,
+          "loser_share": 0.1111111111111111,
+          "delta": 0.5555555555555556
+        },
+        {
+          "amenity": "crib",
+          "winner_share": 0.5555555555555556,
+          "loser_share": 0.1111111111111111,
+          "delta": 0.4444444444444445
+        },
+        {
+          "amenity": "beach access",
+          "winner_share": 0.5555555555555556,
+          "loser_share": 0.1111111111111111,
+          "delta": 0.4444444444444445
+        }
+      ],
+      "title_keywords": [
+        {
+          "word": "nusa",
+          "delta": 0.5555555555555556
+        },
+        {
+          "word": "dua",
+          "delta": 0.5555555555555556
+        },
+        {
+          "word": "luxury",
+          "delta": 0.4444444444444444
+        },
+        {
+          "word": "apartment",
+          "delta": 0.4444444444444444
+        },
+        {
+          "word": "resort",
+          "delta": 0.2222222222222222
+        }
+      ],
+      "winner_covers": [
+        {
+          "listing_id": "3234117",
+          "listing_name": "NUSA DUA LUXURY 2 BEDROOM APARTMENT",
+          "viral_score": 100,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/22d69943-894d-4e5a-a4fa-6e6ffb2fbe60.jpg",
+          "locality": "Benoa",
+          "ttm_revpar": 2035100,
+          "ttm_occupancy": 0.696,
+          "rating_overall": 4.9,
+          "num_reviews": 172
+        },
+        {
+          "listing_id": "2320703",
+          "listing_name": "LUXURY 2 BEDROOM NUSA DUA APARTMENT",
+          "viral_score": 98.8,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/489100d8-be22-4598-b59a-a28d4d19fe43.jpg",
+          "locality": "Benoa",
+          "ttm_revpar": 1684272,
+          "ttm_occupancy": 0.614,
+          "rating_overall": 4.94,
+          "num_reviews": 133
+        },
+        {
+          "listing_id": "844488",
+          "listing_name": "Luxury 2 Bedroom Apartment in Resort Nusa Dua",
+          "viral_score": 92.8,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/12204752/a858c6d9_original.jpg",
+          "locality": "Benoa",
+          "ttm_revpar": 1426364,
+          "ttm_occupancy": 0.611,
+          "rating_overall": 4.72,
+          "num_reviews": 152
+        },
+        {
+          "listing_id": "41366486",
+          "listing_name": "Luxury Residence 2 with hotel resort facilities",
+          "viral_score": 91.2,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-41366486/original/16fd3cab-7850-40f7-8ecb-78e6861385f6.jpeg",
+          "locality": "Benoa",
+          "ttm_revpar": 1354028,
+          "ttm_occupancy": 0.584,
+          "rating_overall": 4.85,
+          "num_reviews": 133
+        },
+        {
+          "listing_id": "1441801010619533626",
+          "listing_name": "Your Nusa Dua Escape at iRini Villas",
+          "viral_score": 89.1,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTQ0MTgwMTAxMDYxOTUzMzYyNg==/original/9fe56a95-9113-4916-b588-005f9db1e834.jpeg",
+          "locality": "South Kuta",
+          "ttm_revpar": 1131010,
+          "ttm_occupancy": 0.712,
+          "rating_overall": 4.93,
+          "num_reviews": 40
+        },
+        {
+          "listing_id": "848794846297972224",
+          "listing_name": "Beautiful Pet Friendly 2BR Villa in Nusa Dua",
+          "viral_score": 88.4,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6ODQ4Nzk0ODQ2Mjk3OTcyMjI0/original/d9508ec2-2760-4d45-b2b2-f0684dbacafa.jpeg",
+          "locality": "Benoa",
+          "ttm_revpar": 1741316,
+          "ttm_occupancy": 0.463,
+          "rating_overall": 4.72,
+          "num_reviews": 53
+        },
+        {
+          "listing_id": "1137238708752698122",
+          "listing_name": "Villa Sakura Nusa Dua",
+          "viral_score": 82.3,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1137238708752698122/original/7e0d091d-43cf-452c-b7f3-63a0cac7c5fc.jpeg",
+          "locality": "Benoa",
+          "ttm_revpar": 1564668,
+          "ttm_occupancy": 0.378,
+          "rating_overall": 4.93,
+          "num_reviews": 14
+        },
+        {
+          "listing_id": "6317447",
+          "listing_name": "Bali Ocean View Apartment with Pool",
+          "viral_score": 80.5,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/358447e3-a7d0-4e23-81bc-25f6bcedc980.jpg",
+          "locality": "Tanjung Benoa",
+          "ttm_revpar": 1351472,
+          "ttm_occupancy": 0.395,
+          "rating_overall": 4.81,
+          "num_reviews": 132
+        },
+        {
+          "listing_id": "1228183037723890294",
+          "listing_name": "The Peak 8 Villa Nusa Dua",
+          "viral_score": 79.9,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-1228183037723890294/original/48e0f065-2b36-42e7-8401-c5b48f4e507d.jpeg",
+          "locality": "Benoa",
+          "ttm_revpar": 1025578,
+          "ttm_occupancy": 0.466,
+          "rating_overall": 4.91,
+          "num_reviews": 55
+        },
+        {
+          "listing_id": "1496772815525377151",
+          "listing_name": "Luxury pool villa, Nusa Dua, Bali",
+          "viral_score": 74.7,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-1496772815525377151/original/63e79a01-d294-41ce-a7c3-adc02cc81b61.jpeg",
+          "locality": "South Kuta",
+          "ttm_revpar": 1643956,
+          "ttm_occupancy": 0.249,
+          "rating_overall": 5,
+          "num_reviews": 5
+        }
+      ]
+    },
+    "3BR": {
+      "market": "nusa-dua",
+      "cohort": "3BR",
+      "currency": "IDR",
+      "sample_size": 39,
+      "winner_n": 9,
+      "winner_median_photos": 52,
+      "winner_median_title_chars": 48,
+      "winner_median_description_chars": 2359,
+      "winner_median_adr_idr": 4221734,
+      "winner_median_occupancy": 0.641,
+      "winner_superhost_share": 0.8888888888888888,
+      "winner_guest_favorite_share": 0.4444444444444444,
+      "loser_median_photos": 27,
+      "loser_median_description_chars": 59,
+      "loser_instant_book_share": 0.2222222222222222,
+      "top_amenities": [
+        {
+          "amenity": "building staff",
+          "winner_share": 0.7777777777777778,
+          "loser_share": 0,
+          "delta": 0.7777777777777778
+        },
+        {
+          "amenity": "outdoor furniture",
+          "winner_share": 0.7777777777777778,
+          "loser_share": 0.1111111111111111,
+          "delta": 0.6666666666666667
+        },
+        {
+          "amenity": "cleaning before checkout",
+          "winner_share": 0.7777777777777778,
+          "loser_share": 0.1111111111111111,
+          "delta": 0.6666666666666667
+        },
+        {
+          "amenity": "private entrance",
+          "winner_share": 0.8888888888888888,
+          "loser_share": 0.2222222222222222,
+          "delta": 0.6666666666666666
+        },
+        {
+          "amenity": "patio or balcony",
+          "winner_share": 0.8888888888888888,
+          "loser_share": 0.2222222222222222,
+          "delta": 0.6666666666666666
+        },
+        {
+          "amenity": "high chair",
+          "winner_share": 0.5555555555555556,
+          "loser_share": 0,
+          "delta": 0.5555555555555556
+        },
+        {
+          "amenity": "sun loungers",
+          "winner_share": 0.5555555555555556,
+          "loser_share": 0,
+          "delta": 0.5555555555555556
+        },
+        {
+          "amenity": "wine glasses",
+          "winner_share": 0.6666666666666666,
+          "loser_share": 0.1111111111111111,
+          "delta": 0.5555555555555556
+        }
+      ],
+      "title_keywords": [
+        {
+          "word": "nusa",
+          "delta": 0.4444444444444445
+        },
+        {
+          "word": "dua",
+          "delta": 0.4444444444444445
+        },
+        {
+          "word": "private",
+          "delta": 0.33333333333333337
+        },
+        {
+          "word": "resort",
+          "delta": 0.2222222222222222
+        },
+        {
+          "word": "beach",
+          "delta": 0.2222222222222222
+        },
+        {
+          "word": "pool",
+          "delta": 0
+        }
+      ],
+      "winner_covers": [
+        {
+          "listing_id": "1071307250455140236",
+          "listing_name": "Nusa Dua 5 star resort, Private pool, Beach access",
+          "viral_score": 98.7,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1071307250455140236/original/ff8e86fa-1529-41de-9270-a93b0cea3616.jpeg",
+          "locality": "Benoa",
+          "ttm_revpar": 2553876,
+          "ttm_occupancy": 0.71,
+          "rating_overall": 4.81,
+          "num_reviews": 53
+        },
+        {
+          "listing_id": "27073352",
+          "listing_name": "3Bedroom private residence Nusa Dua - 3Emeralds",
+          "viral_score": 95.8,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/airflow/Hosting-27073352/original/a446c42c-18a4-42dc-bce2-16a7f8bfcf04.jpg",
+          "locality": "Benoa",
+          "ttm_revpar": 2191657,
+          "ttm_occupancy": 0.649,
+          "rating_overall": 4.97,
+          "num_reviews": 93
+        },
+        {
+          "listing_id": "1077153227675734409",
+          "listing_name": "3BR Private Villa 10 Min Drive to Nusa Dua Beach",
+          "viral_score": 90.8,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTA3NzE1MzIyNzY3NTczNDQwOQ%3D%3D/original/7adf9e3f-f910-4b3e-a37e-14faf2301505.jpeg",
+          "locality": "Benoa",
+          "ttm_revpar": 1742123,
+          "ttm_occupancy": 0.69,
+          "rating_overall": 4.91,
+          "num_reviews": 96
+        },
+        {
+          "listing_id": "1397573312464192443",
+          "listing_name": "Nusa Dua 3 BR private pool, luxury @Villa Blissful",
+          "viral_score": 87.6,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-1397573312464192443/original/0b06416f-9850-4215-aaef-a36aac90f5b8.jpeg",
+          "locality": "Kecamatan Kuta Selatan",
+          "ttm_revpar": 3177232,
+          "ttm_occupancy": 0.641,
+          "rating_overall": 4.78,
+          "num_reviews": 23
+        },
+        {
+          "listing_id": "783603468347134734",
+          "listing_name": "Villa Noam Nusadua 3BR 10pplBilyard",
+          "viral_score": 86.1,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-783603468347134734/original/ce47fc49-f1fc-4777-a177-1f708e75a6e9.jpeg",
+          "locality": "Benoa",
+          "ttm_revpar": 1455155,
+          "ttm_occupancy": 0.696,
+          "rating_overall": 4.84,
+          "num_reviews": 225
+        },
+        {
+          "listing_id": "23489323",
+          "listing_name": "Villa  NUSA DUA   Resort  5* Private Swimingpool",
+          "viral_score": 85.3,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/ec09453b-b729-47de-8392-417de60d865f.jpg",
+          "locality": "Benoa",
+          "ttm_revpar": 2451448,
+          "ttm_occupancy": 0.499,
+          "rating_overall": 4.58,
+          "num_reviews": 50
+        },
+        {
+          "listing_id": "1355749128560647894",
+          "listing_name": "Chic All-White Villa with Pool & Fire Pit",
+          "viral_score": 81.6,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTM1NTc0OTEyODU2MDY0Nzg5NA==/original/545c58bd-ff7c-432f-8929-763328fd5891.jpeg",
+          "locality": "South Kuta",
+          "ttm_revpar": 2133223,
+          "ttm_occupancy": 0.433,
+          "rating_overall": 4.85,
+          "num_reviews": 53
+        },
+        {
+          "listing_id": "1353487887589498222",
+          "listing_name": "Emerald Villa Nusa Dua, rare gem",
+          "viral_score": 78.9,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTM1MzQ4Nzg4NzU4OTQ5ODIyMg==/original/91062cdd-902e-498a-bc4d-5628b567de6b.jpeg",
+          "locality": "South Kuta",
+          "ttm_revpar": 1889935,
+          "ttm_occupancy": 0.444,
+          "rating_overall": 5,
+          "num_reviews": 13
+        },
+        {
+          "listing_id": "697516619107689437",
+          "listing_name": "Absolute waterfront 3BR villa in Benoa/Nusa Dua!",
+          "viral_score": 78.2,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-697516619107689437/original/fc761f5d-c856-49a4-b2cb-e87d2c6aaab0.jpeg",
+          "locality": "Tanjung Benoa",
+          "ttm_revpar": 3196291,
+          "ttm_occupancy": 0.414,
+          "rating_overall": 4.8,
+          "num_reviews": 10
+        },
+        {
+          "listing_id": "1252038754988580137",
+          "listing_name": "Sophisticated 3BR Villa Queeno near Pandawa Beach",
+          "viral_score": 76.1,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTI1MjAzODc1NDk4ODU4MDEzNw%3D%3D/original/26decd4e-77a2-43fb-a7d8-ec9f86b65bdb.jpeg",
+          "locality": "Benoa",
+          "ttm_revpar": 1357481,
+          "ttm_occupancy": 0.553,
+          "rating_overall": 4.77,
+          "num_reviews": 44
+        }
+      ]
+    },
+    "4BR": {
+      "market": "nusa-dua",
+      "cohort": "4BR",
+      "currency": "IDR",
+      "sample_size": 37,
+      "winner_n": 9,
+      "winner_median_photos": 58,
+      "winner_median_title_chars": 46,
+      "winner_median_description_chars": 2190,
+      "winner_median_adr_idr": 5296822,
+      "winner_median_occupancy": 0.353,
+      "winner_superhost_share": 0.3333333333333333,
+      "winner_guest_favorite_share": 0,
+      "loser_median_photos": 32,
+      "loser_median_description_chars": 167,
+      "loser_instant_book_share": 0,
+      "top_amenities": [
+        {
+          "amenity": "cleaning products",
+          "winner_share": 0.7777777777777778,
+          "loser_share": 0.2222222222222222,
+          "delta": 0.5555555555555556
+        },
+        {
+          "amenity": "exterior security cameras on property",
+          "winner_share": 0.5555555555555556,
+          "loser_share": 0,
+          "delta": 0.5555555555555556
+        },
+        {
+          "amenity": "first aid kit",
+          "winner_share": 0.6666666666666666,
+          "loser_share": 0.1111111111111111,
+          "delta": 0.5555555555555556
+        },
+        {
+          "amenity": "luggage dropoff allowed",
+          "winner_share": 0.8888888888888888,
+          "loser_share": 0.3333333333333333,
+          "delta": 0.5555555555555556
+        },
+        {
+          "amenity": "long term stays allowed",
+          "winner_share": 1,
+          "loser_share": 0.4444444444444444,
+          "delta": 0.5555555555555556
+        },
+        {
+          "amenity": "shower gel",
+          "winner_share": 0.7777777777777778,
+          "loser_share": 0.3333333333333333,
+          "delta": 0.4444444444444445
+        },
+        {
+          "amenity": "oven",
+          "winner_share": 0.5555555555555556,
+          "loser_share": 0.1111111111111111,
+          "delta": 0.4444444444444445
+        },
+        {
+          "amenity": "toaster",
+          "winner_share": 0.5555555555555556,
+          "loser_share": 0.1111111111111111,
+          "delta": 0.4444444444444445
+        }
+      ],
+      "title_keywords": [
+        {
+          "word": "pool",
+          "delta": 0.2222222222222222
+        },
+        {
+          "word": "view",
+          "delta": 0.2222222222222222
+        },
+        {
+          "word": "dua",
+          "delta": 0.1111111111111111
+        },
+        {
+          "word": "nusa",
+          "delta": 0
+        },
+        {
+          "word": "benoa",
+          "delta": -0.2222222222222222
+        }
+      ],
+      "winner_covers": [
+        {
+          "listing_id": "1348975974957615918",
+          "listing_name": "Stylish 4BR Luxury Villa - Pool, Sauna & Cinema",
+          "viral_score": 94.7,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTM0ODk3NTk3NDk1NzYxNTkxOA%3D%3D/original/8a7f49e6-d101-4793-90b9-ef9cc4f93e1e.png",
+          "locality": "Kecamatan Kuta Selatan",
+          "ttm_revpar": 3466218,
+          "ttm_occupancy": 0.436,
+          "rating_overall": 4.66,
+          "num_reviews": 32
+        },
+        {
+          "listing_id": "941851293868760064",
+          "listing_name": "Villa Merry",
+          "viral_score": 87.2,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-941851293868760064/original/2dbdb4f1-5394-470e-a231-7f382e6edd94.png",
+          "locality": "Benoa",
+          "ttm_revpar": 1801589,
+          "ttm_occupancy": 0.381,
+          "rating_overall": 4.84,
+          "num_reviews": 32
+        },
+        {
+          "listing_id": "1360618964801873644",
+          "listing_name": "4BR Ocen View Villa in Jimbaran for Family Only",
+          "viral_score": 86.9,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1360618964801873644/original/400060ad-eb62-4707-a9f7-ac4c5c73fec5.jpeg",
+          "locality": "Kecamatan Kuta Selatan",
+          "ttm_revpar": 1946889,
+          "ttm_occupancy": 0.348,
+          "rating_overall": 4.53,
+          "num_reviews": 15
+        },
+        {
+          "listing_id": "1524635652075659506",
+          "listing_name": "Ocean View 4BR Design Villa w/ Lap Pool & Jacuzzi",
+          "viral_score": 84.7,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-1524635652075659506/original/7af545fa-f8e6-45be-9d65-9e26bbf338aa.jpeg",
+          "locality": "South Kuta",
+          "ttm_revpar": 1822262,
+          "ttm_occupancy": 0.353,
+          "rating_overall": 4.64,
+          "num_reviews": 11
+        },
+        {
+          "listing_id": "937229963729185946",
+          "listing_name": "By the sea 4-bedroom villa in Benoa - Nusa Dua",
+          "viral_score": 82.2,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6OTM3MjI5OTYzNzI5MTg1OTQ2/original/ff2e624d-79c4-4b94-b9db-4f68ae8c2904.jpeg",
+          "locality": "Tanjung Benoa",
+          "ttm_revpar": 2322920,
+          "ttm_occupancy": 0.307,
+          "rating_overall": 4.5,
+          "num_reviews": 4
+        },
+        {
+          "listing_id": "1143805333386299432",
+          "listing_name": "AF-4 Bedroom Waterfront Villa in Nusa Dua",
+          "viral_score": 80.3,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTE0MzgwNTMzMzM4NjI5OTQzMg%3D%3D/original/530b54a1-d473-4861-93bd-e2e32b3ad7de.jpeg",
+          "locality": "Tanjung Benoa",
+          "ttm_revpar": 1820469,
+          "ttm_occupancy": 0.312,
+          "rating_overall": 5,
+          "num_reviews": 6
+        },
+        {
+          "listing_id": "812705364528507431",
+          "listing_name": "4 Bedroom Villa Nusa Dua - Pool , 3 Bathrooms",
+          "viral_score": 80.3,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-812705364528507431/original/515f895d-8faf-4be9-8ce9-e80f77809a1a.jpeg",
+          "locality": "Benoa",
+          "ttm_revpar": 1034233,
+          "ttm_occupancy": 0.537,
+          "rating_overall": 4.85,
+          "num_reviews": 46
+        },
+        {
+          "listing_id": "5236431",
+          "listing_name": "Villa Prabu Madu - Kampial, Nusa Dua",
+          "viral_score": 77.5,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/3b76da9b-5e20-43c6-bd4a-9f376470565a.jpg",
+          "locality": "Benoa",
+          "ttm_revpar": 807089,
+          "ttm_occupancy": 0.405,
+          "rating_overall": 4.88,
+          "num_reviews": 89
+        },
+        {
+          "listing_id": "1127258147821602623",
+          "listing_name": "Benoa Bay: 4-Bedroom Villa Steps from the Beach",
+          "viral_score": 76.9,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1127258147821602623/original/d04de841-2664-4b4a-b51f-6724157634de.jpeg",
+          "locality": "South Kuta",
+          "ttm_revpar": 1531976,
+          "ttm_occupancy": 0.247,
+          "rating_overall": 4.73,
+          "num_reviews": 11
+        },
+        {
+          "listing_id": "959265441430053219",
+          "listing_name": "Stylish 4-Bedroom Private Villa In Nusa Dua",
+          "viral_score": 76.9,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-959265441430053219/original/5a623447-75c8-4f10-9b0c-8525e42adbe1.jpeg",
+          "locality": "Benoa",
+          "ttm_revpar": 1506773,
+          "ttm_occupancy": 0.205,
+          "rating_overall": 5,
+          "num_reviews": 6
+        }
+      ]
+    },
+    "5+BR": {
+      "market": "nusa-dua",
+      "cohort": "5+BR",
+      "currency": "IDR",
+      "sample_size": 28,
+      "winner_n": 7,
+      "winner_median_photos": 48,
+      "winner_median_title_chars": 48,
+      "winner_median_description_chars": 2945,
+      "winner_median_adr_idr": 10222455,
+      "winner_median_occupancy": 0.348,
+      "winner_superhost_share": 0.8571428571428571,
+      "winner_guest_favorite_share": 0.2857142857142857,
+      "loser_median_photos": 37,
+      "loser_median_description_chars": 847,
+      "loser_instant_book_share": 0.14285714285714285,
+      "top_amenities": [
+        {
+          "amenity": "coffee maker",
+          "winner_share": 1,
+          "loser_share": 0,
+          "delta": 1
+        },
+        {
+          "amenity": "patio or balcony",
+          "winner_share": 1,
+          "loser_share": 0.14285714285714285,
+          "delta": 0.8571428571428572
+        },
+        {
+          "amenity": "blender",
+          "winner_share": 0.7142857142857143,
+          "loser_share": 0,
+          "delta": 0.7142857142857143
+        },
+        {
+          "amenity": "backyard",
+          "winner_share": 1,
+          "loser_share": 0.2857142857142857,
+          "delta": 0.7142857142857143
+        },
+        {
+          "amenity": "breakfast",
+          "winner_share": 0.7142857142857143,
+          "loser_share": 0,
+          "delta": 0.7142857142857143
+        },
+        {
+          "amenity": "cleaning products",
+          "winner_share": 0.8571428571428571,
+          "loser_share": 0.14285714285714285,
+          "delta": 0.7142857142857142
+        },
+        {
+          "amenity": "drying rack for clothing",
+          "winner_share": 0.7142857142857143,
+          "loser_share": 0.14285714285714285,
+          "delta": 0.5714285714285714
+        },
+        {
+          "amenity": "sound system",
+          "winner_share": 0.5714285714285714,
+          "loser_share": 0,
+          "delta": 0.5714285714285714
+        }
+      ],
+      "title_keywords": [
+        {
+          "word": "nusa",
+          "delta": 0.5714285714285714
+        },
+        {
+          "word": "dua",
+          "delta": 0.5714285714285714
+        },
+        {
+          "word": "beach",
+          "delta": 0.42857142857142855
+        },
+        {
+          "word": "luxury",
+          "delta": 0.14285714285714285
+        },
+        {
+          "word": "view",
+          "delta": 0
+        }
+      ],
+      "winner_covers": [
+        {
+          "listing_id": "29375091",
+          "listing_name": "Jacuzzi on Roof Terrace with View, 500m to Beach",
+          "viral_score": 100,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-29375091/original/e16c2b72-e5f0-49a0-9672-cdec74917bd3.jpeg",
+          "locality": "Benoa",
+          "ttm_revpar": 6113553,
+          "ttm_occupancy": 0.712,
+          "rating_overall": 4.9,
+          "num_reviews": 167
+        },
+        {
+          "listing_id": "30026002",
+          "listing_name": "Nusa Dua,7 BDR,White Sandy Beaches, Super Location",
+          "viral_score": 94.8,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/b6cc3a9b-5927-42e6-9c87-807565e1c197.jpg",
+          "locality": "Benoa",
+          "ttm_revpar": 5337048,
+          "ttm_occupancy": 0.468,
+          "rating_overall": 4.62,
+          "num_reviews": 68
+        },
+        {
+          "listing_id": "31993512",
+          "listing_name": "Luxury Traditional Design, Sleep 15+ In Nusa Dua",
+          "viral_score": 90.9,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/459c0812-d211-4a71-a196-8c6ae6ddd3ce.jpg",
+          "locality": "Benoa",
+          "ttm_revpar": 3463079,
+          "ttm_occupancy": 0.348,
+          "rating_overall": 4.94,
+          "num_reviews": 69
+        },
+        {
+          "listing_id": "1381494257879099754",
+          "listing_name": "5BR Villa Emerald w/ Pool Close to Nusa Dua Beach",
+          "viral_score": 88.3,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTM4MTQ5NDI1Nzg3OTA5OTc1NA==/original/1eb15d18-b53c-4cb3-9c87-13c175697834.jpeg",
+          "locality": "Kecamatan Kuta Selatan",
+          "ttm_revpar": 2683391,
+          "ttm_occupancy": 0.46,
+          "rating_overall": 4.93,
+          "num_reviews": 15
+        },
+        {
+          "listing_id": "32907039",
+          "listing_name": "Huge 6B Private Castle Villa located in Nusa Dua",
+          "viral_score": 82.6,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/a69e1036-7c40-4e6a-a392-c61810692c4a.jpg",
+          "locality": "Benoa",
+          "ttm_revpar": 3151221,
+          "ttm_occupancy": 0.236,
+          "rating_overall": 4.83,
+          "num_reviews": 109
+        },
+        {
+          "listing_id": "1177077235069696157",
+          "listing_name": "Luxury 8 Bedroom villa Nusa Dua with sea view",
+          "viral_score": 79.8,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1177077235069696157/original/c7122569-17dd-40f8-ab3c-1ee3bf023f3d.jpeg",
+          "locality": "Benoa",
+          "ttm_revpar": 3135391,
+          "ttm_occupancy": 0.203,
+          "rating_overall": 5,
+          "num_reviews": 19
+        },
+        {
+          "listing_id": "973557289049558168",
+          "listing_name": "Mayasari Villa 6BR 10 mins to Nusa Dua Beach",
+          "viral_score": 67.4,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-973557289049558168/original/39ad8b90-ba17-4dc3-a546-49e571e45b75.jpeg",
+          "locality": "Benoa",
+          "ttm_revpar": 1325461,
+          "ttm_occupancy": 0.312,
+          "rating_overall": 4.63,
+          "num_reviews": 16
+        },
+        {
+          "listing_id": "930890766031764358",
+          "listing_name": "Luxury 6-Bedroom Private Villa",
+          "viral_score": 64.8,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6OTMwODkwNzY2MDMxNzY0MzU4/original/2b4ad6a7-9ec4-45eb-b217-944afc9ccd0f.jpeg",
+          "locality": "Benoa",
+          "ttm_revpar": 2636885,
+          "ttm_occupancy": 0.241,
+          "rating_overall": 5,
+          "num_reviews": 3
+        },
+        {
+          "listing_id": "1049155965205659928",
+          "listing_name": "Family 5-Beds Villa with Private Pool and Garden",
+          "viral_score": 64.6,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1049155965205659928/original/d2d7baf6-472f-4ff2-9d21-5a8fc692defc.jpeg",
+          "locality": "South Kuta",
+          "ttm_revpar": 973826,
+          "ttm_occupancy": 0.348,
+          "rating_overall": 4.68,
+          "num_reviews": 28
+        },
+        {
+          "listing_id": "1341805653932628135",
+          "listing_name": "10BR family villa in Jimbaran - Benoa Harbour view",
+          "viral_score": 60.6,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1341805653932628135/original/a1ece2be-4e70-4b5b-b2fc-bd3c35ef572e.jpeg",
+          "locality": "South Kuta",
+          "ttm_revpar": 2567016,
+          "ttm_occupancy": 0.252,
+          "rating_overall": 0,
+          "num_reviews": 2
+        }
+      ]
+    }
+  }
+}

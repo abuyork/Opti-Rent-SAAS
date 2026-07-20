@@ -1,0 +1,1059 @@
+{
+  "market": "uluwatu-bukit",
+  "generated_from": 192,
+  "cohorts": {
+    "1BR": {
+      "market": "uluwatu-bukit",
+      "cohort": "1BR",
+      "currency": "IDR",
+      "sample_size": 40,
+      "winner_n": 10,
+      "winner_median_photos": 26,
+      "winner_median_title_chars": 48,
+      "winner_median_description_chars": 2796.5,
+      "winner_median_adr_idr": 5390953,
+      "winner_median_occupancy": 0.6315,
+      "winner_superhost_share": 1,
+      "winner_guest_favorite_share": 0.8,
+      "loser_median_photos": 11,
+      "loser_median_description_chars": 0,
+      "loser_instant_book_share": 0.1,
+      "top_amenities": [
+        {
+          "amenity": "coffee maker",
+          "winner_share": 0.8,
+          "loser_share": 0,
+          "delta": 0.8
+        },
+        {
+          "amenity": "hair dryer",
+          "winner_share": 1,
+          "loser_share": 0.3,
+          "delta": 0.7
+        },
+        {
+          "amenity": "private entrance",
+          "winner_share": 0.9,
+          "loser_share": 0.2,
+          "delta": 0.7
+        },
+        {
+          "amenity": "safe",
+          "winner_share": 0.8,
+          "loser_share": 0.2,
+          "delta": 0.6000000000000001
+        },
+        {
+          "amenity": "stove",
+          "winner_share": 0.8,
+          "loser_share": 0.2,
+          "delta": 0.6000000000000001
+        },
+        {
+          "amenity": "pool view",
+          "winner_share": 0.7,
+          "loser_share": 0.1,
+          "delta": 0.6
+        },
+        {
+          "amenity": "bathtub",
+          "winner_share": 0.7,
+          "loser_share": 0.1,
+          "delta": 0.6
+        },
+        {
+          "amenity": "dishes and silverware",
+          "winner_share": 1,
+          "loser_share": 0.4,
+          "delta": 0.6
+        }
+      ],
+      "title_keywords": [
+        {
+          "word": "ocean",
+          "delta": 0.5
+        },
+        {
+          "word": "view",
+          "delta": 0.30000000000000004
+        },
+        {
+          "word": "bingin",
+          "delta": 0.3
+        },
+        {
+          "word": "panoramic",
+          "delta": 0.2
+        },
+        {
+          "word": "uniquely",
+          "delta": 0.2
+        },
+        {
+          "word": "airship",
+          "delta": 0.2
+        },
+        {
+          "word": "bali",
+          "delta": 0.2
+        },
+        {
+          "word": "beach",
+          "delta": 0.2
+        }
+      ],
+      "winner_covers": [
+        {
+          "listing_id": "1120040062088702973",
+          "listing_name": "1BR Panoramic Ocean View Villa in Bingin/Uluwatu",
+          "viral_score": 93.7,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-1120040062088702973/original/18add146-c793-4dbe-8f45-ad85373c6f01.png",
+          "locality": "Pecatu",
+          "ttm_revpar": 3806866,
+          "ttm_occupancy": 0.666,
+          "rating_overall": 4.92,
+          "num_reviews": 71
+        },
+        {
+          "listing_id": "546669230556606281",
+          "listing_name": "Uniquely 1 Bedroom Airship Bali 2 with Ocean View",
+          "viral_score": 90.8,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-546669230556606281/original/32400272-6108-4e69-acaa-0cd4f8cc4d6d.jpeg",
+          "locality": "Pecatu",
+          "ttm_revpar": 6691704,
+          "ttm_occupancy": 0.603,
+          "rating_overall": 4.68,
+          "num_reviews": 168
+        },
+        {
+          "listing_id": "546601492376628844",
+          "listing_name": "Uniquely 1Bedroom Airship Bali 1 with Ocean View",
+          "viral_score": 90.8,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-546601492376628844/original/549f504b-c378-4bfe-bbe0-7f3992e86cb4.jpeg",
+          "locality": "Pecatu",
+          "ttm_revpar": 5646394,
+          "ttm_occupancy": 0.641,
+          "rating_overall": 4.61,
+          "num_reviews": 109
+        },
+        {
+          "listing_id": "726454941072912453",
+          "listing_name": "Contemporary and Tropical Villa with Pool",
+          "viral_score": 89.1,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-726454941072912453/original/0485f8a7-76eb-473e-84df-6244a65bae58.jpeg",
+          "locality": "Pecatu",
+          "ttm_revpar": 3179788,
+          "ttm_occupancy": 0.737,
+          "rating_overall": 4.97,
+          "num_reviews": 72
+        },
+        {
+          "listing_id": "1120048501263456802",
+          "listing_name": "1BR Adults Only Panoramic Ocean View in Bingin",
+          "viral_score": 88.3,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-1120048501263456802/original/2b5c31cc-343f-4d3c-a2d1-81278d0a7d5c.png",
+          "locality": "Pecatu",
+          "ttm_revpar": 3248582,
+          "ttm_occupancy": 0.622,
+          "rating_overall": 4.94,
+          "num_reviews": 88
+        },
+        {
+          "listing_id": "36711939",
+          "listing_name": "Pronoia Beach Resort 1BR Private Pool Villa (VA)",
+          "viral_score": 88.1,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/12c636ca-4b5a-4bc9-923c-a85647cc25d7.jpg",
+          "locality": "Kedonganan",
+          "ttm_revpar": 3241855,
+          "ttm_occupancy": 0.701,
+          "rating_overall": 4.96,
+          "num_reviews": 52
+        },
+        {
+          "listing_id": "1120069200504594097",
+          "listing_name": "If You Want to Have a Romantic Escape, Click Here",
+          "viral_score": 85.5,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-1120069200504594097/original/0b1484dd-83a5-4544-9121-c963a659617e.jpeg",
+          "locality": "Pecatu",
+          "ttm_revpar": 3562726,
+          "ttm_occupancy": 0.611,
+          "rating_overall": 4.98,
+          "num_reviews": 44
+        },
+        {
+          "listing_id": "1120026478722135711",
+          "listing_name": "1BR Villa to Make Your Partner Fall Madly in Love",
+          "viral_score": 78.3,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-1120026478722135711/original/1bff12a8-946e-4ea8-8a66-3329acf954d2.png",
+          "locality": "Pecatu",
+          "ttm_revpar": 3009464,
+          "ttm_occupancy": 0.589,
+          "rating_overall": 4.99,
+          "num_reviews": 73
+        },
+        {
+          "listing_id": "913913937746968916",
+          "listing_name": "Private Pool, Boutique Villa, Bingin Beach.",
+          "viral_score": 77.4,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-913913937746968916/original/2d2523b7-8634-4431-8817-f943c84e974a.jpeg",
+          "locality": "Pecatu",
+          "ttm_revpar": 2580290,
+          "ttm_occupancy": 0.682,
+          "rating_overall": 4.96,
+          "num_reviews": 106
+        },
+        {
+          "listing_id": "34425691",
+          "listing_name": "Ocean Escape. Secluded 1br & private pool",
+          "viral_score": 76.8,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/cb4de064-6cc2-4a6c-afec-88714fd9314e.jpg",
+          "locality": "Pecatu",
+          "ttm_revpar": 2921208,
+          "ttm_occupancy": 0.499,
+          "rating_overall": 4.97,
+          "num_reviews": 106
+        }
+      ]
+    },
+    "2BR": {
+      "market": "uluwatu-bukit",
+      "cohort": "2BR",
+      "currency": "IDR",
+      "sample_size": 35,
+      "winner_n": 8,
+      "winner_median_photos": 44.5,
+      "winner_median_title_chars": 42.5,
+      "winner_median_description_chars": 3286.5,
+      "winner_median_adr_idr": 5559977,
+      "winner_median_occupancy": 0.7095,
+      "winner_superhost_share": 1,
+      "winner_guest_favorite_share": 1,
+      "loser_median_photos": 19,
+      "loser_median_description_chars": 0,
+      "loser_instant_book_share": 0.375,
+      "top_amenities": [
+        {
+          "amenity": "sun loungers",
+          "winner_share": 1,
+          "loser_share": 0,
+          "delta": 1
+        },
+        {
+          "amenity": "safe",
+          "winner_share": 0.875,
+          "loser_share": 0,
+          "delta": 0.875
+        },
+        {
+          "amenity": "bathtub",
+          "winner_share": 0.75,
+          "loser_share": 0,
+          "delta": 0.75
+        },
+        {
+          "amenity": "shampoo",
+          "winner_share": 0.875,
+          "loser_share": 0.125,
+          "delta": 0.75
+        },
+        {
+          "amenity": "conditioner",
+          "winner_share": 0.75,
+          "loser_share": 0,
+          "delta": 0.75
+        },
+        {
+          "amenity": "body soap",
+          "winner_share": 0.875,
+          "loser_share": 0.125,
+          "delta": 0.75
+        },
+        {
+          "amenity": "shower gel",
+          "winner_share": 0.75,
+          "loser_share": 0,
+          "delta": 0.75
+        },
+        {
+          "amenity": "coffee",
+          "winner_share": 0.75,
+          "loser_share": 0,
+          "delta": 0.75
+        }
+      ],
+      "title_keywords": [
+        {
+          "word": "tropical",
+          "delta": 0.25
+        },
+        {
+          "word": "bingin",
+          "delta": 0.25
+        },
+        {
+          "word": "stunning",
+          "delta": 0.25
+        },
+        {
+          "word": "private",
+          "delta": 0.25
+        },
+        {
+          "word": "uluwatu",
+          "delta": 0.125
+        },
+        {
+          "word": "pool",
+          "delta": 0
+        }
+      ],
+      "winner_covers": [
+        {
+          "listing_id": "755292056144261232",
+          "listing_name": "Panoramic Ocean View with gym",
+          "viral_score": 100,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-742242003461197493/original/8612997f-700b-44e6-b7fb-6a71b193b382.jpeg",
+          "locality": "Pecatu",
+          "ttm_revpar": 4612476,
+          "ttm_occupancy": 0.732,
+          "rating_overall": 5,
+          "num_reviews": 48
+        },
+        {
+          "listing_id": "1308381189155716115",
+          "listing_name": "Tropical Oasis in Uluwatu ~ Amazing Location",
+          "viral_score": 97.4,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTMwODM4MTE4OTE1NTcxNjExNQ==/original/c0fa3d60-a635-46de-83f9-56bc0c5655c7.jpeg",
+          "locality": "Pecatu",
+          "ttm_revpar": 4353805,
+          "ttm_occupancy": 0.734,
+          "rating_overall": 4.98,
+          "num_reviews": 41
+        },
+        {
+          "listing_id": "1254418680435456468",
+          "listing_name": "T u a m o t u \nBingin Beach",
+          "viral_score": 88.1,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-1254418680435456468/original/106e42ab-13cd-45ba-98fa-be197bcca8f3.jpeg",
+          "locality": "Pecatu",
+          "ttm_revpar": 3825971,
+          "ttm_occupancy": 0.715,
+          "rating_overall": 4.95,
+          "num_reviews": 37
+        },
+        {
+          "listing_id": "1396092932545071368",
+          "listing_name": "Stunning 2br Bingin Villa with Private Pool",
+          "viral_score": 87.5,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-1396092932545071368/original/980d727c-14ff-44b2-b0c8-e2822767a7c3.jpeg",
+          "locality": "Kecamatan Kuta Selatan",
+          "ttm_revpar": 4138277,
+          "ttm_occupancy": 0.715,
+          "rating_overall": 4.92,
+          "num_reviews": 24
+        },
+        {
+          "listing_id": "1290819825211642453",
+          "listing_name": "Prime Uluwatu 2BR Tropical Hideaway",
+          "viral_score": 87.4,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-1290819825211642453/original/6f40ba69-05f5-41ad-af61-fb1ee9a6af02.jpeg",
+          "locality": "Pecatu",
+          "ttm_revpar": 4306538,
+          "ttm_occupancy": 0.649,
+          "rating_overall": 4.91,
+          "num_reviews": 47
+        },
+        {
+          "listing_id": "938436432245563184",
+          "listing_name": "The Young Villas: Luxury Two-bedroom villa",
+          "viral_score": 85.3,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-938436432245563184/original/bc4aaf24-5665-4425-9d6c-774264c13ce0.png",
+          "locality": "Pecatu",
+          "ttm_revpar": 3587436,
+          "ttm_occupancy": 0.677,
+          "rating_overall": 4.98,
+          "num_reviews": 46
+        },
+        {
+          "listing_id": "1379419621414676579",
+          "listing_name": "Stunning Private Pool Villa in the Heart of Ulu",
+          "viral_score": 81.5,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTM3OTQxOTYyMTQxNDY3NjU3OQ==/original/6ae629fa-2486-4bd6-9061-69f101c71148.jpeg",
+          "locality": "Kecamatan Kuta Selatan",
+          "ttm_revpar": 3585418,
+          "ttm_occupancy": 0.701,
+          "rating_overall": 4.97,
+          "num_reviews": 36
+        },
+        {
+          "listing_id": "1243257287504315821",
+          "listing_name": "Villa Zara Spacious, Chic & Classy 2BR in Uluwatu",
+          "viral_score": 77.4,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTI0MzI1NzI4NzUwNDMxNTgyMQ==/original/2066f817-97eb-4370-b845-119c56c1a69f.jpeg",
+          "locality": "Pecatu",
+          "ttm_revpar": 3522679,
+          "ttm_occupancy": 0.704,
+          "rating_overall": 4.96,
+          "num_reviews": 23
+        },
+        {
+          "listing_id": "1060428703924888176",
+          "listing_name": "Casa Maro: A Minimalist & Tropical Villa Uluwatu",
+          "viral_score": 77.1,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1060428703924888176/original/749aaa7f-2304-4bdd-ab97-4ebbc4b4a640.jpeg",
+          "locality": "Pecatu",
+          "ttm_revpar": 3492946,
+          "ttm_occupancy": 0.712,
+          "rating_overall": 4.92,
+          "num_reviews": 50
+        },
+        {
+          "listing_id": "1137195939209244869",
+          "listing_name": "5-Star Stay in the Heart of Uluwatu",
+          "viral_score": 73.5,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-1137195939209244869/original/2936c04a-c006-40a6-a508-504df1487ef0.jpeg",
+          "locality": "Pecatu",
+          "ttm_revpar": 3337376,
+          "ttm_occupancy": 0.666,
+          "rating_overall": 4.9,
+          "num_reviews": 48
+        }
+      ]
+    },
+    "3BR": {
+      "market": "uluwatu-bukit",
+      "cohort": "3BR",
+      "currency": "IDR",
+      "sample_size": 38,
+      "winner_n": 9,
+      "winner_median_photos": 47,
+      "winner_median_title_chars": 46,
+      "winner_median_description_chars": 3115,
+      "winner_median_adr_idr": 7069664,
+      "winner_median_occupancy": 0.69,
+      "winner_superhost_share": 0.8888888888888888,
+      "winner_guest_favorite_share": 0.8888888888888888,
+      "loser_median_photos": 39,
+      "loser_median_description_chars": 0,
+      "loser_instant_book_share": 0.1111111111111111,
+      "top_amenities": [
+        {
+          "amenity": "safe",
+          "winner_share": 1,
+          "loser_share": 0.2222222222222222,
+          "delta": 0.7777777777777778
+        },
+        {
+          "amenity": "dedicated workspace",
+          "winner_share": 1,
+          "loser_share": 0.2222222222222222,
+          "delta": 0.7777777777777778
+        },
+        {
+          "amenity": "cleaning before checkout",
+          "winner_share": 0.8888888888888888,
+          "loser_share": 0.1111111111111111,
+          "delta": 0.7777777777777777
+        },
+        {
+          "amenity": "blender",
+          "winner_share": 0.7777777777777778,
+          "loser_share": 0.1111111111111111,
+          "delta": 0.6666666666666667
+        },
+        {
+          "amenity": "bathtub",
+          "winner_share": 0.8888888888888888,
+          "loser_share": 0.2222222222222222,
+          "delta": 0.6666666666666666
+        },
+        {
+          "amenity": "crib",
+          "winner_share": 0.6666666666666666,
+          "loser_share": 0,
+          "delta": 0.6666666666666666
+        },
+        {
+          "amenity": "exterior security cameras on property",
+          "winner_share": 0.6666666666666666,
+          "loser_share": 0,
+          "delta": 0.6666666666666666
+        },
+        {
+          "amenity": "dining table",
+          "winner_share": 0.8888888888888888,
+          "loser_share": 0.3333333333333333,
+          "delta": 0.5555555555555556
+        }
+      ],
+      "title_keywords": [
+        {
+          "word": "uluwatu",
+          "delta": 0.4444444444444444
+        },
+        {
+          "word": "bingin",
+          "delta": 0.2222222222222222
+        },
+        {
+          "word": "luxury",
+          "delta": 0.2222222222222222
+        },
+        {
+          "word": "three",
+          "delta": 0.2222222222222222
+        },
+        {
+          "word": "beach",
+          "delta": 0.2222222222222222
+        },
+        {
+          "word": "private",
+          "delta": 0.1111111111111111
+        },
+        {
+          "word": "pool",
+          "delta": -0.3333333333333333
+        }
+      ],
+      "winner_covers": [
+        {
+          "listing_id": "859825233986616566",
+          "listing_name": "Eternal - 3 Bedroom Ocean View Villa",
+          "viral_score": 99.9,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-859825233986616566/original/aaa764be-edc6-49ff-920b-546721ad454b.jpeg",
+          "locality": "Pecatu",
+          "ttm_revpar": 6242753,
+          "ttm_occupancy": 0.721,
+          "rating_overall": 4.96,
+          "num_reviews": 49
+        },
+        {
+          "listing_id": "1278647361473957828",
+          "listing_name": "Nisí Bingin - 3bed 3bath Private Pool (Villa 9)",
+          "viral_score": 94.5,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1278647361473957828/original/0da52dfc-e9aa-49b3-885f-267a270da615.jpeg",
+          "locality": "Pecatu",
+          "ttm_revpar": 5302876,
+          "ttm_occupancy": 0.732,
+          "rating_overall": 5,
+          "num_reviews": 23
+        },
+        {
+          "listing_id": "1409181419729679075",
+          "listing_name": "Dream Villa 3 : 3BR Brand New Villa In Uluwatu",
+          "viral_score": 92.6,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1409181419729679075/original/d822e818-b0e8-400d-8ace-f20dee75d272.jpeg",
+          "locality": "Kecamatan Kuta Selatan",
+          "ttm_revpar": 4858499,
+          "ttm_occupancy": 0.723,
+          "rating_overall": 4.89,
+          "num_reviews": 38
+        },
+        {
+          "listing_id": "1275088511796780006",
+          "listing_name": "Spacious Luxury Villa • Prime Uluwatu location",
+          "viral_score": 90.5,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1275088511796780006/original/a322c236-7c48-453d-83e2-658b7f14f361.jpeg",
+          "locality": "Pecatu",
+          "ttm_revpar": 5013217,
+          "ttm_occupancy": 0.69,
+          "rating_overall": 4.84,
+          "num_reviews": 57
+        },
+        {
+          "listing_id": "1098603406921983943",
+          "listing_name": "Private pool Three bedroom Villa · Uluwatu",
+          "viral_score": 89.6,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTA5ODYwMzQwNjkyMTk4Mzk0Mw%3D%3D/original/e5f8a708-3ad3-4f4f-89d9-221e6b6466e9.png",
+          "locality": "Pecatu",
+          "ttm_revpar": 4681807,
+          "ttm_occupancy": 0.666,
+          "rating_overall": 4.97,
+          "num_reviews": 39
+        },
+        {
+          "listing_id": "1043786819645171676",
+          "listing_name": "Seaside 3 Br Villa, Walking Distance to Beach",
+          "viral_score": 86.9,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-1043786819645171676/original/971bdf65-f5b1-4306-9afd-dec5e54d1cc4.jpeg",
+          "locality": "Pecatu",
+          "ttm_revpar": 4270168,
+          "ttm_occupancy": 0.726,
+          "rating_overall": 4.93,
+          "num_reviews": 41
+        },
+        {
+          "listing_id": "1231697200876507031",
+          "listing_name": "Mona Boutique Villas & Spa – Raja Utara",
+          "viral_score": 85.3,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTIzMTY5NzIwMDg3NjUwNzAzMQ%3D%3D/original/a97335eb-d1be-427b-b586-91af79879b1c.jpeg",
+          "locality": "Pecatu",
+          "ttm_revpar": 5358171,
+          "ttm_occupancy": 0.575,
+          "rating_overall": 5,
+          "num_reviews": 23
+        },
+        {
+          "listing_id": "558974354426332581",
+          "listing_name": "Modern Elegance in Bingin Beach: 3 BR Luxury Villa",
+          "viral_score": 83.5,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-558974354426332581/original/2ce84e8f-ab30-4771-9c0b-7b5ec79765e9.jpeg",
+          "locality": "Pecatu",
+          "ttm_revpar": 4253575,
+          "ttm_occupancy": 0.647,
+          "rating_overall": 4.98,
+          "num_reviews": 110
+        },
+        {
+          "listing_id": "1098612081068936751",
+          "listing_name": "Private pool three-bedroom Managed villa · Uluwatu",
+          "viral_score": 82.3,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-1098612081068936751/original/f0e4e901-bedd-423b-be7f-dade9114c528.png",
+          "locality": "Pecatu",
+          "ttm_revpar": 4380219,
+          "ttm_occupancy": 0.614,
+          "rating_overall": 4.97,
+          "num_reviews": 39
+        },
+        {
+          "listing_id": "1207521891668979727",
+          "listing_name": "Nisí Bingin - 3bed 3bath Private Pool (Villa 2)",
+          "viral_score": 80.1,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1207521891668979727/original/6cda4df0-5abe-4ceb-be6b-bfe929d576c3.jpeg",
+          "locality": "Pecatu",
+          "ttm_revpar": 4616422,
+          "ttm_occupancy": 0.605,
+          "rating_overall": 4.96,
+          "num_reviews": 23
+        }
+      ]
+    },
+    "4BR": {
+      "market": "uluwatu-bukit",
+      "cohort": "4BR",
+      "currency": "IDR",
+      "sample_size": 39,
+      "winner_n": 9,
+      "winner_median_photos": 45,
+      "winner_median_title_chars": 47,
+      "winner_median_description_chars": 4926,
+      "winner_median_adr_idr": 9718254,
+      "winner_median_occupancy": 0.638,
+      "winner_superhost_share": 0.7777777777777778,
+      "winner_guest_favorite_share": 0.6666666666666666,
+      "loser_median_photos": 43,
+      "loser_median_description_chars": 480,
+      "loser_instant_book_share": 0.2222222222222222,
+      "top_amenities": [
+        {
+          "amenity": "sound system",
+          "winner_share": 0.8888888888888888,
+          "loser_share": 0,
+          "delta": 0.8888888888888888
+        },
+        {
+          "amenity": "wine glasses",
+          "winner_share": 0.8888888888888888,
+          "loser_share": 0.1111111111111111,
+          "delta": 0.7777777777777777
+        },
+        {
+          "amenity": "sun loungers",
+          "winner_share": 0.8888888888888888,
+          "loser_share": 0.1111111111111111,
+          "delta": 0.7777777777777777
+        },
+        {
+          "amenity": "crib",
+          "winner_share": 0.7777777777777778,
+          "loser_share": 0.1111111111111111,
+          "delta": 0.6666666666666667
+        },
+        {
+          "amenity": "conditioner",
+          "winner_share": 0.8888888888888888,
+          "loser_share": 0.2222222222222222,
+          "delta": 0.6666666666666666
+        },
+        {
+          "amenity": "high chair",
+          "winner_share": 0.6666666666666666,
+          "loser_share": 0,
+          "delta": 0.6666666666666666
+        },
+        {
+          "amenity": "blender",
+          "winner_share": 0.8888888888888888,
+          "loser_share": 0.2222222222222222,
+          "delta": 0.6666666666666666
+        },
+        {
+          "amenity": "outdoor furniture",
+          "winner_share": 0.8888888888888888,
+          "loser_share": 0.2222222222222222,
+          "delta": 0.6666666666666666
+        }
+      ],
+      "title_keywords": [
+        {
+          "word": "bingin",
+          "delta": 0.3333333333333333
+        },
+        {
+          "word": "uluwatu",
+          "delta": 0.3333333333333333
+        },
+        {
+          "word": "private",
+          "delta": 0.2222222222222222
+        },
+        {
+          "word": "cliff",
+          "delta": 0.2222222222222222
+        },
+        {
+          "word": "luxury",
+          "delta": 0.2222222222222222
+        },
+        {
+          "word": "ocean",
+          "delta": 0.2222222222222222
+        },
+        {
+          "word": "beach",
+          "delta": 0.1111111111111111
+        },
+        {
+          "word": "pool",
+          "delta": -0.1111111111111111
+        }
+      ],
+      "winner_covers": [
+        {
+          "listing_id": "50272199",
+          "listing_name": "A heaven of serenity in the heart of Bingin -4bdrs",
+          "viral_score": 100,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-50272199/original/787671ec-9f03-4032-a437-60df8f62ba8c.jpeg",
+          "locality": "Pecatu",
+          "ttm_revpar": 7328738,
+          "ttm_occupancy": 0.737,
+          "rating_overall": 4.95,
+          "num_reviews": 130
+        },
+        {
+          "listing_id": "1130728331567495225",
+          "listing_name": "4BR Tropical Oasis Experience at Bingin, Uluwatu",
+          "viral_score": 90.3,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTEzMDcyODMzMTU2NzQ5NTIyNQ%3D%3D/original/cc90aaf1-403d-4838-8a35-a0c8c227bd31.jpeg",
+          "locality": "Pecatu",
+          "ttm_revpar": 6479718,
+          "ttm_occupancy": 0.707,
+          "rating_overall": 4.84,
+          "num_reviews": 51
+        },
+        {
+          "listing_id": "669236370778973001",
+          "listing_name": "La Lourdes – Private hideaway near Bingin beach",
+          "viral_score": 88,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-669236370778973001/original/0e6b094d-714a-4acb-aa5f-140eba939e20.jpeg",
+          "locality": "Pecatu",
+          "ttm_revpar": 6265042,
+          "ttm_occupancy": 0.638,
+          "rating_overall": 4.95,
+          "num_reviews": 102
+        },
+        {
+          "listing_id": "4887818",
+          "listing_name": "Cliff front, private beach Villa Aum",
+          "viral_score": 86.8,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-4887818/original/fdab6106-dac3-4017-8e93-f6afeabb65d5.jpeg",
+          "locality": "Jimbaran",
+          "ttm_revpar": 7105675,
+          "ttm_occupancy": 0.545,
+          "rating_overall": 5,
+          "num_reviews": 30
+        },
+        {
+          "listing_id": "1304178440063681667",
+          "listing_name": "Valentina 4BR Villa, for Groups/Family",
+          "viral_score": 84.5,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-1304178440063681667/original/fb5a3a5f-431f-4689-bbb8-1a371fe0940e.jpeg",
+          "locality": "Pecatu",
+          "ttm_revpar": 6773637,
+          "ttm_occupancy": 0.663,
+          "rating_overall": 4.77,
+          "num_reviews": 26
+        },
+        {
+          "listing_id": "677220239021613668",
+          "listing_name": "Sunset Palms Luxury Beachside Pool Villa 4BR",
+          "viral_score": 82.9,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-677220239021613668/original/e0c0446d-0922-47b8-87b0-ed3006494028.jpeg",
+          "locality": "Kedonganan",
+          "ttm_revpar": 5903136,
+          "ttm_occupancy": 0.688,
+          "rating_overall": 5,
+          "num_reviews": 24
+        },
+        {
+          "listing_id": "23264865",
+          "listing_name": "Luxury 4 Bedroom Cliff Ocean Edge Villa Uluwatu",
+          "viral_score": 79.2,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/c91b14c7-89c7-4309-a554-2fc3ce40d542.jpg",
+          "locality": "Pecatu",
+          "ttm_revpar": 6482723,
+          "ttm_occupancy": 0.132,
+          "rating_overall": 5,
+          "num_reviews": 31
+        },
+        {
+          "listing_id": "28701636",
+          "listing_name": "Ocean View 4BR, Butler, 24 Sec. Daily Breakfast",
+          "viral_score": 79.2,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/dab026c0-3320-4b1e-a4e9-f56b7fb12c1b.jpg",
+          "locality": "Kutuh",
+          "ttm_revpar": 5267807,
+          "ttm_occupancy": 0.553,
+          "rating_overall": 4.92,
+          "num_reviews": 59
+        },
+        {
+          "listing_id": "1042584168550079934",
+          "listing_name": "Private pool Four bedroom Managed villa · Uluwatu",
+          "viral_score": 78.7,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-1042584168550079934/original/51fd6004-8ea1-4a2a-bd97-5effe264a793.png",
+          "locality": "Pecatu",
+          "ttm_revpar": 5055776,
+          "ttm_occupancy": 0.619,
+          "rating_overall": 4.98,
+          "num_reviews": 43
+        },
+        {
+          "listing_id": "29193245",
+          "listing_name": "Ocean View, 4BR, Butler, 24hr Sec. Daily Breakfast",
+          "viral_score": 76.1,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/face7eae-4fbb-42d8-a35d-76f33efb8885.jpg",
+          "locality": "Kutuh",
+          "ttm_revpar": 6001169,
+          "ttm_occupancy": 0.603,
+          "rating_overall": 4.96,
+          "num_reviews": 27
+        }
+      ]
+    },
+    "5+BR": {
+      "market": "uluwatu-bukit",
+      "cohort": "5+BR",
+      "currency": "IDR",
+      "sample_size": 40,
+      "winner_n": 10,
+      "winner_median_photos": 78,
+      "winner_median_title_chars": 47.5,
+      "winner_median_description_chars": 4307,
+      "winner_median_adr_idr": 16822001,
+      "winner_median_occupancy": 0.6645,
+      "winner_superhost_share": 1,
+      "winner_guest_favorite_share": 0.7,
+      "loser_median_photos": 47.5,
+      "loser_median_description_chars": 1527.5,
+      "loser_instant_book_share": 0.2,
+      "top_amenities": [
+        {
+          "amenity": "conditioner",
+          "winner_share": 0.8,
+          "loser_share": 0.2,
+          "delta": 0.6000000000000001
+        },
+        {
+          "amenity": "board games",
+          "winner_share": 0.6,
+          "loser_share": 0,
+          "delta": 0.6
+        },
+        {
+          "amenity": "mini fridge",
+          "winner_share": 0.6,
+          "loser_share": 0,
+          "delta": 0.6
+        },
+        {
+          "amenity": "coffee",
+          "winner_share": 0.8,
+          "loser_share": 0.3,
+          "delta": 0.5
+        },
+        {
+          "amenity": "outdoor shower",
+          "winner_share": 0.7,
+          "loser_share": 0.2,
+          "delta": 0.49999999999999994
+        },
+        {
+          "amenity": "bbq grill",
+          "winner_share": 0.7,
+          "loser_share": 0.2,
+          "delta": 0.49999999999999994
+        },
+        {
+          "amenity": "pack ’n play/travel crib",
+          "winner_share": 0.5,
+          "loser_share": 0.1,
+          "delta": 0.4
+        },
+        {
+          "amenity": "patio or balcony",
+          "winner_share": 0.9,
+          "loser_share": 0.5,
+          "delta": 0.4
+        }
+      ],
+      "title_keywords": [
+        {
+          "word": "bingin",
+          "delta": 0.4
+        },
+        {
+          "word": "ocean",
+          "delta": 0.30000000000000004
+        },
+        {
+          "word": "view",
+          "delta": 0.3
+        },
+        {
+          "word": "views",
+          "delta": 0.1
+        },
+        {
+          "word": "6br",
+          "delta": 0.1
+        },
+        {
+          "word": "beach",
+          "delta": 0.09999999999999998
+        },
+        {
+          "word": "uluwatu",
+          "delta": 0
+        },
+        {
+          "word": "pool",
+          "delta": 0
+        }
+      ],
+      "winner_covers": [
+        {
+          "listing_id": "1175701686199288054",
+          "listing_name": "Luxurious Ocean views 5 Bdr Villa - Bingin Beach",
+          "viral_score": 90.1,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1175701686199288054/original/7426dbb8-f9cf-4b7a-ac6e-c50717c4891e.jpeg",
+          "locality": "Pecatu",
+          "ttm_revpar": 12537393,
+          "ttm_occupancy": 0.718,
+          "rating_overall": 4.93,
+          "num_reviews": 27
+        },
+        {
+          "listing_id": "8284831",
+          "listing_name": "7 bedroom Villa TirtaKencana near Nusa Dua&Uluwatu",
+          "viral_score": 90,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/0526bf1d-409b-453d-9c00-e441f210e403.jpg",
+          "locality": "Kutuh",
+          "ttm_revpar": 11043087,
+          "ttm_occupancy": 0.745,
+          "rating_overall": 4.77,
+          "num_reviews": 57
+        },
+        {
+          "listing_id": "711239502856364613",
+          "listing_name": "The Backyard Bingin - Celebrate in Style!",
+          "viral_score": 89.6,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-711239502856364613/original/0223e31c-05e9-4128-b095-1e93a9f1a181.jpeg",
+          "locality": "Pecatu",
+          "ttm_revpar": 13211469,
+          "ttm_occupancy": 0.529,
+          "rating_overall": 4.89,
+          "num_reviews": 38
+        },
+        {
+          "listing_id": "27003518",
+          "listing_name": "Villa Bayu, Uluwatu, full staff luxury estate",
+          "viral_score": 88.5,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MjcwMDM1MTg%3D/original/6ef38ce5-8d4b-438f-81f7-43f5bc6fecd7.jpeg",
+          "locality": "Pecatu",
+          "ttm_revpar": 11483966,
+          "ttm_occupancy": 0.688,
+          "rating_overall": 4.84,
+          "num_reviews": 57
+        },
+        {
+          "listing_id": "880004742173857641",
+          "listing_name": "Ocean View 6br Retreat w/ Infinity Pool Bingin",
+          "viral_score": 87.4,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-880004742173857641/original/94e4200e-285e-4efd-9154-29e6569707d0.jpeg",
+          "locality": "Pecatu",
+          "ttm_revpar": 12920600,
+          "ttm_occupancy": 0.619,
+          "rating_overall": 4.78,
+          "num_reviews": 59
+        },
+        {
+          "listing_id": "28654006",
+          "listing_name": "* Villa EMILE * (5bdr/Beach/Pool)",
+          "viral_score": 85,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/8f90d7dd-ba9b-4e40-a290-59ea30c6b704.jpg",
+          "locality": "Pecatu",
+          "ttm_revpar": 8220720,
+          "ttm_occupancy": 0.734,
+          "rating_overall": 4.91,
+          "num_reviews": 76
+        },
+        {
+          "listing_id": "51414187",
+          "listing_name": "Luxury 9BR Bingin Villa | Huge Pool, Walk to Beach",
+          "viral_score": 83.7,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-51414187/original/32a7a607-9ce8-43f1-9abd-1d66234aa983.jpeg",
+          "locality": "Pecatu",
+          "ttm_revpar": 10878593,
+          "ttm_occupancy": 0.46,
+          "rating_overall": 4.91,
+          "num_reviews": 67
+        },
+        {
+          "listing_id": "1161163940979883359",
+          "listing_name": "Beyond The Sea: Luxe Sea View Villa in Jimbaran",
+          "viral_score": 83.7,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTE2MTE2Mzk0MDk3OTg4MzM1OQ%3D%3D/original/9c0b681e-ede3-48f0-ba32-20cc68355c89.jpeg",
+          "locality": "Jimbaran",
+          "ttm_revpar": 10024954,
+          "ttm_occupancy": 0.641,
+          "rating_overall": 5,
+          "num_reviews": 39
+        },
+        {
+          "listing_id": "1272808859165361333",
+          "listing_name": "Modern 5BR Family Villa in Bingin with Ocean Views",
+          "viral_score": 83.2,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTI3MjgwODg1OTE2NTM2MTMzMw%3D%3D/original/3e1ef7ef-3a0a-4fe9-b80e-5e85adef6db3.jpeg",
+          "locality": "Pecatu",
+          "ttm_revpar": 9912526,
+          "ttm_occupancy": 0.737,
+          "rating_overall": 5,
+          "num_reviews": 26
+        },
+        {
+          "listing_id": "25171997",
+          "listing_name": "Cliff Top Ocean View 6BR, Sleeps 12, Chef, Butler",
+          "viral_score": 79.6,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-25171997/original/3823266d-786e-42f0-9969-35f19c9f7798.jpeg",
+          "locality": "Kutuh",
+          "ttm_revpar": 10916578,
+          "ttm_occupancy": 0.468,
+          "rating_overall": 4.97,
+          "num_reviews": 29
+        }
+      ]
+    }
+  }
+}

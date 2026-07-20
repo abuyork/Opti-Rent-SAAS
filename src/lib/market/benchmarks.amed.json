@@ -1,0 +1,629 @@
+{
+  "market": "amed",
+  "generated_from": 120,
+  "cohorts": {
+    "1BR": {
+      "market": "amed",
+      "cohort": "1BR",
+      "currency": "IDR",
+      "sample_size": 40,
+      "winner_n": 10,
+      "winner_median_photos": 45,
+      "winner_median_title_chars": 46,
+      "winner_median_description_chars": 3206,
+      "winner_median_adr_idr": 2270563,
+      "winner_median_occupancy": 0.5960000000000001,
+      "winner_superhost_share": 0.6,
+      "winner_guest_favorite_share": 0.8,
+      "loser_median_photos": 24.5,
+      "loser_median_description_chars": 56.5,
+      "loser_instant_book_share": 0.2,
+      "top_amenities": [
+        {
+          "amenity": "hair dryer",
+          "winner_share": 1,
+          "loser_share": 0.2,
+          "delta": 0.8
+        },
+        {
+          "amenity": "outdoor furniture",
+          "winner_share": 0.8,
+          "loser_share": 0,
+          "delta": 0.8
+        },
+        {
+          "amenity": "pool view",
+          "winner_share": 0.6,
+          "loser_share": 0,
+          "delta": 0.6
+        },
+        {
+          "amenity": "smoke alarm",
+          "winner_share": 0.7,
+          "loser_share": 0.1,
+          "delta": 0.6
+        },
+        {
+          "amenity": "drying rack for clothing",
+          "winner_share": 0.6,
+          "loser_share": 0,
+          "delta": 0.6
+        },
+        {
+          "amenity": "shampoo",
+          "winner_share": 1,
+          "loser_share": 0.5,
+          "delta": 0.5
+        },
+        {
+          "amenity": "fire extinguisher",
+          "winner_share": 0.6,
+          "loser_share": 0.1,
+          "delta": 0.5
+        },
+        {
+          "amenity": "first aid kit",
+          "winner_share": 0.6,
+          "loser_share": 0.1,
+          "delta": 0.5
+        }
+      ],
+      "title_keywords": [
+        {
+          "word": "pool",
+          "delta": 0.6
+        },
+        {
+          "word": "seaview",
+          "delta": 0.5
+        },
+        {
+          "word": "private",
+          "delta": 0.5
+        },
+        {
+          "word": "bungalow",
+          "delta": 0.4
+        },
+        {
+          "word": "hilltop",
+          "delta": 0.3
+        },
+        {
+          "word": "boutique",
+          "delta": 0.3
+        },
+        {
+          "word": "infinity",
+          "delta": 0.2
+        },
+        {
+          "word": "homestay",
+          "delta": 0.19999999999999998
+        }
+      ],
+      "winner_covers": [
+        {
+          "listing_id": "532386",
+          "listing_name": "Aquamarine Seaview - Private Pool - Oceanfront",
+          "viral_score": 100,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-532386/original/25ed042c-f77d-4d3d-80a7-629ac5d46c93.jpeg",
+          "locality": "Lipah",
+          "ttm_revpar": 1771901,
+          "ttm_occupancy": 0.701,
+          "rating_overall": 4.95,
+          "num_reviews": 147
+        },
+        {
+          "listing_id": "1415995526278121889",
+          "listing_name": "Hilltop Boutique Homestay Bungalow 3 - Seaview",
+          "viral_score": 94,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTQxNTk5NTUyNjI3ODEyMTg4OQ==/original/762112ff-7941-4417-b0f2-d1d4008b8218.jpeg",
+          "locality": "Kecamatan Abang",
+          "ttm_revpar": 1454258,
+          "ttm_occupancy": 0.66,
+          "rating_overall": 5,
+          "num_reviews": 29
+        },
+        {
+          "listing_id": "16429822",
+          "listing_name": "Villa Makara - Beachfront & Private Infinity Pool",
+          "viral_score": 92.8,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/b9c7a9f6-ebed-482c-b0c6-077a3af62880.jpg",
+          "locality": "Lipah",
+          "ttm_revpar": 1727324,
+          "ttm_occupancy": 0.63,
+          "rating_overall": 4.9,
+          "num_reviews": 155
+        },
+        {
+          "listing_id": "34690133",
+          "listing_name": "Luxury Villa | Private Pool | Mountain View",
+          "viral_score": 92.4,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-34690133/original/e025de68-7a02-4842-bec2-c4d8b672144a.png",
+          "locality": "Ababi",
+          "ttm_revpar": 1781049,
+          "ttm_occupancy": 0.397,
+          "rating_overall": 4.89,
+          "num_reviews": 102
+        },
+        {
+          "listing_id": "1272067331996663598",
+          "listing_name": "Hilltop Boutique Homestay Bungalow 1 - Seaview",
+          "viral_score": 90.6,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTE5MjQyNTMxOTU2NzMxNTU5NQ%3D%3D/original/c9c3791a-4a8f-47aa-b689-93e41b5d9af4.jpeg",
+          "locality": "Jemeluk",
+          "ttm_revpar": 1167290,
+          "ttm_occupancy": 0.644,
+          "rating_overall": 4.97,
+          "num_reviews": 94
+        },
+        {
+          "listing_id": "5071111",
+          "listing_name": "Onlyou Villas -One Bedroom Villa with Private Pool",
+          "viral_score": 87.1,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6NTA3MTExMQ==/original/81274bd5-24f4-4ced-9306-81622b49c579.jpeg",
+          "locality": "Bunutan",
+          "ttm_revpar": 1231151,
+          "ttm_occupancy": 0.515,
+          "rating_overall": 4.93,
+          "num_reviews": 29
+        },
+        {
+          "listing_id": "1191561158281661381",
+          "listing_name": "Hilltop Boutique Homestay Bungalow 2 - Seaview",
+          "viral_score": 86.5,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTE5MTU2MTE1ODI4MTY2MTM4MQ%3D%3D/original/8da8d11b-4e3f-47c6-af18-a2912d0d3106.jpeg",
+          "locality": "Jemeluk",
+          "ttm_revpar": 1085895,
+          "ttm_occupancy": 0.562,
+          "rating_overall": 4.92,
+          "num_reviews": 77
+        },
+        {
+          "listing_id": "16976270",
+          "listing_name": "Amed beachfront paradise",
+          "viral_score": 81.9,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/b7b78396-ec18-437e-b53e-7a6ff451f0b9.jpg",
+          "locality": "Amed",
+          "ttm_revpar": 340290,
+          "ttm_occupancy": 0.715,
+          "rating_overall": 4.93,
+          "num_reviews": 351
+        },
+        {
+          "listing_id": "16434612",
+          "listing_name": "Villa Rinjani - Beachfront & Private Infinity Pool",
+          "viral_score": 81.5,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/53cadc4a-f5d7-497f-861c-9b764a4659f6.jpg",
+          "locality": "Lipah",
+          "ttm_revpar": 1175048,
+          "ttm_occupancy": 0.444,
+          "rating_overall": 4.78,
+          "num_reviews": 55
+        },
+        {
+          "listing_id": "2403103",
+          "listing_name": "AMED Bali Marina Bungalow-Seaview lush garden/pool",
+          "viral_score": 80.1,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/109978063/fe816d87_original.jpg",
+          "locality": "Jemeluk",
+          "ttm_revpar": 735829,
+          "ttm_occupancy": 0.419,
+          "rating_overall": 4.88,
+          "num_reviews": 207
+        }
+      ]
+    },
+    "2BR": {
+      "market": "amed",
+      "cohort": "2BR",
+      "currency": "IDR",
+      "sample_size": 40,
+      "winner_n": 10,
+      "winner_median_photos": 21.5,
+      "winner_median_title_chars": 48,
+      "winner_median_description_chars": 2092,
+      "winner_median_adr_idr": 2838579,
+      "winner_median_occupancy": 0.575,
+      "winner_superhost_share": 0.6,
+      "winner_guest_favorite_share": 0.7,
+      "loser_median_photos": 20.5,
+      "loser_median_description_chars": 108,
+      "loser_instant_book_share": 0.3,
+      "top_amenities": [
+        {
+          "amenity": "crib",
+          "winner_share": 0.9,
+          "loser_share": 0.1,
+          "delta": 0.8
+        },
+        {
+          "amenity": "coffee maker",
+          "winner_share": 0.8,
+          "loser_share": 0.1,
+          "delta": 0.7000000000000001
+        },
+        {
+          "amenity": "backyard",
+          "winner_share": 1,
+          "loser_share": 0.3,
+          "delta": 0.7
+        },
+        {
+          "amenity": "luggage dropoff allowed",
+          "winner_share": 0.8,
+          "loser_share": 0.2,
+          "delta": 0.6000000000000001
+        },
+        {
+          "amenity": "high chair",
+          "winner_share": 0.6,
+          "loser_share": 0.1,
+          "delta": 0.5
+        },
+        {
+          "amenity": "fire extinguisher",
+          "winner_share": 0.6,
+          "loser_share": 0.1,
+          "delta": 0.5
+        },
+        {
+          "amenity": "patio or balcony",
+          "winner_share": 0.8,
+          "loser_share": 0.3,
+          "delta": 0.5
+        },
+        {
+          "amenity": "bed linens",
+          "winner_share": 0.9,
+          "loser_share": 0.5,
+          "delta": 0.4
+        }
+      ],
+      "title_keywords": [
+        {
+          "word": "pool",
+          "delta": 0.7
+        },
+        {
+          "word": "beach",
+          "delta": 0.4
+        },
+        {
+          "word": "oceanfront",
+          "delta": 0.2
+        },
+        {
+          "word": "private",
+          "delta": 0.2
+        },
+        {
+          "word": "oceanview",
+          "delta": 0.2
+        },
+        {
+          "word": "onlyou",
+          "delta": 0.2
+        },
+        {
+          "word": "villas",
+          "delta": 0.2
+        }
+      ],
+      "winner_covers": [
+        {
+          "listing_id": "10889636",
+          "listing_name": "Amed, Bali. Aslin Villa",
+          "viral_score": 100,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/d968a9b8-9024-4695-b768-c57e7dd9f707.jpg",
+          "locality": "Amed",
+          "ttm_revpar": 2317539,
+          "ttm_occupancy": 0.641,
+          "rating_overall": 4.89,
+          "num_reviews": 126
+        },
+        {
+          "listing_id": "946553",
+          "listing_name": "Villa Aquamarine -  100% Oceanfront & Private Pool",
+          "viral_score": 100,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/14032280/3ede9d46_original.jpg",
+          "locality": "Lipah",
+          "ttm_revpar": 2236323,
+          "ttm_occupancy": 0.729,
+          "rating_overall": 4.87,
+          "num_reviews": 216
+        },
+        {
+          "listing_id": "16432347",
+          "listing_name": "Villa Pura Maia - Oceanfront, Private Pool & Beach",
+          "viral_score": 100,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/920db356-6e73-4aa7-a20f-ba3756c8d814.jpg",
+          "locality": "Lipah",
+          "ttm_revpar": 1937202,
+          "ttm_occupancy": 0.644,
+          "rating_overall": 4.88,
+          "num_reviews": 136
+        },
+        {
+          "listing_id": "19351202",
+          "listing_name": "Villa Bukit Malas 2, 2 Bedroom villa and pool",
+          "viral_score": 97.8,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/a1a43ffa-1e16-49f5-acb2-d4cc1d4a2f38.jpg",
+          "locality": "Bunutan",
+          "ttm_revpar": 1803921,
+          "ttm_occupancy": 0.658,
+          "rating_overall": 4.95,
+          "num_reviews": 113
+        },
+        {
+          "listing_id": "16590509",
+          "listing_name": "Villa Syrena - Oceanview - Private Pool & Beach",
+          "viral_score": 87.6,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/35af8992-a397-4185-9a8c-a5059f4caa36.jpg",
+          "locality": "Lipah",
+          "ttm_revpar": 1649203,
+          "ttm_occupancy": 0.597,
+          "rating_overall": 4.92,
+          "num_reviews": 59
+        },
+        {
+          "listing_id": "5072049",
+          "listing_name": "Onlyou Villas -Two Bedroom Villa with Private Pool",
+          "viral_score": 82.4,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6NTA3MjA0OQ==/original/83c21ef7-a2e4-4d77-97d1-29f0cb675cb7.jpeg",
+          "locality": "Bunutan",
+          "ttm_revpar": 1508073,
+          "ttm_occupancy": 0.553,
+          "rating_overall": 4.84,
+          "num_reviews": 25
+        },
+        {
+          "listing_id": "21768139",
+          "listing_name": "Villa Macondo - Panoramic Oceanview - Pool & Beach",
+          "viral_score": 80,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/85bdef2b-d866-47e3-8c40-7f3673eecb5f.jpg",
+          "locality": "Lipah",
+          "ttm_revpar": 1657140,
+          "ttm_occupancy": 0.51,
+          "rating_overall": 4.78,
+          "num_reviews": 45
+        },
+        {
+          "listing_id": "5282726",
+          "listing_name": "Onlyou Villas - Private Pool Villa",
+          "viral_score": 80,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/6cd72193-8f49-4c85-beca-8d7ad11e7d5c.jpg",
+          "locality": "Lipah",
+          "ttm_revpar": 1432284,
+          "ttm_occupancy": 0.542,
+          "rating_overall": 4.84,
+          "num_reviews": 70
+        },
+        {
+          "listing_id": "29695737",
+          "listing_name": "Villa Adi - Villa Adi POOL Wayan",
+          "viral_score": 76.8,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/9da7dfbe-e6e2-462b-a83c-d2f683dfe9df.jpg",
+          "locality": "Bunutan",
+          "ttm_revpar": 1139486,
+          "ttm_occupancy": 0.49,
+          "rating_overall": 4.85,
+          "num_reviews": 74
+        },
+        {
+          "listing_id": "651626759727274562",
+          "listing_name": "Modern 2BR Villa | Pool  | Garden | 200m to Beach",
+          "viral_score": 76,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-651626759727274562/original/a36c85e1-62fd-4d8f-841f-695ff570f5fd.jpeg",
+          "locality": "Purwa Kerthi",
+          "ttm_revpar": 1340036,
+          "ttm_occupancy": 0.46,
+          "rating_overall": 4.87,
+          "num_reviews": 106
+        }
+      ]
+    },
+    "3BR": {
+      "market": "amed",
+      "cohort": "3BR",
+      "currency": "IDR",
+      "sample_size": 40,
+      "winner_n": 10,
+      "winner_median_photos": 43.5,
+      "winner_median_title_chars": 34,
+      "winner_median_description_chars": 3098.5,
+      "winner_median_adr_idr": 3879472,
+      "winner_median_occupancy": 0.5945,
+      "winner_superhost_share": 0.8,
+      "winner_guest_favorite_share": 1,
+      "loser_median_photos": 33,
+      "loser_median_description_chars": 139.5,
+      "loser_instant_book_share": 0.2,
+      "top_amenities": [
+        {
+          "amenity": "ceiling fan",
+          "winner_share": 0.8,
+          "loser_share": 0.2,
+          "delta": 0.6000000000000001
+        },
+        {
+          "amenity": "stove",
+          "winner_share": 0.8,
+          "loser_share": 0.2,
+          "delta": 0.6000000000000001
+        },
+        {
+          "amenity": "coffee maker",
+          "winner_share": 0.8,
+          "loser_share": 0.2,
+          "delta": 0.6000000000000001
+        },
+        {
+          "amenity": "toaster",
+          "winner_share": 0.8,
+          "loser_share": 0.2,
+          "delta": 0.6000000000000001
+        },
+        {
+          "amenity": "blender",
+          "winner_share": 0.8,
+          "loser_share": 0.2,
+          "delta": 0.6000000000000001
+        },
+        {
+          "amenity": "backyard",
+          "winner_share": 0.8,
+          "loser_share": 0.2,
+          "delta": 0.6000000000000001
+        },
+        {
+          "amenity": "ocean view",
+          "winner_share": 0.6,
+          "loser_share": 0,
+          "delta": 0.6
+        },
+        {
+          "amenity": "oven",
+          "winner_share": 0.7,
+          "loser_share": 0.1,
+          "delta": 0.6
+        }
+      ],
+      "title_keywords": [
+        {
+          "word": "front",
+          "delta": 0.2
+        },
+        {
+          "word": "beach",
+          "delta": 0.10000000000000003
+        },
+        {
+          "word": "oceanfront",
+          "delta": 0.1
+        },
+        {
+          "word": "amed",
+          "delta": 0
+        },
+        {
+          "word": "pool",
+          "delta": 0
+        }
+      ],
+      "winner_covers": [
+        {
+          "listing_id": "680609811622239908",
+          "listing_name": "Villa Shalimar beach front in Amed",
+          "viral_score": 100,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/ce640cab-fba1-40b0-ad42-87aced9f20ff.jpg",
+          "locality": "Amed",
+          "ttm_revpar": 3894136,
+          "ttm_occupancy": 0.66,
+          "rating_overall": 4.98,
+          "num_reviews": 165
+        },
+        {
+          "listing_id": "17864638",
+          "listing_name": "Villa Agung beach front in Amed",
+          "viral_score": 100,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/8ef2113b-5e1c-41f7-bce2-dc71d6ae6697.jpg",
+          "locality": "Amed",
+          "ttm_revpar": 2852594,
+          "ttm_occupancy": 0.74,
+          "rating_overall": 4.97,
+          "num_reviews": 225
+        },
+        {
+          "listing_id": "883800968553440844",
+          "listing_name": "Villa Del MARE beach front in Amed",
+          "viral_score": 99.4,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/bf127542-e062-4ad1-b571-1d77cc09c6f6.jpg",
+          "locality": "Amed",
+          "ttm_revpar": 2796626,
+          "ttm_occupancy": 0.748,
+          "rating_overall": 4.99,
+          "num_reviews": 142
+        },
+        {
+          "listing_id": "1197044",
+          "listing_name": "Batu Tangga - Big Blue Oceanfront View & Pool",
+          "viral_score": 94.2,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/36512480/0dd3f414_original.jpg",
+          "locality": "Lipah",
+          "ttm_revpar": 2352205,
+          "ttm_occupancy": 0.592,
+          "rating_overall": 4.91,
+          "num_reviews": 229
+        },
+        {
+          "listing_id": "5364934",
+          "listing_name": "Villa Celagi, private and spacious, sea front",
+          "viral_score": 93.5,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/2ac78543-d7f4-4840-bf86-1c02215ce8ce.jpg",
+          "locality": "Lipah",
+          "ttm_revpar": 2606884,
+          "ttm_occupancy": 0.597,
+          "rating_overall": 4.96,
+          "num_reviews": 113
+        },
+        {
+          "listing_id": "6162050",
+          "listing_name": "200m² • Total privacy",
+          "viral_score": 84.7,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/0f79d824-17c1-4c98-9094-de1764680744.jpg",
+          "locality": "Lipah",
+          "ttm_revpar": 2102414,
+          "ttm_occupancy": 0.507,
+          "rating_overall": 4.86,
+          "num_reviews": 192
+        },
+        {
+          "listing_id": "1196783944994019478",
+          "listing_name": "Tropical Habitat Bali - Villa Nō.1",
+          "viral_score": 84.5,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-1196783944994019478/original/4492eb49-c709-4b8a-b8b6-4ff5ee3f6091.jpeg",
+          "locality": "Bangle",
+          "ttm_revpar": 2360501,
+          "ttm_occupancy": 0.701,
+          "rating_overall": 5,
+          "num_reviews": 15
+        },
+        {
+          "listing_id": "8821782",
+          "listing_name": "The Kampung, Amed",
+          "viral_score": 78.1,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/111730328/3893b5d8_original.jpg",
+          "locality": "Bunutan",
+          "ttm_revpar": 2234843,
+          "ttm_occupancy": 0.466,
+          "rating_overall": 4.96,
+          "num_reviews": 45
+        },
+        {
+          "listing_id": "814560388545530705",
+          "listing_name": "oceanfront beach house",
+          "viral_score": 76.8,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-814560388545530705/original/94d56447-c143-4213-b0ee-b1e64c9fbc1f.jpeg",
+          "locality": "Amed",
+          "ttm_revpar": 1791543,
+          "ttm_occupancy": 0.57,
+          "rating_overall": 4.96,
+          "num_reviews": 48
+        },
+        {
+          "listing_id": "5894364",
+          "listing_name": "Villa Bukit Malas 1, 3 Bedroom villa and pool",
+          "viral_score": 76.5,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/cfcda73b-b920-4127-8588-6bd3aee2648b.jpg",
+          "locality": "Jemeluk",
+          "ttm_revpar": 1705170,
+          "ttm_occupancy": 0.542,
+          "rating_overall": 4.93,
+          "num_reviews": 139
+        }
+      ]
+    }
+  }
+}

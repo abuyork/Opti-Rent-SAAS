@@ -16,9 +16,9 @@ export default function Home() {
   const bench = getMarketBenchmark("greater-canggu", "2BR");
   const priceLabel = formatUsdFromCents(config.reportPriceUsdCents);
   const marketList =
-    trust.markets.length > 1
-      ? `${trust.markets.slice(0, -1).join(", ")} and ${trust.markets[trust.markets.length - 1]}`
-      : trust.markets[0];
+    trust.displayMarkets.length > 1
+      ? `${trust.displayMarkets.slice(0, -1).join(", ")} and ${trust.displayMarkets[trust.displayMarkets.length - 1]}`
+      : trust.displayMarkets[0];
 
   const stats = [
     { value: trust.listings.toLocaleString("en-US"), label: "live listings measured" },

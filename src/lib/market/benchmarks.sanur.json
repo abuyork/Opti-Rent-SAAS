@@ -1,0 +1,1047 @@
+{
+  "market": "sanur",
+  "generated_from": 196,
+  "cohorts": {
+    "1BR": {
+      "market": "sanur",
+      "cohort": "1BR",
+      "currency": "IDR",
+      "sample_size": 40,
+      "winner_n": 10,
+      "winner_median_photos": 30,
+      "winner_median_title_chars": 45,
+      "winner_median_description_chars": 1109,
+      "winner_median_adr_idr": 1932291,
+      "winner_median_occupancy": 0.6585000000000001,
+      "winner_superhost_share": 0.9,
+      "winner_guest_favorite_share": 0.8,
+      "loser_median_photos": 9.5,
+      "loser_median_description_chars": 196.5,
+      "loser_instant_book_share": 0.4,
+      "top_amenities": [
+        {
+          "amenity": "essentials",
+          "winner_share": 1,
+          "loser_share": 0.2,
+          "delta": 0.8
+        },
+        {
+          "amenity": "cooking basics",
+          "winner_share": 0.9,
+          "loser_share": 0.1,
+          "delta": 0.8
+        },
+        {
+          "amenity": "private entrance",
+          "winner_share": 0.9,
+          "loser_share": 0.1,
+          "delta": 0.8
+        },
+        {
+          "amenity": "outdoor furniture",
+          "winner_share": 0.8,
+          "loser_share": 0.1,
+          "delta": 0.7000000000000001
+        },
+        {
+          "amenity": "fire extinguisher",
+          "winner_share": 0.9,
+          "loser_share": 0.2,
+          "delta": 0.7
+        },
+        {
+          "amenity": "shampoo",
+          "winner_share": 0.9,
+          "loser_share": 0.3,
+          "delta": 0.6000000000000001
+        },
+        {
+          "amenity": "hot water",
+          "winner_share": 1,
+          "loser_share": 0.4,
+          "delta": 0.6
+        },
+        {
+          "amenity": "hangers",
+          "winner_share": 1,
+          "loser_share": 0.4,
+          "delta": 0.6
+        }
+      ],
+      "title_keywords": [
+        {
+          "word": "private",
+          "delta": 0.3
+        },
+        {
+          "word": "modern",
+          "delta": 0.3
+        },
+        {
+          "word": "pool",
+          "delta": 0.3
+        },
+        {
+          "word": "loft",
+          "delta": 0.3
+        },
+        {
+          "word": "apartment",
+          "delta": 0.3
+        },
+        {
+          "word": "side",
+          "delta": 0.2
+        },
+        {
+          "word": "central",
+          "delta": 0.1
+        },
+        {
+          "word": "sanur",
+          "delta": 0
+        }
+      ],
+      "winner_covers": [
+        {
+          "listing_id": "1903155",
+          "listing_name": "Sanur- Couples retreat - private Villa",
+          "viral_score": 97.6,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-1903155/original/07e9969e-76fa-446c-ba36-e5eba0df86e3.jpeg",
+          "locality": "Denpasar",
+          "ttm_revpar": 1393358,
+          "ttm_occupancy": 0.742,
+          "rating_overall": 4.92,
+          "num_reviews": 219
+        },
+        {
+          "listing_id": "23689057",
+          "listing_name": "Modern Balinese Villa with a Pool in Central Sanur",
+          "viral_score": 95.8,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/5b4ac5b7-5748-4ba2-85a3-a9c421964a30.jpg",
+          "locality": "Denpasar",
+          "ttm_revpar": 1422552,
+          "ttm_occupancy": 0.732,
+          "rating_overall": 4.94,
+          "num_reviews": 139
+        },
+        {
+          "listing_id": "4230100",
+          "listing_name": "Float in the Royal Blue Pool - Safe and Dry Area",
+          "viral_score": 90.9,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-4230100/original/4638ffdd-86f9-4038-8c23-40a0e6f149fc.jpeg",
+          "locality": "Denpasar",
+          "ttm_revpar": 1491839,
+          "ttm_occupancy": 0.559,
+          "rating_overall": 4.97,
+          "num_reviews": 253
+        },
+        {
+          "listing_id": "40760809",
+          "listing_name": "Secluded Private Villa in central Sanur",
+          "viral_score": 89.4,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-40760809/original/d063a531-1fe1-4c25-93f9-35bf3ee682f2.jpeg",
+          "locality": "Denpasar",
+          "ttm_revpar": 1600949,
+          "ttm_occupancy": 0.696,
+          "rating_overall": 4.85,
+          "num_reviews": 80
+        },
+        {
+          "listing_id": "52887995",
+          "listing_name": "Jagaditha 1BR Villa Sanur with private pool",
+          "viral_score": 88.6,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-52887995/original/52ffd096-dbcc-4a9a-9f0b-8aac9fdcafb6.jpeg",
+          "locality": "Denpasar",
+          "ttm_revpar": 1483767,
+          "ttm_occupancy": 0.696,
+          "rating_overall": 4.84,
+          "num_reviews": 142
+        },
+        {
+          "listing_id": "1197350348859571872",
+          "listing_name": "Bfast Included | 1BR Private Pool Sanur Escape",
+          "viral_score": 85,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTE5NzM1MDM0ODg1OTU3MTg3Mg%3D%3D/original/ea12af7c-b0ee-45d3-a80e-156b26952108.jpeg",
+          "locality": "Denpasar",
+          "ttm_revpar": 1504261,
+          "ttm_occupancy": 0.532,
+          "rating_overall": 4.93,
+          "num_reviews": 95
+        },
+        {
+          "listing_id": "42461986",
+          "listing_name": "Romantic 1 BR Private Pool Villa Danka - Room Only",
+          "viral_score": 84.7,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-42461986/original/ef46dbab-85d5-4364-8687-db4d58b31004.jpeg",
+          "locality": "Denpasar",
+          "ttm_revpar": 1266579,
+          "ttm_occupancy": 0.668,
+          "rating_overall": 4.87,
+          "num_reviews": 101
+        },
+        {
+          "listing_id": "646051146133011549",
+          "listing_name": "Stylish Modern Loft Apartment, Beach-Side Sanur",
+          "viral_score": 79.6,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/45721faf-8a1b-430a-bf26-f5bb60250dbe.jpg",
+          "locality": "Denpasar",
+          "ttm_revpar": 1073742,
+          "ttm_occupancy": 0.649,
+          "rating_overall": 4.94,
+          "num_reviews": 132
+        },
+        {
+          "listing_id": "758320656113024238",
+          "listing_name": "Chic Modern Loft Apartment, Beach Side Sanur",
+          "viral_score": 78.6,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/13cffdd9-b94c-4d6f-a03b-e7c7176a6893.jpg",
+          "locality": "Denpasar",
+          "ttm_revpar": 1139486,
+          "ttm_occupancy": 0.603,
+          "rating_overall": 5,
+          "num_reviews": 113
+        },
+        {
+          "listing_id": "45355735",
+          "listing_name": "Beautiful New Loft Apartment Beachside Sanur",
+          "viral_score": 76.8,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/08e3cdc0-2321-4d14-9769-254c3a464efd.jpg",
+          "locality": "Denpasar",
+          "ttm_revpar": 996248,
+          "ttm_occupancy": 0.573,
+          "rating_overall": 4.99,
+          "num_reviews": 172
+        }
+      ]
+    },
+    "2BR": {
+      "market": "sanur",
+      "cohort": "2BR",
+      "currency": "IDR",
+      "sample_size": 40,
+      "winner_n": 10,
+      "winner_median_photos": 37.5,
+      "winner_median_title_chars": 35,
+      "winner_median_description_chars": 2393.5,
+      "winner_median_adr_idr": 3683742,
+      "winner_median_occupancy": 0.718,
+      "winner_superhost_share": 0.6,
+      "winner_guest_favorite_share": 0.3,
+      "loser_median_photos": 18,
+      "loser_median_description_chars": 28,
+      "loser_instant_book_share": 0.3,
+      "top_amenities": [
+        {
+          "amenity": "crib",
+          "winner_share": 0.9,
+          "loser_share": 0.1,
+          "delta": 0.8
+        },
+        {
+          "amenity": "private entrance",
+          "winner_share": 0.8,
+          "loser_share": 0.2,
+          "delta": 0.6000000000000001
+        },
+        {
+          "amenity": "outdoor shower",
+          "winner_share": 0.7,
+          "loser_share": 0.1,
+          "delta": 0.6
+        },
+        {
+          "amenity": "iron",
+          "winner_share": 0.6,
+          "loser_share": 0.1,
+          "delta": 0.5
+        },
+        {
+          "amenity": "high chair",
+          "winner_share": 0.6,
+          "loser_share": 0.1,
+          "delta": 0.5
+        },
+        {
+          "amenity": "refrigerator",
+          "winner_share": 1,
+          "loser_share": 0.5,
+          "delta": 0.5
+        },
+        {
+          "amenity": "toaster",
+          "winner_share": 0.7,
+          "loser_share": 0.2,
+          "delta": 0.49999999999999994
+        },
+        {
+          "amenity": "coffee",
+          "winner_share": 0.7,
+          "loser_share": 0.2,
+          "delta": 0.49999999999999994
+        }
+      ],
+      "title_keywords": [
+        {
+          "word": "two",
+          "delta": 0.2
+        },
+        {
+          "word": "bed",
+          "delta": 0.2
+        },
+        {
+          "word": "beachside",
+          "delta": 0.2
+        },
+        {
+          "word": "bali",
+          "delta": 0.1
+        },
+        {
+          "word": "swimming",
+          "delta": 0.1
+        },
+        {
+          "word": "sanur",
+          "delta": 0
+        },
+        {
+          "word": "pool",
+          "delta": 0
+        },
+        {
+          "word": "beach",
+          "delta": 0
+        }
+      ],
+      "winner_covers": [
+        {
+          "listing_id": "929253351768759716",
+          "listing_name": "Villa Notina, Sanur, Bali",
+          "viral_score": 92.6,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-929253351768759716/original/21b0655b-88be-4c0c-92ec-fdead16af54a.jpeg",
+          "locality": "Denpasar",
+          "ttm_revpar": 2640563,
+          "ttm_occupancy": 0.721,
+          "rating_overall": 4.91,
+          "num_reviews": 146
+        },
+        {
+          "listing_id": "989595143494127924",
+          "listing_name": "Aestetika Villa ~ Swimming Pool & 5-Min to Beach!",
+          "viral_score": 91.3,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-989595143494127924/original/26d499c6-538e-4510-8477-21523099f127.jpeg",
+          "locality": "Denpasar",
+          "ttm_revpar": 3533890,
+          "ttm_occupancy": 0.721,
+          "rating_overall": 4.77,
+          "num_reviews": 53
+        },
+        {
+          "listing_id": "1199697692646296546",
+          "listing_name": "Villa Amingo - Sanur, Bali",
+          "viral_score": 89.6,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1199697692646296546/original/3edbef47-ed30-41c6-ba5c-9bb609dc3ee4.jpeg",
+          "locality": "Denpasar",
+          "ttm_revpar": 1795176,
+          "ttm_occupancy": 0.732,
+          "rating_overall": 4.94,
+          "num_reviews": 86
+        },
+        {
+          "listing_id": "26502002",
+          "listing_name": "Renewal Open Nice Two BedRoom Turiya Villa Sanur",
+          "viral_score": 88.7,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/e7dd4af8-e936-4420-b28c-ae4e148e26d8.jpg",
+          "locality": "Denpasar",
+          "ttm_revpar": 2174750,
+          "ttm_occupancy": 0.726,
+          "rating_overall": 4.84,
+          "num_reviews": 105
+        },
+        {
+          "listing_id": "37218535",
+          "listing_name": "Luxurious home: The Green Door Villa",
+          "viral_score": 87.9,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-37218535/original/76d717a3-6386-4503-ba57-6bdbd7cb1a04.jpeg",
+          "locality": "Denpasar",
+          "ttm_revpar": 2765144,
+          "ttm_occupancy": 0.638,
+          "rating_overall": 4.82,
+          "num_reviews": 160
+        },
+        {
+          "listing_id": "46359858",
+          "listing_name": "2 bed Villa Next to Hyatt:3min walk to the beach!",
+          "viral_score": 86.2,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/d547dccf-c5ef-4dd8-b8fe-461322327265.jpg",
+          "locality": "Denpasar",
+          "ttm_revpar": 2535758,
+          "ttm_occupancy": 0.682,
+          "rating_overall": 4.72,
+          "num_reviews": 111
+        },
+        {
+          "listing_id": "1309642519501755914",
+          "listing_name": "Azura Villa ~ Swimming Pool & 150m to Beach",
+          "viral_score": 82.3,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTMwOTY0MjUxOTUwMTc1NTkxNA%3D%3D/original/593a9cde-abd4-4814-b185-0fadc0b0015c.jpeg",
+          "locality": "Kecamatan Denpasar Selatan",
+          "ttm_revpar": 3365001,
+          "ttm_occupancy": 0.715,
+          "rating_overall": 4.67,
+          "num_reviews": 12
+        },
+        {
+          "listing_id": "1192558193188110652",
+          "listing_name": "Sanur Beachside 2BR  Private Oasis",
+          "viral_score": 82.2,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/airflow/Hosting-1192558193188110652/original/1da82c7e-4082-46fc-bcbd-b63277d715d7.jpg",
+          "locality": "Denpasar",
+          "ttm_revpar": 1810468,
+          "ttm_occupancy": 0.685,
+          "rating_overall": 4.95,
+          "num_reviews": 38
+        },
+        {
+          "listing_id": "1233861088238042573",
+          "listing_name": "Two Bed Villa Beachside Sanur",
+          "viral_score": 81.9,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-1233861088238042573/original/e8e819ad-9629-4c95-809d-3db3a0de4a9a.jpeg",
+          "locality": "Denpasar",
+          "ttm_revpar": 2399876,
+          "ttm_occupancy": 0.619,
+          "rating_overall": 5,
+          "num_reviews": 37
+        },
+        {
+          "listing_id": "972904985445637897",
+          "listing_name": "Peaceful Private Perfect in Sanur",
+          "viral_score": 76.4,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-972904985445637897/original/262c6b28-3e6e-4c54-8c6f-f80854687612.jpeg",
+          "locality": "Denpasar",
+          "ttm_revpar": 1780870,
+          "ttm_occupancy": 0.721,
+          "rating_overall": 4.71,
+          "num_reviews": 41
+        }
+      ]
+    },
+    "3BR": {
+      "market": "sanur",
+      "cohort": "3BR",
+      "currency": "IDR",
+      "sample_size": 40,
+      "winner_n": 10,
+      "winner_median_photos": 55,
+      "winner_median_title_chars": 40,
+      "winner_median_description_chars": 1835.5,
+      "winner_median_adr_idr": 4359344,
+      "winner_median_occupancy": 0.718,
+      "winner_superhost_share": 0.7,
+      "winner_guest_favorite_share": 0.8,
+      "loser_median_photos": 22,
+      "loser_median_description_chars": 376,
+      "loser_instant_book_share": 0,
+      "top_amenities": [
+        {
+          "amenity": "outdoor furniture",
+          "winner_share": 0.9,
+          "loser_share": 0.1,
+          "delta": 0.8
+        },
+        {
+          "amenity": "microwave",
+          "winner_share": 1,
+          "loser_share": 0.3,
+          "delta": 0.7
+        },
+        {
+          "amenity": "cooking basics",
+          "winner_share": 1,
+          "loser_share": 0.3,
+          "delta": 0.7
+        },
+        {
+          "amenity": "oven",
+          "winner_share": 0.9,
+          "loser_share": 0.2,
+          "delta": 0.7
+        },
+        {
+          "amenity": "toaster",
+          "winner_share": 0.8,
+          "loser_share": 0.2,
+          "delta": 0.6000000000000001
+        },
+        {
+          "amenity": "long term stays allowed",
+          "winner_share": 0.8,
+          "loser_share": 0.2,
+          "delta": 0.6000000000000001
+        },
+        {
+          "amenity": "body soap",
+          "winner_share": 0.8,
+          "loser_share": 0.2,
+          "delta": 0.6000000000000001
+        },
+        {
+          "amenity": "extra pillows and blankets",
+          "winner_share": 0.6,
+          "loser_share": 0,
+          "delta": 0.6
+        }
+      ],
+      "title_keywords": [
+        {
+          "word": "pool",
+          "delta": 0.2
+        },
+        {
+          "word": "beach",
+          "delta": 0.19999999999999998
+        },
+        {
+          "word": "family",
+          "delta": 0.1
+        },
+        {
+          "word": "private",
+          "delta": -0.09999999999999998
+        },
+        {
+          "word": "sanur",
+          "delta": -0.29999999999999993
+        }
+      ],
+      "winner_covers": [
+        {
+          "listing_id": "9687627",
+          "listing_name": "Villa Sarina Sanur",
+          "viral_score": 100,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/2b88ad26-3c30-4ffc-98b9-c7f49c28b291.jpg",
+          "locality": "Denpasar",
+          "ttm_revpar": 5231302,
+          "ttm_occupancy": 0.71,
+          "rating_overall": 4.9,
+          "num_reviews": 108
+        },
+        {
+          "listing_id": "881498009122351586",
+          "listing_name": "Villa Stella - Tranquillity by the beach",
+          "viral_score": 99.1,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-881498009122351586/original/a04fe643-ad9a-4e7a-a759-4a55a06f9fdb.jpeg",
+          "locality": "Denpasar",
+          "ttm_revpar": 3368499,
+          "ttm_occupancy": 0.751,
+          "rating_overall": 4.95,
+          "num_reviews": 41
+        },
+        {
+          "listing_id": "1112734681200324643",
+          "listing_name": "Jade Villa No.5 - Private Villa in Sanur",
+          "viral_score": 94.9,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTExMjczNDY4MTIwMDMyNDY0Mw%3D%3D/original/513c2d47-c64e-4f70-9f35-23b62e40e12f.jpeg",
+          "locality": "Denpasar",
+          "ttm_revpar": 2900310,
+          "ttm_occupancy": 0.74,
+          "rating_overall": 4.98,
+          "num_reviews": 40
+        },
+        {
+          "listing_id": "8597618",
+          "listing_name": "Villa Koa  - 3 br Sanur Seaside",
+          "viral_score": 91.2,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-8597618/original/4c590a25-e98f-4692-9f60-ed35a0c12ca8.jpeg",
+          "locality": "Denpasar",
+          "ttm_revpar": 2730793,
+          "ttm_occupancy": 0.66,
+          "rating_overall": 4.92,
+          "num_reviews": 109
+        },
+        {
+          "listing_id": "2057962",
+          "listing_name": "Great Bali Character Family Villa",
+          "viral_score": 90.1,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-2057962/original/f02bae5a-252a-4fd3-aeb0-9b967b9e3666.jpeg",
+          "locality": "Denpasar",
+          "ttm_revpar": 3151939,
+          "ttm_occupancy": 0.597,
+          "rating_overall": 4.96,
+          "num_reviews": 48
+        },
+        {
+          "listing_id": "1343948618832389831",
+          "listing_name": "New 3BR Private Villa in Sanur - Walk to Beach",
+          "viral_score": 90,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-1343948618832389831/original/fc43a6c3-2918-4eca-9cfb-9a5779f00353.jpeg",
+          "locality": "Denpasar Selatan",
+          "ttm_revpar": 2712765,
+          "ttm_occupancy": 0.74,
+          "rating_overall": 4.98,
+          "num_reviews": 43
+        },
+        {
+          "listing_id": "1452800837393484431",
+          "listing_name": "Tropical Family 3BR Villa•Garden•Pool•Calm Zone",
+          "viral_score": 84.7,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTQ1MjgwMDgzNzM5MzQ4NDQzMQ==/original/07806c7e-a7a8-463e-936a-8b90df38d79d.jpeg",
+          "locality": "Denpasar Selatan",
+          "ttm_revpar": 2842683,
+          "ttm_occupancy": 0.608,
+          "rating_overall": 5,
+          "num_reviews": 23
+        },
+        {
+          "listing_id": "29093057",
+          "listing_name": "Exclusive Villa Estate with Backyard Pool",
+          "viral_score": 84.7,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/8b7aeb58-2c46-4b7a-b5ec-f96a878cda52.jpg",
+          "locality": "Denpasar",
+          "ttm_revpar": 2292963,
+          "ttm_occupancy": 0.726,
+          "rating_overall": 4.93,
+          "num_reviews": 107
+        },
+        {
+          "listing_id": "6506647",
+          "listing_name": "Child safe. Villa Adon. Pool 4*10 meters",
+          "viral_score": 82.1,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/6a55d0b5-4e1c-4256-8bb7-dc9d283b5a0b.jpg",
+          "locality": "Denpasar",
+          "ttm_revpar": 2372430,
+          "ttm_occupancy": 0.732,
+          "rating_overall": 4.66,
+          "num_reviews": 107
+        },
+        {
+          "listing_id": "19865337",
+          "listing_name": "VILLA IBU 3 BDRM POOL VILLA, Close to Beach",
+          "viral_score": 78.7,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/378cd7b2-16d9-4155-bc9a-744026b9ff68.jpg",
+          "locality": "Denpasar",
+          "ttm_revpar": 2772634,
+          "ttm_occupancy": 0.477,
+          "rating_overall": 4.89,
+          "num_reviews": 44
+        }
+      ]
+    },
+    "4BR": {
+      "market": "sanur",
+      "cohort": "4BR",
+      "currency": "IDR",
+      "sample_size": 40,
+      "winner_n": 10,
+      "winner_median_photos": 37.5,
+      "winner_median_title_chars": 49,
+      "winner_median_description_chars": 2108,
+      "winner_median_adr_idr": 6123688,
+      "winner_median_occupancy": 0.6725,
+      "winner_superhost_share": 0.8,
+      "winner_guest_favorite_share": 0.6,
+      "loser_median_photos": 50,
+      "loser_median_description_chars": 360,
+      "loser_instant_book_share": 0.2,
+      "top_amenities": [
+        {
+          "amenity": "coffee maker",
+          "winner_share": 0.9,
+          "loser_share": 0.3,
+          "delta": 0.6000000000000001
+        },
+        {
+          "amenity": "patio or balcony",
+          "winner_share": 0.9,
+          "loser_share": 0.3,
+          "delta": 0.6000000000000001
+        },
+        {
+          "amenity": "iron",
+          "winner_share": 0.9,
+          "loser_share": 0.4,
+          "delta": 0.5
+        },
+        {
+          "amenity": "outdoor furniture",
+          "winner_share": 0.8,
+          "loser_share": 0.3,
+          "delta": 0.5
+        },
+        {
+          "amenity": "hair dryer",
+          "winner_share": 0.9,
+          "loser_share": 0.5,
+          "delta": 0.4
+        },
+        {
+          "amenity": "body soap",
+          "winner_share": 0.8,
+          "loser_share": 0.4,
+          "delta": 0.4
+        },
+        {
+          "amenity": "oven",
+          "winner_share": 0.8,
+          "loser_share": 0.4,
+          "delta": 0.4
+        },
+        {
+          "amenity": "crib",
+          "winner_share": 0.7,
+          "loser_share": 0.3,
+          "delta": 0.39999999999999997
+        }
+      ],
+      "title_keywords": [
+        {
+          "word": "beach",
+          "delta": 0.49999999999999994
+        },
+        {
+          "word": "private",
+          "delta": 0.2
+        },
+        {
+          "word": "pool",
+          "delta": 0.2
+        },
+        {
+          "word": "walk",
+          "delta": 0.2
+        },
+        {
+          "word": "sanur",
+          "delta": 0
+        },
+        {
+          "word": "family",
+          "delta": 0
+        },
+        {
+          "word": "modern",
+          "delta": 0
+        }
+      ],
+      "winner_covers": [
+        {
+          "listing_id": "7602984",
+          "listing_name": "Stroll to Sanur Beach Fully Staffed Family Villa",
+          "viral_score": 99.1,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/5aed2a19-1154-43ff-b78c-d50984fdbece.jpg",
+          "locality": "Denpasar",
+          "ttm_revpar": 3911178,
+          "ttm_occupancy": 0.726,
+          "rating_overall": 4.91,
+          "num_reviews": 214
+        },
+        {
+          "listing_id": "603190115018994824",
+          "listing_name": "Modern family villa 200 metres from the beach",
+          "viral_score": 98.1,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-603190115018994824/original/e5677cf9-27f9-4831-8943-4ad74d4980ad.jpeg",
+          "locality": "Denpasar",
+          "ttm_revpar": 5181658,
+          "ttm_occupancy": 0.707,
+          "rating_overall": 4.93,
+          "num_reviews": 54
+        },
+        {
+          "listing_id": "7184382",
+          "listing_name": "Stunning & Large 4BR Villa with Private Pool Sanur",
+          "viral_score": 94,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/107418682/10840c7c_original.jpg",
+          "locality": "Denpasar",
+          "ttm_revpar": 5298077,
+          "ttm_occupancy": 0.625,
+          "rating_overall": 4.97,
+          "num_reviews": 35
+        },
+        {
+          "listing_id": "1170127104555023486",
+          "listing_name": "Modern Primitive Beach Villa Duyung, Sanur",
+          "viral_score": 92.9,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1170127104555023486/original/4ab4a8e9-4810-46bf-b10e-5867b3331651.jpeg",
+          "locality": "Denpasar",
+          "ttm_revpar": 3966876,
+          "ttm_occupancy": 0.638,
+          "rating_overall": 4.93,
+          "num_reviews": 59
+        },
+        {
+          "listing_id": "23310705",
+          "listing_name": "Villa Tarku. Amazing brand new villa!",
+          "viral_score": 89.1,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/dd7ef35d-726b-4fc9-916e-5ea5cd288f72.jpg",
+          "locality": "Denpasar",
+          "ttm_revpar": 2747430,
+          "ttm_occupancy": 0.748,
+          "rating_overall": 4.9,
+          "num_reviews": 145
+        },
+        {
+          "listing_id": "23046664",
+          "listing_name": "4BR UltimateLuxury Villa near Sanur Beach-50%disc!",
+          "viral_score": 85.8,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-23046664/original/4615c00a-3007-4df6-9b78-923122da941b.jpeg",
+          "locality": "Denpasar",
+          "ttm_revpar": 3236115,
+          "ttm_occupancy": 0.485,
+          "rating_overall": 4.95,
+          "num_reviews": 111
+        },
+        {
+          "listing_id": "23756105",
+          "listing_name": "Luxury beachside villa in Sanur, Villa Penjor Bali",
+          "viral_score": 82.6,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-23756105/original/bb5dfc65-36d8-449c-bd74-6e7f9b7b9891.jpeg",
+          "locality": "Denpasar",
+          "ttm_revpar": 3264098,
+          "ttm_occupancy": 0.523,
+          "rating_overall": 4.84,
+          "num_reviews": 103
+        },
+        {
+          "listing_id": "46604779",
+          "listing_name": "Stylish Villa Jiwa 5 min walk to beach & Icon Mall",
+          "viral_score": 81.8,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-46604779/original/df0abc7a-e9a0-4e48-a778-13572dd67dfb.jpeg",
+          "locality": "Denpasar",
+          "ttm_revpar": 4020018,
+          "ttm_occupancy": 0.655,
+          "rating_overall": 5,
+          "num_reviews": 9
+        },
+        {
+          "listing_id": "920735084086322053",
+          "listing_name": "5 Minute Walk to Sanur Beach! ~ Villa Pethak",
+          "viral_score": 81.3,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/52631938-21dd-4d44-b464-8447f2703c95.jpg",
+          "locality": "Denpasar",
+          "ttm_revpar": 2778508,
+          "ttm_occupancy": 0.69,
+          "rating_overall": 4.81,
+          "num_reviews": 108
+        },
+        {
+          "listing_id": "41802267",
+          "listing_name": "Villa Frangi-4BR Private Pool 250m frm Sanur Beach",
+          "viral_score": 80.3,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/949163de-008c-49b5-82e7-efe245d6ad30.jpg",
+          "locality": "Denpasar",
+          "ttm_revpar": 3002289,
+          "ttm_occupancy": 0.693,
+          "rating_overall": 4.79,
+          "num_reviews": 47
+        }
+      ]
+    },
+    "5+BR": {
+      "market": "sanur",
+      "cohort": "5+BR",
+      "currency": "IDR",
+      "sample_size": 36,
+      "winner_n": 9,
+      "winner_median_photos": 71,
+      "winner_median_title_chars": 48,
+      "winner_median_description_chars": 2297,
+      "winner_median_adr_idr": 7952453,
+      "winner_median_occupancy": 0.608,
+      "winner_superhost_share": 0.7777777777777778,
+      "winner_guest_favorite_share": 0.2222222222222222,
+      "loser_median_photos": 30,
+      "loser_median_description_chars": 571,
+      "loser_instant_book_share": 0.2222222222222222,
+      "top_amenities": [
+        {
+          "amenity": "iron",
+          "winner_share": 1,
+          "loser_share": 0.3333333333333333,
+          "delta": 0.6666666666666667
+        },
+        {
+          "amenity": "books and reading material",
+          "winner_share": 0.5555555555555556,
+          "loser_share": 0,
+          "delta": 0.5555555555555556
+        },
+        {
+          "amenity": "high chair",
+          "winner_share": 0.7777777777777778,
+          "loser_share": 0.2222222222222222,
+          "delta": 0.5555555555555556
+        },
+        {
+          "amenity": "patio or balcony",
+          "winner_share": 0.8888888888888888,
+          "loser_share": 0.3333333333333333,
+          "delta": 0.5555555555555556
+        },
+        {
+          "amenity": "crib",
+          "winner_share": 0.7777777777777778,
+          "loser_share": 0.2222222222222222,
+          "delta": 0.5555555555555556
+        },
+        {
+          "amenity": "room-darkening shades",
+          "winner_share": 0.7777777777777778,
+          "loser_share": 0.3333333333333333,
+          "delta": 0.4444444444444445
+        },
+        {
+          "amenity": "wine glasses",
+          "winner_share": 0.7777777777777778,
+          "loser_share": 0.3333333333333333,
+          "delta": 0.4444444444444445
+        },
+        {
+          "amenity": "outdoor furniture",
+          "winner_share": 0.7777777777777778,
+          "loser_share": 0.3333333333333333,
+          "delta": 0.4444444444444445
+        }
+      ],
+      "title_keywords": [
+        {
+          "word": "100",
+          "delta": 0.2222222222222222
+        },
+        {
+          "word": "pool",
+          "delta": 0.1111111111111111
+        },
+        {
+          "word": "luxury",
+          "delta": 0.1111111111111111
+        },
+        {
+          "word": "beach",
+          "delta": 0
+        },
+        {
+          "word": "family",
+          "delta": 0
+        },
+        {
+          "word": "sanur",
+          "delta": -0.2222222222222222
+        }
+      ],
+      "winner_covers": [
+        {
+          "listing_id": "1029427264856350002",
+          "listing_name": "Serene retreat in peaceful Sanur",
+          "viral_score": 90.6,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1029427264856350002/original/8d20cca3-8538-4d6a-ae80-3d1118819809.jpeg",
+          "locality": "Denpasar",
+          "ttm_revpar": 4332997,
+          "ttm_occupancy": 0.712,
+          "rating_overall": 4.81,
+          "num_reviews": 48
+        },
+        {
+          "listing_id": "22543568",
+          "listing_name": "Sanur entire Villa \"Sedap Malam\" 5 bed/5 bath/Pool",
+          "viral_score": 88.9,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/airflow/Hosting-22543568/original/e6646ca5-3d72-4416-b6b4-348459dc419a.jpg",
+          "locality": "Denpasar",
+          "ttm_revpar": 7061726,
+          "ttm_occupancy": 0.529,
+          "rating_overall": 4.88,
+          "num_reviews": 25
+        },
+        {
+          "listing_id": "7227400",
+          "listing_name": "Deal 100 Meters Walk Beach 6BR Villa Sanur #family",
+          "viral_score": 87.1,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6NzIyNzQwMA%3D%3D/original/0133910e-e647-47cb-a794-7bdc41df4103.jpeg",
+          "locality": "Denpasar",
+          "ttm_revpar": 6489629,
+          "ttm_occupancy": 0.674,
+          "rating_overall": 4.73,
+          "num_reviews": 15
+        },
+        {
+          "listing_id": "16033852",
+          "listing_name": "Luxury private pool villa 7BR, 4* beachside",
+          "viral_score": 84.1,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-16033852/original/b68ca140-3931-414f-8c27-9b503540a66b.png",
+          "locality": "Denpasar",
+          "ttm_revpar": 5981841,
+          "ttm_occupancy": 0.359,
+          "rating_overall": 5,
+          "num_reviews": 16
+        },
+        {
+          "listing_id": "800729",
+          "listing_name": "Luxury Family Villa w/pool and access to the beach",
+          "viral_score": 82.3,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-800729/original/fa30b067-3e99-4426-880d-41067fbe70fb.jpeg",
+          "locality": "Denpasar",
+          "ttm_revpar": 4212810,
+          "ttm_occupancy": 0.608,
+          "rating_overall": 4.79,
+          "num_reviews": 19
+        },
+        {
+          "listing_id": "912572550239285415",
+          "listing_name": "Villa Umadahayu, Bali",
+          "viral_score": 81.7,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-912572550239285415/original/08fc885a-cca7-4853-9141-8ddee3bc4a62.jpeg",
+          "locality": "Denpasar",
+          "ttm_revpar": 4255997,
+          "ttm_occupancy": 0.523,
+          "rating_overall": 4.82,
+          "num_reviews": 22
+        },
+        {
+          "listing_id": "24231172",
+          "listing_name": "Villa Cemara",
+          "viral_score": 79.7,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/12d1901a-b83a-431c-9cae-7a1f1701f621.jpg",
+          "locality": "Denpasar",
+          "ttm_revpar": 9097634,
+          "ttm_occupancy": 0.326,
+          "rating_overall": 4.89,
+          "num_reviews": 9
+        },
+        {
+          "listing_id": "7466345",
+          "listing_name": "6 Bedr. Villa TIRTA in Excellent Location in Sanur",
+          "viral_score": 78.7,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/94664820/74d865f5_original.jpg",
+          "locality": "Denpasar",
+          "ttm_revpar": 2009762,
+          "ttm_occupancy": 0.74,
+          "rating_overall": 4.72,
+          "num_reviews": 146
+        },
+        {
+          "listing_id": "39537306",
+          "listing_name": "Tamarind Villa Sanur - 100 metres from the beach",
+          "viral_score": 76.9,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/0666bd49-ef28-4f33-9ca5-bdd8119b4647.jpg",
+          "locality": "Denpasar",
+          "ttm_revpar": 3530886,
+          "ttm_occupancy": 0.682,
+          "rating_overall": 4.77,
+          "num_reviews": 13
+        },
+        {
+          "listing_id": "1375060267194202995",
+          "listing_name": "5 bedroom Beachside villa/brand new/premium",
+          "viral_score": 74.6,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTM3NTA2MDI2NzE5NDIwMjk5NQ==/original/57377651-4595-4dab-b379-640088a1ae9f.jpeg",
+          "locality": "Kecamatan Denpasar Selatan",
+          "ttm_revpar": 2676260,
+          "ttm_occupancy": 0.542,
+          "rating_overall": 4.9,
+          "num_reviews": 29
+        }
+      ]
+    }
+  }
+}

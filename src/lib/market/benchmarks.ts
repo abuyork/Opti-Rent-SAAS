@@ -17,6 +17,14 @@ import type { AuditMarketEvidence } from "@/lib/types";
 import cangguData from "./benchmarks.greater-canggu.json";
 import dubaiData from "./benchmarks.dubai.json";
 import londonData from "./benchmarks.london.json";
+import seminyakData from "./benchmarks.seminyak.json";
+import ubudData from "./benchmarks.ubud.json";
+import uluwatuData from "./benchmarks.uluwatu-bukit.json";
+import sanurData from "./benchmarks.sanur.json";
+import nusaDuaData from "./benchmarks.nusa-dua.json";
+import amedData from "./benchmarks.amed.json";
+import lovinaData from "./benchmarks.lovina.json";
+import nusaIslandsData from "./benchmarks.nusa-islands.json";
 
 export interface CoverExample {
   listing_id: string;
@@ -145,6 +153,14 @@ const BENCHMARKS: Record<string, BenchmarksFile> = {
   "greater-canggu": cangguData as unknown as BenchmarksFile,
   dubai: dubaiData as unknown as BenchmarksFile,
   london: londonData as unknown as BenchmarksFile,
+  seminyak: seminyakData as unknown as BenchmarksFile,
+  ubud: ubudData as unknown as BenchmarksFile,
+  "uluwatu-bukit": uluwatuData as unknown as BenchmarksFile,
+  sanur: sanurData as unknown as BenchmarksFile,
+  "nusa-dua": nusaDuaData as unknown as BenchmarksFile,
+  amed: amedData as unknown as BenchmarksFile,
+  lovina: lovinaData as unknown as BenchmarksFile,
+  "nusa-islands": nusaIslandsData as unknown as BenchmarksFile,
 };
 
 /** Winner benchmark for a market + bedroom cohort (e.g. "dubai", "3BR"), or null. */
@@ -188,10 +204,22 @@ export function toAuditEvidence(b: MarketBenchmark): AuditMarketEvidence {
 }
 
 /** Landing-page trust stats, computed from the real scan data (never hardcode). */
-export function getTrustStats(): { listings: number; markets: string[] } {
+export function getTrustStats(): {
+  listings: number;
+  markets: string[];
+  /** Human list with the Bali regions grouped — 11 raw titles overwhelm the copy. */
+  displayMarkets: string[];
+} {
   const files = Object.values(BENCHMARKS);
+  const titles = files.map((f) => MARKETS[f.market]?.title ?? f.market);
+  const baliCount = files.filter((f) => MARKETS[f.market]?.currency === "IDR").length;
+  const nonBali = files
+    .filter((f) => MARKETS[f.market]?.currency !== "IDR")
+    .map((f) => MARKETS[f.market]?.title ?? f.market);
   return {
     listings: files.reduce((sum, f) => sum + (f.generated_from ?? 0), 0),
-    markets: files.map((f) => MARKETS[f.market]?.title ?? f.market),
+    markets: titles,
+    displayMarkets:
+      baliCount > 1 ? [`Bali (${baliCount} regions)`, ...nonBali] : titles,
   };
 }

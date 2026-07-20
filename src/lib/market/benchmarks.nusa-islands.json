@@ -1,0 +1,850 @@
+{
+  "market": "nusa-islands",
+  "generated_from": 140,
+  "cohorts": {
+    "1BR": {
+      "market": "nusa-islands",
+      "cohort": "1BR",
+      "currency": "IDR",
+      "sample_size": 40,
+      "winner_n": 10,
+      "winner_median_photos": 54,
+      "winner_median_title_chars": 46.5,
+      "winner_median_description_chars": 1929.5,
+      "winner_median_adr_idr": 3784354,
+      "winner_median_occupancy": 0.644,
+      "winner_superhost_share": 1,
+      "winner_guest_favorite_share": 0.6,
+      "loser_median_photos": 25.5,
+      "loser_median_description_chars": 632.5,
+      "loser_instant_book_share": 0,
+      "top_amenities": [
+        {
+          "amenity": "wine glasses",
+          "winner_share": 1,
+          "loser_share": 0,
+          "delta": 1
+        },
+        {
+          "amenity": "blender",
+          "winner_share": 0.8,
+          "loser_share": 0,
+          "delta": 0.8
+        },
+        {
+          "amenity": "extra pillows and blankets",
+          "winner_share": 0.8,
+          "loser_share": 0.1,
+          "delta": 0.7000000000000001
+        },
+        {
+          "amenity": "laundromat nearby",
+          "winner_share": 0.8,
+          "loser_share": 0.1,
+          "delta": 0.7000000000000001
+        },
+        {
+          "amenity": "safe",
+          "winner_share": 0.9,
+          "loser_share": 0.2,
+          "delta": 0.7
+        },
+        {
+          "amenity": "dishes and silverware",
+          "winner_share": 1,
+          "loser_share": 0.3,
+          "delta": 0.7
+        },
+        {
+          "amenity": "dining table",
+          "winner_share": 0.9,
+          "loser_share": 0.2,
+          "delta": 0.7
+        },
+        {
+          "amenity": "coffee",
+          "winner_share": 0.9,
+          "loser_share": 0.2,
+          "delta": 0.7
+        }
+      ],
+      "title_keywords": [
+        {
+          "word": "pool",
+          "delta": 0.5
+        },
+        {
+          "word": "glamping",
+          "delta": 0.3
+        },
+        {
+          "word": "sea",
+          "delta": 0.2
+        },
+        {
+          "word": "oceanfront",
+          "delta": 0.2
+        },
+        {
+          "word": "private",
+          "delta": 0.2
+        },
+        {
+          "word": "outdoor",
+          "delta": 0.2
+        },
+        {
+          "word": "adults",
+          "delta": 0.2
+        },
+        {
+          "word": "only",
+          "delta": 0.2
+        }
+      ],
+      "winner_covers": [
+        {
+          "listing_id": "1395234898039452790",
+          "listing_name": "Tropical Glamping • Honeymoon Villa + Sea View",
+          "viral_score": 97.3,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTM5NTIzNDg5ODAzOTQ1Mjc5MA==/original/4f20507e-d8b3-45e4-aa8e-3c921af19f61.jpeg",
+          "locality": "Nusa Penida",
+          "ttm_revpar": 6219747,
+          "ttm_occupancy": 0.732,
+          "rating_overall": 4.92,
+          "num_reviews": 48
+        },
+        {
+          "listing_id": "51567500",
+          "listing_name": "Tropical Glamping 🌴 Cliff Side Ocean View + Net🐬",
+          "viral_score": 95.1,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-51567500/original/bb5114fb-75a7-4a0c-aa0a-ed402f0a29c8.jpeg",
+          "locality": "Pejukutan",
+          "ttm_revpar": 5152553,
+          "ttm_occupancy": 0.647,
+          "rating_overall": 4.9,
+          "num_reviews": 482
+        },
+        {
+          "listing_id": "959914683424550005",
+          "listing_name": "Oceanfront Villa | Volcano Views | Private Pool",
+          "viral_score": 94.2,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/airflow/Hosting-959914683424550005/original/6d28dc4f-1592-4054-b99a-aaa609a2ff89.jpg",
+          "locality": "Ped",
+          "ttm_revpar": 2074520,
+          "ttm_occupancy": 0.707,
+          "rating_overall": 4.97,
+          "num_reviews": 108
+        },
+        {
+          "listing_id": "1036728572361561145",
+          "listing_name": "Manta Iconic bamboo | Hearth Pool • Outdoor Cinema",
+          "viral_score": 91,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-1036728572361561145/original/ee3e1e85-8478-4afa-b097-67d8b381f408.jpeg",
+          "locality": "Toyapakeh",
+          "ttm_revpar": 3007311,
+          "ttm_occupancy": 0.715,
+          "rating_overall": 4.86,
+          "num_reviews": 71
+        },
+        {
+          "listing_id": "1152737010554551940",
+          "listing_name": "Samsara Penida",
+          "viral_score": 84.7,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-1152737010554551940/original/8593e821-e7cc-403f-a2d9-307948ed0cad.jpeg",
+          "locality": "Kutampi Kaler",
+          "ttm_revpar": 1818495,
+          "ttm_occupancy": 0.71,
+          "rating_overall": 4.97,
+          "num_reviews": 29
+        },
+        {
+          "listing_id": "34522485",
+          "listing_name": "Tropical Glamping🌴 Open Air Romantic Bungalow♥️",
+          "viral_score": 84.1,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MzQ1MjI0ODU%3D/original/1333a3ce-680e-4a7a-ba47-d572e2b37199.png",
+          "locality": "Pejukutan",
+          "ttm_revpar": 2416155,
+          "ttm_occupancy": 0.501,
+          "rating_overall": 4.89,
+          "num_reviews": 536
+        },
+        {
+          "listing_id": "1079912729217096765",
+          "listing_name": "The Dream Beach, Nusa Penida",
+          "viral_score": 83.7,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1079912729217096765/original/c0d1bcb8-9959-4cbb-8d58-aa5820060915.jpeg",
+          "locality": "Ped",
+          "ttm_revpar": 1363176,
+          "ttm_occupancy": 0.641,
+          "rating_overall": 4.92,
+          "num_reviews": 85
+        },
+        {
+          "listing_id": "1076293332402134332",
+          "listing_name": "Shell house | Rooftop Pool 360° • Outdoor Movie",
+          "viral_score": 80.6,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-1076293332402134332/original/25f306e2-e4b2-4773-9d3b-72491edfb9ae.jpeg",
+          "locality": "Toyapakeh",
+          "ttm_revpar": 2968116,
+          "ttm_occupancy": 0.556,
+          "rating_overall": 4.76,
+          "num_reviews": 54
+        },
+        {
+          "listing_id": "1376681130404074144",
+          "listing_name": "Oceanfront Villa | Sea View Pool | Adults Only",
+          "viral_score": 79.6,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-1376681130404074144/original/2f6f5ac4-7378-4d67-b618-f56dca905ed4.jpeg",
+          "locality": "Kecamatan Nusa Penida",
+          "ttm_revpar": 1623596,
+          "ttm_occupancy": 0.545,
+          "rating_overall": 5,
+          "num_reviews": 52
+        },
+        {
+          "listing_id": "1039418308824090347",
+          "listing_name": "Beachfront Villa | Private Pool | Adults Only",
+          "viral_score": 79.4,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-1039418308824090347/original/cdc6a556-bc5a-454a-9ef9-afbaeeab4366.jpeg",
+          "locality": "Ped",
+          "ttm_revpar": 1446590,
+          "ttm_occupancy": 0.515,
+          "rating_overall": 4.95,
+          "num_reviews": 78
+        }
+      ]
+    },
+    "2BR": {
+      "market": "nusa-islands",
+      "cohort": "2BR",
+      "currency": "IDR",
+      "sample_size": 40,
+      "winner_n": 10,
+      "winner_median_photos": 32,
+      "winner_median_title_chars": 40.5,
+      "winner_median_description_chars": 1877,
+      "winner_median_adr_idr": 3463393,
+      "winner_median_occupancy": 0.41800000000000004,
+      "winner_superhost_share": 0.8,
+      "winner_guest_favorite_share": 0.4,
+      "loser_median_photos": 15,
+      "loser_median_description_chars": 71,
+      "loser_instant_book_share": 0.1,
+      "top_amenities": [
+        {
+          "amenity": "safe",
+          "winner_share": 0.9,
+          "loser_share": 0.3,
+          "delta": 0.6000000000000001
+        },
+        {
+          "amenity": "ceiling fan",
+          "winner_share": 0.6,
+          "loser_share": 0.1,
+          "delta": 0.5
+        },
+        {
+          "amenity": "coffee",
+          "winner_share": 0.7,
+          "loser_share": 0.2,
+          "delta": 0.49999999999999994
+        },
+        {
+          "amenity": "sun loungers",
+          "winner_share": 0.7,
+          "loser_share": 0.2,
+          "delta": 0.49999999999999994
+        },
+        {
+          "amenity": "body soap",
+          "winner_share": 0.9,
+          "loser_share": 0.5,
+          "delta": 0.4
+        },
+        {
+          "amenity": "clothing storage",
+          "winner_share": 1,
+          "loser_share": 0.6,
+          "delta": 0.4
+        },
+        {
+          "amenity": "hot water kettle",
+          "winner_share": 0.8,
+          "loser_share": 0.4,
+          "delta": 0.4
+        },
+        {
+          "amenity": "outdoor shower",
+          "winner_share": 0.4,
+          "loser_share": 0,
+          "delta": 0.4
+        }
+      ],
+      "title_keywords": [
+        {
+          "word": "lembongan",
+          "delta": 0.2
+        },
+        {
+          "word": "la",
+          "delta": 0.2
+        },
+        {
+          "word": "beach",
+          "delta": 0.2
+        },
+        {
+          "word": "seaviews",
+          "delta": 0.2
+        },
+        {
+          "word": "private",
+          "delta": 0.09999999999999998
+        },
+        {
+          "word": "pool",
+          "delta": 0
+        },
+        {
+          "word": "nusa",
+          "delta": -0.09999999999999998
+        },
+        {
+          "word": "penida",
+          "delta": -0.2
+        }
+      ],
+      "winner_covers": [
+        {
+          "listing_id": "1321473773510894322",
+          "listing_name": "New 2BR Villa with Ocean & Mt Agung View Lembongan",
+          "viral_score": 98.3,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-1321473773510894322/original/6e2d874a-a60d-473d-b552-7d95d629e1d5.jpeg",
+          "locality": "Jungutbatu",
+          "ttm_revpar": 3175169,
+          "ttm_occupancy": 0.726,
+          "rating_overall": 5,
+          "num_reviews": 26
+        },
+        {
+          "listing_id": "1120157936489956703",
+          "listing_name": "Pool Villa La Mimosa",
+          "viral_score": 97.9,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/airflow/Hosting-1120157936489956703/original/24d67454-4dac-46b8-bc4b-535303d2f835.jpg",
+          "locality": "Toyapakeh",
+          "ttm_revpar": 2009135,
+          "ttm_occupancy": 0.603,
+          "rating_overall": 4.82,
+          "num_reviews": 109
+        },
+        {
+          "listing_id": "1096667083493769591",
+          "listing_name": "Moontana Beach 2BR Private Villa Nusa Penida",
+          "viral_score": 90.8,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1096667083493769591/original/51c8671b-da18-4b53-8962-67b97ba3b21c.jpeg",
+          "locality": "Ped",
+          "ttm_revpar": 1945768,
+          "ttm_occupancy": 0.54,
+          "rating_overall": 4.62,
+          "num_reviews": 65
+        },
+        {
+          "listing_id": "38763116",
+          "listing_name": "The Arancia Luxury Villa 2BR with seaviews Penida",
+          "viral_score": 87.9,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-38763116/original/690b29c0-e0c4-4702-bbdf-93a299c1975a.jpeg",
+          "locality": "Toyapakeh",
+          "ttm_revpar": 1992766,
+          "ttm_occupancy": 0.386,
+          "rating_overall": 4.84,
+          "num_reviews": 56
+        },
+        {
+          "listing_id": "1060605299907372490",
+          "listing_name": "Lembo Lagoon 2BR Beach Shack",
+          "viral_score": 87.8,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1060605299907372490/original/d22e2627-7ff0-4a13-a940-7bc3a2192e0e.jpeg",
+          "locality": "Jungutbatu",
+          "ttm_revpar": 1280301,
+          "ttm_occupancy": 0.501,
+          "rating_overall": 4.83,
+          "num_reviews": 36
+        },
+        {
+          "listing_id": "1216342038017459792",
+          "listing_name": "2 Bedroom Private Villa Madu Dua with Views",
+          "viral_score": 84.9,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTIxNjM0MjAzODAxNzQ1OTc5Mg%3D%3D/original/5124f816-7970-49d3-9d21-118ab3677741.jpeg",
+          "locality": "Jungutbatu",
+          "ttm_revpar": 1805445,
+          "ttm_occupancy": 0.433,
+          "rating_overall": 4.93,
+          "num_reviews": 29
+        },
+        {
+          "listing_id": "1495422276908269505",
+          "listing_name": "2 bedroom Villa, Seaviews, Lembongan inc Breakfast",
+          "viral_score": 78.1,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-1495422276908269505/original/6c376233-0621-42ad-b310-822136ec779e.jpeg",
+          "locality": "Nusa Penida",
+          "ttm_revpar": 1069975,
+          "ttm_occupancy": 0.299,
+          "rating_overall": 5,
+          "num_reviews": 35
+        },
+        {
+          "listing_id": "966188797447178352",
+          "listing_name": "La Plage Flaner Beachfront Nusa Penida",
+          "viral_score": 77.7,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-966188797447178352/original/830a0a80-aa94-4e2b-adb8-412c89d74ab7.jpeg",
+          "locality": "Ped",
+          "ttm_revpar": 1416363,
+          "ttm_occupancy": 0.403,
+          "rating_overall": 4.88,
+          "num_reviews": 16
+        },
+        {
+          "listing_id": "1117785540259907692",
+          "listing_name": "Sedaya villa",
+          "viral_score": 75.8,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-1117785540259907692/original/20747c9e-3198-459a-892b-dee8ddc5bc1d.jpeg",
+          "locality": "Ped",
+          "ttm_revpar": 1247385,
+          "ttm_occupancy": 0.307,
+          "rating_overall": 4.93,
+          "num_reviews": 14
+        },
+        {
+          "listing_id": "952050715375247396",
+          "listing_name": "Private Pool Villa - Two Bedrooms",
+          "viral_score": 74.9,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-952050715375247396/original/a07646a6-a479-4258-be94-7a1765b30048.jpeg",
+          "locality": "Batukandik",
+          "ttm_revpar": 912118,
+          "ttm_occupancy": 0.304,
+          "rating_overall": 4.63,
+          "num_reviews": 130
+        }
+      ]
+    },
+    "3BR": {
+      "market": "nusa-islands",
+      "cohort": "3BR",
+      "currency": "IDR",
+      "sample_size": 36,
+      "winner_n": 9,
+      "winner_median_photos": 60,
+      "winner_median_title_chars": 44,
+      "winner_median_description_chars": 2256,
+      "winner_median_adr_idr": 5785282,
+      "winner_median_occupancy": 0.592,
+      "winner_superhost_share": 0.7777777777777778,
+      "winner_guest_favorite_share": 0.3333333333333333,
+      "loser_median_photos": 19,
+      "loser_median_description_chars": 241,
+      "loser_instant_book_share": 0.3333333333333333,
+      "top_amenities": [
+        {
+          "amenity": "cooking basics",
+          "winner_share": 1,
+          "loser_share": 0.3333333333333333,
+          "delta": 0.6666666666666667
+        },
+        {
+          "amenity": "coffee maker",
+          "winner_share": 0.6666666666666666,
+          "loser_share": 0,
+          "delta": 0.6666666666666666
+        },
+        {
+          "amenity": "body soap",
+          "winner_share": 0.7777777777777778,
+          "loser_share": 0.2222222222222222,
+          "delta": 0.5555555555555556
+        },
+        {
+          "amenity": "dishes and silverware",
+          "winner_share": 1,
+          "loser_share": 0.4444444444444444,
+          "delta": 0.5555555555555556
+        },
+        {
+          "amenity": "blender",
+          "winner_share": 0.5555555555555556,
+          "loser_share": 0,
+          "delta": 0.5555555555555556
+        },
+        {
+          "amenity": "patio or balcony",
+          "winner_share": 0.7777777777777778,
+          "loser_share": 0.2222222222222222,
+          "delta": 0.5555555555555556
+        },
+        {
+          "amenity": "coffee",
+          "winner_share": 0.7777777777777778,
+          "loser_share": 0.3333333333333333,
+          "delta": 0.4444444444444445
+        },
+        {
+          "amenity": "bed linens",
+          "winner_share": 1,
+          "loser_share": 0.5555555555555556,
+          "delta": 0.4444444444444444
+        }
+      ],
+      "title_keywords": [
+        {
+          "word": "nusa",
+          "delta": 0.3333333333333333
+        },
+        {
+          "word": "beachfront",
+          "delta": 0.1111111111111111
+        },
+        {
+          "word": "ceningan",
+          "delta": 0.1111111111111111
+        },
+        {
+          "word": "private",
+          "delta": 0.1111111111111111
+        },
+        {
+          "word": "penida",
+          "delta": 0
+        },
+        {
+          "word": "lembongan",
+          "delta": -0.1111111111111111
+        }
+      ],
+      "winner_covers": [
+        {
+          "listing_id": "552626959075564922",
+          "listing_name": "Elegant & Absolute BeachFront Villa Nusa Ceningan",
+          "viral_score": 100,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-552626959075564922/original/d2dd40db-af95-42c4-b931-d0c56d12bf92.jpeg",
+          "locality": "Lembongan",
+          "ttm_revpar": 5730301,
+          "ttm_occupancy": 0.753,
+          "rating_overall": 4.95,
+          "num_reviews": 148
+        },
+        {
+          "listing_id": "1210719634183750373",
+          "listing_name": "Haven of serenity facing the sea",
+          "viral_score": 95.9,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1210719634183750373/original/f6894e56-4a72-4599-8355-895eb8bdebc5.jpeg",
+          "locality": "Pejukutan",
+          "ttm_revpar": 4011991,
+          "ttm_occupancy": 0.586,
+          "rating_overall": 4.97,
+          "num_reviews": 58
+        },
+        {
+          "listing_id": "1176494135692776261",
+          "listing_name": "Sunset Beachfront Wood Villa, Nusa Lembongan",
+          "viral_score": 89.4,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTE3NjQ5NDEzNTY5Mjc3NjI2MQ%3D%3D/original/72f13d62-cd36-4756-b0ae-3eee320f3458.jpeg",
+          "locality": "Jungutbatu",
+          "ttm_revpar": 3159473,
+          "ttm_occupancy": 0.614,
+          "rating_overall": 4.66,
+          "num_reviews": 59
+        },
+        {
+          "listing_id": "2043439",
+          "listing_name": "Villa Nusa - Private Villa in Exclusive Location",
+          "viral_score": 84.3,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/75153607/e8dc968a_original.jpg",
+          "locality": "Jungutbatu",
+          "ttm_revpar": 2724066,
+          "ttm_occupancy": 0.433,
+          "rating_overall": 4.94,
+          "num_reviews": 148
+        },
+        {
+          "listing_id": "48063517",
+          "listing_name": "Comfy private villa 3Br Nusa Penida",
+          "viral_score": 83.9,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/53fb78d5-5966-4a99-8322-b53f112dd059.jpg",
+          "locality": "Batununggal",
+          "ttm_revpar": 1600859,
+          "ttm_occupancy": 0.592,
+          "rating_overall": 4.99,
+          "num_reviews": 198
+        },
+        {
+          "listing_id": "1279655414194041994",
+          "listing_name": "Sugih Villa Ceningan (Nusa Ceningan Island)",
+          "viral_score": 80.6,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1279655414194041994/original/67ea15ce-35d0-486d-bb9f-f61e63254010.jpeg",
+          "locality": "Lembongan",
+          "ttm_revpar": 2457099,
+          "ttm_occupancy": 0.616,
+          "rating_overall": 4.85,
+          "num_reviews": 40
+        },
+        {
+          "listing_id": "46298107",
+          "listing_name": "The Arancia Luxury Villa 3BR with seaviews Penida",
+          "viral_score": 78.9,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/0940e22f-114c-4e1f-8c35-9569f3328597.jpg",
+          "locality": "Toyapakeh",
+          "ttm_revpar": 2677650,
+          "ttm_occupancy": 0.452,
+          "rating_overall": 4.57,
+          "num_reviews": 51
+        },
+        {
+          "listing_id": "1415064339922172563",
+          "listing_name": "The Blue Zone Villa – Nusa Lembongan",
+          "viral_score": 77.4,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTQxNTA2NDMzOTkyMjE3MjU2Mw==/original/35a0f149-046f-4f2a-995a-7a86993cd680.jpeg",
+          "locality": "Nusa Penida",
+          "ttm_revpar": 1903568,
+          "ttm_occupancy": 0.638,
+          "rating_overall": 4.91,
+          "num_reviews": 32
+        },
+        {
+          "listing_id": "1411844518042123380",
+          "listing_name": "Panorama Villas: Villa Rose 3 BR ocean view villa",
+          "viral_score": 73.4,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1411844518042123380/original/66e4e17c-f96c-482d-8d06-25a843a17a1f.jpeg",
+          "locality": "Nusa Ceningan",
+          "ttm_revpar": 2911476,
+          "ttm_occupancy": 0.427,
+          "rating_overall": 4.89,
+          "num_reviews": 18
+        },
+        {
+          "listing_id": "671917270268004427",
+          "listing_name": "Nusa penida private 3BR",
+          "viral_score": 71.6,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/c5b2f12b-1a25-4dc9-b2d7-457a9148ccf1.jpg",
+          "locality": "Batununggal",
+          "ttm_revpar": 1394299,
+          "ttm_occupancy": 0.501,
+          "rating_overall": 5,
+          "num_reviews": 32
+        }
+      ]
+    },
+    "4BR": {
+      "market": "nusa-islands",
+      "cohort": "4BR",
+      "currency": "IDR",
+      "sample_size": 24,
+      "winner_n": 6,
+      "winner_median_photos": 66,
+      "winner_median_title_chars": 43,
+      "winner_median_description_chars": 2400,
+      "winner_median_adr_idr": 6006304,
+      "winner_median_occupancy": 0.5,
+      "winner_superhost_share": 0.6666666666666666,
+      "winner_guest_favorite_share": 0.6666666666666666,
+      "loser_median_photos": 34,
+      "loser_median_description_chars": 126.5,
+      "loser_instant_book_share": 0.16666666666666666,
+      "top_amenities": [
+        {
+          "amenity": "pool",
+          "winner_share": 1,
+          "loser_share": 0.3333333333333333,
+          "delta": 0.6666666666666667
+        },
+        {
+          "amenity": "hair dryer",
+          "winner_share": 0.6666666666666666,
+          "loser_share": 0.16666666666666666,
+          "delta": 0.5
+        },
+        {
+          "amenity": "stove",
+          "winner_share": 0.6666666666666666,
+          "loser_share": 0.16666666666666666,
+          "delta": 0.5
+        },
+        {
+          "amenity": "oven",
+          "winner_share": 0.5,
+          "loser_share": 0,
+          "delta": 0.5
+        },
+        {
+          "amenity": "kitchen",
+          "winner_share": 1,
+          "loser_share": 0.6666666666666666,
+          "delta": 0.33333333333333337
+        },
+        {
+          "amenity": "self check-in",
+          "winner_share": 0.5,
+          "loser_share": 0.16666666666666666,
+          "delta": 0.33333333333333337
+        },
+        {
+          "amenity": "host greets you",
+          "winner_share": 0.5,
+          "loser_share": 0.16666666666666666,
+          "delta": 0.33333333333333337
+        },
+        {
+          "amenity": "cooking basics",
+          "winner_share": 0.6666666666666666,
+          "loser_share": 0.3333333333333333,
+          "delta": 0.3333333333333333
+        }
+      ],
+      "title_keywords": [
+        {
+          "word": "ceningan",
+          "delta": 0.5
+        },
+        {
+          "word": "nusa",
+          "delta": 0.33333333333333337
+        },
+        {
+          "word": "luxury",
+          "delta": 0.3333333333333333
+        },
+        {
+          "word": "breathtaking",
+          "delta": 0.16666666666666666
+        },
+        {
+          "word": "beachfront",
+          "delta": 0.16666666666666666
+        },
+        {
+          "word": "private",
+          "delta": 0.16666666666666666
+        },
+        {
+          "word": "woods",
+          "delta": 0.16666666666666666
+        },
+        {
+          "word": "best",
+          "delta": 0.16666666666666666
+        }
+      ],
+      "winner_covers": [
+        {
+          "listing_id": "1188820625739772638",
+          "listing_name": "Breathtaking 4BR Beachfront Villa in Nusa Ceningan",
+          "viral_score": 98.5,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1188820625739772638/original/6e8e9b89-158c-47a9-ab77-b1b8bc25f930.jpeg",
+          "locality": "Lembongan",
+          "ttm_revpar": 5243096,
+          "ttm_occupancy": 0.466,
+          "rating_overall": 4.96,
+          "num_reviews": 81
+        },
+        {
+          "listing_id": "20667332",
+          "listing_name": "4 BDR with Private POOL Nusa Ceningan",
+          "viral_score": 95.4,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-20667332/original/6a56b763-3af9-44fd-9949-311ce82de24a.jpeg",
+          "locality": "Lembongan",
+          "ttm_revpar": 2558899,
+          "ttm_occupancy": 0.584,
+          "rating_overall": 4.88,
+          "num_reviews": 105
+        },
+        {
+          "listing_id": "14410022",
+          "listing_name": "THE BEACH WOODS NUSA CENINGAN ISLAND",
+          "viral_score": 93.7,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/d7caa6f3-7286-4f03-8536-c157b2b27ea6.jpg",
+          "locality": "Lembongan",
+          "ttm_revpar": 2811246,
+          "ttm_occupancy": 0.562,
+          "rating_overall": 4.91,
+          "num_reviews": 82
+        },
+        {
+          "listing_id": "1180018083918156523",
+          "listing_name": "Luxury Villa with Best View in Penida",
+          "viral_score": 88.7,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-1180018083918156523/original/1b089a05-7f13-4928-8ae0-9150a091b688.jpeg",
+          "locality": "Sakti",
+          "ttm_revpar": 2874030,
+          "ttm_occupancy": 0.534,
+          "rating_overall": 4.84,
+          "num_reviews": 67
+        },
+        {
+          "listing_id": "46878876",
+          "listing_name": "The Arancia Luxury Villa 4BR with seaviews Penida",
+          "viral_score": 86.5,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-46878876/original/f27284d0-25e7-416b-9961-29a9cb32331b.jpeg",
+          "locality": "Toyapakeh",
+          "ttm_revpar": 2932060,
+          "ttm_occupancy": 0.414,
+          "rating_overall": 4.58,
+          "num_reviews": 40
+        },
+        {
+          "listing_id": "1372727493177531799",
+          "listing_name": "Jennys Place Villa Senja (4BR) Ocean&Sunset views.",
+          "viral_score": 75.4,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1372727493177531799/original/00f1ecea-ef8c-41c6-b8bc-36d37f289259.jpeg",
+          "locality": "Nusa Penida",
+          "ttm_revpar": 2407051,
+          "ttm_occupancy": 0.334,
+          "rating_overall": 5,
+          "num_reviews": 12
+        },
+        {
+          "listing_id": "45744693",
+          "listing_name": "Clifftop villa with Ocean, volcanos & lagoon Views",
+          "viral_score": 75.2,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/14eb4371-9d5f-459d-b05d-8bf759dfbea1.jpg",
+          "locality": "Lembongan",
+          "ttm_revpar": 2182105,
+          "ttm_occupancy": 0.296,
+          "rating_overall": 4.82,
+          "num_reviews": 103
+        },
+        {
+          "listing_id": "1194553218130636455",
+          "listing_name": "Dreamy Ocean View 4BR Villa with Infinity Pool",
+          "viral_score": 63.5,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-1194553218130636455/original/e8ec8d58-e57f-42f3-944e-7881ae2daa5e.jpeg",
+          "locality": "Kecamatan Nusa Penida",
+          "ttm_revpar": 2201209,
+          "ttm_occupancy": 0.23,
+          "rating_overall": 5,
+          "num_reviews": 10
+        },
+        {
+          "listing_id": "41413966",
+          "listing_name": "Agasta Villa Bungalows beautiful tranquil location",
+          "viral_score": 58.9,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/713397bb-980c-4dc4-be2a-3b2be5cd7aec.jpg",
+          "locality": "Bunga Mekar",
+          "ttm_revpar": 113908,
+          "ttm_occupancy": 0.241,
+          "rating_overall": 4.86,
+          "num_reviews": 133
+        },
+        {
+          "listing_id": "1562977316394602248",
+          "listing_name": "Private Retreat Villa with Sunset View",
+          "viral_score": 56.3,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-1562977316394602248/original/7a84b55c-bde7-489a-a183-382b9825c9f0.jpeg",
+          "locality": "Nusa Penida",
+          "ttm_revpar": 233063,
+          "ttm_occupancy": 0.164,
+          "rating_overall": 4.94,
+          "num_reviews": 17
+        }
+      ]
+    }
+  }
+}

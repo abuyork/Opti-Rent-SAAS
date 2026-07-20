@@ -1,0 +1,1051 @@
+{
+  "market": "lovina",
+  "generated_from": 198,
+  "cohorts": {
+    "1BR": {
+      "market": "lovina",
+      "cohort": "1BR",
+      "currency": "IDR",
+      "sample_size": 40,
+      "winner_n": 10,
+      "winner_median_photos": 50,
+      "winner_median_title_chars": 44.5,
+      "winner_median_description_chars": 2527,
+      "winner_median_adr_idr": 2454588,
+      "winner_median_occupancy": 0.537,
+      "winner_superhost_share": 0.9,
+      "winner_guest_favorite_share": 0.9,
+      "loser_median_photos": 21,
+      "loser_median_description_chars": 505,
+      "loser_instant_book_share": 0.2,
+      "top_amenities": [
+        {
+          "amenity": "fire extinguisher",
+          "winner_share": 0.9,
+          "loser_share": 0.1,
+          "delta": 0.8
+        },
+        {
+          "amenity": "coffee maker",
+          "winner_share": 0.9,
+          "loser_share": 0.1,
+          "delta": 0.8
+        },
+        {
+          "amenity": "toaster",
+          "winner_share": 0.8,
+          "loser_share": 0,
+          "delta": 0.8
+        },
+        {
+          "amenity": "stove",
+          "winner_share": 0.8,
+          "loser_share": 0.1,
+          "delta": 0.7000000000000001
+        },
+        {
+          "amenity": "dining table",
+          "winner_share": 0.8,
+          "loser_share": 0.1,
+          "delta": 0.7000000000000001
+        },
+        {
+          "amenity": "wine glasses",
+          "winner_share": 0.7,
+          "loser_share": 0,
+          "delta": 0.7
+        },
+        {
+          "amenity": "patio or balcony",
+          "winner_share": 1,
+          "loser_share": 0.3,
+          "delta": 0.7
+        },
+        {
+          "amenity": "freezer",
+          "winner_share": 0.7,
+          "loser_share": 0,
+          "delta": 0.7
+        }
+      ],
+      "title_keywords": [
+        {
+          "word": "beach",
+          "delta": 0.4
+        },
+        {
+          "word": "pool",
+          "delta": 0.2
+        },
+        {
+          "word": "ocean",
+          "delta": 0.2
+        },
+        {
+          "word": "koko",
+          "delta": 0.2
+        },
+        {
+          "word": "villas",
+          "delta": 0.2
+        },
+        {
+          "word": "view",
+          "delta": 0.19999999999999998
+        },
+        {
+          "word": "lovina",
+          "delta": -0.09999999999999998
+        }
+      ],
+      "winner_covers": [
+        {
+          "listing_id": "1141162926655384886",
+          "listing_name": "Glasshouse With Infinity Pool And Ocean Views",
+          "viral_score": 97.1,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTE0MTE2MjkyNjY1NTM4NDg4Ng%3D%3D/original/05218ad8-4b79-4f01-94d6-e7f12393e4df.jpeg",
+          "locality": "Sidetapa",
+          "ttm_revpar": 1643642,
+          "ttm_occupancy": 0.553,
+          "rating_overall": 4.9,
+          "num_reviews": 115
+        },
+        {
+          "listing_id": "34545707",
+          "listing_name": "Koko-Beach-Villas, Lovina * Villa Tiga Deluxe",
+          "viral_score": 96,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-34545707/original/adcad66d-b929-4f0f-8cc4-d14d534f0173.jpeg",
+          "locality": "Tukadmungga",
+          "ttm_revpar": 1473183,
+          "ttm_occupancy": 0.556,
+          "rating_overall": 4.92,
+          "num_reviews": 142
+        },
+        {
+          "listing_id": "31574947",
+          "listing_name": "Koko-Beach-Villas, Lovina * Villa Empat",
+          "viral_score": 89.6,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-31574947/original/6aafaed6-324b-4723-8cf3-de08334172e3.jpeg",
+          "locality": "Tukadmungga",
+          "ttm_revpar": 1065132,
+          "ttm_occupancy": 0.474,
+          "rating_overall": 4.92,
+          "num_reviews": 197
+        },
+        {
+          "listing_id": "1396041392929390670",
+          "listing_name": "One Bedroom Villa - Alam",
+          "viral_score": 86.4,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-1396041392929390670/original/d2229f76-dadd-4c05-bab3-a93e64e906a5.jpeg",
+          "locality": "Sukasada",
+          "ttm_revpar": 1631354,
+          "ttm_occupancy": 0.532,
+          "rating_overall": 4.96,
+          "num_reviews": 24
+        },
+        {
+          "listing_id": "866898745253248845",
+          "listing_name": "Epic Sunset Ocean View Treehouse w/ Pool • Beach",
+          "viral_score": 86.3,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-866898745253248845/original/ebf9b1e5-5ee4-422b-a387-4db08427abf2.jpeg",
+          "locality": "Dencarik",
+          "ttm_revpar": 877856,
+          "ttm_occupancy": 0.485,
+          "rating_overall": 4.85,
+          "num_reviews": 150
+        },
+        {
+          "listing_id": "1013377832219582960",
+          "listing_name": "EJ House: Absolute Beach Front Industrial House",
+          "viral_score": 84.9,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1013377832219582960/original/cc7a3180-d1c9-4b03-9a14-25b768042f99.jpeg",
+          "locality": "Banyuasri",
+          "ttm_revpar": 717891,
+          "ttm_occupancy": 0.559,
+          "rating_overall": 4.89,
+          "num_reviews": 151
+        },
+        {
+          "listing_id": "1257893345925570664",
+          "listing_name": "Unwind in luxury, where LOVE meets paradise!",
+          "viral_score": 84.5,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTI1Nzg5MzM0NTkyNTU3MDY2NA%3D%3D/original/b6ef5def-88e5-42d8-8533-41e7f549c34d.jpeg",
+          "locality": "Kaliasem",
+          "ttm_revpar": 1658979,
+          "ttm_occupancy": 0.395,
+          "rating_overall": 4.93,
+          "num_reviews": 29
+        },
+        {
+          "listing_id": "1298981027578155236",
+          "listing_name": "Private Bamboo Villa, Sunrise & Mountain View",
+          "viral_score": 83.7,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-1298981027578155236/original/1046bfe8-235a-4c5f-b255-adba4088eadc.jpeg",
+          "locality": "Sambangan",
+          "ttm_revpar": 1534084,
+          "ttm_occupancy": 0.559,
+          "rating_overall": 4.94,
+          "num_reviews": 17
+        },
+        {
+          "listing_id": "1009656782031602881",
+          "listing_name": "Garden Terrace Bali (Clove Cabin)",
+          "viral_score": 77.9,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-1009656782031602881/original/f3038d28-3b32-4391-88ac-30f86bd25c0a.jpeg",
+          "locality": "Pedawa",
+          "ttm_revpar": 731345,
+          "ttm_occupancy": 0.532,
+          "rating_overall": 4.97,
+          "num_reviews": 73
+        },
+        {
+          "listing_id": "1016416421101231374",
+          "listing_name": "Sea View Suite @ Villa Rawarawa",
+          "viral_score": 76.8,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTAxNjQxNjQyMTEwMTIzMTM3NA%3D%3D/original/57b00c61-8e6f-46bb-a923-b251b904a6af.jpeg",
+          "locality": "Kaliasem",
+          "ttm_revpar": 694706,
+          "ttm_occupancy": 0.542,
+          "rating_overall": 4.94,
+          "num_reviews": 64
+        }
+      ]
+    },
+    "2BR": {
+      "market": "lovina",
+      "cohort": "2BR",
+      "currency": "IDR",
+      "sample_size": 40,
+      "winner_n": 10,
+      "winner_median_photos": 47,
+      "winner_median_title_chars": 45.5,
+      "winner_median_description_chars": 2695.5,
+      "winner_median_adr_idr": 2913517,
+      "winner_median_occupancy": 0.5095000000000001,
+      "winner_superhost_share": 0.8,
+      "winner_guest_favorite_share": 0.8,
+      "loser_median_photos": 22.5,
+      "loser_median_description_chars": 890,
+      "loser_instant_book_share": 0.3,
+      "top_amenities": [
+        {
+          "amenity": "safe",
+          "winner_share": 0.8,
+          "loser_share": 0,
+          "delta": 0.8
+        },
+        {
+          "amenity": "coffee maker",
+          "winner_share": 0.8,
+          "loser_share": 0.1,
+          "delta": 0.7000000000000001
+        },
+        {
+          "amenity": "fire extinguisher",
+          "winner_share": 0.8,
+          "loser_share": 0.2,
+          "delta": 0.6000000000000001
+        },
+        {
+          "amenity": "stove",
+          "winner_share": 0.8,
+          "loser_share": 0.2,
+          "delta": 0.6000000000000001
+        },
+        {
+          "amenity": "private entrance",
+          "winner_share": 0.8,
+          "loser_share": 0.2,
+          "delta": 0.6000000000000001
+        },
+        {
+          "amenity": "hair dryer",
+          "winner_share": 1,
+          "loser_share": 0.4,
+          "delta": 0.6
+        },
+        {
+          "amenity": "hangers",
+          "winner_share": 1,
+          "loser_share": 0.4,
+          "delta": 0.6
+        },
+        {
+          "amenity": "microwave",
+          "winner_share": 0.7,
+          "loser_share": 0.1,
+          "delta": 0.6
+        }
+      ],
+      "title_keywords": [
+        {
+          "word": "beachfront",
+          "delta": 0.4
+        },
+        {
+          "word": "lovina",
+          "delta": 0.4
+        },
+        {
+          "word": "luxury",
+          "delta": 0.3
+        },
+        {
+          "word": "ocean",
+          "delta": 0.2
+        },
+        {
+          "word": "private",
+          "delta": 0
+        },
+        {
+          "word": "pool",
+          "delta": -0.10000000000000003
+        }
+      ],
+      "winner_covers": [
+        {
+          "listing_id": "5007326",
+          "listing_name": "Ocean Beachfront Luxury Design Villa @ Lovina",
+          "viral_score": 98.1,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-5007326/original/d966a94e-ef1c-4a0a-a330-2c2bfdbf137f.jpeg",
+          "locality": "Dencarik",
+          "ttm_revpar": 2016265,
+          "ttm_occupancy": 0.49,
+          "rating_overall": 4.91,
+          "num_reviews": 264
+        },
+        {
+          "listing_id": "813012425246439180",
+          "listing_name": "Jasmine: Gorgeous beachfront villa near Lovina!",
+          "viral_score": 98.1,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6ODEzMDEyNDI1MjQ2NDM5MTgw/original/f7ab0764-459d-4db0-a0ba-e8fafb8144c6.jpeg",
+          "locality": "Kecamatan Banjar",
+          "ttm_revpar": 1957697,
+          "ttm_occupancy": 0.655,
+          "rating_overall": 4.93,
+          "num_reviews": 60
+        },
+        {
+          "listing_id": "26453940",
+          "listing_name": "Villa Emerald - Romantic Balinese Beachfront Villa",
+          "viral_score": 96.3,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/c83bfa01-be1c-4271-bafd-821e1fa479fc.jpg",
+          "locality": "Seririt",
+          "ttm_revpar": 1698668,
+          "ttm_occupancy": 0.647,
+          "rating_overall": 4.94,
+          "num_reviews": 86
+        },
+        {
+          "listing_id": "31212696",
+          "listing_name": "Koko-Beach-Villas, Lovina * Villa Dua",
+          "viral_score": 89.9,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-31212696/original/7b18eeb8-9a52-4f37-8c06-b97f305a58f0.jpeg",
+          "locality": "Tukadmungga",
+          "ttm_revpar": 1438562,
+          "ttm_occupancy": 0.482,
+          "rating_overall": 4.93,
+          "num_reviews": 160
+        },
+        {
+          "listing_id": "691526440796304890",
+          "listing_name": "Lovina Beachfront 2 Bedroom Luxury Villa with pool",
+          "viral_score": 85.8,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-691526440796304890/original/b5483e7b-0189-4ca9-b5e1-d54fffd84802.jpeg",
+          "locality": "Kalibukbuk",
+          "ttm_revpar": 1814235,
+          "ttm_occupancy": 0.419,
+          "rating_overall": 4.97,
+          "num_reviews": 35
+        },
+        {
+          "listing_id": "842985835235963137",
+          "listing_name": "New Luxury 2BR Villa w/ Private Pool in Lovina",
+          "viral_score": 85.5,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/0cce1ab7-c6f7-4e15-b9aa-c47484311754.jpg",
+          "locality": "Kaliasem",
+          "ttm_revpar": 1078765,
+          "ttm_occupancy": 0.529,
+          "rating_overall": 4.98,
+          "num_reviews": 52
+        },
+        {
+          "listing_id": "1171437105044609553",
+          "listing_name": "Lovina Villa with Private Pool",
+          "viral_score": 84.4,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1171437105044609553/original/cde050f3-24c4-494a-9342-0c7c9716e255.jpeg",
+          "locality": "Kaliasem",
+          "ttm_revpar": 922612,
+          "ttm_occupancy": 0.666,
+          "rating_overall": 4.82,
+          "num_reviews": 128
+        },
+        {
+          "listing_id": "11625082",
+          "listing_name": "Villa Surgawi Lovina , North Bali",
+          "viral_score": 83.5,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/1b671d39-c138-4c5a-8b97-97136b4f0a33.jpg",
+          "locality": "Dencarik",
+          "ttm_revpar": 1210118,
+          "ttm_occupancy": 0.392,
+          "rating_overall": 4.99,
+          "num_reviews": 70
+        },
+        {
+          "listing_id": "1482547709939358282",
+          "listing_name": "Villa L'espoir IV - Lovina Hill, ocean view+butler",
+          "viral_score": 83.2,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTQ4MjU0NzcwOTkzOTM1ODI4Mg==/original/46b43d01-21b3-4375-b3a0-d7531c339432.jpeg",
+          "locality": "Banjar",
+          "ttm_revpar": 1637139,
+          "ttm_occupancy": 0.477,
+          "rating_overall": 4.96,
+          "num_reviews": 27
+        },
+        {
+          "listing_id": "1171614213280571570",
+          "listing_name": "Stylish Villa in Heart of Lovina",
+          "viral_score": 81.3,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1171614213280571570/original/83aabd5e-55b7-416e-96fa-73b3199fe992.jpeg",
+          "locality": "Kaliasem",
+          "ttm_revpar": 842383,
+          "ttm_occupancy": 0.608,
+          "rating_overall": 4.82,
+          "num_reviews": 130
+        }
+      ]
+    },
+    "3BR": {
+      "market": "lovina",
+      "cohort": "3BR",
+      "currency": "IDR",
+      "sample_size": 40,
+      "winner_n": 10,
+      "winner_median_photos": 54.5,
+      "winner_median_title_chars": 46.5,
+      "winner_median_description_chars": 3891,
+      "winner_median_adr_idr": 3056350,
+      "winner_median_occupancy": 0.5934999999999999,
+      "winner_superhost_share": 1,
+      "winner_guest_favorite_share": 0.7,
+      "loser_median_photos": 25.5,
+      "loser_median_description_chars": 171.5,
+      "loser_instant_book_share": 0,
+      "top_amenities": [
+        {
+          "amenity": "cable tv",
+          "winner_share": 0.5,
+          "loser_share": 0,
+          "delta": 0.5
+        },
+        {
+          "amenity": "fire extinguisher",
+          "winner_share": 1,
+          "loser_share": 0.5,
+          "delta": 0.5
+        },
+        {
+          "amenity": "first aid kit",
+          "winner_share": 0.8,
+          "loser_share": 0.3,
+          "delta": 0.5
+        },
+        {
+          "amenity": "beach access",
+          "winner_share": 0.6,
+          "loser_share": 0.1,
+          "delta": 0.5
+        },
+        {
+          "amenity": "ocean view",
+          "winner_share": 0.5,
+          "loser_share": 0.1,
+          "delta": 0.4
+        },
+        {
+          "amenity": "gym",
+          "winner_share": 0.5,
+          "loser_share": 0.1,
+          "delta": 0.4
+        },
+        {
+          "amenity": "rice maker",
+          "winner_share": 0.7,
+          "loser_share": 0.3,
+          "delta": 0.39999999999999997
+        },
+        {
+          "amenity": "self check-in",
+          "winner_share": 0.6,
+          "loser_share": 0.2,
+          "delta": 0.39999999999999997
+        }
+      ],
+      "title_keywords": [
+        {
+          "word": "luxury",
+          "delta": 0.4
+        },
+        {
+          "word": "beachfront",
+          "delta": 0.3
+        },
+        {
+          "word": "sea",
+          "delta": 0.2
+        },
+        {
+          "word": "beach",
+          "delta": 0.2
+        },
+        {
+          "word": "pool",
+          "delta": 0.2
+        },
+        {
+          "word": "private",
+          "delta": 0.19999999999999998
+        },
+        {
+          "word": "view",
+          "delta": 0
+        },
+        {
+          "word": "lovina",
+          "delta": -0.19999999999999996
+        }
+      ],
+      "winner_covers": [
+        {
+          "listing_id": "775705063367217405",
+          "listing_name": "Sea View Beach Estate - Luxury Villa In Lovina",
+          "viral_score": 100,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-775705063367217405/original/b0f94083-548c-473d-a4ca-3537d6ddeb64.jpeg",
+          "locality": "Kaliasem",
+          "ttm_revpar": 4778808,
+          "ttm_occupancy": 0.633,
+          "rating_overall": 4.99,
+          "num_reviews": 97
+        },
+        {
+          "listing_id": "42053029",
+          "listing_name": "Villa Kamboja ~ Intimate Luxury Beach Villa 3BR",
+          "viral_score": 96,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/d7156a60-e4d7-4f9d-b7e4-6e7b859f7694.jpg",
+          "locality": "Dencarik",
+          "ttm_revpar": 2427052,
+          "ttm_occupancy": 0.69,
+          "rating_overall": 4.92,
+          "num_reviews": 48
+        },
+        {
+          "listing_id": "12658889",
+          "listing_name": "Holiday Beachfront Villa Lovina with private pool!",
+          "viral_score": 94,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-12658889/original/15fee10a-8ed9-4066-b885-59608817000b.jpeg",
+          "locality": "Dencarik",
+          "ttm_revpar": 1781812,
+          "ttm_occupancy": 0.504,
+          "rating_overall": 4.95,
+          "num_reviews": 132
+        },
+        {
+          "listing_id": "5587210",
+          "listing_name": "Bundar: Superb beachfront villa with pool & staff!",
+          "viral_score": 93.5,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/ff8caeb6-6f83-44fd-84da-ba59e3c586a5.jpg",
+          "locality": "Dencarik",
+          "ttm_revpar": 1721090,
+          "ttm_occupancy": 0.611,
+          "rating_overall": 4.91,
+          "num_reviews": 77
+        },
+        {
+          "listing_id": "1076493299571787647",
+          "listing_name": "Villa Cakrawala",
+          "viral_score": 88.8,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1076493299571787647/original/ad53932d-65de-4d5a-a598-c66321d2954a.jpeg",
+          "locality": "Kaliasem",
+          "ttm_revpar": 1825581,
+          "ttm_occupancy": 0.512,
+          "rating_overall": 4.93,
+          "num_reviews": 44
+        },
+        {
+          "listing_id": "18433976",
+          "listing_name": "Luxury Beachfront Villa on Bali's North Coast",
+          "viral_score": 81.3,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-18433976/original/877866bd-3fd5-49f8-b503-276da618b761.jpeg",
+          "locality": "Anturan",
+          "ttm_revpar": 1620412,
+          "ttm_occupancy": 0.479,
+          "rating_overall": 4.84,
+          "num_reviews": 111
+        },
+        {
+          "listing_id": "8497580",
+          "listing_name": "Sianti:  Luxury villa with amazing sea view!",
+          "viral_score": 79.5,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6ODQ5NzU4MA%3D%3D/original/92574e21-9121-4ee5-92e9-916f5a81dc05.jpeg",
+          "locality": "Temukus",
+          "ttm_revpar": 1512244,
+          "ttm_occupancy": 0.548,
+          "rating_overall": 4.88,
+          "num_reviews": 56
+        },
+        {
+          "listing_id": "22870647",
+          "listing_name": "WELJA Villa,Newly Built Villa in Central Lovina",
+          "viral_score": 79.5,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-22870647/original/e3adaddc-d879-45d0-9f50-dab407cc175f.jpeg",
+          "locality": "Kaliasem",
+          "ttm_revpar": 956560,
+          "ttm_occupancy": 0.751,
+          "rating_overall": 4.79,
+          "num_reviews": 314
+        },
+        {
+          "listing_id": "49444973",
+          "listing_name": "Luxury Private Pool Villa in Lovina",
+          "viral_score": 78.8,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-49444973/original/18643ed7-24b3-4da0-b9e0-56996b792401.jpeg",
+          "locality": "Pemaron",
+          "ttm_revpar": 1174017,
+          "ttm_occupancy": 0.603,
+          "rating_overall": 4.98,
+          "num_reviews": 62
+        },
+        {
+          "listing_id": "722149520679491452",
+          "listing_name": "Villa Bukit Sing Sing Private Pool Villa Lovina",
+          "viral_score": 77.6,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/a38e9445-41ab-418b-b8b3-931d85a7837d.jpg",
+          "locality": "Temukus",
+          "ttm_revpar": 1178771,
+          "ttm_occupancy": 0.584,
+          "rating_overall": 4.92,
+          "num_reviews": 48
+        }
+      ]
+    },
+    "4BR": {
+      "market": "lovina",
+      "cohort": "4BR",
+      "currency": "IDR",
+      "sample_size": 40,
+      "winner_n": 10,
+      "winner_median_photos": 61.5,
+      "winner_median_title_chars": 47,
+      "winner_median_description_chars": 5231.5,
+      "winner_median_adr_idr": 3799265,
+      "winner_median_occupancy": 0.5275000000000001,
+      "winner_superhost_share": 1,
+      "winner_guest_favorite_share": 0.6,
+      "loser_median_photos": 45.5,
+      "loser_median_description_chars": 2728,
+      "loser_instant_book_share": 0.2,
+      "top_amenities": [
+        {
+          "amenity": "high chair",
+          "winner_share": 0.7,
+          "loser_share": 0.3,
+          "delta": 0.39999999999999997
+        },
+        {
+          "amenity": "books and reading material",
+          "winner_share": 0.4,
+          "loser_share": 0.1,
+          "delta": 0.30000000000000004
+        },
+        {
+          "amenity": "coffee maker",
+          "winner_share": 1,
+          "loser_share": 0.7,
+          "delta": 0.30000000000000004
+        },
+        {
+          "amenity": "blender",
+          "winner_share": 0.6,
+          "loser_share": 0.3,
+          "delta": 0.3
+        },
+        {
+          "amenity": "crib",
+          "winner_share": 0.8,
+          "loser_share": 0.6,
+          "delta": 0.20000000000000007
+        },
+        {
+          "amenity": "ocean view",
+          "winner_share": 0.4,
+          "loser_share": 0.2,
+          "delta": 0.2
+        },
+        {
+          "amenity": "children’s books and toys",
+          "winner_share": 0.4,
+          "loser_share": 0.2,
+          "delta": 0.2
+        },
+        {
+          "amenity": "essentials",
+          "winner_share": 1,
+          "loser_share": 0.8,
+          "delta": 0.19999999999999996
+        }
+      ],
+      "title_keywords": [
+        {
+          "word": "view",
+          "delta": 0.30000000000000004
+        },
+        {
+          "word": "luxury",
+          "delta": 0.3
+        },
+        {
+          "word": "pool",
+          "delta": 0.2
+        },
+        {
+          "word": "ocean",
+          "delta": 0.2
+        },
+        {
+          "word": "paradise",
+          "delta": 0.1
+        },
+        {
+          "word": "lovina",
+          "delta": 0.09999999999999998
+        },
+        {
+          "word": "beach",
+          "delta": 0.09999999999999998
+        },
+        {
+          "word": "beachfront",
+          "delta": 0
+        }
+      ],
+      "winner_covers": [
+        {
+          "listing_id": "6615698",
+          "listing_name": "Villa Kembar",
+          "viral_score": 100,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/83367123/bb193351_original.jpg",
+          "locality": "Seririt",
+          "ttm_revpar": 5206413,
+          "ttm_occupancy": 0.644,
+          "rating_overall": 4.94,
+          "num_reviews": 228
+        },
+        {
+          "listing_id": "669910302099658530",
+          "listing_name": "4 Bdr Lovina | Jungle Pool Villa | Ocean View",
+          "viral_score": 98.6,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-669910302099658530/original/138fec67-3acf-4f20-9219-2100091a1b2d.jpeg",
+          "locality": "Tigawasa",
+          "ttm_revpar": 3495861,
+          "ttm_occupancy": 0.567,
+          "rating_overall": 4.89,
+          "num_reviews": 155
+        },
+        {
+          "listing_id": "9709771",
+          "listing_name": "Bersama: luxury beachfront villa!",
+          "viral_score": 97.8,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-9709771/original/97bd9412-31ce-45e5-863b-2b7f2c1965c7.jpeg",
+          "locality": "Seririt",
+          "ttm_revpar": 2516654,
+          "ttm_occupancy": 0.641,
+          "rating_overall": 4.9,
+          "num_reviews": 115
+        },
+        {
+          "listing_id": "1150292483704584834",
+          "listing_name": "Lovina Sea View Villa | Private Gym | Movie Screen",
+          "viral_score": 88.8,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-1150292483704584834/original/7df550ad-c301-4f27-9a4f-aa471f9e0514.jpeg",
+          "locality": "Temukus",
+          "ttm_revpar": 4764413,
+          "ttm_occupancy": 0.479,
+          "rating_overall": 4.9,
+          "num_reviews": 50
+        },
+        {
+          "listing_id": "2001760",
+          "listing_name": "Villa Banjar Beach; Private paradise, Lovina Bali",
+          "viral_score": 85.6,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MjAwMTc2MA%3D%3D/original/d2e8880f-a63a-4eb5-96e4-46036526e3f4.jpeg",
+          "locality": "Banjar/Lovina beach/Singaraja",
+          "ttm_revpar": 2426380,
+          "ttm_occupancy": 0.63,
+          "rating_overall": 4.9,
+          "num_reviews": 59
+        },
+        {
+          "listing_id": "51072702",
+          "listing_name": "Villa IzaJay - Modern & Splendid Sea View Villa",
+          "viral_score": 84.9,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/b44e6c7c-c706-43d6-aac1-9b8decbbc76b.jpg",
+          "locality": "Kalibukbuk",
+          "ttm_revpar": 1861951,
+          "ttm_occupancy": 0.534,
+          "rating_overall": 4.92,
+          "num_reviews": 100
+        },
+        {
+          "listing_id": "5073270",
+          "listing_name": "Bayu: Exclusive villa, ocean view, pool & wellness",
+          "viral_score": 84.7,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-5073270/original/0d4ec810-7406-4428-b2a6-baf4c7a488c5.jpeg",
+          "locality": "Temukus",
+          "ttm_revpar": 1740150,
+          "ttm_occupancy": 0.337,
+          "rating_overall": 4.97,
+          "num_reviews": 154
+        },
+        {
+          "listing_id": "30296150",
+          "listing_name": "Villa Lakshmi - Luxury Oceanview Villa in Lovina",
+          "viral_score": 81.4,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-30296150/original/e41a6af6-af9f-4467-a24d-c305b4957d7b.jpeg",
+          "locality": "Temukus",
+          "ttm_revpar": 1614178,
+          "ttm_occupancy": 0.499,
+          "rating_overall": 4.89,
+          "num_reviews": 64
+        },
+        {
+          "listing_id": "14639874",
+          "listing_name": "Villa Kemuning - Paradise 5* at Lovina Beach",
+          "viral_score": 80.3,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/921a7484-a86b-46c4-b4b9-e8342693cdf7.jpg",
+          "locality": "Kalibukbuk",
+          "ttm_revpar": 1486323,
+          "ttm_occupancy": 0.521,
+          "rating_overall": 4.94,
+          "num_reviews": 158
+        },
+        {
+          "listing_id": "15941190",
+          "listing_name": "Sali Beach: luxury beachfront villa with staff!",
+          "viral_score": 80,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTU5NDExOTA=/original/84ee507a-01d5-4dc2-a1a4-6f6003ee8b9d.jpeg",
+          "locality": "Seririt",
+          "ttm_revpar": 1641041,
+          "ttm_occupancy": 0.419,
+          "rating_overall": 4.9,
+          "num_reviews": 119
+        }
+      ]
+    },
+    "5+BR": {
+      "market": "lovina",
+      "cohort": "5+BR",
+      "currency": "IDR",
+      "sample_size": 38,
+      "winner_n": 9,
+      "winner_median_photos": 68,
+      "winner_median_title_chars": 49,
+      "winner_median_description_chars": 3822,
+      "winner_median_adr_idr": 4607453,
+      "winner_median_occupancy": 0.564,
+      "winner_superhost_share": 1,
+      "winner_guest_favorite_share": 0.8888888888888888,
+      "loser_median_photos": 52,
+      "loser_median_description_chars": 587,
+      "loser_instant_book_share": 0.2222222222222222,
+      "top_amenities": [
+        {
+          "amenity": "first aid kit",
+          "winner_share": 1,
+          "loser_share": 0.4444444444444444,
+          "delta": 0.5555555555555556
+        },
+        {
+          "amenity": "gym",
+          "winner_share": 0.5555555555555556,
+          "loser_share": 0.1111111111111111,
+          "delta": 0.4444444444444445
+        },
+        {
+          "amenity": "crib",
+          "winner_share": 0.8888888888888888,
+          "loser_share": 0.4444444444444444,
+          "delta": 0.4444444444444444
+        },
+        {
+          "amenity": "high chair",
+          "winner_share": 0.8888888888888888,
+          "loser_share": 0.4444444444444444,
+          "delta": 0.4444444444444444
+        },
+        {
+          "amenity": "fire extinguisher",
+          "winner_share": 1,
+          "loser_share": 0.5555555555555556,
+          "delta": 0.4444444444444444
+        },
+        {
+          "amenity": "backyard",
+          "winner_share": 0.8888888888888888,
+          "loser_share": 0.4444444444444444,
+          "delta": 0.4444444444444444
+        },
+        {
+          "amenity": "self check-in",
+          "winner_share": 1,
+          "loser_share": 0.5555555555555556,
+          "delta": 0.4444444444444444
+        },
+        {
+          "amenity": "building staff",
+          "winner_share": 1,
+          "loser_share": 0.5555555555555556,
+          "delta": 0.4444444444444444
+        }
+      ],
+      "title_keywords": [
+        {
+          "word": "beachfront",
+          "delta": 0.4444444444444445
+        },
+        {
+          "word": "luxury",
+          "delta": 0.4444444444444444
+        },
+        {
+          "word": "pool",
+          "delta": 0.2222222222222222
+        },
+        {
+          "word": "spacious",
+          "delta": 0.2222222222222222
+        },
+        {
+          "word": "lovina",
+          "delta": 0.11111111111111116
+        },
+        {
+          "word": "staff",
+          "delta": 0.1111111111111111
+        }
+      ],
+      "winner_covers": [
+        {
+          "listing_id": "874189426548253466",
+          "listing_name": "Exclusive 5* Beachfront Villa In Central Lovina",
+          "viral_score": 97.4,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6ODc0MTg5NDI2NTQ4MjUzNDY2/original/1e8de1c0-d666-4993-8f47-cce2ba146fe9.jpeg",
+          "locality": "Kalibukbuk",
+          "ttm_revpar": 6948401,
+          "ttm_occupancy": 0.553,
+          "rating_overall": 4.99,
+          "num_reviews": 86
+        },
+        {
+          "listing_id": "24747307",
+          "listing_name": "Sali Sing Sing: New 5-starvilla with amazing view!",
+          "viral_score": 96.9,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-24747307/original/7504362c-2c02-4a8c-a02f-c5498ffa0901.jpeg",
+          "locality": "Temukus",
+          "ttm_revpar": 3014935,
+          "ttm_occupancy": 0.641,
+          "rating_overall": 4.98,
+          "num_reviews": 80
+        },
+        {
+          "listing_id": "16431517",
+          "listing_name": "5 BR Beachfront Villa, Huge Pool, Cook & Staff",
+          "viral_score": 94.5,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/4119fd4f-9d16-446a-bd6a-220840e71464.jpg",
+          "locality": "Temukus",
+          "ttm_revpar": 2491406,
+          "ttm_occupancy": 0.564,
+          "rating_overall": 4.95,
+          "num_reviews": 135
+        },
+        {
+          "listing_id": "16272881",
+          "listing_name": "5☆  beachfront villa Lovina w/ 5BR,  pool & staff",
+          "viral_score": 92,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-16272881/original/5a526a92-26c9-4940-a7ec-1f280cbb8354.jpeg",
+          "locality": "Dencarik",
+          "ttm_revpar": 2234260,
+          "ttm_occupancy": 0.578,
+          "rating_overall": 4.93,
+          "num_reviews": 73
+        },
+        {
+          "listing_id": "758865611525550753",
+          "listing_name": "-HOT DEAL in Lovina-Luxury Mansion 7br BEACH FRONT",
+          "viral_score": 91.5,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-758865611525550753/original/70c99d31-a5d1-405f-aa3f-d9aa14d65407.jpeg",
+          "locality": "Dencarik",
+          "ttm_revpar": 5269062,
+          "ttm_occupancy": 0.551,
+          "rating_overall": 5,
+          "num_reviews": 53
+        },
+        {
+          "listing_id": "958462454898767174",
+          "listing_name": "THE most luxury villa in Lovina! Stunning Outlook!",
+          "viral_score": 91.5,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-958462454898767174/original/0fb708a7-a305-4c1f-8d60-9cc9a9ce61d9.jpeg",
+          "locality": "Kaliasem",
+          "ttm_revpar": 3661118,
+          "ttm_occupancy": 0.573,
+          "rating_overall": 4.98,
+          "num_reviews": 47
+        },
+        {
+          "listing_id": "16948935",
+          "listing_name": "Luxury & spacious beachfront villa near Lovina",
+          "viral_score": 80.3,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/76f3d142-e3cd-4c56-a105-77fef5269552.jpg",
+          "locality": "Dencarik",
+          "ttm_revpar": 1898814,
+          "ttm_occupancy": 0.603,
+          "rating_overall": 4.85,
+          "num_reviews": 68
+        },
+        {
+          "listing_id": "5586032",
+          "listing_name": "The Mango Trees: Luxury 5-star beachfront villa!",
+          "viral_score": 79.9,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-5586032/original/acce85c4-0234-4c7c-9934-b922fa4156db.jpeg",
+          "locality": "Lovina / Buleleng",
+          "ttm_revpar": 1877647,
+          "ttm_occupancy": 0.466,
+          "rating_overall": 4.86,
+          "num_reviews": 128
+        },
+        {
+          "listing_id": "822003774094618792",
+          "listing_name": "Unique & spacious 5bd private villa North of Bali",
+          "viral_score": 79.6,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6ODIyMDAzNzc0MDk0NjE4Nzky/original/7c9e63af-8d7a-4db5-b589-4ff1fab24cf1.jpeg",
+          "locality": "Lovina",
+          "ttm_revpar": 2048554,
+          "ttm_occupancy": 0.408,
+          "rating_overall": 4.97,
+          "num_reviews": 63
+        },
+        {
+          "listing_id": "24346442",
+          "listing_name": "Lovina, ⭐️ ⭐️⭐️⭐️⭐️ private beach front villa, 10P",
+          "viral_score": 77.3,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MjQzNDY0NDI%3D/original/088e398c-73eb-48d4-83a3-cc547fe7db8c.jpeg",
+          "locality": "Dencarik",
+          "ttm_revpar": 2101024,
+          "ttm_occupancy": 0.54,
+          "rating_overall": 4.66,
+          "num_reviews": 56
+        }
+      ]
+    }
+  }
+}

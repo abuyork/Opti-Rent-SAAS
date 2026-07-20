@@ -1,5 +1,5 @@
 import { config } from "@/lib/config";
-import type { MarketDef } from "./markets";
+import { passesLocalityRules, type MarketDef } from "./markets";
 import type { CohortDef, MarketSearchListing, ScannedListing, Stratum } from "./types";
 
 /**
@@ -49,9 +49,8 @@ async function search(
 }
 
 function inMarket(l: MarketSearchListing, def: MarketDef): boolean {
-  if (!def.localityAllow) return true; // radius is the geofence
-  const hay = `${l.location_info?.locality ?? ""} ${l.location_info?.district ?? ""}`.toLowerCase();
-  return def.localityAllow.some((a) => hay.includes(a));
+  const hay = `${l.location_info?.locality ?? ""} ${l.location_info?.district ?? ""}`;
+  return passesLocalityRules(def, hay); // allow + block rules shared with audit detection
 }
 
 function flatten(l: MarketSearchListing, cohort: string, stratum: Stratum): ScannedListing | null {

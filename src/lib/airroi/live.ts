@@ -7,7 +7,7 @@ import type {
 import { config } from "@/lib/config";
 import { AirRoiError, type AirRoiProvider } from "./provider";
 import { resolveAirbnbListingId } from "./url";
-import { MARKETS } from "@/lib/market/markets";
+import { baliMarketKey } from "@/lib/market/markets";
 import { fetchAirbnbCoverUrl, reorderWithCover } from "./cover";
 
 /** Shown to owners when AirROI simply has no data for their (valid) listing. */
@@ -248,10 +248,11 @@ export class LiveAirRoiProvider implements AirRoiProvider {
 // --- Market detection (which scanned benchmark set applies) ---
 
 /**
- * Map a listing's location to one of our scanned markets ("greater-canggu",
- * "dubai", "london") or null when we have no playbook for it.
+ * Map a listing's location to one of our scanned markets or null when we have
+ * no playbook for it.
  *
- * The Canggu locality list comes from markets.ts — the SAME allowlist the
+ * Bali (9 markets since 2026-07-20) resolves through `baliMarketKey`, which
+ * reads the SAME MarketDef geometry (allow/block lists + center/radius) the
  * scanner samples with — so a listing inside the benchmarks can never be
  * denied its own market evidence (a hand-copied regex drifted once: Kuta
  * Utara villas were in the benchmarks but missed here).
@@ -266,8 +267,11 @@ function marketKey(loc: AirRoiListing["location_info"]): string | null {
   if (cc === "GB" && /london|westminster|camden|hackney|islington|kensington|chelsea|southwark|lambeth|tower hamlets/.test(hay))
     return "london";
   if (cc === "ID") {
-    const allow = MARKETS["greater-canggu"]?.localityAllow ?? [];
-    if (allow.some((a) => hay.includes(a))) return "greater-canggu";
+    return baliMarketKey({
+      latitude: loc?.latitude,
+      longitude: loc?.longitude,
+      localityHay: hay,
+    });
   }
   return null;
 }
@@ -286,6 +290,9 @@ function microMarket(loc: AirRoiListing["location_info"]): string {
   if (/seminyak/.test(hay)) return "Seminyak";
   if (/ubud/.test(hay)) return "Ubud";
   if (/(sanur)/.test(hay)) return "Sanur";
+  if (/(amed|lipah|bunutan|tulamben)/.test(hay)) return "Amed/East Coast";
+  if (/(lovina|kalibukbuk|kaliasem|seririt|temukus)/.test(hay)) return "Lovina/North Coast";
+  if (/(nusa penida|lembongan|jungutbatu|ceningan)/.test(hay)) return "Nusa Islands";
   return loc?.locality || loc?.region || "Bali";
 }
 

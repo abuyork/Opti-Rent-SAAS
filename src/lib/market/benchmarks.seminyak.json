@@ -1,0 +1,1027 @@
+{
+  "market": "seminyak",
+  "generated_from": 179,
+  "cohorts": {
+    "1BR": {
+      "market": "seminyak",
+      "cohort": "1BR",
+      "currency": "IDR",
+      "sample_size": 36,
+      "winner_n": 9,
+      "winner_median_photos": 28,
+      "winner_median_title_chars": 49,
+      "winner_median_description_chars": 3350,
+      "winner_median_adr_idr": 2871519,
+      "winner_median_occupancy": 0.679,
+      "winner_superhost_share": 1,
+      "winner_guest_favorite_share": 0.7777777777777778,
+      "loser_median_photos": 13,
+      "loser_median_description_chars": 251,
+      "loser_instant_book_share": 0.2222222222222222,
+      "top_amenities": [
+        {
+          "amenity": "body soap",
+          "winner_share": 1,
+          "loser_share": 0.1111111111111111,
+          "delta": 0.8888888888888888
+        },
+        {
+          "amenity": "toaster",
+          "winner_share": 1,
+          "loser_share": 0.1111111111111111,
+          "delta": 0.8888888888888888
+        },
+        {
+          "amenity": "stove",
+          "winner_share": 1,
+          "loser_share": 0.2222222222222222,
+          "delta": 0.7777777777777778
+        },
+        {
+          "amenity": "cooking basics",
+          "winner_share": 0.8888888888888888,
+          "loser_share": 0.1111111111111111,
+          "delta": 0.7777777777777777
+        },
+        {
+          "amenity": "freezer",
+          "winner_share": 0.8888888888888888,
+          "loser_share": 0.1111111111111111,
+          "delta": 0.7777777777777777
+        },
+        {
+          "amenity": "outdoor shower",
+          "winner_share": 0.7777777777777778,
+          "loser_share": 0.1111111111111111,
+          "delta": 0.6666666666666667
+        },
+        {
+          "amenity": "safe",
+          "winner_share": 1,
+          "loser_share": 0.3333333333333333,
+          "delta": 0.6666666666666667
+        },
+        {
+          "amenity": "single level home",
+          "winner_share": 0.7777777777777778,
+          "loser_share": 0.1111111111111111,
+          "delta": 0.6666666666666667
+        }
+      ],
+      "title_keywords": [
+        {
+          "word": "pool",
+          "delta": 0.5555555555555556
+        },
+        {
+          "word": "spa",
+          "delta": 0.4444444444444444
+        },
+        {
+          "word": "sunken",
+          "delta": 0.3333333333333333
+        },
+        {
+          "word": "lr",
+          "delta": 0.3333333333333333
+        },
+        {
+          "word": "daybed",
+          "delta": 0.3333333333333333
+        },
+        {
+          "word": "kubu",
+          "delta": 0.2222222222222222
+        },
+        {
+          "word": "private",
+          "delta": 0.2222222222222222
+        },
+        {
+          "word": "marbletub",
+          "delta": 0.2222222222222222
+        }
+      ],
+      "winner_covers": [
+        {
+          "listing_id": "563258752336527507",
+          "listing_name": "Bali Breeze Villa, Kubu Seminyak",
+          "viral_score": 98.1,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-563258752336527507/original/bcdcb5cf-f6a3-49d5-ba4b-eb7d8d59aa3e.jpeg",
+          "locality": "Seminyak",
+          "ttm_revpar": 2190222,
+          "ttm_occupancy": 0.734,
+          "rating_overall": 4.93,
+          "num_reviews": 80
+        },
+        {
+          "listing_id": "988839273485793410",
+          "listing_name": "Seminyak Dream 1 bedroom villa with private pool",
+          "viral_score": 92.6,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-988839273485793410/original/80c0f335-2a3e-423b-adc8-23c4051088d4.jpeg",
+          "locality": "Seminyak",
+          "ttm_revpar": 2165736,
+          "ttm_occupancy": 0.729,
+          "rating_overall": 4.92,
+          "num_reviews": 119
+        },
+        {
+          "listing_id": "1342501095134791156",
+          "listing_name": "Pool Decor - Sunken LR - MarbleTub - Spa - DayBed",
+          "viral_score": 92.4,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTM0MjUwMTA5NTEzNDc5MTE1Ng==/original/5856deee-8524-402c-af31-477bad36c645.jpeg",
+          "locality": "Kecamatan Kuta",
+          "ttm_revpar": 2085597,
+          "ttm_occupancy": 0.737,
+          "rating_overall": 4.97,
+          "num_reviews": 39
+        },
+        {
+          "listing_id": "1233846",
+          "listing_name": "Private Pool Villa. Real Seminyak. Full Services.",
+          "viral_score": 89.6,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-1233846/original/2756435f-0f66-4489-8f0a-9ed79d91087f.jpeg",
+          "locality": "Seminyak",
+          "ttm_revpar": 2153269,
+          "ttm_occupancy": 0.562,
+          "rating_overall": 4.97,
+          "num_reviews": 263
+        },
+        {
+          "listing_id": "1318402108702777954",
+          "listing_name": "Pool flower - DayBed - Spa - MarbleTub - Sunken LR",
+          "viral_score": 87.6,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1318402108702777954/original/24cfea97-8ed7-4a70-af5d-b7dd8b380f57.jpeg",
+          "locality": "Denpasar",
+          "ttm_revpar": 2013574,
+          "ttm_occupancy": 0.677,
+          "rating_overall": 4.95,
+          "num_reviews": 63
+        },
+        {
+          "listing_id": "563249185757556111",
+          "listing_name": "Tropical Paradise Villa Kubu",
+          "viral_score": 81.9,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-563249185757556111/original/45e3f3fb-807f-487e-9fa2-acfa1bbe77e2.jpeg",
+          "locality": "Seminyak",
+          "ttm_revpar": 1652701,
+          "ttm_occupancy": 0.679,
+          "rating_overall": 4.73,
+          "num_reviews": 44
+        },
+        {
+          "listing_id": "1328901595812040833",
+          "listing_name": "MarblePool - FlowerBath - DayBed - Spa - Sunken LR",
+          "viral_score": 81.4,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTMyODkwMTU5NTgxMjA0MDgzMw%3D%3D/original/2eb03f8e-1207-45ea-a8a3-eb54f3b65bc0.jpeg",
+          "locality": "Kecamatan Kuta",
+          "ttm_revpar": 1953436,
+          "ttm_occupancy": 0.674,
+          "rating_overall": 4.9,
+          "num_reviews": 89
+        },
+        {
+          "listing_id": "1342492157588865748",
+          "listing_name": "Romantic Stay - FlowerBath - Private Pool - Spa",
+          "viral_score": 79.4,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTMyODkwMTU5NTgxMjA0MDgzMw%3D%3D/original/e67a2d28-6c6f-4335-937a-53600349067b.jpeg",
+          "locality": "Kecamatan Kuta",
+          "ttm_revpar": 1730508,
+          "ttm_occupancy": 0.616,
+          "rating_overall": 4.92,
+          "num_reviews": 49
+        },
+        {
+          "listing_id": "696848936806219649",
+          "listing_name": "Intimate Private Pool Villa Near Double Six Beach",
+          "viral_score": 78.1,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/16ef4881-32ce-43a6-9114-3aa4aa5876c7.jpg",
+          "locality": "Legian",
+          "ttm_revpar": 1544219,
+          "ttm_occupancy": 0.696,
+          "rating_overall": 4.89,
+          "num_reviews": 46
+        },
+        {
+          "listing_id": "24212066",
+          "listing_name": "Glamorous Villa walk to Mexicola & Seminyak Beach",
+          "viral_score": 78.1,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-24212066/original/80db8309-5843-4abc-8603-3daa60e9c7c8.jpeg",
+          "locality": "Seminyak",
+          "ttm_revpar": 1529689,
+          "ttm_occupancy": 0.655,
+          "rating_overall": 4.89,
+          "num_reviews": 199
+        }
+      ]
+    },
+    "2BR": {
+      "market": "seminyak",
+      "cohort": "2BR",
+      "currency": "IDR",
+      "sample_size": 36,
+      "winner_n": 9,
+      "winner_median_photos": 36,
+      "winner_median_title_chars": 48,
+      "winner_median_description_chars": 2910,
+      "winner_median_adr_idr": 3639188,
+      "winner_median_occupancy": 0.712,
+      "winner_superhost_share": 0.8888888888888888,
+      "winner_guest_favorite_share": 0.6666666666666666,
+      "loser_median_photos": 18,
+      "loser_median_description_chars": 281,
+      "loser_instant_book_share": 0.2222222222222222,
+      "top_amenities": [
+        {
+          "amenity": "coffee maker",
+          "winner_share": 1,
+          "loser_share": 0,
+          "delta": 1
+        },
+        {
+          "amenity": "drying rack for clothing",
+          "winner_share": 0.7777777777777778,
+          "loser_share": 0,
+          "delta": 0.7777777777777778
+        },
+        {
+          "amenity": "smoke alarm",
+          "winner_share": 1,
+          "loser_share": 0.2222222222222222,
+          "delta": 0.7777777777777778
+        },
+        {
+          "amenity": "cleaning before checkout",
+          "winner_share": 0.7777777777777778,
+          "loser_share": 0,
+          "delta": 0.7777777777777778
+        },
+        {
+          "amenity": "wine glasses",
+          "winner_share": 0.8888888888888888,
+          "loser_share": 0.1111111111111111,
+          "delta": 0.7777777777777777
+        },
+        {
+          "amenity": "coffee",
+          "winner_share": 0.8888888888888888,
+          "loser_share": 0.1111111111111111,
+          "delta": 0.7777777777777777
+        },
+        {
+          "amenity": "fire extinguisher",
+          "winner_share": 0.8888888888888888,
+          "loser_share": 0.2222222222222222,
+          "delta": 0.6666666666666666
+        },
+        {
+          "amenity": "microwave",
+          "winner_share": 0.8888888888888888,
+          "loser_share": 0.2222222222222222,
+          "delta": 0.6666666666666666
+        }
+      ],
+      "title_keywords": [
+        {
+          "word": "seminyak",
+          "delta": 0.33333333333333337
+        },
+        {
+          "word": "tropical",
+          "delta": 0.2222222222222222
+        },
+        {
+          "word": "beach",
+          "delta": 0.1111111111111111
+        },
+        {
+          "word": "private",
+          "delta": 0.1111111111111111
+        },
+        {
+          "word": "pool",
+          "delta": 0
+        }
+      ],
+      "winner_covers": [
+        {
+          "listing_id": "1422935750891548767",
+          "listing_name": "2BR Beach Villa in Seminyak | Floating Breakfast",
+          "viral_score": 95,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTQyMjkzNTc1MDg5MTU0ODc2Nw==/original/41e388dc-50f5-49ad-97d7-fb803b4af048.jpeg",
+          "locality": "Kuta",
+          "ttm_revpar": 2861339,
+          "ttm_occupancy": 0.751,
+          "rating_overall": 4.96,
+          "num_reviews": 49
+        },
+        {
+          "listing_id": "1189447106878798864",
+          "listing_name": "*Luxury Industrial Villa w/Sauna&HighEnd Amenities",
+          "viral_score": 91.1,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTE4OTQ0NzEwNjg3ODc5ODg2NA%3D%3D/original/4d951c14-01e7-4104-ac10-117e7e93cebb.jpeg",
+          "locality": "Kuta",
+          "ttm_revpar": 3644435,
+          "ttm_occupancy": 0.723,
+          "rating_overall": 4.81,
+          "num_reviews": 79
+        },
+        {
+          "listing_id": "2695688",
+          "listing_name": "2BR Pool Villa. Full Services. Peaceful Seminyak",
+          "viral_score": 90.1,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/e893cd53-be41-4fd9-b438-b8eb8d74fed5.jpg",
+          "locality": "Seminyak",
+          "ttm_revpar": 3149069,
+          "ttm_occupancy": 0.553,
+          "rating_overall": 4.93,
+          "num_reviews": 205
+        },
+        {
+          "listing_id": "1441158025836963076",
+          "listing_name": "NABU Serene Tropical Escape in Heart of Seminyak",
+          "viral_score": 88.9,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1441158025836963076/original/858ddffd-4cc8-4118-9870-285d5a3d1fac.jpeg",
+          "locality": "Seminyak",
+          "ttm_revpar": 2716576,
+          "ttm_occupancy": 0.742,
+          "rating_overall": 4.94,
+          "num_reviews": 33
+        },
+        {
+          "listing_id": "40183809",
+          "listing_name": "Private Butler Hosted Villa~Enclosed~400m Beach",
+          "viral_score": 88.4,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-40183809/original/e57c32a0-d8b0-444a-86f1-f9b276d68466.jpeg",
+          "locality": "Seminyak",
+          "ttm_revpar": 2865150,
+          "ttm_occupancy": 0.644,
+          "rating_overall": 5,
+          "num_reviews": 79
+        },
+        {
+          "listing_id": "14808347",
+          "listing_name": "Charming Tropical Villa Kayu Aya - Seminyak",
+          "viral_score": 87.4,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/8237a446-1f20-44e5-994a-a9fd941b9420.jpg",
+          "locality": "Seminyak",
+          "ttm_revpar": 2467996,
+          "ttm_occupancy": 0.701,
+          "rating_overall": 4.98,
+          "num_reviews": 122
+        },
+        {
+          "listing_id": "1006049993496899010",
+          "listing_name": "Seminyak Design spacious 2 bedr villa private pool",
+          "viral_score": 84.7,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1006049993496899010/original/277bab1a-5fbe-4d79-94d1-352558c245ef.jpeg",
+          "locality": "Seminyak",
+          "ttm_revpar": 2464319,
+          "ttm_occupancy": 0.712,
+          "rating_overall": 4.91,
+          "num_reviews": 91
+        },
+        {
+          "listing_id": "22346219",
+          "listing_name": "Seminyak 2BR Villa 6px w/Pool & Walk to Eat Street",
+          "viral_score": 81.6,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MjIzNDYyMTk%3D/original/75830e30-64b7-4b16-b8c0-9ad2d83e30c4.jpeg",
+          "locality": "Seminyak",
+          "ttm_revpar": 2548226,
+          "ttm_occupancy": 0.701,
+          "rating_overall": 4.89,
+          "num_reviews": 85
+        },
+        {
+          "listing_id": "1231748234410757533",
+          "listing_name": "Great Seminyak Location - Your Own Private Oasis",
+          "viral_score": 80.6,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTIzMTc0ODIzNDQxMDc1NzUzMw%3D%3D/original/9a7f6e54-1d87-448c-82b0-b8cc37c6a5c8.jpeg",
+          "locality": "Kuta",
+          "ttm_revpar": 2465889,
+          "ttm_occupancy": 0.734,
+          "rating_overall": 4.79,
+          "num_reviews": 52
+        },
+        {
+          "listing_id": "640071882839155124",
+          "listing_name": "Cheerful 2-bedroom Villa with Pool",
+          "viral_score": 74.6,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-640071882839155124/original/0313a2d9-dfb1-4a01-828c-a4da06135a7f.jpeg",
+          "locality": "Seminyak",
+          "ttm_revpar": 2349649,
+          "ttm_occupancy": 0.732,
+          "rating_overall": 4.82,
+          "num_reviews": 51
+        }
+      ]
+    },
+    "3BR": {
+      "market": "seminyak",
+      "cohort": "3BR",
+      "currency": "IDR",
+      "sample_size": 35,
+      "winner_n": 8,
+      "winner_median_photos": 49,
+      "winner_median_title_chars": 47,
+      "winner_median_description_chars": 2763,
+      "winner_median_adr_idr": 5948543,
+      "winner_median_occupancy": 0.7015,
+      "winner_superhost_share": 1,
+      "winner_guest_favorite_share": 0.875,
+      "loser_median_photos": 29.5,
+      "loser_median_description_chars": 782,
+      "loser_instant_book_share": 0.25,
+      "top_amenities": [
+        {
+          "amenity": "toaster",
+          "winner_share": 1,
+          "loser_share": 0.125,
+          "delta": 0.875
+        },
+        {
+          "amenity": "oven",
+          "winner_share": 0.75,
+          "loser_share": 0,
+          "delta": 0.75
+        },
+        {
+          "amenity": "safe",
+          "winner_share": 0.875,
+          "loser_share": 0.25,
+          "delta": 0.625
+        },
+        {
+          "amenity": "clothing storage",
+          "winner_share": 0.875,
+          "loser_share": 0.25,
+          "delta": 0.625
+        },
+        {
+          "amenity": "dishes and silverware",
+          "winner_share": 1,
+          "loser_share": 0.375,
+          "delta": 0.625
+        },
+        {
+          "amenity": "coffee maker",
+          "winner_share": 0.75,
+          "loser_share": 0.125,
+          "delta": 0.625
+        },
+        {
+          "amenity": "wine glasses",
+          "winner_share": 0.75,
+          "loser_share": 0.125,
+          "delta": 0.625
+        },
+        {
+          "amenity": "bathtub",
+          "winner_share": 0.625,
+          "loser_share": 0.125,
+          "delta": 0.5
+        }
+      ],
+      "title_keywords": [
+        {
+          "word": "seminyak",
+          "delta": 0.5
+        },
+        {
+          "word": "luxury",
+          "delta": 0.375
+        },
+        {
+          "word": "brand",
+          "delta": 0.375
+        },
+        {
+          "word": "3bd",
+          "delta": 0.25
+        },
+        {
+          "word": "new",
+          "delta": 0.25
+        },
+        {
+          "word": "beach",
+          "delta": 0
+        }
+      ],
+      "winner_covers": [
+        {
+          "listing_id": "848271621183501026",
+          "listing_name": "Fully staffed luxury villa, walk to the beach!",
+          "viral_score": 99.4,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-848271621183501026/original/9a9d008b-de3a-4f75-9c5d-2493632990a8.jpeg",
+          "locality": "Seminyak",
+          "ttm_revpar": 6203558,
+          "ttm_occupancy": 0.74,
+          "rating_overall": 4.96,
+          "num_reviews": 71
+        },
+        {
+          "listing_id": "5552331",
+          "listing_name": "PROMO Villa Sawah 3bd (8 people max) Seminyak Center",
+          "viral_score": 96.2,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-5552331/original/42930a55-6b39-4711-98cd-126a455d8670.jpeg",
+          "locality": "Seminyak",
+          "ttm_revpar": 4031409,
+          "ttm_occupancy": 0.748,
+          "rating_overall": 4.89,
+          "num_reviews": 231
+        },
+        {
+          "listing_id": "47022542",
+          "listing_name": "Villa Florence - 3BDR luxury, pool, near beach",
+          "viral_score": 91.8,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-47022542/original/4d5fb19a-a4f4-48d6-ac87-d080381542d5.jpeg",
+          "locality": "Seminyak",
+          "ttm_revpar": 4777104,
+          "ttm_occupancy": 0.71,
+          "rating_overall": 4.89,
+          "num_reviews": 123
+        },
+        {
+          "listing_id": "1084492980764211618",
+          "listing_name": "Villa Zarrin Seminyak Bali Luxury 3 bedroom villa",
+          "viral_score": 88.8,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTA4NDQ5Mjk4MDc2NDIxMTYxOA==/original/0011f68b-321c-4479-8dd2-1517ebcc5dbc.jpeg",
+          "locality": "Seminyak",
+          "ttm_revpar": 4640325,
+          "ttm_occupancy": 0.693,
+          "rating_overall": 4.98,
+          "num_reviews": 65
+        },
+        {
+          "listing_id": "35390734",
+          "listing_name": "Brand New 3 bdr villa near Seminyak beach",
+          "viral_score": 87.6,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/d6ecfff9-5296-472b-a497-dec8f04f5eee.jpg",
+          "locality": "Seminyak",
+          "ttm_revpar": 5464410,
+          "ttm_occupancy": 0.57,
+          "rating_overall": 5,
+          "num_reviews": 76
+        },
+        {
+          "listing_id": "669012891203670408",
+          "listing_name": "Brand New 3Bd Villa - Enclosed Living - Seminyak",
+          "viral_score": 86.5,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-669012891203670408/original/160c0a25-14ff-4fbb-b3ec-750de241201f.jpeg",
+          "locality": "Seminyak",
+          "ttm_revpar": 3804848,
+          "ttm_occupancy": 0.69,
+          "rating_overall": 4.85,
+          "num_reviews": 100
+        },
+        {
+          "listing_id": "1015567048012436748",
+          "listing_name": "Brand New! Spacious 3BR Villa in Seminyak",
+          "viral_score": 83.8,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1015567048012436748/original/d1a65e6b-abfa-48cf-bee4-b66a8b45d754.jpeg",
+          "locality": "Seminyak",
+          "ttm_revpar": 3360561,
+          "ttm_occupancy": 0.732,
+          "rating_overall": 4.96,
+          "num_reviews": 113
+        },
+        {
+          "listing_id": "750580449167126989",
+          "listing_name": "Captivating Modern Villa in the Heart of Seminyak",
+          "viral_score": 78.5,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-750580449167126989/original/30e49d17-0beb-438f-9db6-340f75b94efe.jpeg",
+          "locality": "Seminyak",
+          "ttm_revpar": 3509449,
+          "ttm_occupancy": 0.652,
+          "rating_overall": 4.91,
+          "num_reviews": 109
+        },
+        {
+          "listing_id": "1101793149491608726",
+          "listing_name": "ALENY VILA, A new Modern tropical Minimalist 3BR",
+          "viral_score": 77.6,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTEwMTc5MzE0OTQ5MTYwODcyNg%3D%3D/original/b6123e80-bb6a-428c-b1c4-9409a8ab189a.jpeg",
+          "locality": "Seminyak",
+          "ttm_revpar": 3679370,
+          "ttm_occupancy": 0.671,
+          "rating_overall": 4.96,
+          "num_reviews": 56
+        },
+        {
+          "listing_id": "876264967355036386",
+          "listing_name": "Villa Baliani – Stylish Escape Walk to KuDeTa",
+          "viral_score": 72.9,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-876264967355036386/original/663f9268-095c-46d3-94f5-196354655205.jpeg",
+          "locality": "Seminyak",
+          "ttm_revpar": 3301096,
+          "ttm_occupancy": 0.699,
+          "rating_overall": 4.94,
+          "num_reviews": 65
+        }
+      ]
+    },
+    "4BR": {
+      "market": "seminyak",
+      "cohort": "4BR",
+      "currency": "IDR",
+      "sample_size": 29,
+      "winner_n": 7,
+      "winner_median_photos": 39,
+      "winner_median_title_chars": 46,
+      "winner_median_description_chars": 3636,
+      "winner_median_adr_idr": 7052309,
+      "winner_median_occupancy": 0.726,
+      "winner_superhost_share": 0.8571428571428571,
+      "winner_guest_favorite_share": 0.5714285714285714,
+      "loser_median_photos": 26,
+      "loser_median_description_chars": 533,
+      "loser_instant_book_share": 0.14285714285714285,
+      "top_amenities": [
+        {
+          "amenity": "bed linens",
+          "winner_share": 1,
+          "loser_share": 0.14285714285714285,
+          "delta": 0.8571428571428572
+        },
+        {
+          "amenity": "bathtub",
+          "winner_share": 0.8571428571428571,
+          "loser_share": 0,
+          "delta": 0.8571428571428571
+        },
+        {
+          "amenity": "microwave",
+          "winner_share": 1,
+          "loser_share": 0.2857142857142857,
+          "delta": 0.7142857142857143
+        },
+        {
+          "amenity": "shampoo",
+          "winner_share": 1,
+          "loser_share": 0.42857142857142855,
+          "delta": 0.5714285714285714
+        },
+        {
+          "amenity": "smoke alarm",
+          "winner_share": 0.7142857142857143,
+          "loser_share": 0.14285714285714285,
+          "delta": 0.5714285714285714
+        },
+        {
+          "amenity": "hot water kettle",
+          "winner_share": 0.7142857142857143,
+          "loser_share": 0.14285714285714285,
+          "delta": 0.5714285714285714
+        },
+        {
+          "amenity": "private entrance",
+          "winner_share": 0.8571428571428571,
+          "loser_share": 0.2857142857142857,
+          "delta": 0.5714285714285714
+        },
+        {
+          "amenity": "patio or balcony",
+          "winner_share": 1,
+          "loser_share": 0.42857142857142855,
+          "delta": 0.5714285714285714
+        }
+      ],
+      "title_keywords": [
+        {
+          "word": "seminyak",
+          "delta": 0.28571428571428575
+        },
+        {
+          "word": "pool",
+          "delta": 0.2857142857142857
+        },
+        {
+          "word": "spacious",
+          "delta": 0.2857142857142857
+        },
+        {
+          "word": "private",
+          "delta": 0.14285714285714285
+        }
+      ],
+      "winner_covers": [
+        {
+          "listing_id": "598924639915639529",
+          "listing_name": "Villa Chandika - 4BDR, private pool, near beach",
+          "viral_score": 92.9,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-598924639915639529/original/e8c0f1ec-fcd0-4b28-9739-019bb2bbfc17.jpeg",
+          "locality": "Seminyak",
+          "ttm_revpar": 5324043,
+          "ttm_occupancy": 0.74,
+          "rating_overall": 4.79,
+          "num_reviews": 78
+        },
+        {
+          "listing_id": "8831078",
+          "listing_name": "Villa Besok - Spacious 4BR w/ Pool in Seminyak",
+          "viral_score": 88.6,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-8831078/original/29f4e7b9-156b-4cdb-9904-5cea4597d142.jpeg",
+          "locality": "Seminyak",
+          "ttm_revpar": 4634719,
+          "ttm_occupancy": 0.734,
+          "rating_overall": 4.89,
+          "num_reviews": 194
+        },
+        {
+          "listing_id": "5262614",
+          "listing_name": "Luxury 4BR, Sleeps 8, Daily BF, Butler, 24hr Sec.",
+          "viral_score": 85,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/65763430/7a6524c9_original.jpg",
+          "locality": "Seminyak",
+          "ttm_revpar": 5118739,
+          "ttm_occupancy": 0.592,
+          "rating_overall": 4.89,
+          "num_reviews": 82
+        },
+        {
+          "listing_id": "840866794681462729",
+          "listing_name": "Luxurious&Spacious 4Br Villa in Seminyak",
+          "viral_score": 84.6,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-840866794681462729/original/18d35254-e828-4bf8-8bad-3927e9b1cb15.jpeg",
+          "locality": "Seminyak",
+          "ttm_revpar": 5659714,
+          "ttm_occupancy": 0.721,
+          "rating_overall": 4.86,
+          "num_reviews": 37
+        },
+        {
+          "listing_id": "2051787",
+          "listing_name": "Villa Fi - Seminyak, b/fast, airport transfer inc",
+          "viral_score": 83.6,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/28745244/ab68eda2_original.jpg",
+          "locality": "Seminyak",
+          "ttm_revpar": 4691404,
+          "ttm_occupancy": 0.603,
+          "rating_overall": 4.97,
+          "num_reviews": 196
+        },
+        {
+          "listing_id": "1447548017044800597",
+          "listing_name": "Exquisite Seminyak Villa – 4BR w/ Huge Pool",
+          "viral_score": 82.5,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1447548017044800597/original/58254a13-edfe-42ed-8d36-9cf3e28c3691.jpeg",
+          "locality": "Seminyak",
+          "ttm_revpar": 4707997,
+          "ttm_occupancy": 0.751,
+          "rating_overall": 4.81,
+          "num_reviews": 26
+        },
+        {
+          "listing_id": "38341685",
+          "listing_name": "Seminyak Private Villa - Villa Gang Bima",
+          "viral_score": 81.4,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/cad1af49-470b-42cb-8964-1e2954a6b2bf.jpg",
+          "locality": "Seminyak",
+          "ttm_revpar": 4313175,
+          "ttm_occupancy": 0.726,
+          "rating_overall": 4.92,
+          "num_reviews": 137
+        },
+        {
+          "listing_id": "1029694614945463310",
+          "listing_name": "Villa San Diego - 4BR w Private Pool & Garden",
+          "viral_score": 78.9,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-1029694614945463310/original/1a63c99f-c8fb-447e-99a2-cfabc375acc0.jpeg",
+          "locality": "Seminyak",
+          "ttm_revpar": 5115196,
+          "ttm_occupancy": 0.701,
+          "rating_overall": 4.69,
+          "num_reviews": 48
+        },
+        {
+          "listing_id": "32071638",
+          "listing_name": "Seminyak Luxury | Private Oasis + Butler & Chef",
+          "viral_score": 78.2,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/airflow/Hosting-32071638/original/dd820470-da9e-4b1f-a1c1-d09c488d06cb.jpg",
+          "locality": "Seminyak",
+          "ttm_revpar": 5092370,
+          "ttm_occupancy": 0.545,
+          "rating_overall": 4.98,
+          "num_reviews": 45
+        },
+        {
+          "listing_id": "34317806",
+          "listing_name": "Amazing 4 bd villa in the heart of Seminyak",
+          "viral_score": 71.4,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/5c6cd621-36ee-40d4-86be-570cc7304bf2.jpg",
+          "locality": "Seminyak",
+          "ttm_revpar": 4045087,
+          "ttm_occupancy": 0.737,
+          "rating_overall": 4.86,
+          "num_reviews": 166
+        }
+      ]
+    },
+    "5+BR": {
+      "market": "seminyak",
+      "cohort": "5+BR",
+      "currency": "IDR",
+      "sample_size": 43,
+      "winner_n": 10,
+      "winner_median_photos": 64,
+      "winner_median_title_chars": 47.5,
+      "winner_median_description_chars": 3101.5,
+      "winner_median_adr_idr": 20189939,
+      "winner_median_occupancy": 0.6645000000000001,
+      "winner_superhost_share": 0.9,
+      "winner_guest_favorite_share": 0.6,
+      "loser_median_photos": 30.5,
+      "loser_median_description_chars": 1826.5,
+      "loser_instant_book_share": 0.1,
+      "top_amenities": [
+        {
+          "amenity": "toaster",
+          "winner_share": 0.9,
+          "loser_share": 0.3,
+          "delta": 0.6000000000000001
+        },
+        {
+          "amenity": "exterior security cameras on property",
+          "winner_share": 0.7,
+          "loser_share": 0.1,
+          "delta": 0.6
+        },
+        {
+          "amenity": "bathtub",
+          "winner_share": 0.8,
+          "loser_share": 0.3,
+          "delta": 0.5
+        },
+        {
+          "amenity": "safe",
+          "winner_share": 0.8,
+          "loser_share": 0.3,
+          "delta": 0.5
+        },
+        {
+          "amenity": "iron",
+          "winner_share": 0.9,
+          "loser_share": 0.5,
+          "delta": 0.4
+        },
+        {
+          "amenity": "hot water kettle",
+          "winner_share": 0.9,
+          "loser_share": 0.5,
+          "delta": 0.4
+        },
+        {
+          "amenity": "host greets you",
+          "winner_share": 0.4,
+          "loser_share": 0,
+          "delta": 0.4
+        },
+        {
+          "amenity": "room-darkening shades",
+          "winner_share": 0.7,
+          "loser_share": 0.3,
+          "delta": 0.39999999999999997
+        }
+      ],
+      "title_keywords": [
+        {
+          "word": "luxury",
+          "delta": 0.30000000000000004
+        },
+        {
+          "word": "new",
+          "delta": 0.2
+        },
+        {
+          "word": "prime",
+          "delta": 0.2
+        },
+        {
+          "word": "location",
+          "delta": 0.2
+        },
+        {
+          "word": "beach",
+          "delta": -0.10000000000000003
+        },
+        {
+          "word": "pool",
+          "delta": -0.2
+        }
+      ],
+      "winner_covers": [
+        {
+          "listing_id": "1105510585527015443",
+          "listing_name": "Villa Vienna - New 8BDR, Jacuzzi, Sauna and Cinema",
+          "viral_score": 100,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-1105510585527015443/original/09eacdf8-3721-4744-bb3d-5d016fcf8958.jpeg",
+          "locality": "Seminyak",
+          "ttm_revpar": 20742865,
+          "ttm_occupancy": 0.748,
+          "rating_overall": 4.93,
+          "num_reviews": 54
+        },
+        {
+          "listing_id": "1017169558552970570",
+          "listing_name": "Villa El Gaucho: New 9BDR, Prime Location",
+          "viral_score": 95.5,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-1017169558552970570/original/708944e4-454a-4686-8a9a-3699e3586270.jpeg",
+          "locality": "Seminyak",
+          "ttm_revpar": 14879776,
+          "ttm_occupancy": 0.707,
+          "rating_overall": 4.9,
+          "num_reviews": 62
+        },
+        {
+          "listing_id": "1096811280153263540",
+          "listing_name": "The Olivia Estate",
+          "viral_score": 95.5,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-1096811280153263540/original/4bfd0a22-3e6e-467c-a0d6-79d6e8894747.jpeg",
+          "locality": "Seminyak",
+          "ttm_revpar": 14641735,
+          "ttm_occupancy": 0.666,
+          "rating_overall": 4.93,
+          "num_reviews": 44
+        },
+        {
+          "listing_id": "958061864827627268",
+          "listing_name": "Villa Miami - Spacious Luxury 7BDR, Prime Location",
+          "viral_score": 90.2,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-958061864827627268/original/da6ed6df-20e7-4357-af3d-5b77ce6d2e7e.jpeg",
+          "locality": "Seminyak",
+          "ttm_revpar": 14172021,
+          "ttm_occupancy": 0.663,
+          "rating_overall": 4.8,
+          "num_reviews": 75
+        },
+        {
+          "listing_id": "36241907",
+          "listing_name": "11 Bdr-Last Minute Deal 50%+ OFF!!! Near Beach",
+          "viral_score": 89.5,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-36241907/original/d1ccb51c-4fe5-4f6a-9049-07618b6b5766.jpeg",
+          "locality": "Kuta",
+          "ttm_revpar": 12346574,
+          "ttm_occupancy": 0.518,
+          "rating_overall": 4.78,
+          "num_reviews": 82
+        },
+        {
+          "listing_id": "1109807168634359026",
+          "listing_name": "The Continental 8 Bed - Cutting edge 8 bed luxury",
+          "viral_score": 85.5,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1109807168634359026/original/9e62be78-ecd5-4c49-b31b-e16bfe970e51.jpeg",
+          "locality": "Seminyak",
+          "ttm_revpar": 11031517,
+          "ttm_occupancy": 0.562,
+          "rating_overall": 5,
+          "num_reviews": 16
+        },
+        {
+          "listing_id": "824193649265135954",
+          "listing_name": "5 bd Luxury Central Villa 300m to Beach & Ku De Ta",
+          "viral_score": 85,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-824193649265135954/original/711f8e54-3a59-403e-b236-b8671fb5fc4a.jpeg",
+          "locality": "Seminyak",
+          "ttm_revpar": 10336946,
+          "ttm_occupancy": 0.534,
+          "rating_overall": 4.94,
+          "num_reviews": 52
+        },
+        {
+          "listing_id": "659239602498306998",
+          "listing_name": "Villa Dublin - Luxury 5 BDR & Pool",
+          "viral_score": 84.9,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-659239602498306998/original/de216f12-8290-4fef-8521-fad03881da54.jpeg",
+          "locality": "Seminyak",
+          "ttm_revpar": 9157907,
+          "ttm_occupancy": 0.748,
+          "rating_overall": 4.87,
+          "num_reviews": 106
+        },
+        {
+          "listing_id": "611190982916876388",
+          "listing_name": "Oberoi - 8 BR Villa w/ 3 Pool, near the Beach",
+          "viral_score": 79,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-611190982916876388/original/2faf1c38-dc80-461d-af55-6c159623b22f.jpeg",
+          "locality": "Seminyak",
+          "ttm_revpar": 10675666,
+          "ttm_occupancy": 0.553,
+          "rating_overall": 4.89,
+          "num_reviews": 18
+        },
+        {
+          "listing_id": "1187958259986456674",
+          "listing_name": "6BR Villa Seminyak | Family & Large Group Friendly",
+          "viral_score": 77.4,
+          "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTE4Nzk1ODI1OTk4NjQ1NjY3NA==/original/d5c014ed-1a28-44f8-b58e-229accf261a9.jpeg",
+          "locality": "Seminyak",
+          "ttm_revpar": 8603120,
+          "ttm_occupancy": 0.688,
+          "rating_overall": 4.94,
+          "num_reviews": 34
+        }
+      ]
+    }
+  }
+}
