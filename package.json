@@ -1,8 +1,8 @@
 {
-  "name": "optirent",
+  "name": "optimorent",
   "version": "0.1.0",
   "private": true,
-  "description": "OptiRent - Villa Listing Audit",
+  "description": "OptimoRent - Villa Listing Audit",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import AuditForm from "@/components/AuditForm";
 import { ReportPreview } from "@/components/landing/ReportPreview";
 import { getMarketBenchmark, getTrustStats } from "@/lib/market/benchmarks";
@@ -82,8 +83,15 @@ export default function Home() {
       {/* Sticky nav */}
       <nav className="sticky top-0 z-50 border-b border-dove/70 bg-paper/85 backdrop-blur-md">
         <div className="mx-auto flex h-16 max-w-5xl items-center justify-between px-6">
-          <a href="#top" className="text-lg font-medium tracking-[-0.02em]">
-            OptiRent
+          <a href="#top" className="flex items-center gap-2.5">
+            <Image
+              src="/logo/optimorent-mark-ink.png"
+              alt="OptimoRent monogram"
+              width={38}
+              height={24}
+              priority
+            />
+            <span className="text-lg font-medium tracking-[-0.02em]">OptimoRent</span>
           </a>
           <div className="hidden items-center gap-6 sm:flex">
             <a href="#how-it-works" className="text-sm font-medium text-fog hover:text-ink">
@@ -109,7 +117,7 @@ export default function Home() {
         {/* Hero */}
         <section className="mx-auto max-w-3xl pt-20 pb-16 text-center sm:pt-28">
           <p className="mb-8 font-mono text-xs uppercase tracking-[0.2em] text-fog">
-            OptiRent · Listing Intelligence
+            OptimoRent · Listing Intelligence
           </p>
           <h1 className="text-[42px] font-normal leading-[1.04] tracking-[-0.025em] sm:text-6xl sm:leading-[1.0]">
             Your villa is leaving money on the table.
@@ -197,7 +205,7 @@ export default function Home() {
               </div>
               <div className="overflow-x-auto px-5 pb-5 font-mono text-xs leading-[1.85] text-dove">
                 <p>
-                  <span className="text-sprout">$</span> optirent scan --market
+                  <span className="text-sprout">$</span> optimorent scan --market
                   greater-canggu
                 </p>
                 <p className="text-fog">fetched 176 live listings · 5 size classes</p>
@@ -320,12 +328,20 @@ export default function Home() {
       <footer className="border-t border-dove">
         <div className="mx-auto flex max-w-5xl flex-col gap-4 px-6 py-10 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <div className="text-base font-medium tracking-[-0.02em]">OptiRent</div>
+            <div className="flex items-center gap-2">
+              <Image
+                src="/logo/optimorent-mark-ink.png"
+                alt="OptimoRent monogram"
+                width={31}
+                height={20}
+              />
+              <span className="text-base font-medium tracking-[-0.02em]">OptimoRent</span>
+            </div>
             <div className="mt-1 font-mono text-[11px] uppercase tracking-[0.15em] text-pewter">
               Villa listing audit · {marketList}
             </div>
           </div>
-          <p className="text-xs text-pewter">© 2026 OptiRent</p>
+          <p className="text-xs text-pewter">© 2026 OptimoRent</p>
         </div>
       </footer>
     </div>

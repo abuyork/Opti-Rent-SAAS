@@ -31,7 +31,7 @@ export function ReportPreview() {
         <span className="h-2.5 w-2.5 rounded-full bg-sunbeam" />
         <span className="h-2.5 w-2.5 rounded-full bg-sprout" />
         <span className="ml-3 font-mono text-[11px] uppercase tracking-[0.15em] text-pewter">
-          optirent · sample report · Greater Canggu 2BR
+          optimorent · sample report · Greater Canggu 2BR
         </span>
       </div>
 

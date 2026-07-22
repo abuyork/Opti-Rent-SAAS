@@ -53,7 +53,7 @@ export const config = {
     // Resend (https://resend.com). Without a key, sends become logged no-ops
     // so the audit flow never depends on email being configured.
     resendApiKey: process.env.RESEND_API_KEY ?? "",
-    from: process.env.EMAIL_FROM ?? "OptiRent <reports@rentlyn.com>",
+    from: process.env.EMAIL_FROM ?? "OptimoRent <reports@rentlyn.com>",
   },
 } as const;
 

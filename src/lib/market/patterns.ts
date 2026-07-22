@@ -10,7 +10,7 @@ import type { CohortStats, PlaybookFindings, ScannedListing } from "./types";
  * angle, positioning). Every finding must cite its evidence.
  */
 
-const patternsSystem = (marketTitle: string) => `You are OptiRent's short-term-rental market analyst.
+const patternsSystem = (marketTitle: string) => `You are OptimoRent's short-term-rental market analyst.
 You receive, for the ${marketTitle} entire-home market:
 1. DETERMINISTIC STATS — measured winners-vs-losers contrasts per bedroom
    cohort (top vs bottom viral-score quartile). These numbers are ground truth.

@@ -85,7 +85,7 @@ async function main(): Promise<void> {
   const MARKET = def.key;
   const CACHE_PATH = cachePath(MARKET);
 
-  console.log(`\n=== OptiRent market scan: ${def.title} (${MARKET}) ===\n`);
+  console.log(`\n=== OptimoRent market scan: ${def.title} (${MARKET}) ===\n`);
 
   // --- fetch + score per cohort (or reuse the cached sample) ---
   const all: Scanned[] = [];

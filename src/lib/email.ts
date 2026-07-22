@@ -33,7 +33,7 @@ export async function sendReportReadyEmail(opts: {
 
   const html = `
     <div style="font-family:-apple-system,Segoe UI,Roboto,sans-serif;max-width:560px;margin:0 auto;color:#0a0a0a">
-      <h2 style="color:#0a0a0a;font-weight:500">Your OptiRent audit is ready</h2>
+      <h2 style="color:#0a0a0a;font-weight:500">Your OptimoRent audit is ready</h2>
       <p>We finished analyzing <b>${escapeHtml(name)}</b> against the top earners in its market.</p>
       <p style="margin:24px 0">
         <a href="${resultUrl}"
@@ -47,7 +47,7 @@ export async function sendReportReadyEmail(opts: {
           : ""
       }
       <p style="color:#858585;font-size:13px;margin-top:28px">
-        OptiRent · listing intelligence
+        OptimoRent · listing intelligence
       </p>
     </div>`;
 

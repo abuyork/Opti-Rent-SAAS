@@ -1,5 +1,5 @@
 /**
- * Core domain types for OptiRent.
+ * Core domain types for OptimoRent.
  *
  * The `ScoringResult` shape is the strict-JSON contract returned by the Claude
  * scoring engine (Build Pack §6). The `ListingInput` / `CompsInput` shapes are

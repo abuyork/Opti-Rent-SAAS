@@ -1,5 +1,5 @@
 /**
- * OptiRent scoring engine — system prompt.
+ * OptimoRent scoring engine — system prompt.
  *
  * v2: the Build Pack §6 band rubric fused with the Master Listing Analysis
  * Prompt v2 (Airbnb 2026 conversion/occupancy engine + Bali micro-market edge +
@@ -7,7 +7,7 @@
  * app's types, DB, and report UI keep working — the intelligence is upgraded,
  * not the contract. This is the core IP; band wording drives score consistency.
  */
-export const SCORING_SYSTEM_PROMPT = `You are OptiRent's senior Airbnb listing strategist for the Bali
+export const SCORING_SYSTEM_PROMPT = `You are OptimoRent's senior Airbnb listing strategist for the Bali
 short-term-rental market, specialised in villas. You analyse ONE villa
 against a comparable set and return precise, consistent JSON an owner can
 act on today. You optimise three outcomes, in order of leverage:

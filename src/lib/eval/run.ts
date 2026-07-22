@@ -1,5 +1,5 @@
 /**
- * OptiRent eval harness — automated pressure-test of the scoring engine, no
+ * OptimoRent eval harness — automated pressure-test of the scoring engine, no
  * manual review needed (Manager feedback 2026-07).
  *
  *   npm run eval                                # mock providers, grounding only
@@ -63,7 +63,7 @@ async function main(): Promise<void> {
   const { checkGrounding } = await import("./grounding");
 
   const url = args.url ?? "https://www.airbnb.com/rooms/mock-villa-seraya";
-  console.log(`\n=== OptiRent eval ===`);
+  console.log(`\n=== OptimoRent eval ===`);
   console.log(
     `listing: ${url}\nproviders: airroi=${config.airroi.mode} claude=${config.claude.mode}` +
       ` vision=${config.claude.vision} runs=${args.runs}\n`,

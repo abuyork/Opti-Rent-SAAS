@@ -47,7 +47,7 @@ export async function POST(req: Request) {
           currency: "usd",
           unit_amount: config.reportPriceUsdCents,
           product_data: {
-            name: "OptiRent full villa listing report",
+            name: "OptimoRent full villa listing report",
             description: "Full fix list, paste-ready rewrites, and branded PDF.",
           },
         },

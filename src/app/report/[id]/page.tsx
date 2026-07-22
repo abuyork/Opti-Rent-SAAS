@@ -88,7 +88,7 @@ export default async function ReportPage({
       </div>
 
       <footer className="mt-12 border-t border-dove pt-4 text-center font-mono text-[11px] uppercase tracking-[0.15em] text-pewter">
-        OptiRent · Listing intelligence
+        OptimoRent · Listing intelligence
       </footer>
     </main>
   );

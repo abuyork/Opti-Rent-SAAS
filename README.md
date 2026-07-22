@@ -1,11 +1,11 @@
-# OptiRent — Villa Listing Audit
+# OptimoRent — Villa Listing Audit
 
 > A villa owner pastes their Airbnb URL and gets a free
 > score, an underpricing estimate vs. comparable villas, and a problem count.
 > They pay once ($49) to unlock the full fix list, paste-ready rewrites, and a
 > branded PDF. STR data from **AirROI**; scoring from **Claude**.
 
-Built to the **OptiRent Build Pack v3.0** (see [`spec/`](spec/)).
+Built to the **OptimoRent Build Pack v3.0** (see [`spec/`](spec/)).
 
 ## Stack
 
@@ -65,6 +65,6 @@ src/
     airroi/            # AirROI provider interface + mock/live adapters
     scoring/           # Claude system prompt + scoring client
     db/                # Supabase access (audits, leads, payments)
-spec/                  # OptiRent Build Pack v3.0 + sample report (PDF)
+spec/                  # OptimoRent Build Pack v3.0 + sample report (PDF)
 supabase/              # SQL migrations
 ```
