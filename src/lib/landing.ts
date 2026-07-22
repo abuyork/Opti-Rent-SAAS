@@ -48,6 +48,8 @@ export interface LandingScope {
   evidence: { listings: number; marketPhrase: string; stats: LandingStat[] };
   /** "Pick your market" cards — universal page only. */
   marketCards: MarketCard[] | null;
+  /** Market-switchable sample report tabs — universal page only. */
+  previewTabs: { key: string; label: string; preview: LandingPreviewScope }[] | null;
   faqMarketsAnswer: string;
   footerLine: string;
 }
@@ -105,6 +107,7 @@ export function getLandingScope(slug: LandingScope["slug"]): LandingScope {
         ],
       },
       marketCards: null,
+      previewTabs: null,
       faqMarketsAnswer: `Your villa is scored against its own Bali region: we have run full market scans across all ${baliKeys.length} regions — ${baliKeys.map((k) => MARKETS[k].title).join(", ")} — measuring ${listings.toLocaleString("en-US")} live villas in depth.`,
       footerLine: `Villa listing audit · Bali · ${baliKeys.length} regions`,
     };
@@ -153,6 +156,7 @@ export function getLandingScope(slug: LandingScope["slug"]): LandingScope {
         ],
       },
       marketCards: null,
+      previewTabs: null,
       faqMarketsAnswer: `Your listing is scored against the ${title} market: we deep-scanned ${listings} live ${title} listings across every bedroom class from 1BR to 5+BR, sampling the top and the bottom of the revenue distribution.`,
       footerLine: `Listing audit · ${title}`,
     };
@@ -197,6 +201,11 @@ export function getLandingScope(slug: LandingScope["slug"]): LandingScope {
         WINNERS_STAT,
       ],
     },
+    previewTabs: [
+      { key: "bali", label: "Bali", preview: getLandingScope("bali").preview },
+      { key: "dubai", label: "Dubai", preview: getLandingScope("dubai").preview },
+      { key: "london", label: "London", preview: getLandingScope("london").preview },
+    ],
     marketCards: [
       {
         title: "Bali",

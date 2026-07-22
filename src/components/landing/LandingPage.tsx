@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import AuditForm from "@/components/AuditForm";
 import { ReportPreview } from "@/components/landing/ReportPreview";
+import { PreviewTabs } from "@/components/landing/PreviewTabs";
 import { getMarketBenchmark } from "@/lib/market/benchmarks";
 import { formatUsdFromCents } from "@/lib/format";
 import { config } from "@/lib/config";
@@ -134,10 +135,29 @@ export function LandingPage({ scope }: { scope: LandingScope }) {
             className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[420px] w-[420px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(closest-side,rgba(255,168,136,0.5),transparent)] blur-[64px]"
           />
           <div className="mx-auto max-w-3xl">
-            <ReportPreview scope={scope.preview} />
-            <p className="mt-4 text-center font-mono text-[11px] uppercase tracking-wide text-pewter">
-              {scope.preview.caption}
-            </p>
+            {scope.previewTabs ? (
+              <PreviewTabs
+                tabs={scope.previewTabs.map((t) => ({
+                  key: t.key,
+                  label: t.label,
+                  content: (
+                    <>
+                      <ReportPreview scope={t.preview} />
+                      <p className="mt-4 text-center font-mono text-[11px] uppercase tracking-wide text-pewter">
+                        {t.preview.caption}
+                      </p>
+                    </>
+                  ),
+                }))}
+              />
+            ) : (
+              <>
+                <ReportPreview scope={scope.preview} />
+                <p className="mt-4 text-center font-mono text-[11px] uppercase tracking-wide text-pewter">
+                  {scope.preview.caption}
+                </p>
+              </>
+            )}
           </div>
         </section>
 
