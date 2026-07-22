@@ -9,8 +9,15 @@ type Step = "url" | "email";
 /**
  * Public audit entry: paste URL → email gate → loading → redirect to result.
  * Mirrors Build Pack §7: "paste URL → loading → free result. Email before result."
+ * CTA and loading copy are scoped per landing page (villa/rental/flat).
  */
-export default function AuditForm() {
+export default function AuditForm({
+  ctaLabel = "Score my villa",
+  scoringLine = "Scoring your villa against comparable listings…",
+}: {
+  ctaLabel?: string;
+  scoringLine?: string;
+}) {
   const router = useRouter();
   const [step, setStep] = useState<Step>("url");
   const [url, setUrl] = useState("");
@@ -48,9 +55,7 @@ export default function AuditForm() {
     return (
       <div className="mx-auto mt-10 flex w-full max-w-xl flex-col items-center gap-3">
         <div className="h-8 w-8 animate-spin rounded-full border-2 border-dove border-t-ink" />
-        <p className="text-sm text-fog">
-          Scoring your villa against comparable listings…
-        </p>
+        <p className="text-sm text-fog">{scoringLine}</p>
       </div>
     );
   }
@@ -71,7 +76,7 @@ export default function AuditForm() {
             type="submit"
             className="rounded-full bg-ink px-6 py-3 text-sm font-medium text-paper transition-colors hover:bg-charcoal"
           >
-            Score my villa
+            {ctaLabel}
           </button>
         </form>
       ) : (

@@ -1,26 +1,30 @@
 import Image from "next/image";
 import { getMarketBenchmark } from "@/lib/market/benchmarks";
-import { formatMoney, formatRupiahMonthly } from "@/lib/format";
+import { formatMoney, formatMoneyMonthly } from "@/lib/format";
+import type { LandingPreviewScope } from "@/lib/landing";
 
 const pct = (v: number) => `${Math.round(v * 100)}%`;
 
 /**
- * Product preview for the landing page: a miniature of the real audit report
+ * Product preview for the landing pages: a miniature of the real audit report
  * inside a cream "window" card (design-ref: product-screenshot imagery, flat
  * cream container, traffic-light chrome). The winner row and benchmark figures
- * are pulled from the live Canggu scan; the headline stats mirror a real
- * audited villa (score 68, Rp 542,858/night underpriced) and are labeled as a
- * sample.
+ * are pulled from the scope's live market scan; the headline stats are a
+ * labeled sample (Bali mirrors a real audited villa, other markets derive a
+ * sample gap from the measured winner ADR — see lib/landing.ts).
  */
-export function ReportPreview() {
-  const b = getMarketBenchmark("greater-canggu", "2BR");
+export function ReportPreview({ scope }: { scope: LandingPreviewScope }) {
+  const b = getMarketBenchmark(scope.marketKey, scope.cohort);
   const winner = b?.winner_covers[0];
 
   const stats = [
     { label: "Listing score", value: "68/100" },
-    { label: "Left on table", value: formatRupiahMonthly(542858) },
+    {
+      label: "Left on table",
+      value: formatMoneyMonthly(b?.currency ?? "IDR", scope.underpricingNightly),
+    },
     { label: "Critical fixes", value: "3" },
-    { label: "Comp set", value: "24 villas" },
+    { label: "Comp set", value: scope.compSetLabel },
   ];
 
   return (
@@ -31,7 +35,7 @@ export function ReportPreview() {
         <span className="h-2.5 w-2.5 rounded-full bg-sunbeam" />
         <span className="h-2.5 w-2.5 rounded-full bg-sprout" />
         <span className="ml-3 font-mono text-[11px] uppercase tracking-[0.15em] text-pewter">
-          optimorent · sample report · Greater Canggu 2BR
+          optimorent · sample report · {scope.windowLabel}
         </span>
       </div>
 
@@ -54,14 +58,13 @@ export function ReportPreview() {
               critical
             </span>
             <p className="text-xs leading-relaxed text-ink sm:text-sm">
-              <span className="font-medium">Cover photo is an interior shot.</span>{" "}
-              Winning listings in this size class lead with pool or rooftop.
+              <span className="font-medium">{scope.fixHeadline}</span> {scope.fixDetail}
             </p>
           </div>
           {b && (
             <p className="mt-2 pl-1 font-mono text-[10px] text-pewter">
-              Basis: winners run {b.winner_median_photos} photos, weak listings{" "}
-              {b.loser_median_photos}
+              Basis: winners run {Math.round(b.winner_median_photos)} photos, weak
+              listings {Math.round(b.loser_median_photos)}
             </p>
           )}
         </div>
