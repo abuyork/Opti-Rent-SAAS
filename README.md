@@ -30,6 +30,7 @@ the app runs end-to-end with zero credentials. Flip to real APIs via env:
 
 Supabase / Stripe similarly fall back to local/no-op behaviour until keys exist.
 
+
 ## Getting started
 
 ```bash
