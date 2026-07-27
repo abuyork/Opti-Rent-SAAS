@@ -14,11 +14,6 @@ import {
 } from "@/lib/market/benchmarks";
 import { formatCohortTotal, formatCompSetTotal } from "@/lib/format";
 
-export interface LandingStat {
-  value: string;
-  label: string;
-}
-
 export interface MarketCard {
   title: string;
   href: string;
@@ -54,9 +49,9 @@ export interface LandingScope {
   heroSub: string;
   ctaLabel: string;
   scoringLine: string;
+  /** Reassurance line under the audit form, sized to this scope's comp set. */
+  trustLine: string;
   preview: LandingPreviewScope;
-  terminal: { marketKey: string; fetchedLine: string };
-  evidence: { listings: number; marketPhrase: string; stats: LandingStat[] };
   /** "Pick your market" cards — universal page only. */
   marketCards: MarketCard[] | null;
   /** Market-switchable sample report tabs — universal page only. */
@@ -80,11 +75,21 @@ function baliListings(): number {
  * 19,155+ vs 26,803+ (manager ask 2026-07-27). Comp set reflects the market,
  * not how many scans we happened to run there.
  */
-function compSetCardLine(marketKeys: string[], noun: string): string {
+function compSetTotal(marketKeys: string[]): string {
   const sets = marketKeys.map((k) => getMarketCompSet(k)).filter((s) => s !== null);
-  const total = sets.reduce((sum, s) => sum + s.total, 0);
-  const capped = sets.some((s) => s.capped);
-  return `${formatCompSetTotal(total, capped)} ${noun} in the comp set`;
+  return formatCompSetTotal(
+    sets.reduce((sum, s) => sum + s.total, 0),
+    sets.some((s) => s.capped),
+  );
+}
+
+function compSetCardLine(marketKeys: string[], noun: string): string {
+  return `${compSetTotal(marketKeys)} ${noun} in the comp set`;
+}
+
+/** Under-the-form reassurance: what the visitor is actually up against. */
+function trustLine(tail: string): string {
+  return `Free score · No account needed · ${tail}`;
 }
 
 /** Sample "left on table" for the mock report: Bali mirrors a real audited
@@ -93,8 +98,6 @@ function sampleGap(marketKey: string): number {
   const adr = getMarketBenchmark(marketKey, "2BR")?.winner_median_adr_idr ?? 0;
   return Math.round(adr * 0.15);
 }
-
-const WINNERS_STAT: LandingStat = { value: "10", label: "winners shown beside yours" };
 
 /**
  * "Comp set" for the sample report: the whole cohort in that region, not the
@@ -120,6 +123,7 @@ export function getLandingScope(slug: LandingScope["slug"]): LandingScope {
         "Paste your Airbnb link. In about a minute you get a free listing score, an underpricing estimate against comparable villas in your region. To grow your revenue",
       ctaLabel: "Score my villa",
       scoringLine: "Scoring your villa against comparable listings…",
+      trustLine: trustLine(`${compSetTotal(baliKeys)} villas in the Bali comp set`),
       preview: {
         marketKey: "greater-canggu",
         cohort: "2BR",
@@ -131,19 +135,6 @@ export function getLandingScope(slug: LandingScope["slug"]): LandingScope {
         fixHeadline: "Cover photo is an interior shot.",
         fixDetail: "Winning listings in this size class lead with pool or rooftop.",
         caption: "A real winner from our Canggu scan, shown the way your report shows it",
-      },
-      terminal: {
-        marketKey: "greater-canggu",
-        fetchedLine: `fetched ${getMarketScanTotal("greater-canggu")} live listings · 5 size classes`,
-      },
-      evidence: {
-        listings,
-        marketPhrase: `${baliKeys.length} Bali regions, from Greater Canggu to the Nusa islands`,
-        stats: [
-          { value: listings.toLocaleString("en-US"), label: "live villas measured" },
-          { value: String(baliKeys.length), label: "Bali regions scanned" },
-          WINNERS_STAT,
-        ],
       },
       marketCards: null,
       previewTabs: null,
@@ -165,6 +156,7 @@ export function getLandingScope(slug: LandingScope["slug"]): LandingScope {
       heroSub: `Paste your Airbnb link. In about a minute you get a free listing score, an underpricing estimate against comparable ${title} listings. To grow your revenue.`,
       ctaLabel: `Score my ${noun}`,
       scoringLine: `Scoring your ${noun} against comparable listings…`,
+      trustLine: trustLine(`${compSetTotal([slug])} listings in the ${title} comp set`),
       preview: {
         marketKey: slug,
         cohort: "2BR",
@@ -182,19 +174,6 @@ export function getLandingScope(slug: LandingScope["slug"]): LandingScope {
             ? "Winning Dubai listings lead with the trophy asset: the named view from a furnished vantage, or the pool in daylight."
             : "Winning London listings lead with a bright, styled living room, shot straight-on in daylight.",
         caption: `A real winner from our ${title} scan, shown the way your report shows it`,
-      },
-      terminal: {
-        marketKey: slug,
-        fetchedLine: `fetched ${listings} live listings · 5 size classes`,
-      },
-      evidence: {
-        listings,
-        marketPhrase: `every ${title} size class, 1BR to 5+BR`,
-        stats: [
-          { value: listings.toLocaleString("en-US"), label: "live listings measured" },
-          { value: "5", label: "size classes scanned" },
-          WINNERS_STAT,
-        ],
       },
       marketCards: null,
       previewTabs: null,
@@ -218,6 +197,7 @@ export function getLandingScope(slug: LandingScope["slug"]): LandingScope {
       "Paste your Airbnb link. In about a minute you get a free listing score, an underpricing estimate against comparable listings in your market. To grow your revenue.",
     ctaLabel: "Score my listing",
     scoringLine: "Scoring your listing against comparable listings…",
+    trustLine: trustLine(`${compSetTotal(Object.keys(MARKETS))} listings in the comp set`),
     preview: {
       marketKey: "greater-canggu",
       cohort: "2BR",
@@ -229,19 +209,6 @@ export function getLandingScope(slug: LandingScope["slug"]): LandingScope {
       fixHeadline: "Cover photo is an interior shot.",
       fixDetail: "Winning listings in this size class lead with pool or rooftop.",
       caption: "A real winner from our Bali scan, shown the way your report shows it",
-    },
-    terminal: {
-      marketKey: "greater-canggu",
-      fetchedLine: `fetched ${getMarketScanTotal("greater-canggu")} live listings · 5 size classes`,
-    },
-    evidence: {
-      listings: trust.listings,
-      marketPhrase: marketList,
-      stats: [
-        { value: trust.listings.toLocaleString("en-US"), label: "live listings measured" },
-        { value: "3", label: "destinations covered" },
-        WINNERS_STAT,
-      ],
     },
     previewTabs: [
       { key: "bali", label: "Bali", preview: getLandingScope("bali").preview },

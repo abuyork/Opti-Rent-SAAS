@@ -3,7 +3,6 @@ import Link from "next/link";
 import AuditForm from "@/components/AuditForm";
 import { ReportPreview } from "@/components/landing/ReportPreview";
 import { PreviewTabs } from "@/components/landing/PreviewTabs";
-import { getMarketBenchmark } from "@/lib/market/benchmarks";
 import { formatUsdFromCents } from "@/lib/format";
 import { config } from "@/lib/config";
 import type { LandingScope } from "@/lib/landing";
@@ -12,12 +11,11 @@ import type { LandingScope } from "@/lib/landing";
  * Shared landing layout (Build Pack §7 "Public audit page"), rendered with a
  * per-page scope: the universal home page and the Bali / Dubai / London
  * campaign pages. Layout per docs/design-ref.md: sticky nav, editorial hero
- * with the audit form, product preview, how-it-works, evidence split with a
- * terminal panel, pricing tiers, FAQ, footer. All market figures come through
- * the scope from real scan data — never hardcoded.
+ * with the audit form, product preview, how-it-works, pricing tiers, FAQ,
+ * footer. All market figures come through the scope from real scan data —
+ * never hardcoded.
  */
 export function LandingPage({ scope }: { scope: LandingScope }) {
-  const bench = getMarketBenchmark(scope.terminal.marketKey, "2BR");
   const priceLabel = formatUsdFromCents(config.reportPriceUsdCents);
 
   const steps = [
@@ -55,7 +53,7 @@ export function LandingPage({ scope }: { scope: LandingScope }) {
   const faqs = [
     {
       q: "Where does the data come from?",
-      a: "Live Airbnb market data via AirROI, which we scan and snapshot ourselves, plus an AI review of your actual listing photos and copy. Nothing in the report is opinion without a number behind it.",
+      a: "Live Airbnb market data, which we scan and snapshot ourselves, plus an AI review of your actual listing photos and copy. Nothing in the report is opinion without a number behind it.",
     },
     {
       q: "Which listings do you compare mine against?",
@@ -121,7 +119,7 @@ export function LandingPage({ scope }: { scope: LandingScope }) {
             <AuditForm ctaLabel={scope.ctaLabel} scoringLine={scope.scoringLine} />
           </div>
           <p className="mt-6 font-mono text-[11px] uppercase tracking-wide text-pewter">
-            Free score · No account needed · You vs 1521 Airbnb properties measured
+            {scope.trustLine}
           </p>
         </section>
 
@@ -205,88 +203,6 @@ export function LandingPage({ scope }: { scope: LandingScope }) {
                 <p className="mt-2 text-sm leading-relaxed text-fog">{s.body}</p>
               </div>
             ))}
-          </div>
-        </section>
-
-        {/* Evidence: text left, terminal right */}
-        <section id="evidence" className="scroll-mt-24 border-t border-dove py-20">
-          <div className="grid items-center gap-12 sm:grid-cols-2">
-            <div>
-              <h2 className="text-3xl font-normal tracking-[-0.025em] sm:text-4xl">
-                Built on measured data
-              </h2>
-              <p className="mt-5 text-base leading-relaxed text-steel">
-                We analyzed{" "}
-                <b className="font-medium text-ink">
-                  {scope.evidence.listings.toLocaleString("en-US")} live Airbnb listings
-                </b>{" "}
-                across <b className="font-medium text-ink">{scope.evidence.marketPhrase}</b>,
-                comparing the top earners with everyone else in each size
-                class. Every recommendation in your report cites those numbers,
-                and you see the actual winning listings next to yours.
-              </p>
-              <div className="mt-8 grid grid-cols-3 gap-4">
-                {scope.evidence.stats.map((s) => (
-                  <div key={s.label}>
-                    <div className="text-xl">{s.value}</div>
-                    <div className="mt-0.5 font-mono text-[10px] uppercase tracking-wide text-pewter">
-                      {s.label}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Terminal panel: real 2BR scan output for this scope's market */}
-            <div className="overflow-hidden rounded-xl bg-charcoal">
-              <div className="flex items-center gap-2 px-4 py-3">
-                <span className="h-2.5 w-2.5 rounded-full bg-ember" />
-                <span className="h-2.5 w-2.5 rounded-full bg-sunbeam" />
-                <span className="h-2.5 w-2.5 rounded-full bg-sprout" />
-              </div>
-              <div className="overflow-x-auto px-5 pb-5 font-mono text-xs leading-[1.85] text-dove">
-                <p>
-                  <span className="text-sprout">$</span> optimorent scan --market{" "}
-                  {scope.terminal.marketKey}
-                </p>
-                <p className="text-fog">{scope.terminal.fetchedLine}</p>
-                {bench && (
-                  <>
-                    <p className="text-fog">2BR winners vs the rest:</p>
-                    <p className="text-fog">
-                      {"  "}photos{"        "}
-                      <span className="text-dove">
-                        {Math.round(bench.winner_median_photos)} vs{" "}
-                        {Math.round(bench.loser_median_photos)}
-                      </span>
-                    </p>
-                    <p className="text-fog">
-                      {"  "}description{"   "}
-                      <span className="text-dove">
-                        {bench.winner_median_description_chars.toLocaleString()} vs{" "}
-                        {bench.loser_median_description_chars} chars
-                      </span>
-                    </p>
-                    <p className="text-fog">
-                      {"  "}occupancy{"     "}
-                      <span className="text-dove">
-                        {Math.round(bench.winner_median_occupancy * 100)}% median
-                      </span>
-                    </p>
-                    <p className="text-fog">
-                      {"  "}superhost{"     "}
-                      <span className="text-dove">
-                        {Math.round(bench.winner_superhost_share * 100)}% of winners
-                      </span>
-                    </p>
-                  </>
-                )}
-                <p>
-                  <span className="text-sprout">✓</span> benchmarks written ·
-                  winners identified
-                </p>
-              </div>
-            </div>
           </div>
         </section>
 
