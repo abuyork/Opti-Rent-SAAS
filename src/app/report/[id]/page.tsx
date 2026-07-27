@@ -44,7 +44,7 @@ export default async function ReportPage({
 
       <section className="mt-8">
         <h1 className="text-3xl font-normal tracking-[-0.025em] text-ink">
-          Villa listing audit
+          Airbnb listing audit
         </h1>
         <ListingIdentity
           title={audit.listing_title}
@@ -88,7 +88,7 @@ export default async function ReportPage({
       </div>
 
       <footer className="mt-12 border-t border-dove pt-4 text-center font-mono text-[11px] uppercase tracking-[0.15em] text-pewter">
-        OptimoRent · Listing intelligence
+        Listing intelligence
       </footer>
     </main>
   );

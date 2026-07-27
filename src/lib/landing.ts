@@ -77,10 +77,10 @@ export function getLandingScope(slug: LandingScope["slug"]): LandingScope {
     return {
       slug,
       logoHref: "/",
-      kicker: "OptimoRent · Bali Listing Intelligence",
-      heroHeadline: "Your villa is leaving money on the table.",
+      kicker: "Bali Listing Intelligence",
+      heroHeadline: "Your Airbnb is leaving money on the table.",
       heroSub:
-        "Paste your Airbnb link. In about a minute you get a free listing score, an underpricing estimate against comparable villas in your region, and a count of what needs fixing.",
+        "Paste your Airbnb link. In about a minute you get a free listing score, an underpricing estimate against comparable villas in your region. To grow your revenue",
       ctaLabel: "Score my villa",
       scoringLine: "Scoring your villa against comparable listings…",
       preview: {
@@ -109,7 +109,7 @@ export function getLandingScope(slug: LandingScope["slug"]): LandingScope {
       marketCards: null,
       previewTabs: null,
       faqMarketsAnswer: `Your villa is scored against its own Bali region: we have run full market scans across all ${baliKeys.length} regions — ${baliKeys.map((k) => MARKETS[k].title).join(", ")} — measuring ${listings.toLocaleString("en-US")} live villas in depth.`,
-      footerLine: `Villa listing audit · Bali · ${baliKeys.length} regions`,
+      footerLine: `Airbnb listing audit · Bali`,
     };
   }
 
@@ -121,9 +121,9 @@ export function getLandingScope(slug: LandingScope["slug"]): LandingScope {
     return {
       slug,
       logoHref: "/",
-      kicker: `OptimoRent · ${title} Listing Intelligence`,
+      kicker: `${title} Listing Intelligence`,
       heroHeadline: `Your ${title} ${noun} is leaving money on the table.`,
-      heroSub: `Paste your Airbnb link. In about a minute you get a free listing score, an underpricing estimate against comparable ${title} listings, and a count of what needs fixing.`,
+      heroSub: `Paste your Airbnb link. In about a minute you get a free listing score, an underpricing estimate against comparable ${title} listings. To grow your revenue.`,
       ctaLabel: `Score my ${noun}`,
       scoringLine: `Scoring your ${noun} against comparable listings…`,
       preview: {
@@ -158,7 +158,7 @@ export function getLandingScope(slug: LandingScope["slug"]): LandingScope {
       marketCards: null,
       previewTabs: null,
       faqMarketsAnswer: `Your listing is scored against the ${title} market: we deep-scanned ${listings} live ${title} listings across every bedroom class from 1BR to 5+BR, sampling the top and the bottom of the revenue distribution.`,
-      footerLine: `Listing audit · ${title}`,
+      footerLine: `Airbnb listing audit · ${title}`,
     };
   }
 
@@ -172,10 +172,10 @@ export function getLandingScope(slug: LandingScope["slug"]): LandingScope {
   return {
     slug: "home",
     logoHref: "#top",
-    kicker: "OptimoRent · Listing Intelligence",
+    kicker: "Listing Intelligence",
     heroHeadline: "Your Airbnb is leaving money on the table.",
     heroSub:
-      "Paste your Airbnb link. In about a minute you get a free listing score, an underpricing estimate against comparable listings in your market, and a count of what needs fixing.",
+      "Paste your Airbnb link. In about a minute you get a free listing score, an underpricing estimate against comparable listings in your market. To grow your revenue.",
     ctaLabel: "Score my listing",
     scoringLine: "Scoring your listing against comparable listings…",
     preview: {
@@ -233,6 +233,6 @@ export function getLandingScope(slug: LandingScope["slug"]): LandingScope {
       },
     ],
     faqMarketsAnswer: `We have run full market scans in ${marketList}. Listings elsewhere still get scored against their own comparable set; the winners section appears once we have scanned your market.`,
-    footerLine: `Listing audit · ${marketList}`,
+    footerLine: `Airbnb listing audit · ${marketList}`,
   };
 }

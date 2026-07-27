@@ -1,4 +1,4 @@
-# OptimoRent — Villa Listing Audit
+# OptimoRent — Airbnb Listing Audit
 
 > A villa owner pastes their Airbnb URL and gets a free
 > score, an underpricing estimate vs. comparable villas, and a problem count.

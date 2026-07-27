@@ -220,6 +220,6 @@ export function getTrustStats(): {
     listings: files.reduce((sum, f) => sum + (f.generated_from ?? 0), 0),
     markets: titles,
     displayMarkets:
-      baliCount > 1 ? [`Bali (${baliCount} regions)`, ...nonBali] : titles,
+      baliCount > 1 ? [`Bali`, ...nonBali] : titles,
   };
 }

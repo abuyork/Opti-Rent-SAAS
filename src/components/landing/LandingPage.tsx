@@ -90,9 +90,6 @@ export function LandingPage({ scope }: { scope: LandingScope }) {
             <a href="#how-it-works" className="text-sm font-medium text-fog hover:text-ink">
               How it works
             </a>
-            <a href="#evidence" className="text-sm font-medium text-fog hover:text-ink">
-              The evidence
-            </a>
             <a href="#pricing" className="text-sm font-medium text-fog hover:text-ink">
               Pricing
             </a>
@@ -124,7 +121,7 @@ export function LandingPage({ scope }: { scope: LandingScope }) {
             <AuditForm ctaLabel={scope.ctaLabel} scoringLine={scope.scoringLine} />
           </div>
           <p className="mt-6 font-mono text-[11px] uppercase tracking-wide text-pewter">
-            Free score · No account needed · {priceLabel} one-time for the full report
+            Free score · No account needed · You vs 1521 Airbnb properties measured
           </p>
         </section>
 
@@ -351,7 +348,7 @@ export function LandingPage({ scope }: { scope: LandingScope }) {
           <h2 className="text-3xl font-normal tracking-[-0.025em] sm:text-4xl">
             Questions
           </h2>
-          <div className="mt-8 max-w-2xl">
+          <div className="mt-8">
             {faqs.map((f) => (
               <details key={f.q} className="group border-b border-dove py-4">
                 <summary className="cursor-pointer list-none text-sm font-medium marker:hidden">

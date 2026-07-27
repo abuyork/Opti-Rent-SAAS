@@ -16,7 +16,7 @@ export function ReportHeader({ subtitle }: { subtitle?: string }) {
             <span className="text-xl font-medium tracking-[-0.02em] text-ink">OptimoRent</span>
           </div>
           <div className="mt-0.5 font-mono text-[11px] uppercase tracking-[0.15em] text-pewter">
-            Villa listing audit
+            Airbnb listing audit
           </div>
         </div>
         {subtitle && (
