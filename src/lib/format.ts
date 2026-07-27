@@ -54,3 +54,14 @@ export function formatCohortTotal(total: number): string {
     ? `${TOTAL_COUNT_CAP.toLocaleString("en-US")}+`
     : total.toLocaleString("en-US");
 }
+
+/**
+ * Comp-set size summed across cohorts. When any cohort hit the API's 10,000
+ * ceiling the sum is a floor, so round down to a clean hundred and mark it "+"
+ * — a precise-looking "19,155" would claim accuracy the cap denies us.
+ */
+export function formatCompSetTotal(total: number, capped: boolean): string {
+  return capped
+    ? `${(Math.floor(total / 100) * 100).toLocaleString("en-US")}+`
+    : total.toLocaleString("en-US");
+}

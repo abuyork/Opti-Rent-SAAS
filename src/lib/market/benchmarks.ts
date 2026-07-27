@@ -12,6 +12,7 @@
  */
 import { cohortStats } from "./stats";
 import { MARKETS } from "./markets";
+import { TOTAL_COUNT_CAP } from "@/lib/format";
 import type { ScannedListing } from "./types";
 import type { AuditMarketEvidence } from "@/lib/types";
 import cangguData from "./benchmarks.greater-canggu.json";
@@ -192,6 +193,21 @@ export function cohortTotalFor(
 ): number | null {
   if (!e) return null;
   return e.cohort_total ?? getMarketBenchmark(e.market, e.cohort)?.cohort_total ?? null;
+}
+
+/**
+ * A market's whole comp set: cohort totals summed across every size class.
+ * `capped` means at least one cohort hit AirROI's 10,000 ceiling, so the sum is
+ * a floor — Dubai and London both do, Bali's regions do not.
+ */
+export function getMarketCompSet(marketKey: string): { total: number; capped: boolean } | null {
+  const file = BENCHMARKS[marketKey];
+  if (!file) return null;
+  const cohorts = Object.values(file.cohorts);
+  return {
+    total: cohorts.reduce((sum, c) => sum + (c.cohort_total ?? 0), 0),
+    capped: cohorts.some((c) => (c.cohort_total ?? 0) >= TOTAL_COUNT_CAP),
+  };
 }
 
 /** Total listings scanned in a market (all cohorts), for "37 of 176" framing. */

@@ -8,10 +8,11 @@
 import { MARKETS } from "@/lib/market/markets";
 import {
   getMarketBenchmark,
+  getMarketCompSet,
   getMarketScanTotal,
   getTrustStats,
 } from "@/lib/market/benchmarks";
-import { formatCohortTotal } from "@/lib/format";
+import { formatCohortTotal, formatCompSetTotal } from "@/lib/format";
 
 export interface LandingStat {
   value: string;
@@ -28,6 +29,15 @@ export interface LandingPreviewScope {
   marketKey: string;
   cohort: string;
   windowLabel: string;
+  /**
+   * Sample headline figures. Every tile in the mock is market-specific so the
+   * three pill tabs read as three different reports rather than one report with
+   * the currency swapped (manager ask 2026-07-27). Bali mirrors a real audited
+   * Canggu villa; Dubai and London are illustrative but plausible, which is why
+   * the card is labeled SAMPLE REPORT.
+   */
+  score: number;
+  criticalFixes: number;
   /** Sample nightly underpricing shown in the mock report's "left on table". */
   underpricingNightly: number;
   compSetLabel: string;
@@ -61,6 +71,20 @@ const baliKeys = Object.values(MARKETS)
 
 function baliListings(): number {
   return baliKeys.reduce((sum, k) => sum + (getMarketScanTotal(k) ?? 0), 0);
+}
+
+/**
+ * Comp-set size for a market card. Cards used to show the measured sample,
+ * which made Bali (9 regions summed) look 8x richer than Dubai and London
+ * (1 region each) when the underlying markets are comparable — 26,520 vs
+ * 19,155+ vs 26,803+ (manager ask 2026-07-27). Comp set reflects the market,
+ * not how many scans we happened to run there.
+ */
+function compSetCardLine(marketKeys: string[], noun: string): string {
+  const sets = marketKeys.map((k) => getMarketCompSet(k)).filter((s) => s !== null);
+  const total = sets.reduce((sum, s) => sum + s.total, 0);
+  const capped = sets.some((s) => s.capped);
+  return `${formatCompSetTotal(total, capped)} ${noun} in the comp set`;
 }
 
 /** Sample "left on table" for the mock report: Bali mirrors a real audited
@@ -100,6 +124,8 @@ export function getLandingScope(slug: LandingScope["slug"]): LandingScope {
         marketKey: "greater-canggu",
         cohort: "2BR",
         windowLabel: "Greater Canggu 2BR",
+        score: 68,
+        criticalFixes: 3,
         underpricingNightly: 542858, // mirrors a real audited Canggu villa
         compSetLabel: compSetLabel("greater-canggu", "2BR", "villas"),
         fixHeadline: "Cover photo is an interior shot.",
@@ -143,6 +169,8 @@ export function getLandingScope(slug: LandingScope["slug"]): LandingScope {
         marketKey: slug,
         cohort: "2BR",
         windowLabel: `${title} 2BR`,
+        score: slug === "dubai" ? 74 : 61,
+        criticalFixes: slug === "dubai" ? 2 : 4,
         underpricingNightly: sampleGap(slug),
         compSetLabel: compSetLabel(slug, "2BR", compNoun),
         fixHeadline:
@@ -181,7 +209,6 @@ export function getLandingScope(slug: LandingScope["slug"]): LandingScope {
     trust.displayMarkets.length > 1
       ? `${trust.displayMarkets.slice(0, -1).join(", ")} and ${trust.displayMarkets[trust.displayMarkets.length - 1]}`
       : trust.displayMarkets[0];
-  const bali = baliListings();
   return {
     slug: "home",
     logoHref: "#top",
@@ -195,6 +222,8 @@ export function getLandingScope(slug: LandingScope["slug"]): LandingScope {
       marketKey: "greater-canggu",
       cohort: "2BR",
       windowLabel: "Greater Canggu 2BR",
+      score: 68,
+      criticalFixes: 3,
       underpricingNightly: 542858, // mirrors a real audited Canggu villa
       compSetLabel: compSetLabel("greater-canggu", "2BR", "villas"),
       fixHeadline: "Cover photo is an interior shot.",
@@ -224,7 +253,7 @@ export function getLandingScope(slug: LandingScope["slug"]): LandingScope {
         title: "Bali",
         href: "/bali",
         lines: [
-          `${bali.toLocaleString("en-US")} villas measured`,
+          compSetCardLine(baliKeys, "villas"),
           `${baliKeys.length} regions, Canggu to the Nusa islands`,
         ],
       },
@@ -232,7 +261,7 @@ export function getLandingScope(slug: LandingScope["slug"]): LandingScope {
         title: "Dubai",
         href: "/dubai",
         lines: [
-          `${(getMarketScanTotal("dubai") ?? 0).toLocaleString("en-US")} listings measured`,
+          compSetCardLine(["dubai"], "listings"),
           "Every size class, Marina to the Palm",
         ],
       },
@@ -240,7 +269,7 @@ export function getLandingScope(slug: LandingScope["slug"]): LandingScope {
         title: "London",
         href: "/london",
         lines: [
-          `${(getMarketScanTotal("london") ?? 0).toLocaleString("en-US")} listings measured`,
+          compSetCardLine(["london"], "listings"),
           "Every size class, zone 1 and beyond",
         ],
       },

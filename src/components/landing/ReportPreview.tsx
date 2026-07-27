@@ -18,12 +18,12 @@ export function ReportPreview({ scope }: { scope: LandingPreviewScope }) {
   const winner = b?.winner_covers[0];
 
   const stats = [
-    { label: "Listing score", value: "68/100" },
+    { label: "Listing score", value: `${scope.score}/100` },
     {
       label: "Left on table",
       value: formatMoneyMonthly(b?.currency ?? "IDR", scope.underpricingNightly),
     },
-    { label: "Critical fixes", value: "3" },
+    { label: "Critical fixes", value: String(scope.criticalFixes) },
     { label: "Comp set", value: scope.compSetLabel },
   ];
 
