@@ -54,6 +54,9 @@ export const config = {
     // so the audit flow never depends on email being configured.
     resendApiKey: process.env.RESEND_API_KEY ?? "",
     from: process.env.EMAIL_FROM ?? "OptimoRent <reports@rentlyn.com>",
+    // Public contact address shown in footers and sent emails. Separate from
+    // `from`: this is where owners write to us, not the sender we send as.
+    contact: process.env.CONTACT_EMAIL ?? "hi@optimo.rent",
   },
 } as const;
 

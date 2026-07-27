@@ -47,7 +47,9 @@ export async function sendReportReadyEmail(opts: {
           : ""
       }
       <p style="color:#858585;font-size:13px;margin-top:28px">
-        OptimoRent · listing intelligence
+        OptimoRent · listing intelligence<br />
+        Questions? Just reply, or write to
+        <a href="mailto:${config.email.contact}" style="color:#858585">${config.email.contact}</a>.
       </p>
     </div>`;
 

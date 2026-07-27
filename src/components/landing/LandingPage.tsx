@@ -299,7 +299,15 @@ export function LandingPage({ scope }: { scope: LandingScope }) {
               {scope.footerLine}
             </div>
           </div>
-          <p className="text-xs text-pewter">© 2026 OptimoRent</p>
+          <div className="flex flex-col gap-1 sm:items-end">
+            <a
+              href={`mailto:${config.email.contact}`}
+              className="text-sm text-fog underline decoration-dove underline-offset-2 hover:text-ink hover:decoration-ink"
+            >
+              {config.email.contact}
+            </a>
+            <p className="text-xs text-pewter">© 2026 OptimoRent</p>
+          </div>
         </div>
       </footer>
     </div>

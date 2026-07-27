@@ -90,8 +90,16 @@ export default async function ReportPage({
         <PrintButton auto={print === "1"} />
       </div>
 
-      <footer className="mt-12 border-t border-dove pt-4 text-center font-mono text-[11px] uppercase tracking-[0.15em] text-pewter">
-        Listing intelligence
+      <footer className="mt-12 border-t border-dove pt-4 text-center">
+        <div className="font-mono text-[11px] uppercase tracking-[0.15em] text-pewter">
+          Listing intelligence
+        </div>
+        <a
+          href={`mailto:${config.email.contact}`}
+          className="mt-1.5 inline-block text-xs text-fog underline decoration-dove underline-offset-2 hover:text-ink hover:decoration-ink"
+        >
+          {config.email.contact}
+        </a>
       </footer>
     </main>
   );

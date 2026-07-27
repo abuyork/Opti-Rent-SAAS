@@ -131,6 +131,17 @@ export default async function ResultPage({
         </section>
       )}
 
+      <footer className="mt-12 border-t border-dove pt-4 text-center">
+        <div className="font-mono text-[11px] uppercase tracking-[0.15em] text-pewter">
+          Questions about your score?
+        </div>
+        <a
+          href={`mailto:${config.email.contact}`}
+          className="mt-1.5 inline-block text-xs text-fog underline decoration-dove underline-offset-2 hover:text-ink hover:decoration-ink"
+        >
+          {config.email.contact}
+        </a>
+      </footer>
     </main>
   );
 }
