@@ -175,6 +175,8 @@ export interface AuditMarketEvidence {
   market: string;
   cohort: string;
   sample_size: number;
+  /** Whole comp set in this market + size class; `sample_size` is what we measured. */
+  cohort_total?: number | null;
   winner_median_photos: number;
   loser_median_photos: number;
   winner_median_title_chars: number;

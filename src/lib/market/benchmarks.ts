@@ -49,6 +49,13 @@ export interface MarketBenchmark {
   market: string;
   cohort: string;
   sample_size: number;
+  /**
+   * The whole comp set: active entire homes in this market + cohort, from the
+   * search `total_count`. `sample_size` is what we measure in depth (a top/
+   * bottom stratified draw); this is the population it comes from. Null on
+   * benchmarks generated before 2026-07-27.
+   */
+  cohort_total?: number | null;
   winner_n: number;
   // measured winner medians
   winner_median_photos: number;
@@ -85,7 +92,12 @@ export function cohortForBeds(beds: number): string {
 }
 
 /** Build one benchmark per cohort from a scored scan sample. */
-export function buildBenchmarks(market: string, listings: ScannedListing[]): BenchmarksFile {
+export function buildBenchmarks(
+  market: string,
+  listings: ScannedListing[],
+  /** Whole-comp-set size per cohort label, from the search `total_count`. */
+  cohortTotals: Record<string, number> = {},
+): BenchmarksFile {
   const byCohort = new Map<string, ScannedListing[]>();
   for (const l of listings) {
     (byCohort.get(l.cohort) ?? byCohort.set(l.cohort, []).get(l.cohort)!).push(l);
@@ -120,6 +132,7 @@ export function buildBenchmarks(market: string, listings: ScannedListing[]): Ben
       cohort,
       currency: MARKETS[market]?.currency ?? "IDR",
       sample_size: s.sample_size,
+      cohort_total: cohortTotals[cohort] ?? null,
       winner_n: s.winners.n,
       winner_median_photos: s.winners.median_photos,
       winner_median_title_chars: s.winners.median_title_chars,
@@ -168,6 +181,19 @@ export function getMarketBenchmark(marketKey: string, cohort: string): MarketBen
   return BENCHMARKS[marketKey]?.cohorts[cohort] ?? null;
 }
 
+/**
+ * Whole comp set for a stored audit's evidence. Audits written before
+ * 2026-07-27 have no `cohort_total` of their own, so fall back to the current
+ * benchmark for the same market + cohort — the report shows the number rather
+ * than reverting to the old "compared against N" card.
+ */
+export function cohortTotalFor(
+  e: { market: string; cohort: string; cohort_total?: number | null } | null | undefined,
+): number | null {
+  if (!e) return null;
+  return e.cohort_total ?? getMarketBenchmark(e.market, e.cohort)?.cohort_total ?? null;
+}
+
 /** Total listings scanned in a market (all cohorts), for "37 of 176" framing. */
 export function getMarketScanTotal(marketKey: string): number | null {
   return BENCHMARKS[marketKey]?.generated_from ?? null;
@@ -183,6 +209,7 @@ export function toAuditEvidence(b: MarketBenchmark): AuditMarketEvidence {
     market: b.market,
     cohort: b.cohort,
     sample_size: b.sample_size,
+    cohort_total: b.cohort_total ?? null,
     winner_median_photos: b.winner_median_photos,
     loser_median_photos: b.loser_median_photos,
     winner_median_title_chars: b.winner_median_title_chars,

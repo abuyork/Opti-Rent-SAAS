@@ -1,4 +1,4 @@
-import { formatMoneyMonthly } from "@/lib/format";
+import { formatCohortTotal, formatMoneyMonthly } from "@/lib/format";
 
 /**
  * Four summary cards mirroring the sample report header.
@@ -16,6 +16,8 @@ export function StatCards({
   compCount,
   currency = "IDR",
   marketCohortSize = null,
+  marketCohortTotal = null,
+  cohortLabel = null,
 }: {
   score: number;
   underpricingIdr: number;
@@ -23,7 +25,13 @@ export function StatCards({
   compCount: number;
   currency?: string;
   marketCohortSize?: number | null;
+  /** Whole comp set in the market + size class (search total_count). */
+  marketCohortTotal?: number | null;
+  /** e.g. "3BR", for the note under the comp-set card. */
+  cohortLabel?: string | null;
 }) {
+  const noun = currency === "IDR" ? "villas" : "listings";
+  const measured = compCount + (marketCohortSize ?? 0);
   const cards = [
     { label: "Listing score", value: `${score}/100`, note: null },
     underpricingIdr > 0
@@ -38,17 +46,25 @@ export function StatCards({
           note: "priced at market rate",
         },
     { label: "Critical fixes", value: String(criticalCount), note: null },
-    marketCohortSize
+    // The comp set is the whole cohort in this market (manager ask 2026-07-27);
+    // the note keeps it honest about how many of those we measure in depth.
+    marketCohortTotal
       ? {
-          label: "Compared against",
-          value: `${compCount + marketCohortSize} villas`,
-          note: `${compCount} nearby · ${marketCohortSize} market cohort`,
+          label: "Comp set",
+          value: `${formatCohortTotal(marketCohortTotal)} ${noun}`,
+          note: `${cohortLabel ? `${cohortLabel} in your market` : "in your size class"} · ${measured} measured in depth`,
         }
-      : {
-          label: "Compared against",
-          value: `${compCount} villas`,
-          note: "closest comparables",
-        },
+      : marketCohortSize
+        ? {
+            label: "Compared against",
+            value: `${measured} ${noun}`,
+            note: `${compCount} nearby · ${marketCohortSize} market cohort`,
+          }
+        : {
+            label: "Compared against",
+            value: `${compCount} ${noun}`,
+            note: "closest comparables",
+          },
   ];
   return (
     <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">

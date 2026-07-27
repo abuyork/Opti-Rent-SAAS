@@ -5,6 +5,7 @@ import { verifyReportToken } from "@/lib/sign";
 import { ReportHeader } from "@/components/report/ReportHeader";
 import { ListingIdentity } from "@/components/report/ListingIdentity";
 import { StatCards } from "@/components/report/StatCards";
+import { cohortTotalFor } from "@/lib/market/benchmarks";
 import { FixList } from "@/components/report/FixList";
 import { RewritesView } from "@/components/report/RewritesView";
 import { MarketEvidence } from "@/components/report/MarketEvidence";
@@ -64,6 +65,8 @@ export default async function ReportPage({
           compCount={audit.comp_count}
           currency={audit.market_evidence?.currency ?? "IDR"}
           marketCohortSize={audit.market_evidence?.sample_size ?? null}
+          marketCohortTotal={cohortTotalFor(audit.market_evidence)}
+          cohortLabel={audit.market_evidence?.cohort ?? null}
         />
       </section>
 

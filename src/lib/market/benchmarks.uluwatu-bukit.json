@@ -7,6 +7,7 @@
       "cohort": "1BR",
       "currency": "IDR",
       "sample_size": 40,
+      "cohort_total": 1349,
       "winner_n": 10,
       "winner_median_photos": 26,
       "winner_median_title_chars": 48,
@@ -220,6 +221,7 @@
       "cohort": "2BR",
       "currency": "IDR",
       "sample_size": 35,
+      "cohort_total": 1417,
       "winner_n": 8,
       "winner_median_photos": 44.5,
       "winner_median_title_chars": 42.5,
@@ -425,6 +427,7 @@
       "cohort": "3BR",
       "currency": "IDR",
       "sample_size": 38,
+      "cohort_total": 882,
       "winner_n": 9,
       "winner_median_photos": 47,
       "winner_median_title_chars": 46,
@@ -530,7 +533,7 @@
         },
         {
           "listing_id": "1278647361473957828",
-          "listing_name": "Nisí Bingin - 3bed 3bath Private Pool (Villa 9)",
+          "listing_name": "Nis\u00ed Bingin - 3bed 3bath Private Pool (Villa 9)",
           "viral_score": 94.5,
           "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1278647361473957828/original/0da52dfc-e9aa-49b3-885f-267a270da615.jpeg",
           "locality": "Pecatu",
@@ -552,7 +555,7 @@
         },
         {
           "listing_id": "1275088511796780006",
-          "listing_name": "Spacious Luxury Villa • Prime Uluwatu location",
+          "listing_name": "Spacious Luxury Villa \u2022 Prime Uluwatu location",
           "viral_score": 90.5,
           "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1275088511796780006/original/a322c236-7c48-453d-83e2-658b7f14f361.jpeg",
           "locality": "Pecatu",
@@ -563,7 +566,7 @@
         },
         {
           "listing_id": "1098603406921983943",
-          "listing_name": "Private pool Three bedroom Villa · Uluwatu",
+          "listing_name": "Private pool Three bedroom Villa \u00b7 Uluwatu",
           "viral_score": 89.6,
           "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTA5ODYwMzQwNjkyMTk4Mzk0Mw%3D%3D/original/e5f8a708-3ad3-4f4f-89d9-221e6b6466e9.png",
           "locality": "Pecatu",
@@ -585,7 +588,7 @@
         },
         {
           "listing_id": "1231697200876507031",
-          "listing_name": "Mona Boutique Villas & Spa – Raja Utara",
+          "listing_name": "Mona Boutique Villas & Spa \u2013 Raja Utara",
           "viral_score": 85.3,
           "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTIzMTY5NzIwMDg3NjUwNzAzMQ%3D%3D/original/a97335eb-d1be-427b-b586-91af79879b1c.jpeg",
           "locality": "Pecatu",
@@ -607,7 +610,7 @@
         },
         {
           "listing_id": "1098612081068936751",
-          "listing_name": "Private pool three-bedroom Managed villa · Uluwatu",
+          "listing_name": "Private pool three-bedroom Managed villa \u00b7 Uluwatu",
           "viral_score": 82.3,
           "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-1098612081068936751/original/f0e4e901-bedd-423b-be7f-dade9114c528.png",
           "locality": "Pecatu",
@@ -618,7 +621,7 @@
         },
         {
           "listing_id": "1207521891668979727",
-          "listing_name": "Nisí Bingin - 3bed 3bath Private Pool (Villa 2)",
+          "listing_name": "Nis\u00ed Bingin - 3bed 3bath Private Pool (Villa 2)",
           "viral_score": 80.1,
           "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-1207521891668979727/original/6cda4df0-5abe-4ceb-be6b-bfe929d576c3.jpeg",
           "locality": "Pecatu",
@@ -634,6 +637,7 @@
       "cohort": "4BR",
       "currency": "IDR",
       "sample_size": 39,
+      "cohort_total": 321,
       "winner_n": 9,
       "winner_median_photos": 45,
       "winner_median_title_chars": 47,
@@ -754,7 +758,7 @@
         },
         {
           "listing_id": "669236370778973001",
-          "listing_name": "La Lourdes – Private hideaway near Bingin beach",
+          "listing_name": "La Lourdes \u2013 Private hideaway near Bingin beach",
           "viral_score": 88,
           "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-669236370778973001/original/0e6b094d-714a-4acb-aa5f-140eba939e20.jpeg",
           "locality": "Pecatu",
@@ -820,7 +824,7 @@
         },
         {
           "listing_id": "1042584168550079934",
-          "listing_name": "Private pool Four bedroom Managed villa · Uluwatu",
+          "listing_name": "Private pool Four bedroom Managed villa \u00b7 Uluwatu",
           "viral_score": 78.7,
           "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-1042584168550079934/original/51fd6004-8ea1-4a2a-bd97-5effe264a793.png",
           "locality": "Pecatu",
@@ -847,6 +851,7 @@
       "cohort": "5+BR",
       "currency": "IDR",
       "sample_size": 40,
+      "cohort_total": 231,
       "winner_n": 10,
       "winner_median_photos": 78,
       "winner_median_title_chars": 47.5,
@@ -896,7 +901,7 @@
           "delta": 0.49999999999999994
         },
         {
-          "amenity": "pack ’n play/travel crib",
+          "amenity": "pack \u2019n play/travel crib",
           "winner_share": 0.5,
           "loser_share": 0.1,
           "delta": 0.4

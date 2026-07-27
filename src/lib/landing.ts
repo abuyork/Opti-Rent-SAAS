@@ -11,6 +11,7 @@ import {
   getMarketScanTotal,
   getTrustStats,
 } from "@/lib/market/benchmarks";
+import { formatCohortTotal } from "@/lib/format";
 
 export interface LandingStat {
   value: string;
@@ -71,6 +72,18 @@ function sampleGap(marketKey: string): number {
 
 const WINNERS_STAT: LandingStat = { value: "10", label: "winners shown beside yours" };
 
+/**
+ * "Comp set" for the sample report: the whole cohort in that region, not the
+ * stratified sample we measure in depth (manager ask 2026-07-27 — "36 villas"
+ * read as a thin data set). Falls back to the measured sample if a benchmark
+ * predates the totals backfill.
+ */
+function compSetLabel(marketKey: string, cohort: string, noun: string): string {
+  const b = getMarketBenchmark(marketKey, cohort);
+  const n = b?.cohort_total ?? b?.sample_size ?? 0;
+  return `${formatCohortTotal(n)} ${noun}`;
+}
+
 export function getLandingScope(slug: LandingScope["slug"]): LandingScope {
   if (slug === "bali") {
     const listings = baliListings();
@@ -88,7 +101,7 @@ export function getLandingScope(slug: LandingScope["slug"]): LandingScope {
         cohort: "2BR",
         windowLabel: "Greater Canggu 2BR",
         underpricingNightly: 542858, // mirrors a real audited Canggu villa
-        compSetLabel: `${getMarketBenchmark("greater-canggu", "2BR")?.sample_size ?? 36} villas`,
+        compSetLabel: compSetLabel("greater-canggu", "2BR", "villas"),
         fixHeadline: "Cover photo is an interior shot.",
         fixDetail: "Winning listings in this size class lead with pool or rooftop.",
         caption: "A real winner from our Canggu scan, shown the way your report shows it",
@@ -131,7 +144,7 @@ export function getLandingScope(slug: LandingScope["slug"]): LandingScope {
         cohort: "2BR",
         windowLabel: `${title} 2BR`,
         underpricingNightly: sampleGap(slug),
-        compSetLabel: `${getMarketBenchmark(slug, "2BR")?.sample_size ?? 40} ${compNoun}`,
+        compSetLabel: compSetLabel(slug, "2BR", compNoun),
         fixHeadline:
           slug === "dubai"
             ? "Cover photo is an empty living room."
@@ -183,7 +196,7 @@ export function getLandingScope(slug: LandingScope["slug"]): LandingScope {
       cohort: "2BR",
       windowLabel: "Greater Canggu 2BR",
       underpricingNightly: 542858, // mirrors a real audited Canggu villa
-      compSetLabel: `${getMarketBenchmark("greater-canggu", "2BR")?.sample_size ?? 36} villas`,
+      compSetLabel: compSetLabel("greater-canggu", "2BR", "villas"),
       fixHeadline: "Cover photo is an interior shot.",
       fixDetail: "Winning listings in this size class lead with pool or rooftop.",
       caption: "A real winner from our Bali scan, shown the way your report shows it",

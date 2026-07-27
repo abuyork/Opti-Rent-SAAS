@@ -21,6 +21,20 @@ interface SearchResponse {
 /** API-enforced maximum page size (422 above this). */
 export const MAX_PAGE_SIZE = 10;
 
+export interface CohortFetch {
+  listings: ScannedListing[];
+  /**
+   * Active entire homes matching this cohort inside the radius — the whole comp
+   * set the stratified sample is drawn from. Free on every search call; we used
+   * to log it and throw it away.
+   *
+   * Counted BEFORE the locality allow/block rules, so for markets that carry
+   * them (Greater Canggu's allowlist, Seminyak's block) it slightly overstates
+   * the region proper.
+   */
+  total: number;
+}
+
 async function search(
   body: Record<string, unknown>,
 ): Promise<SearchResponse> {
@@ -95,7 +109,7 @@ export async function fetchCohort(
   cohort: CohortDef,
   pagesPerStratum: number,
   log: (msg: string) => void,
-): Promise<ScannedListing[]> {
+): Promise<CohortFetch> {
   const filter = {
     room_type: { eq: "entire_home" },
     bedrooms: cohort.bedrooms,
@@ -147,5 +161,5 @@ export async function fetchCohort(
       `(top ${out.filter((o) => o.stratum === "top").length}, ` +
       `bottom ${out.filter((o) => o.stratum === "bottom").length}) after ${def.title} filter`,
   );
-  return out;
+  return { listings: out, total };
 }

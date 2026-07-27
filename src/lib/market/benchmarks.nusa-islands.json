@@ -7,6 +7,7 @@
       "cohort": "1BR",
       "currency": "IDR",
       "sample_size": 40,
+      "cohort_total": 177,
       "winner_n": 10,
       "winner_median_photos": 54,
       "winner_median_title_chars": 46.5,
@@ -105,7 +106,7 @@
       "winner_covers": [
         {
           "listing_id": "1395234898039452790",
-          "listing_name": "Tropical Glamping • Honeymoon Villa + Sea View",
+          "listing_name": "Tropical Glamping \u2022 Honeymoon Villa + Sea View",
           "viral_score": 97.3,
           "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTM5NTIzNDg5ODAzOTQ1Mjc5MA==/original/4f20507e-d8b3-45e4-aa8e-3c921af19f61.jpeg",
           "locality": "Nusa Penida",
@@ -116,7 +117,7 @@
         },
         {
           "listing_id": "51567500",
-          "listing_name": "Tropical Glamping 🌴 Cliff Side Ocean View + Net🐬",
+          "listing_name": "Tropical Glamping \ud83c\udf34 Cliff Side Ocean View + Net\ud83d\udc2c",
           "viral_score": 95.1,
           "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-51567500/original/bb5114fb-75a7-4a0c-aa0a-ed402f0a29c8.jpeg",
           "locality": "Pejukutan",
@@ -138,7 +139,7 @@
         },
         {
           "listing_id": "1036728572361561145",
-          "listing_name": "Manta Iconic bamboo | Hearth Pool • Outdoor Cinema",
+          "listing_name": "Manta Iconic bamboo | Hearth Pool \u2022 Outdoor Cinema",
           "viral_score": 91,
           "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-1036728572361561145/original/ee3e1e85-8478-4afa-b097-67d8b381f408.jpeg",
           "locality": "Toyapakeh",
@@ -160,7 +161,7 @@
         },
         {
           "listing_id": "34522485",
-          "listing_name": "Tropical Glamping🌴 Open Air Romantic Bungalow♥️",
+          "listing_name": "Tropical Glamping\ud83c\udf34 Open Air Romantic Bungalow\u2665\ufe0f",
           "viral_score": 84.1,
           "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MzQ1MjI0ODU%3D/original/1333a3ce-680e-4a7a-ba47-d572e2b37199.png",
           "locality": "Pejukutan",
@@ -182,7 +183,7 @@
         },
         {
           "listing_id": "1076293332402134332",
-          "listing_name": "Shell house | Rooftop Pool 360° • Outdoor Movie",
+          "listing_name": "Shell house | Rooftop Pool 360\u00b0 \u2022 Outdoor Movie",
           "viral_score": 80.6,
           "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-1076293332402134332/original/25f306e2-e4b2-4773-9d3b-72491edfb9ae.jpeg",
           "locality": "Toyapakeh",
@@ -220,6 +221,7 @@
       "cohort": "2BR",
       "currency": "IDR",
       "sample_size": 40,
+      "cohort_total": 58,
       "winner_n": 10,
       "winner_median_photos": 32,
       "winner_median_title_chars": 40.5,
@@ -433,6 +435,7 @@
       "cohort": "3BR",
       "currency": "IDR",
       "sample_size": 36,
+      "cohort_total": 36,
       "winner_n": 9,
       "winner_median_photos": 60,
       "winner_median_title_chars": 44,
@@ -600,7 +603,7 @@
         },
         {
           "listing_id": "1415064339922172563",
-          "listing_name": "The Blue Zone Villa – Nusa Lembongan",
+          "listing_name": "The Blue Zone Villa \u2013 Nusa Lembongan",
           "viral_score": 77.4,
           "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTQxNTA2NDMzOTkyMjE3MjU2Mw==/original/35a0f149-046f-4f2a-995a-7a86993cd680.jpeg",
           "locality": "Nusa Penida",
@@ -638,6 +641,7 @@
       "cohort": "4BR",
       "currency": "IDR",
       "sample_size": 24,
+      "cohort_total": 24,
       "winner_n": 6,
       "winner_median_photos": 66,
       "winner_median_title_chars": 43,

@@ -7,6 +7,7 @@
       "cohort": "1BR",
       "currency": "GBP",
       "sample_size": 40,
+      "cohort_total": 10000,
       "winner_n": 10,
       "winner_median_photos": 22.5,
       "winner_median_title_chars": 42.5,
@@ -220,6 +221,7 @@
       "cohort": "2BR",
       "currency": "GBP",
       "sample_size": 40,
+      "cohort_total": 10000,
       "winner_n": 10,
       "winner_median_photos": 23,
       "winner_median_title_chars": 47,
@@ -233,7 +235,7 @@
       "loser_instant_book_share": 0,
       "top_amenities": [
         {
-          "amenity": "pack ’n play/travel crib",
+          "amenity": "pack \u2019n play/travel crib",
           "winner_share": 0.9,
           "loser_share": 0,
           "delta": 0.9
@@ -329,7 +331,7 @@
         },
         {
           "listing_id": "719439020466791505",
-          "listing_name": "£12 million Buckingham Palace duplex with garden",
+          "listing_name": "\u00a312 million Buckingham Palace duplex with garden",
           "viral_score": 96.8,
           "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6NzE5NDM5MDIwNDY2NzkxNTA1/original/17710430-bab9-4bf7-8501-d6caa1b96c6b.jpeg",
           "locality": "London",
@@ -433,6 +435,7 @@
       "cohort": "3BR",
       "currency": "GBP",
       "sample_size": 40,
+      "cohort_total": 4641,
       "winner_n": 10,
       "winner_median_photos": 33.5,
       "winner_median_title_chars": 49,
@@ -564,7 +567,7 @@
         },
         {
           "listing_id": "23340313",
-          "listing_name": "Stunning Mayfair 3 Bed 3 Bath £8 million AC Wi-Fi",
+          "listing_name": "Stunning Mayfair 3 Bed 3 Bath \u00a38 million AC Wi-Fi",
           "viral_score": 91.7,
           "cover_photo_url": "https://a0.muscache.com/im/pictures/5894dbd7-6532-43b7-b18a-4c18415314a5.jpg",
           "locality": "London",
@@ -646,6 +649,7 @@
       "cohort": "4BR",
       "currency": "GBP",
       "sample_size": 40,
+      "cohort_total": 1564,
       "winner_n": 10,
       "winner_median_photos": 42.5,
       "winner_median_title_chars": 42,
@@ -735,7 +739,7 @@
         },
         {
           "listing_id": "1268844400847145571",
-          "listing_name": "Chelsea 4‑BR, 4 Ensuites | Roof Deck, Quiet Street",
+          "listing_name": "Chelsea 4\u2011BR, 4 Ensuites | Roof Deck, Quiet Street",
           "viral_score": 97.1,
           "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-1268844400847145571/original/9a081c0a-29d2-40b6-a437-dd4ab33cdba2.png",
           "locality": "London",
@@ -839,6 +843,7 @@
       "cohort": "5+BR",
       "currency": "GBP",
       "sample_size": 40,
+      "cohort_total": 598,
       "winner_n": 10,
       "winner_median_photos": 67.5,
       "winner_median_title_chars": 39.5,
@@ -852,7 +857,7 @@
       "loser_instant_book_share": 0.2,
       "top_amenities": [
         {
-          "amenity": "pack ’n play/travel crib",
+          "amenity": "pack \u2019n play/travel crib",
           "winner_share": 0.8,
           "loser_share": 0.1,
           "delta": 0.7000000000000001

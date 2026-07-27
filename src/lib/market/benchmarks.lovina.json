@@ -7,6 +7,7 @@
       "cohort": "1BR",
       "currency": "IDR",
       "sample_size": 40,
+      "cohort_total": 76,
       "winner_n": 10,
       "winner_median_photos": 50,
       "winner_median_title_chars": 44.5,
@@ -145,7 +146,7 @@
         },
         {
           "listing_id": "866898745253248845",
-          "listing_name": "Epic Sunset Ocean View Treehouse w/ Pool • Beach",
+          "listing_name": "Epic Sunset Ocean View Treehouse w/ Pool \u2022 Beach",
           "viral_score": 86.3,
           "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-866898745253248845/original/ebf9b1e5-5ee4-422b-a387-4db08427abf2.jpeg",
           "locality": "Dencarik",
@@ -216,6 +217,7 @@
       "cohort": "2BR",
       "currency": "IDR",
       "sample_size": 40,
+      "cohort_total": 124,
       "winner_n": 10,
       "winner_median_photos": 47,
       "winner_median_title_chars": 45.5,
@@ -421,6 +423,7 @@
       "cohort": "3BR",
       "currency": "IDR",
       "sample_size": 40,
+      "cohort_total": 89,
       "winner_n": 10,
       "winner_median_photos": 54.5,
       "winner_median_title_chars": 46.5,
@@ -634,6 +637,7 @@
       "cohort": "4BR",
       "currency": "IDR",
       "sample_size": 40,
+      "cohort_total": 58,
       "winner_n": 10,
       "winner_median_photos": 61.5,
       "winner_median_title_chars": 47,
@@ -683,7 +687,7 @@
           "delta": 0.2
         },
         {
-          "amenity": "children’s books and toys",
+          "amenity": "children\u2019s books and toys",
           "winner_share": 0.4,
           "loser_share": 0.2,
           "delta": 0.2
@@ -847,6 +851,7 @@
       "cohort": "5+BR",
       "currency": "IDR",
       "sample_size": 38,
+      "cohort_total": 38,
       "winner_n": 9,
       "winner_median_photos": 68,
       "winner_median_title_chars": 49,
@@ -970,7 +975,7 @@
         },
         {
           "listing_id": "16272881",
-          "listing_name": "5☆  beachfront villa Lovina w/ 5BR,  pool & staff",
+          "listing_name": "5\u2606  beachfront villa Lovina w/ 5BR,  pool & staff",
           "viral_score": 92,
           "cover_photo_url": "https://a0.muscache.com/im/pictures/miso/Hosting-16272881/original/5a526a92-26c9-4940-a7ec-1f280cbb8354.jpeg",
           "locality": "Dencarik",
@@ -1036,7 +1041,7 @@
         },
         {
           "listing_id": "24346442",
-          "listing_name": "Lovina, ⭐️ ⭐️⭐️⭐️⭐️ private beach front villa, 10P",
+          "listing_name": "Lovina, \u2b50\ufe0f \u2b50\ufe0f\u2b50\ufe0f\u2b50\ufe0f\u2b50\ufe0f private beach front villa, 10P",
           "viral_score": 77.3,
           "cover_photo_url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MjQzNDY0NDI%3D/original/088e398c-73eb-48d4-83a3-cc547fe7db8c.jpeg",
           "locality": "Dencarik",

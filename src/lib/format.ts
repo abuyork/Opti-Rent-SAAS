@@ -39,3 +39,18 @@ export function formatMoney(currency: string, amount: number): string {
 export function formatMoneyMonthly(currency: string, nightly: number): string {
   return `${formatMoney(currency, Math.max(0, nightly) * NIGHTS_PER_MONTH)}/mo`;
 }
+
+/**
+ * AirROI caps a search's `total_count` at 10,000 (verified 2026-07-27: Dubai
+ * 1BR and London 1BR/2BR all report exactly 10000). At the cap the true
+ * population is larger and unknown, so it must render as "10,000+" — printing
+ * a flat "10,000" would state a number we do not have.
+ */
+export const TOTAL_COUNT_CAP = 10_000;
+
+/** Whole-comp-set size for display, honest about the API's ceiling. */
+export function formatCohortTotal(total: number): string {
+  return total >= TOTAL_COUNT_CAP
+    ? `${TOTAL_COUNT_CAP.toLocaleString("en-US")}+`
+    : total.toLocaleString("en-US");
+}

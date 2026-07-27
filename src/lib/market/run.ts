@@ -90,8 +90,15 @@ async function main(): Promise<void> {
   // --- fetch + score per cohort (or reuse the cached sample) ---
   const all: Scanned[] = [];
   const stats: Stats[] = [];
+  /** Whole-comp-set size per cohort (search `total_count`), shown in reports. */
+  const totals: Record<string, number> = {};
   if (args.cached) {
-    const cached = JSON.parse(readFileSync(resolve(process.cwd(), CACHE_PATH), "utf8")) as Scanned[];
+    // Older caches were a bare ScannedListing[]; newer ones carry the totals too.
+    const raw = JSON.parse(readFileSync(resolve(process.cwd(), CACHE_PATH), "utf8")) as
+      | Scanned[]
+      | { listings: Scanned[]; totals: Record<string, number> };
+    const cached = Array.isArray(raw) ? raw : raw.listings;
+    if (!Array.isArray(raw)) Object.assign(totals, raw.totals);
     all.push(...cached);
     for (const cohort of def.cohorts) {
       const listings = all.filter((l) => l.cohort === cohort.label);
@@ -100,7 +107,8 @@ async function main(): Promise<void> {
     console.log(`loaded ${all.length} listings from cache (${CACHE_PATH})`);
   } else {
     for (const cohort of def.cohorts) {
-      const listings = await fetchCohort(def, cohort, args.pages, (m) => console.log(m));
+      const { listings, total } = await fetchCohort(def, cohort, args.pages, (m) => console.log(m));
+      totals[cohort.label] = total;
       if (listings.length < 20) {
         console.log(`${cohort.label}: only ${listings.length} listings — skipping stats`);
         continue;
@@ -110,7 +118,7 @@ async function main(): Promise<void> {
       all.push(...listings);
     }
     mkdirSync(resolve(process.cwd(), CACHE_PATH, ".."), { recursive: true });
-    writeFileSync(resolve(process.cwd(), CACHE_PATH), JSON.stringify(all));
+    writeFileSync(resolve(process.cwd(), CACHE_PATH), JSON.stringify({ listings: all, totals }));
   }
   console.log(`\nscored ${all.length} listings across ${stats.length} cohorts`);
   if (stats.length === 0) {
@@ -151,7 +159,7 @@ async function main(): Promise<void> {
   // drift from the human playbook.
   const { buildBenchmarks } = await import("./benchmarks");
   const benchPath = resolve(process.cwd(), "src/lib/market", `benchmarks.${MARKET}.json`);
-  writeFileSync(benchPath, JSON.stringify(buildBenchmarks(MARKET, all), null, 2));
+  writeFileSync(benchPath, JSON.stringify(buildBenchmarks(MARKET, all, totals), null, 2));
   console.log(`benchmarks written: ${benchPath}`);
 
   // --- persist ---
