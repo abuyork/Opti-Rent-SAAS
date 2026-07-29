@@ -13,6 +13,9 @@ export const config = {
 
   reportPriceUsdCents: Number(process.env.REPORT_PRICE_USD_CENTS ?? "4900"),
 
+  /** One market playbook PDF. Sold per location, separate from the audit. */
+  playbookPriceUsdCents: Number(process.env.PLAYBOOK_PRICE_USD_CENTS ?? "2900"),
+
   reportLinkSecret: process.env.REPORT_LINK_SECRET ?? "dev-insecure-secret",
 
   // TESTING ONLY: when true, the result screen reveals the full report (fixes +

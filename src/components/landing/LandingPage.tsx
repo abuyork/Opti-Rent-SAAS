@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { SiteNav } from "@/components/SiteNav";
 import AuditForm from "@/components/AuditForm";
 import { ReportPreview } from "@/components/landing/ReportPreview";
 import { PreviewTabs } from "@/components/landing/PreviewTabs";
@@ -47,7 +48,6 @@ export function LandingPage({ scope }: { scope: LandingScope }) {
     "The 10 winning listings in your size class, with their real revenue and occupancy",
     "3 paste-ready title options plus a rewritten description opening",
     "Branded PDF report, link sent to your email",
-    "Re-audit in 60 days at a discount",
   ];
 
   const faqs = [
@@ -71,35 +71,14 @@ export function LandingPage({ scope }: { scope: LandingScope }) {
 
   return (
     <div className="text-ink">
-      {/* Sticky nav */}
-      <nav className="sticky top-0 z-50 border-b border-dove/70 bg-paper/85 backdrop-blur-md">
-        <div className="mx-auto flex h-16 max-w-5xl items-center justify-between px-6">
-          <a href={scope.logoHref} className="flex items-center gap-2.5">
-            <Image
-              src="/logo/optimorent-mark-ink.png"
-              alt="OptimoRent monogram"
-              width={38}
-              height={24}
-              priority
-            />
-            <span className="text-lg font-medium tracking-[-0.02em]">OptimoRent</span>
-          </a>
-          <div className="hidden items-center gap-6 sm:flex">
-            <a href="#how-it-works" className="text-sm font-medium text-fog hover:text-ink">
-              How it works
-            </a>
-            <a href="#pricing" className="text-sm font-medium text-fog hover:text-ink">
-              Pricing
-            </a>
-          </div>
-          <a
-            href="#audit"
-            className="rounded-full bg-ink px-4 py-2 text-sm font-medium text-paper hover:bg-charcoal"
-          >
-            {scope.ctaLabel}
-          </a>
-        </div>
-      </nav>
+      <SiteNav
+        logoHref={scope.logoHref}
+        links={[
+          { label: "How it works", href: "#how-it-works" },
+          { label: "Pricing", href: "#pricing" },
+        ]}
+        cta={{ label: scope.ctaLabel, href: "#audit" }}
+      />
 
       <main id="top" className="mx-auto max-w-5xl px-6">
         {/* Hero */}
