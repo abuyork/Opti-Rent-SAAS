@@ -6,6 +6,7 @@ import { ReportPreview } from "@/components/landing/ReportPreview";
 import { PreviewTabs } from "@/components/landing/PreviewTabs";
 import { formatUsdFromCents } from "@/lib/format";
 import { config } from "@/lib/config";
+import { PLAYBOOKS } from "@/lib/playbooks";
 import type { LandingScope } from "@/lib/landing";
 
 /**
@@ -18,6 +19,10 @@ import type { LandingScope } from "@/lib/landing";
  */
 export function LandingPage({ scope }: { scope: LandingScope }) {
   const priceLabel = formatUsdFromCents(config.reportPriceUsdCents);
+  const playbookPrice = formatUsdFromCents(config.playbookPriceUsdCents);
+  // Campaign pages cite only their own market, so the playbook pitch names just
+  // that book; the universal page pitches the set.
+  const book = scope.slug === "home" ? null : PLAYBOOKS[scope.slug];
 
   const steps = [
     {
@@ -58,6 +63,12 @@ export function LandingPage({ scope }: { scope: LandingScope }) {
     {
       q: "Which listings do you compare mine against?",
       a: scope.faqMarketsAnswer,
+    },
+    {
+      q: "What is the Playbook, and how is it different from the report?",
+      a: book
+        ? `The report scores your listing. The ${book.title} is the market itself: ${book.pages} pages on what the top-earning ${book.noun} in ${book.place} do differently, measured against the bottom quartile in every size class. It is ${playbookPrice}, one-time, and it is the same research your report cites.`
+        : `The report scores your listing. The Playbook is the market itself: what the top earners do differently, measured size class by size class, written up as one book per market. It is ${playbookPrice} one-time per market, and it is the same research your report cites.`,
     },
     {
       q: "Is the underpricing estimate guaranteed?",
@@ -212,17 +223,18 @@ export function LandingPage({ scope }: { scope: LandingScope }) {
                 Get your free score
               </a>
             </div>
-            <div className="rounded-2xl bg-cream p-10">
+            {/* Inverted so the paid tier is the one the eye lands on. */}
+            <div className="rounded-2xl bg-ink p-10 text-paper">
               <h3 className="text-2xl font-medium tracking-[-0.02em]">Full report</h3>
               <div className="mt-4 text-4xl tracking-[-0.025em]">
                 {priceLabel}
-                <span className="ml-2 font-mono text-xs uppercase tracking-wide text-pewter">
+                <span className="ml-2 font-mono text-xs uppercase tracking-wide text-dove">
                   one-time
                 </span>
               </div>
               <ul className="mt-8 flex flex-col gap-2">
                 {paidFeatures.map((f) => (
-                  <li key={f} className="flex gap-2.5 text-sm">
+                  <li key={f} className="flex gap-2.5 text-sm text-dove">
                     <span aria-hidden>✓</span>
                     {f}
                   </li>
@@ -230,10 +242,37 @@ export function LandingPage({ scope }: { scope: LandingScope }) {
               </ul>
               <a
                 href="#audit"
-                className="mt-10 inline-block rounded-full bg-ink px-6 py-3 text-sm font-medium text-paper hover:bg-charcoal"
+                className="mt-10 inline-block rounded-full bg-paper px-6 py-3 text-sm font-medium text-ink hover:bg-dove"
               >
                 Start with the free score
               </a>
+            </div>
+          </div>
+        </section>
+
+        {/* Playbook cross-sell, in place of the bare divider under pricing */}
+        <section className="py-14">
+          <div className="rounded-2xl bg-sand px-8 py-10 sm:px-10">
+            <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+              <div className="max-w-xl">
+                <p className="font-mono text-[11px] uppercase tracking-[0.15em] text-ember">
+                  New
+                </p>
+                <h2 className="mt-2 text-2xl font-medium tracking-[-0.02em] sm:text-3xl">
+                  {book ? `The ${book.place} Playbook` : "The Airbnb Playbook"}
+                </h2>
+                <p className="mt-3 text-base leading-relaxed text-steel">
+                  {book
+                    ? `${book.pages} pages on what the top-earning ${book.noun} in ${book.place} do differently, measured against the bottom quartile in every size class.`
+                    : "Everything your report says about one listing, said about your whole market: what the top earners do differently, measured size class by size class. One book per market."}
+                </p>
+              </div>
+              <Link
+                href="/playbook"
+                className="shrink-0 self-start rounded-full bg-ink px-6 py-3 text-sm font-medium text-paper hover:bg-charcoal sm:self-auto"
+              >
+                See the playbook · {playbookPrice}
+              </Link>
             </div>
           </div>
         </section>

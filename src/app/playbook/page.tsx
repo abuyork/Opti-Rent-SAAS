@@ -183,10 +183,6 @@ export default function PlaybookLanding() {
               </div>
             ))}
           </div>
-          <p className="mt-6 font-mono text-[11px] uppercase tracking-wide text-pewter">
-            Scanned {books[0].scanned} · Instant download · A market snapshot, not a revenue
-            guarantee
-          </p>
         </section>
       </main>
 
