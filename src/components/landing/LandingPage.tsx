@@ -250,31 +250,29 @@ export function LandingPage({ scope }: { scope: LandingScope }) {
           </div>
         </section>
 
-        {/* Playbook cross-sell, in place of the bare divider under pricing */}
-        <section className="py-14">
-          <div className="rounded-2xl bg-sand px-8 py-10 sm:px-10">
-            <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
-              <div className="max-w-xl">
-                <p className="font-mono text-[11px] uppercase tracking-[0.15em] text-ember">
-                  New
-                </p>
-                <h2 className="mt-2 text-2xl font-medium tracking-[-0.02em] sm:text-3xl">
-                  {book ? `The ${book.place} Playbook` : "The Airbnb Playbook"}
-                </h2>
-                <p className="mt-3 text-base leading-relaxed text-steel">
-                  {book
-                    ? `${book.pages} pages on what the top-earning ${book.noun} in ${book.place} do differently, measured against the bottom quartile in every size class.`
-                    : "Everything your report says about one listing, said about your whole market: what the top earners do differently, measured size class by size class. One book per market."}
-                </p>
-              </div>
-              <Link
-                href="/playbook"
-                className="shrink-0 self-start rounded-full bg-ink px-6 py-3 text-sm font-medium text-paper hover:bg-charcoal sm:self-auto"
-              >
-                See the playbook · {playbookPrice}
-              </Link>
-            </div>
-          </div>
+        {/* Playbook cross-sell — a one-line strip that IS the divider under
+            pricing, not a card competing with the tiers above it. */}
+        <section className="border-t border-dove">
+          <Link
+            href="/playbook"
+            className="group flex flex-col gap-2 py-6 sm:flex-row sm:items-baseline sm:justify-between sm:gap-8"
+          >
+            <p className="text-sm leading-relaxed text-fog">
+              <span className="font-mono text-[11px] uppercase tracking-[0.15em] text-ember">
+                New
+              </span>{" "}
+              <span className="font-medium text-ink">
+                {book ? `The ${book.place} Playbook` : "The Airbnb Playbook"}
+              </span>{" "}
+              ·{" "}
+              {book
+                ? `${book.pages} pages on what the top-earning ${book.noun} in ${book.place} do differently.`
+                : "What the top earners in your market do differently, measured size class by size class."}
+            </p>
+            <span className="shrink-0 whitespace-nowrap font-mono text-[11px] uppercase tracking-wide text-fog group-hover:text-ink">
+              See the playbook · {playbookPrice} →
+            </span>
+          </Link>
         </section>
 
         {/* FAQ */}

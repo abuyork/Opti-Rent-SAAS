@@ -55,8 +55,12 @@ export default function PlaybookLanding() {
   return (
     <div className="text-ink">
       <SiteNav
-        links={[{ label: "What's inside", href: "#inside" }]}
+        links={[
+          { label: "What's inside", href: "#inside" },
+          { label: "Pick your market", href: "#buy" },
+        ]}
         cta={{ label: "Get the playbook", href: "#buy" }}
+        showPlaybookLink={false}
       />
 
       <main className="mx-auto max-w-5xl px-6">

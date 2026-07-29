@@ -11,17 +11,20 @@ export interface NavLink {
  * "New" badge and the brand mark live in one place.
  *
  * `links` are page-specific (the landing pages pass their in-page anchors,
- * which do not exist elsewhere). The playbook entry is always present — it is
- * the thing the badge is advertising.
+ * which do not exist elsewhere). The playbook entry carries the badge, and is
+ * hidden with `showPlaybookLink={false}` on the playbook page itself — a nav
+ * item pointing at the page you are already on is dead weight.
  */
 export function SiteNav({
   logoHref = "/",
   links = [],
   cta,
+  showPlaybookLink = true,
 }: {
   logoHref?: string;
   links?: NavLink[];
   cta?: { label: string; href: string };
+  showPlaybookLink?: boolean;
 }) {
   return (
     <nav className="sticky top-0 z-50 border-b border-dove/70 bg-paper/85 backdrop-blur-md">
@@ -43,15 +46,17 @@ export function SiteNav({
               {l.label}
             </a>
           ))}
-          <Link
-            href="/playbook"
-            className="relative text-sm font-medium text-fog hover:text-ink"
-          >
-            Airbnb Playbook
-            <span className="absolute -right-6 -top-2 font-mono text-[9px] font-medium uppercase tracking-[0.12em] text-ember">
-              New
-            </span>
-          </Link>
+          {showPlaybookLink && (
+            <Link
+              href="/playbook"
+              className="relative text-sm font-medium text-fog hover:text-ink"
+            >
+              Airbnb Playbook
+              <span className="absolute -right-6 -top-2 font-mono text-[9px] font-medium uppercase tracking-[0.12em] text-ember">
+                New
+              </span>
+            </Link>
+          )}
         </div>
 
         {cta && (
