@@ -92,6 +92,17 @@ export function playbookMeasured(p: PlaybookDef): number {
 }
 
 /**
+ * Deep-scanned total across all three books, rounded to the nearest thousand
+ * with a "+". Alex's call 2026-07-29: the exact figure moves every time we scan
+ * (Dubai and London are queued for deeper samples), and a round number does not
+ * go stale between scans.
+ */
+export function measuredTotalLabel(): string {
+  const total = PLAYBOOK_KEYS.reduce((sum, k) => sum + playbookMeasured(PLAYBOOKS[k]), 0);
+  return `${(Math.round(total / 1000) * 1000).toLocaleString("en-US")}+`;
+}
+
+/**
  * What every book contains, in the order the chapters appear. Mirrors the
  * section structure of `docs/playbooks/<market>-*.md`, which is what the PDF
  * is rendered from — so this list is a description, not a promise.
@@ -99,34 +110,34 @@ export function playbookMeasured(p: PlaybookDef): number {
 export const PLAYBOOK_CONTENTS: { title: string; body: string }[] = [
   {
     title: "Top actions, highest leverage first",
-    body: "The ranked list of what actually moves revenue in this market, starting with the single biggest gap between winners and everyone else.",
+    body: "What moves revenue in this market, ranked, starting with the biggest gap.",
   },
   {
     title: "Cover photos",
-    body: "What the top earners lead with, what the bottom quartile shows instead, and the named listings on both sides so you can see the difference yourself.",
+    body: "What top earners lead with, what the bottom quartile shows instead, both named.",
   },
   {
     title: "Titles",
-    body: "The words that carry positive delta in each size class and the ones worth zero, measured across winners versus laggards.",
+    body: "The words that carry measured positive delta per size class, and the ones worth zero.",
   },
   {
     title: "Descriptions",
-    body: "How long winning descriptions run, what their opening two sentences do, and the median character count of the listings losing to them.",
+    body: "How long winning descriptions run and what their opening two sentences do.",
   },
   {
     title: "Amenities",
-    body: "The amenities that over-index in winners, ranked by the gap in how often each side lists them. Filter invisibility is binary: untagged means unbookable.",
+    body: "What over-indexes in winners. Untagged is unbookable, so the list matters.",
   },
   {
     title: "Pricing",
-    body: "Where winners sit on nightly rate and occupancy, so you can tell underpricing apart from an unbookable listing.",
+    body: "Where winners sit on nightly rate and occupancy, per size class.",
   },
   {
     title: "Winners versus losers, per size class",
-    body: "Photo counts, description length, occupancy, Superhost and Guest Favorite share — the top revenue quartile against the bottom, measured separately for every bedroom class.",
+    body: "Photos, description length, occupancy, Superhost share: top quartile against bottom.",
   },
   {
     title: "The top 10 listings in each size class",
-    body: "Real listings with their cover shots, revenue per available night, and occupancy. The evidence behind every recommendation in the book.",
+    body: "Real listings, cover shots, revenue per available night and occupancy.",
   },
 ];
