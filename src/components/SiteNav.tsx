@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { PLAYBOOKS, PLAYBOOK_KEYS } from "@/lib/playbooks";
 
 export interface NavLink {
   label: string;
@@ -11,9 +12,11 @@ export interface NavLink {
  * "New" badge and the brand mark live in one place.
  *
  * `links` are page-specific (the landing pages pass their in-page anchors,
- * which do not exist elsewhere). The playbook entry carries the badge, and is
- * hidden with `showPlaybookLink={false}` on the playbook page itself — a nav
- * item pointing at the page you are already on is dead weight.
+ * which do not exist elsewhere). The playbook entry carries the badge and a
+ * CSS-only hover/focus dropdown of the three region pages (Max ask
+ * 2026-08-03). The trigger itself deliberately navigates nowhere (Alex
+ * 2026-08-03: no default playbook page from the nav — the reader must pick a
+ * market). It is hidden with `showPlaybookLink={false}` on the /playbook hub.
  */
 export function SiteNav({
   logoHref = "/",
@@ -47,15 +50,35 @@ export function SiteNav({
             </a>
           ))}
           {showPlaybookLink && (
-            <Link
-              href="/playbook"
-              className="relative text-sm font-medium text-fog hover:text-ink"
-            >
-              Airbnb Playbook
-              <span className="absolute -right-6 -top-2 font-mono text-[9px] font-medium uppercase tracking-[0.12em] text-ember">
-                New
-              </span>
-            </Link>
+            <div className="group relative">
+              <button
+                type="button"
+                aria-haspopup="menu"
+                className="relative flex cursor-default items-center gap-1 text-sm font-medium text-fog hover:text-ink"
+              >
+                Airbnb Playbook
+                <span aria-hidden className="text-[10px] text-pewter">
+                  ▾
+                </span>
+                <span className="absolute -right-5 -top-2 font-mono text-[9px] font-medium uppercase tracking-[0.12em] text-ember">
+                  New
+                </span>
+              </button>
+              {/* pt-2 keeps the hover surface contiguous between trigger and menu */}
+              <div className="invisible absolute right-0 top-full pt-2 opacity-0 transition-opacity duration-100 group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
+                <div className="flex w-44 flex-col rounded-xl border border-dove bg-paper p-1.5 shadow-[0_12px_32px_rgba(10,10,10,0.10)]">
+                  {PLAYBOOK_KEYS.map((k) => (
+                    <Link
+                      key={k}
+                      href={`/playbook/${k}`}
+                      className="rounded-lg px-3 py-2 text-sm font-medium text-fog hover:bg-cream hover:text-ink"
+                    >
+                      {PLAYBOOKS[k].place}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
           )}
         </div>
 

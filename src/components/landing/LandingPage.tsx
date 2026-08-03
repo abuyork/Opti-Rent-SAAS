@@ -251,10 +251,12 @@ export function LandingPage({ scope }: { scope: LandingScope }) {
         </section>
 
         {/* Playbook cross-sell — a one-line strip that IS the divider under
-            pricing, not a card competing with the tiers above it. */}
+            pricing, not a card competing with the tiers above it. Campaign
+            pages deep-link to their own region's playbook page; the reader
+            there has already picked a market. */}
         <section className="border-t border-dove">
           <Link
-            href="/playbook"
+            href={book ? `/playbook/${book.key}` : "/playbook"}
             className="group flex flex-col gap-2 py-6 sm:flex-row sm:items-baseline sm:justify-between sm:gap-8"
           >
             <p className="text-sm leading-relaxed text-fog">

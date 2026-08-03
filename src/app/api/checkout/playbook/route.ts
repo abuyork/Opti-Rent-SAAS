@@ -53,7 +53,7 @@ export async function POST(req: Request) {
     ],
     metadata: { playbook_market: market },
     success_url: `${thanksUrl}?market=${market}&session_id={CHECKOUT_SESSION_ID}`,
-    cancel_url: `${config.appUrl}/playbook`,
+    cancel_url: `${config.appUrl}/playbook/${market}`,
   });
 
   return NextResponse.json({ url: session.url });
