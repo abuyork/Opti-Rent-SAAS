@@ -42,7 +42,7 @@ export const PLAYBOOKS: Record<PlaybookKey, PlaybookDef> = {
     place: "Bali",
     noun: "villas",
     file: "The-Bali-Playbook.pdf",
-    pages: 27,
+    pages: 28,
     markets: BALI_MARKETS,
     chapterLine: `${BALI_MARKETS.length} regions, Canggu to the Nusa islands`,
     scanned: "July 2026",
