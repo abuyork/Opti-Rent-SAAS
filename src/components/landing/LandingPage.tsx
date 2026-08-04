@@ -93,14 +93,15 @@ export function LandingPage({ scope }: { scope: LandingScope }) {
 
       <main id="top" className="mx-auto max-w-5xl px-6">
         {/* Hero */}
-        <section className="mx-auto max-w-3xl pt-20 pb-16 text-center sm:pt-28">
+        <section className="pt-20 pb-16 text-center sm:pt-28">
           <p className="mb-8 font-mono text-xs uppercase tracking-[0.2em] text-fog">
             {scope.kicker}
           </p>
-          <h1 className="text-[42px] font-normal leading-[1.04] tracking-[-0.025em] sm:text-6xl sm:leading-[1.0]">
-            {scope.heroHeadline}
-            <br />
-            <span className="text-fog">We help you take it back.</span>
+          {/* lg is text-5xl because the longest scope headline (Dubai, 20em at
+              this tracking) must fit the 5xl column on one line. */}
+          <h1 className="text-[42px] font-normal leading-[1.04] tracking-[-0.025em] sm:text-6xl sm:leading-[1.0] lg:text-5xl">
+            <span className="block lg:whitespace-nowrap">{scope.heroHeadline}</span>
+            <span className="block text-fog">We help you take it back.</span>
           </h1>
           <p className="mx-auto mt-8 max-w-xl text-base leading-relaxed text-steel">
             {scope.heroSub}
