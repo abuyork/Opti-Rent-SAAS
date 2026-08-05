@@ -93,7 +93,9 @@ export function LandingPage({ scope }: { scope: LandingScope }) {
 
       <main id="top" className="mx-auto max-w-5xl px-6">
         {/* Hero */}
-        <section className="pt-20 pb-16 text-center sm:pt-28">
+        {/* overflow-x-clip (not hidden) contains the form glow's horizontal
+            spill on narrow screens without creating a scroll container. */}
+        <section className="overflow-x-clip pt-20 pb-16 text-center sm:pt-28">
           <p className="mb-8 font-mono text-xs uppercase tracking-[0.2em] text-fog">
             {scope.kicker}
           </p>
@@ -106,12 +108,17 @@ export function LandingPage({ scope }: { scope: LandingScope }) {
           <p className="mx-auto mt-8 max-w-xl text-base leading-relaxed text-steel">
             {scope.heroSub}
           </p>
-          <div id="audit" className="scroll-mt-24">
+          {/* z-0 creates the stacking context that keeps the -z-10 glow behind
+              the form's content but above the page background. */}
+          <div
+            id="audit"
+            className="relative z-0 mx-auto max-w-xl scroll-mt-24 before:pointer-events-none before:absolute before:-inset-x-[160px] before:-inset-y-[88px] before:-z-10 before:bg-[radial-gradient(50%_50%_at_50%_50%,rgba(255,168,136,0.40),rgba(255,168,136,0.28)_40%,rgba(255,168,136,0.13)_65%,rgba(255,168,136,0.04)_85%,rgba(255,168,136,0)_100%)] before:blur-[20px] before:content-['']"
+          >
             <AuditForm ctaLabel={scope.ctaLabel} scoringLine={scope.scoringLine} />
+            <p className="mt-6 font-mono text-[11px] uppercase tracking-wide text-pewter">
+              {scope.trustLine}
+            </p>
           </div>
-          <p className="mt-6 font-mono text-[11px] uppercase tracking-wide text-pewter">
-            {scope.trustLine}
-          </p>
         </section>
 
         {/* Product preview with gradient orb */}
