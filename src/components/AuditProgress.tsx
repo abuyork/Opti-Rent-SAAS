@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { postJson } from "@/lib/http";
 
 /** Staged copy so the 30-70s wait feels alive; advances on a timer, not real progress. */
 const STAGES: { at: number; label: string }[] = [
@@ -18,15 +19,24 @@ const GIVE_UP_MS = 5 * 60 * 1000; // stop polling after 5 min and show guidance
 /**
  * Progress screen for the async audit flow. Polls GET /api/audit/[id] until
  * the background scorer completes, then reloads so the server-rendered result
- * page shows the finished report. On failure, surfaces the row's message.
+ * page shows the finished report. On failure, surfaces the row's message plus
+ * a one-click "Run it again" (POST /api/audit/[id]/retry) — most failures are
+ * transient upstream blips, and re-pasting the URL was the only way out before
+ * (manager report 2026-08-05).
  */
 export default function AuditProgress({ auditId }: { auditId: string }) {
   const [elapsed, setElapsed] = useState(0);
   const [failed, setFailed] = useState<string | null>(null);
   const [timedOut, setTimedOut] = useState(false);
+  // Bumped by "Run it again" to restart the polling effect from scratch.
+  const [attempt, setAttempt] = useState(0);
+  const [retrying, setRetrying] = useState(false);
   const startedAt = useRef(Date.now());
 
   useEffect(() => {
+    startedAt.current = Date.now();
+    setElapsed(0);
+
     const tick = setInterval(
       () => setElapsed(Math.round((Date.now() - startedAt.current) / 1000)),
       1000,
@@ -62,7 +72,21 @@ export default function AuditProgress({ auditId }: { auditId: string }) {
       clearInterval(tick);
       clearInterval(poll);
     };
-  }, [auditId]);
+  }, [auditId, attempt]);
+
+  async function retry() {
+    setRetrying(true);
+    try {
+      await postJson(`/api/audit/${auditId}/retry`, {});
+      setFailed(null);
+      setTimedOut(false);
+      setAttempt((n) => n + 1); // restart the polling effect
+    } catch (e) {
+      setFailed((e as Error).message);
+    } finally {
+      setRetrying(false);
+    }
+  }
 
   if (failed) {
     return (
@@ -71,12 +95,21 @@ export default function AuditProgress({ auditId }: { auditId: string }) {
           We hit a snag with this listing
         </p>
         <p className="mx-auto mt-2 max-w-md text-sm leading-relaxed text-fog">{failed}</p>
-        <a
-          href="/"
-          className="mt-6 inline-block rounded-full bg-ink px-6 py-3 text-sm font-medium text-paper hover:bg-charcoal"
-        >
-          Try another listing
-        </a>
+        <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+          <button
+            onClick={retry}
+            disabled={retrying}
+            className="rounded-full bg-ink px-6 py-3 text-sm font-medium text-paper hover:bg-charcoal disabled:opacity-60"
+          >
+            {retrying ? "Restarting…" : "Run it again"}
+          </button>
+          <a
+            href="/"
+            className="rounded-full px-6 py-3 text-sm font-medium text-ink shadow-[0_0_0_1px_rgba(10,10,10,0.15)] hover:bg-paper"
+          >
+            Try another listing
+          </a>
+        </div>
       </div>
     );
   }

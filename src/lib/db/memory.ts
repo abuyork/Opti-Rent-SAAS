@@ -88,6 +88,11 @@ export class MemoryAuditStore implements AuditStore {
     if (a) Object.assign(a, { status: "failed", error_message: errorMessage });
   }
 
+  async markProcessing(id: string): Promise<void> {
+    const a = store.audits.get(id);
+    if (a) Object.assign(a, { status: "processing", error_message: null });
+  }
+
   async getAudit(id: string): Promise<Audit | null> {
     return store.audits.get(id) ?? null;
   }

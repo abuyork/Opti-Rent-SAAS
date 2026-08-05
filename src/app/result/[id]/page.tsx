@@ -6,6 +6,7 @@ import { ReportHeader } from "@/components/report/ReportHeader";
 import { ListingIdentity } from "@/components/report/ListingIdentity";
 import { StatCards } from "@/components/report/StatCards";
 import { cohortTotalFor } from "@/lib/market/benchmarks";
+import { comparedAgainstLine } from "@/lib/report-copy";
 import { FixList, LockedFixPreview } from "@/components/report/FixList";
 import { RewritesView } from "@/components/report/RewritesView";
 import { MarketEvidence } from "@/components/report/MarketEvidence";
@@ -13,6 +14,10 @@ import PayButton from "@/components/PayButton";
 import AuditProgress from "@/components/AuditProgress";
 
 export const dynamic = "force-dynamic";
+
+// Owners print this page directly too — same browser-header concern as
+// /report, so it gets a document title that reads like a report.
+export const metadata = { title: "Your listing audit - OptimoRent" };
 
 export default async function ResultPage({
   params,
@@ -56,7 +61,8 @@ export default async function ResultPage({
           airbnbUrl={audit.airbnb_url}
         />
         <p className="mt-3 text-sm text-fog">
-          Compared against {audit.comp_basis}. Fixes ordered by impact.
+          {comparedAgainstLine(audit.comp_basis, audit.market_evidence)} Fixes
+          ordered by impact.
         </p>
       </section>
 

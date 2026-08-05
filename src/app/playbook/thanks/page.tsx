@@ -19,6 +19,7 @@ export default async function PlaybookThanks({
   searchParams: Promise<{ market?: string; session_id?: string; token?: string }>;
 }) {
   const { market = "", session_id: sessionId, token } = await searchParams;
+  let buyerEmail: string | null = null;
 
   const notFound = (
     <Shell heading="We could not confirm that purchase.">
@@ -45,6 +46,7 @@ export default async function PlaybookThanks({
       const session = await getStripe().checkout.sessions.retrieve(sessionId);
       paid =
         session.payment_status === "paid" && session.metadata?.playbook_market === market;
+      buyerEmail = session.customer_details?.email ?? null;
     } catch (e) {
       console.error("[playbook/thanks] session lookup failed", e);
     }
@@ -55,11 +57,24 @@ export default async function PlaybookThanks({
 
   const href = `/api/playbook/download?market=${market}&token=${playbookDownloadToken(market)}`;
 
+  // Email the buyer their own copy of the link (Stripe collected the address;
+  // the mock flow has none). Fire-and-forget: the button above already works.
+  if (buyerEmail) {
+    const { sendPlaybookEmail } = await import("@/lib/email");
+    void sendPlaybookEmail({
+      to: buyerEmail,
+      playbookTitle: playbook.title,
+      place: playbook.place,
+      pages: playbook.pages,
+      downloadUrl: `${config.appUrl}${href}`,
+    }).catch((e) => console.error("[playbook/thanks] email failed", e));
+  }
+
   return (
     <Shell heading={`${playbook.title} is yours.`}>
       <p className="mt-4 text-base leading-relaxed text-steel">
         {playbook.pages} pages, built from {playbookCompSet(playbook)} live {playbook.noun} in{" "}
-        {playbook.place}. The link below is signed and expires in 15 minutes, so save the file
+        {playbook.place}. The download button works for the next 72 hours, so save the file
         once it opens.
       </p>
       <a

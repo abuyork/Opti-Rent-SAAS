@@ -71,6 +71,14 @@ export class SupabaseAuditStore implements AuditStore {
     if (error) throw new Error(`failAudit failed: ${error.message}`);
   }
 
+  async markProcessing(id: string): Promise<void> {
+    const { error } = await this.db
+      .from("audits")
+      .update({ status: "processing", error_message: null })
+      .eq("id", id);
+    if (error) throw new Error(`markProcessing failed: ${error.message}`);
+  }
+
   async getAudit(id: string): Promise<Audit | null> {
     const { data, error } = await this.db.from("audits").select().eq("id", id).maybeSingle();
     if (error) throw new Error(`getAudit failed: ${error.message}`);

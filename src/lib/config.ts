@@ -9,7 +9,20 @@ function required(name: string, value: string | undefined): string {
 }
 
 export const config = {
-  appUrl: process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000",
+  /**
+   * Public origin used to build every user-facing absolute URL (checkout
+   * redirects, unlock links, email links). Netlify provides URL /
+   * DEPLOY_PRIME_URL, so production can never fall back to localhost —
+   * that exact fallback shipped: with NEXT_PUBLIC_APP_URL unset in Netlify,
+   * the live buy button redirected buyers to http://localhost:3000
+   * (manager report 2026-08-05). Set NEXT_PUBLIC_APP_URL=https://optimo.rent
+   * in Netlify to prefer the branded domain over the *.netlify.app one.
+   */
+  appUrl:
+    process.env.NEXT_PUBLIC_APP_URL ??
+    process.env.URL ??
+    process.env.DEPLOY_PRIME_URL ??
+    "http://localhost:3000",
 
   reportPriceUsdCents: Number(process.env.REPORT_PRICE_USD_CENTS ?? "4900"),
 

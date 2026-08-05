@@ -80,24 +80,139 @@ const FIELD_NAMES: [RegExp, string][] = [
   [/\bcomps?\.sample_titles\b/gi, "the comp titles"],
   [/\bsample_titles\b/gi, "comp titles"],
   [/\btitle_keywords\b/gi, "winning title words"],
-  [/\bviral_score\b/gi, "viral score"],
+  [/\bviral_score\b/gi, "popularity score"],
   [/\bpool_tier\b/gi, "pool coverage"],
+];
+
+/**
+ * Analyst vocabulary → owner words (manager report 2026-08-05: "winner cohort
+ * n=37", "winner median ADR" — "use only human language for ordinary villa
+ * owners"). The prompt bans these; this is the deterministic backstop, same
+ * pattern as FIELD_NAMES. Order matters: multi-word phrases before their
+ * single-word fallbacks.
+ */
+const ANALYST_WORDS: [RegExp, string][] = [
+  [/\bn\s*=\s*(\d+)/gi, "$1 listings"],
+  [/\bwinner median\b/gi, "typical winner"],
+  [/\bcomp median\b/gi, "typical comp"],
+  [/\bmedian\b/gi, "typical"],
+  [/\bADR\b/g, "nightly rate"],
+  [/\bRevPAR\b/gi, "revenue per available night"],
+  [/\bcohort\b/gi, "size class"],
+  [/winner-size class/g, "winner size class"], // "winner-cohort" after the rule above
+  [/\bmicro-?market\b/gi, "area"],
+  [/\btop quartile\b/gi, "top 25%"],
+  [/\bbottom quartile\b/gi, "bottom 25%"],
+  [/\bconversion[- ]hygiene( band)?\b/gi, "booking ease"],
+  [/\bguest-friendly hygiene\b/gi, "guest-friendly setup"],
+  [/\bconversion rate\b/gi, "booking rate"],
+  [/\bconversions?\b/gi, "bookings"],
+  [/\bviral score\b/gi, "popularity score"],
+  [/\bCTR\b/g, "click rate"],
+  [/\bTTM\b/g, "trailing-year"],
+  [/\bocc\b/gi, "occupancy"],
+  [/~\s*(?=\d)/g, "about "],
 ];
 
 export function ownerLanguage(raw: string): string {
   let s = raw;
   for (const [re, human] of FIELD_NAMES) s = s.replace(re, human);
+  for (const [re, human] of ANALYST_WORDS) s = s.replace(re, human);
   s = s
     .replace(/\b(is|are)\s+null\b/gi, "$1 not shown on your listing")
     .replace(/\bnull\b/gi, "missing")
+    // Occupancy written as a fraction ("occupancy 0.726") reads as a percent.
+    // The only 0.xx decimals in report text are occupancy shares.
+    .replace(/\b0\.(\d{2,3})\b/g, (m) => `${Math.round(parseFloat(m) * 1000) / 10}%`)
     // Any remaining lowercase snake_case identifier reads as words.
     .replace(/\b([a-z]+)_([a-z][a-z_]*)\b/g, (m) => m.replace(/_/g, " "));
   return s;
 }
 
+// --- Money formatting in report text (manager ask 2026-08-05) ---
+
+/** Parse "1,075,805", "1.075.805", "4025086.5", "15,7" → a number, else null. */
+function parseAmount(raw: string): number | null {
+  const s = raw.trim();
+  if (/^\d+$/.test(s)) return Number(s);
+  if (/^\d{1,3}(,\d{3})+(\.\d+)?$/.test(s)) return parseFloat(s.replace(/,/g, ""));
+  if (/^\d{1,3}(\.\d{3})+(,\d+)?$/.test(s))
+    return parseFloat(s.replace(/\./g, "").replace(",", "."));
+  if (/^\d+\.\d+$/.test(s)) return parseFloat(s);
+  if (/^\d+,\d+$/.test(s)) return parseFloat(s.replace(",", "."));
+  return null;
+}
+
+/** "Rp 1.075.805" — Indonesian convention (dot thousands, no decimals). */
+const idrFull = (n: number) => `Rp ${Math.round(n).toLocaleString("id-ID")}`;
+const enFull = (n: number) => Math.round(n).toLocaleString("en-US");
+
+/** A number that ends on a digit (so trailing sentence punctuation stays put). */
+const NUM = "(\\d(?:[\\d.,]*\\d)?)";
+
+/**
+ * Normalise every money mention in model-written text to the house style:
+ * IDR as "Rp 1.075.805" (Max's call 2026-08-05: full figures, Indonesian
+ * separators — never "1,075,805 IDR" or "4.0M IDR"), AED as "AED 1,506",
+ * GBP as "£1,506". Idempotent: already-formatted amounts re-parse cleanly.
+ */
+export function formatMoneyInText(raw: string): string {
+  const sub = (s: string, re: RegExp, fmt: (n: number) => string, scale = 1): string =>
+    s.replace(re, (m, a: string) => {
+      const n = parseAmount(a);
+      return n === null ? m : fmt(n * scale);
+    });
+
+  let s = raw;
+  // Millions shorthand first ("4.0M IDR", "Rp 15.7M") so the plain patterns
+  // below don't half-match it.
+  s = sub(s, new RegExp(`(?:Rp\\.?\\s*)?${NUM}\\s*M\\s*IDR\\b`, "gi"), idrFull, 1e6);
+  s = sub(s, new RegExp(`\\bRp\\.?\\s*${NUM}\\s*M\\b`, "gi"), idrFull, 1e6);
+  s = sub(s, new RegExp(`\\bIDR\\s*${NUM}`, "gi"), idrFull);
+  s = sub(s, new RegExp(`${NUM}\\s*IDR\\b`, "gi"), idrFull);
+  s = sub(s, new RegExp(`\\bRp\\.?\\s*${NUM}`, "gi"), idrFull);
+  s = sub(s, new RegExp(`\\bAED\\s*${NUM}`, "gi"), (n) => `AED ${enFull(n)}`);
+  s = sub(s, new RegExp(`${NUM}\\s*AED\\b`, "gi"), (n) => `AED ${enFull(n)}`);
+  s = sub(s, new RegExp(`£\\s*${NUM}`, "g"), (n) => `£${enFull(n)}`);
+  s = sub(s, new RegExp(`\\bGBP\\s*${NUM}`, "gi"), (n) => `£${enFull(n)}`);
+  s = sub(s, new RegExp(`${NUM}\\s*GBP\\b`, "gi"), (n) => `£${enFull(n)}`);
+  // Bare rupiah-scale amounts with no currency marker, seen in real audits
+  // ("benchmark 2,261,975 vs your 2,137,752"). Two-plus comma groups means
+  // >= 1,000,000 — only IDR rates reach that scale in our reports, and counts
+  // (photos, characters) never do. Skip anything already adjacent to another
+  // currency token or part of a larger number.
+  const nearCurrency = (whole: string, start: number, len: number): boolean => {
+    const before = whole.slice(Math.max(0, start - 6), start);
+    const after = whole.slice(start + len, start + len + 6);
+    return /(AED|GBP|£|Rp)\s*$/i.test(before) || /^\s*(AED|GBP)/i.test(after) || /[\d.,]$/.test(before);
+  };
+  s = s.replace(/\d{1,3}(?:,\d{3}){2,}(?!\d)/g, (m, offset: number, whole: string) =>
+    nearCurrency(whole, offset, m.length) ? m : idrFull(parseAmount(m) ?? 0));
+  // Glued millions shorthand with a decimal and no marker ("you 1.59M vs
+  // benchmark 2.14M") — same reasoning: that shape is only ever an IDR rate.
+  s = s.replace(/\d+\.\d+M\b/g, (m, offset: number, whole: string) =>
+    nearCurrency(whole, offset, m.length) ? m : idrFull(parseFloat(m) * 1e6));
+  return s;
+}
+
+/**
+ * The model kept improvising an evidence clause onto comp_basis ("; winner
+ * cohort n=37", "plus 40-listing Lovina 1BR winner scan"). The app now
+ * composes that sentence itself (see lib/report-copy.ts), so any model-added
+ * suffix is stripped deterministically. Matches only the observed "N-listing"
+ * hyphenated shapes — never a plain "25 listings" comp phrase.
+ */
+export function stripEvidenceSuffix(s: string): string {
+  return s
+    .replace(/\s*[;,]?\s*(?:plus\s+|measured\s+(?:against|vs\.?|with)\s+|market evidence\s+|and\s+)?(?:a\s+)?\d+-listing[^.;]*/gi, "")
+    .replace(/\s*;\s*winner (?:cohort|size class)[^.;]*/gi, "")
+    .replace(/\s*[;,]\s*$/, "")
+    .trim();
+}
+
 /** Full cleanup pass for model-written text the report renders. */
 export function cleanReportText(s: string): string {
-  return ownerLanguage(plainDashes(s));
+  return ownerLanguage(plainDashes(formatMoneyInText(s)));
 }
 
 function parseRewrite(v: unknown, label: string) {
@@ -230,7 +345,7 @@ export function validateScoringResult(input: unknown): ScoringResult {
     category_scores,
     underpricing_idr: Math.max(0, toInt(input.underpricing_idr, "underpricing_idr")),
     comp_count: toInt(input.comp_count, "comp_count"),
-    comp_basis: cleanReportText(str(input.comp_basis, "comp_basis")),
+    comp_basis: cleanReportText(stripEvidenceSuffix(str(input.comp_basis, "comp_basis"))),
     problem_count: toInt(input.problem_count, "problem_count"),
     critical_count: toInt(input.critical_count, "critical_count"),
     fixes,

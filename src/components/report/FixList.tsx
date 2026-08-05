@@ -6,6 +6,17 @@ const SEV_STYLE: Record<Severity, string> = {
   medium: "bg-sev-medium-bg text-sev-medium",
 };
 
+/**
+ * Severity-coloured left edge per card (manager ask 2026-08-05: "color code
+ * fixes for better readability"). Same three functional accents as the tags,
+ * so severity is scannable down the list without reading each badge.
+ */
+const SEV_EDGE: Record<Severity, string> = {
+  critical: "border-l-sev-critical",
+  high: "border-l-sev-high",
+  medium: "border-l-sev-medium",
+};
+
 export function SeverityTag({ severity }: { severity: Severity }) {
   return (
     <span
@@ -18,9 +29,9 @@ export function SeverityTag({ severity }: { severity: Severity }) {
 
 /**
  * Full fix list (paid). Each fix shows severity, title, detail, and comp basis.
- * Layout per manager QA 2026-07-16: severity tag on its own row so the title,
- * detail, and basis all share one left edge; title is a heading; basis reads at
- * body size behind a prominent mono BASIS label.
+ * Layout per manager QA 2026-07-16 + 2026-08-05: severity tag on its own row,
+ * a severity-coloured left edge on the card, and the basis in its own tinted
+ * panel so the measured fact reads apart from the advice text.
  */
 export function FixList({ fixes }: { fixes: Fix[] }) {
   return (
@@ -28,7 +39,7 @@ export function FixList({ fixes }: { fixes: Fix[] }) {
       {fixes.map((fix, i) => (
         <div
           key={i}
-          className="pdf-block rounded-lg border border-dove px-5 py-4 text-left"
+          className={`pdf-block rounded-lg border border-dove border-l-[3px] px-5 py-4 text-left ${SEV_EDGE[fix.severity]}`}
         >
           <SeverityTag severity={fix.severity} />
           <h3 className="mt-2.5 text-base font-medium leading-snug text-ink">
@@ -36,7 +47,7 @@ export function FixList({ fixes }: { fixes: Fix[] }) {
           </h3>
           <p className="mt-1.5 text-sm leading-relaxed text-steel">{fix.detail}</p>
           {fix.comp_basis && (
-            <p className="mt-3 border-t border-dove/60 pt-3 text-sm leading-relaxed text-fog">
+            <p className="mt-3 rounded-lg bg-cream px-4 py-3 text-sm leading-relaxed text-fog">
               <span className="mr-2 font-mono text-[11px] font-medium uppercase tracking-[0.15em] text-ink">
                 Basis
               </span>
@@ -58,7 +69,10 @@ export function LockedFixPreview({ fixes }: { fixes: Fix[] }) {
     <div className="relative">
       <div className="pointer-events-none flex select-none flex-col gap-3 blur-sm">
         {fixes.slice(0, 4).map((fix, i) => (
-          <div key={i} className="rounded-lg border border-dove px-5 py-4 text-left">
+          <div
+            key={i}
+            className={`rounded-lg border border-dove border-l-[3px] px-5 py-4 text-left ${SEV_EDGE[fix.severity]}`}
+          >
             <SeverityTag severity={fix.severity} />
             <span className="mt-2.5 block h-4 w-56 rounded bg-dove" />
             <span className="mt-2 block h-3 w-full rounded bg-dove" />

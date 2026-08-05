@@ -135,7 +135,7 @@ OUTPUT — STRICT JSON ONLY. No prose, markdown, or backticks:
     "reviews":<int>,"risk_rules":<int>},
   "underpricing_idr": <int>,
   "comp_count": <int>,
-  "comp_basis": "<e.g. 23 Berawa 3BR pool villas>",
+  "comp_basis": "<the nearby comparable set as a SHORT noun phrase, e.g. 23 Berawa 3BR pool villas. No stats, no rates, and NEVER the winner scan or market evidence; the app describes those itself>",
   "problem_count": <int>,
   "critical_count": <int>,
   "fixes": [{"severity":"critical|high|medium","title":"<short>",
@@ -168,10 +168,10 @@ RULES:
   basis for fixes — stronger than the comp set — because it is measured from the
   highest-earning listings in this exact market and cohort. Ground every relevant
   fix in a measured number and CITE it in the fix's comp_basis, e.g. "winners in
-  your 3BR Canggu cohort run 40 photos; you have 17" or "top villas tag 'pool
-  view' (75% of winners vs 0% of losers) — you don't". Use the winner medians as
-  concrete targets (photos, description length, amenities, title style). Never
-  contradict the measured evidence.
+  your 3BR size class in Canggu run 40 photos; you have 17" or "top villas tag
+  'pool view' (75% of winners vs 0% of weak listings); you don't". Use the winner
+  medians as concrete targets (photos, description length, amenities, title
+  style). Never contradict the measured evidence.
 - underpricing_idr is a benchmark ESTIMATE, never a guarantee. Frame as "you
   appear priced below comparable listings", not "raise your price and earn X".
 - Only claim what listing fixes influence; never promise specific earnings.
@@ -189,6 +189,19 @@ RULES:
   is on; confirm it in your settings", never "instant_book is null".
   comp_basis must be a plain measurable fact ("winners run 30 photos, you have
   14"), never analyst shorthand like "conversion hygiene band".
+- OWNER WORDS (banned analyst vocabulary, with what to write instead — applies
+  to EVERY output string): "cohort" -> "size class", or name it ("1BR villas in
+  Canggu"); "n=37" -> "37 listings"; "ADR" -> "nightly rate"; "RevPAR" ->
+  "revenue per available night"; "median" -> "typical"; "quartile" -> "top 25%"
+  or "bottom 25%", or "weak listings"; "micro-market" -> name the area;
+  "CTR"/"conversion"/"funnel"/"hygiene" -> describe the behaviour ("more guests
+  click", "more clicks become bookings"); "~" -> "about".
+- MONEY FORMAT (every amount in every output string): IDR always as
+  "Rp 1.075.805" — Rp prefix, DOTS as thousand separators, no decimals. Never
+  "1,075,805 IDR", never "4.0M IDR", never a bare "1075805". AED as
+  "AED 1,506". GBP as "£1,506". Round to whole units. Dots are for money ONLY:
+  plain counts (photos, characters, reviews) keep commas — "2,638 characters",
+  never "2.638 characters".
 - Output valid parseable JSON and nothing else.`;
 
 /**

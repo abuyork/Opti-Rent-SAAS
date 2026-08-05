@@ -1,9 +1,8 @@
 import { NextResponse } from "next/server";
-import { processAuditJob } from "@/lib/audit";
+import { dispatchAuditJob } from "@/lib/audit";
 import { getStore } from "@/lib/db";
 import { AirRoiError } from "@/lib/airroi";
 import { resolveAirbnbListingId } from "@/lib/airroi/url";
-import { config } from "@/lib/config";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -61,7 +60,7 @@ export async function POST(req: Request) {
     });
     await store.createLead({ email, airbnb_url: url, source: "audit" });
 
-    await dispatchBackgroundJob(audit.id, url);
+    await dispatchAuditJob(audit.id, url);
 
     return NextResponse.json({ id: audit.id, status: "processing" });
   } catch (e) {
@@ -70,29 +69,5 @@ export async function POST(req: Request) {
       { error: "We couldn't start the audit right now. Please try again." },
       { status: 502 },
     );
-  }
-}
-
-async function dispatchBackgroundJob(auditId: string, url: string): Promise<void> {
-  if (process.env.NETLIFY === "true") {
-    // Background functions ACK with 202 immediately and keep running (15-min cap).
-    const base =
-      process.env.URL ?? process.env.DEPLOY_PRIME_URL ?? config.appUrl;
-    const res = await fetch(`${base}/.netlify/functions/audit-background`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        // Shared-secret guard so strangers can't trigger paid API work directly.
-        "x-optirent-job-secret": config.reportLinkSecret,
-      },
-      body: JSON.stringify({ auditId, url }),
-    });
-    if (res.status >= 300) {
-      throw new Error(`audit-background dispatch failed: HTTP ${res.status}`);
-    }
-  } else {
-    // Persistent server (dev / next start): run detached in-process.
-    // processAuditJob never throws — failures land on the audit row.
-    void processAuditJob(auditId, url);
   }
 }

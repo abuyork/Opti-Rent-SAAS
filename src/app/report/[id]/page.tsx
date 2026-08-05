@@ -6,12 +6,30 @@ import { ReportHeader } from "@/components/report/ReportHeader";
 import { ListingIdentity } from "@/components/report/ListingIdentity";
 import { StatCards } from "@/components/report/StatCards";
 import { cohortTotalFor } from "@/lib/market/benchmarks";
+import { comparedAgainstLine } from "@/lib/report-copy";
 import { FixList } from "@/components/report/FixList";
 import { RewritesView } from "@/components/report/RewritesView";
 import { MarketEvidence } from "@/components/report/MarketEvidence";
 import PrintButton from "@/components/PrintButton";
 
 export const dynamic = "force-dynamic";
+
+/**
+ * The browser may print the document title in its page header (user setting we
+ * cannot suppress from CSS), so the PDF must not inherit the marketing tagline
+ * from the root layout — it printed "Your Airbnb is leaving money on the
+ * table" on Max's copy (2026-08-05). Title the document like the report it is.
+ */
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const { id } = await params;
+  const audit = await getStore().getAudit(id);
+  const name = audit?.listing_title?.trim();
+  return { title: name ? `Listing audit - ${name}` : "Listing audit - OptimoRent" };
+}
 
 /**
  * Branded single-page A4 report (Build Pack §7 PDF). Accessible when the audit
@@ -53,7 +71,8 @@ export default async function ReportPage({
           airbnbUrl={audit.airbnb_url}
         />
         <p className="mt-3 text-sm text-fog">
-          Compared against {audit.comp_basis}. Fixes ordered by impact.
+          {comparedAgainstLine(audit.comp_basis, audit.market_evidence)} Fixes
+          ordered by impact.
         </p>
       </section>
 

@@ -17,9 +17,19 @@ export interface AirRoiProvider {
 export interface AirRoiErrorOptions {
   /** Upstream HTTP status, when the error came from an AirROI response. */
   status?: number;
-  /** Owner-facing message shown in the UI. Defaults to `message` (dev detail). */
+  /** Owner-facing message shown in the UI. Defaults to a generic friendly line. */
   userMessage?: string;
 }
+
+/**
+ * Generic owner-facing fallback. A raw upstream message ("A valid and active
+ * API key is required") leaked to a real user once (manager report 2026-08-05)
+ * because userMessage used to default to `message`. Provider/internal detail
+ * now NEVER reaches the UI unless a path explicitly sets a friendly message.
+ */
+export const GENERIC_DATA_ERROR_MESSAGE =
+  "We couldn't pull fresh market data for this listing just now. " +
+  "Give it a minute and try again.";
 
 export class AirRoiError extends Error {
   readonly status?: number;
@@ -29,6 +39,6 @@ export class AirRoiError extends Error {
     super(message);
     this.name = "AirRoiError";
     this.status = options.status;
-    this.userMessage = options.userMessage ?? message;
+    this.userMessage = options.userMessage ?? GENERIC_DATA_ERROR_MESSAGE;
   }
 }

@@ -19,7 +19,8 @@ export async function sendReportReadyEmail(opts: {
   listingTitle: string | null;
   includePdfLink: boolean;
 }): Promise<boolean> {
-  const base = process.env.URL ?? config.appUrl;
+  // config.appUrl already prefers NEXT_PUBLIC_APP_URL, then Netlify's URL.
+  const base = config.appUrl;
   const resultUrl = `${base}/result/${opts.auditId}`;
   const pdfUrl = `${base}/report/${opts.auditId}?t=${reportToken(opts.auditId)}`;
   const name = opts.listingTitle ?? "your listing";
@@ -74,6 +75,70 @@ export async function sendReportReadyEmail(opts: {
     return true;
   } catch (e) {
     console.error("[email] send failed:", e);
+    return false;
+  }
+}
+
+/**
+ * "Your playbook" email, sent after a confirmed playbook purchase with a fresh
+ * signed download link (72h). Fire-and-forget like the report email: a send
+ * failure must never fail a delivered purchase — the thanks page already
+ * offers the download directly. NOTE: until a sending domain is verified in
+ * Resend, delivery only works to the account owner's address.
+ */
+export async function sendPlaybookEmail(opts: {
+  to: string;
+  playbookTitle: string;
+  place: string;
+  pages: number;
+  downloadUrl: string;
+}): Promise<boolean> {
+  if (!config.email.resendApiKey) {
+    console.log(
+      `[email] RESEND_API_KEY not set - skipped playbook email to ${opts.to}`,
+    );
+    return false;
+  }
+
+  const html = `
+    <div style="font-family:-apple-system,Segoe UI,Roboto,sans-serif;max-width:560px;margin:0 auto;color:#0a0a0a">
+      <h2 style="color:#0a0a0a;font-weight:500">${escapeHtml(opts.playbookTitle)} is yours</h2>
+      <p>Thanks for the purchase. Your ${opts.pages}-page ${escapeHtml(opts.place)} playbook is ready to download.</p>
+      <p style="margin:24px 0">
+        <a href="${opts.downloadUrl}"
+           style="background:#0a0a0a;color:#fff;padding:12px 22px;border-radius:9999px;text-decoration:none;font-weight:500">
+          Download the PDF
+        </a>
+      </p>
+      <p style="color:#545454;font-size:14px">This link works for 72 hours — save the file once it opens. Lost it? Just reply to this email and we resend it.</p>
+      <p style="color:#858585;font-size:13px;margin-top:28px">
+        OptimoRent · listing intelligence<br />
+        Questions? Write to
+        <a href="mailto:${config.email.contact}" style="color:#858585">${config.email.contact}</a>.
+      </p>
+    </div>`;
+
+  try {
+    const res = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${config.email.resendApiKey}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        from: config.email.from,
+        to: [opts.to],
+        subject: `Your ${opts.place} playbook is ready`,
+        html,
+      }),
+    });
+    if (!res.ok) {
+      console.error(`[email] Resend ${res.status}: ${(await res.text()).slice(0, 200)}`);
+      return false;
+    }
+    return true;
+  } catch (e) {
+    console.error("[email] playbook send failed:", e);
     return false;
   }
 }

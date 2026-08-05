@@ -145,10 +145,20 @@ export class LiveAirRoiProvider implements AirRoiProvider {
     try {
       json = JSON.parse(text);
     } catch {
-      throw new AirRoiError(`AirROI ${path} returned non-JSON (HTTP ${res.status}).`);
+      throw new AirRoiError(`AirROI ${path} returned non-JSON (HTTP ${res.status}).`, {
+        status: res.status,
+      });
     }
     if (!res.ok) {
       const msg = (json as { message?: string })?.message ?? `HTTP ${res.status}`;
+      // Auth-shaped failures are OUR ops problem (dead key, exhausted credits,
+      // or an upstream blip — a transient 401 hit a real user 2026-08-05).
+      // Flag them loudly so they're findable in Netlify logs at a glance.
+      if (res.status === 401 || res.status === 403) {
+        console.error(`[airroi] AUTH FAILURE on ${path}: ${msg}`);
+      }
+      // No userMessage on purpose: the class default keeps upstream text out
+      // of the UI. Raw detail stays here in `message` for server logs.
       throw new AirRoiError(`AirROI ${path}: ${msg}`, { status: res.status });
     }
     return json as T;

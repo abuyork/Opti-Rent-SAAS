@@ -29,13 +29,29 @@ export function verifyUnlockToken(auditId: string, token: string): boolean {
  * Authorises downloading one playbook PDF. Minted server-side only after a
  * payment is confirmed, then handed to the buyer's browser — the PDFs live in
  * a private bucket and are never reachable by guessing a URL.
+ *
+ * Tokens EXPIRE (72h): the token is `<unix-expiry>.<hmac over market+expiry>`.
+ * The old constant-payload token was effectively a permanent, universal
+ * free-download link once anyone shared it — and the thank-you page promised
+ * an expiry the code didn't have. A buyer who loses the link past expiry
+ * re-opens it from their email or writes to us.
  */
-export function playbookDownloadToken(market: string): string {
-  return sign(`playbook-download:${market}`);
+export const PLAYBOOK_TOKEN_TTL_SECONDS = 72 * 60 * 60;
+
+export function playbookDownloadToken(
+  market: string,
+  ttlSeconds: number = PLAYBOOK_TOKEN_TTL_SECONDS,
+): string {
+  const exp = Math.floor(Date.now() / 1000) + ttlSeconds;
+  return `${exp}.${sign(`playbook-download:${market}:${exp}`)}`;
 }
 
 export function verifyPlaybookDownloadToken(market: string, token: string): boolean {
-  return verify(`playbook-download:${market}`, token);
+  const [expRaw, mac] = token.split(".", 2);
+  if (!/^\d{10,}$/.test(expRaw ?? "") || !mac) return false;
+  const exp = Number(expRaw);
+  if (exp <= Math.floor(Date.now() / 1000)) return false;
+  return verify(`playbook-download:${market}:${exp}`, mac);
 }
 
 /**

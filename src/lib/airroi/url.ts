@@ -21,7 +21,10 @@ export function parseAirbnbListingId(input: string): string {
   try {
     u = new URL(s);
   } catch {
-    throw new AirRoiError("Enter a valid Airbnb listing URL.");
+    // userMessage must be explicit: AirRoiError's default is now the generic
+    // market-data line, which would be wrong for URL validation.
+    const msg = "Enter a valid Airbnb listing URL.";
+    throw new AirRoiError(msg, { userMessage: msg });
   }
 
   const fromPath = u.pathname.match(/\/rooms\/(?:plus\/)?(\d+)/);
@@ -31,9 +34,9 @@ export function parseAirbnbListingId(input: string): string {
   const lastSeg = u.pathname.split("/").filter(Boolean).pop() ?? "";
   if (/^\d{6,}$/.test(lastSeg)) return lastSeg;
 
-  throw new AirRoiError(
-    "Couldn't find an Airbnb listing id in that URL. Paste the full listing link.",
-  );
+  const noId =
+    "Couldn't find an Airbnb listing id in that URL. Paste the full listing link.";
+  throw new AirRoiError(noId, { userMessage: noId });
 }
 
 const NO_ID_MESSAGE =

@@ -30,6 +30,7 @@ export function ListingIdentity({
           width={112}
           height={112}
           className="h-14 w-14 shrink-0 rounded-lg border border-dove object-cover"
+          loading="eager"
         />
       )}
       <div className="min-w-0">

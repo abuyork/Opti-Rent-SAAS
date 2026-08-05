@@ -43,6 +43,8 @@ export interface AuditStore {
   createPendingAudit(input: PendingAuditInput): Promise<Audit>;
   completeAudit(id: string, input: CompleteAuditInput): Promise<void>;
   failAudit(id: string, errorMessage: string): Promise<void>;
+  /** Flip a failed row back to 'processing' so its job can be re-run in place. */
+  markProcessing(id: string): Promise<void>;
   getAudit(id: string): Promise<Audit | null>;
   markAuditPaid(id: string): Promise<void>;
   createLead(input: LeadInput): Promise<void>;

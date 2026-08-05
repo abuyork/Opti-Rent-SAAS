@@ -38,7 +38,7 @@ export function StatCards({
       ? {
           label: "Left on table",
           value: formatMoneyMonthly(currency, underpricingIdr),
-          note: "vs the nearby comp median",
+          note: "vs the typical nearby comp",
         }
       : {
           label: "Left on table",
@@ -58,7 +58,7 @@ export function StatCards({
         ? {
             label: "Compared against",
             value: `${measured} ${noun}`,
-            note: `${compCount} nearby · ${marketCohortSize} market cohort`,
+            note: `${compCount} nearby · ${marketCohortSize} in your size class`,
           }
         : {
             label: "Compared against",

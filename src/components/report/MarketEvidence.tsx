@@ -2,15 +2,13 @@ import Image from "next/image";
 import type { AuditMarketEvidence, MarketCoverExample } from "@/lib/types";
 import { formatMoney } from "@/lib/format";
 import { getMarketScanTotal } from "@/lib/market/benchmarks";
+import { MARKETS } from "@/lib/market/markets";
 
 const pct = (v: number) => `${Math.round(v * 100)}%`;
 
-const MARKET_TITLES: Record<string, string> = {
-  "greater-canggu": "Greater Canggu",
-  dubai: "Dubai",
-  london: "London",
-};
-const marketTitle = (key: string) => MARKET_TITLES[key] ?? key;
+// All 11 scanned markets — a hand-kept 3-entry map here once showed raw slugs
+// ("2BR in ubud") for every market added after it was written.
+const marketTitle = (key: string) => MARKETS[key]?.title ?? key;
 
 /**
  * One plain sentence on why this listing ranks, built only from measured
@@ -24,7 +22,7 @@ function whyItWins(c: MarketCoverExample, e: AuditMarketEvidence): string {
   if (occ >= medianOcc) {
     clauses.push(`fills ${occ}% of nights (typical winner here: ${medianOcc}%)`);
   } else {
-    clauses.push("earns among the most per available night in this cohort");
+    clauses.push("earns among the most per available night in its size class");
   }
   const words = e.title_keywords
     .filter((w) => c.listing_name.toLowerCase().includes(w.toLowerCase()))
@@ -71,7 +69,9 @@ function WinnerRow({
   return (
     <div className="pdf-block flex flex-col overflow-hidden rounded-2xl border border-dove sm:flex-row">
       {/* next/image serves covers from our origin — direct muscache.com images
-          get blocked by ad/privacy blockers on some devices. */}
+          get blocked by ad/privacy blockers on some devices. loading="eager":
+          lazy below-the-fold images never load for print, which left blank
+          photo boxes in the saved PDF (manager report 2026-08-05). */}
       <div className="relative h-44 w-full sm:h-auto sm:w-56 sm:shrink-0">
         <Image
           src={c.cover_photo_url}
@@ -79,6 +79,7 @@ function WinnerRow({
           fill
           sizes="(min-width: 640px) 224px, 100vw"
           className="object-cover"
+          loading="eager"
         />
       </div>
       <div className="flex min-w-0 flex-1 flex-col justify-center gap-1.5 px-5 py-4">
@@ -171,10 +172,10 @@ export function MarketEvidence({ evidence: e }: { evidence: AuditMarketEvidence 
               Description{" "}
             </span>
             <b className="font-medium">
-              {e.winner_median_description_chars.toLocaleString()} chars
+              {e.winner_median_description_chars.toLocaleString("en-US")} chars
             </b>{" "}
             <span className="text-fog">
-              (weak listings: {e.loser_median_description_chars})
+              (weak listings: {e.loser_median_description_chars.toLocaleString("en-US")})
             </span>
           </li>
           <li>
