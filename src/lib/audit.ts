@@ -129,14 +129,32 @@ export async function processAuditJob(auditId: string, airbnbUrl: string): Promi
 }
 
 /**
- * Kick the background job for an audit. On Netlify, invoke the background
- * function (15-min budget, 202-ack); on a persistent server (dev/next start)
- * run detached in-process. Shared by POST /api/audit and the retry route.
+ * Kick the background job for an audit. Shared by POST /api/audit and the
+ * retry route.
+ *
+ * Dispatch is SELF-DETECTING, not env-flag-detecting: it tries the Netlify
+ * background function over HTTP first and falls back to detached in-process
+ * execution only in dev, or when the function endpoint genuinely does not
+ * exist (404 — e.g. plain `next start` off Netlify). The old gate was
+ * `process.env.NETLIFY === "true"`, and when a Netlify runtime rebuild
+ * stopped exposing that variable (2026-08-05), every production audit
+ * silently took the in-process path — which a serverless lambda freezes the
+ * moment the response returns, leaving rows stuck in 'processing' forever.
+ * An in-process fallback on a frozen lambda is strictly worse than an error,
+ * so any other dispatch failure now throws and the user gets a truthful
+ * retryable message instead of an infinite spinner.
  */
 export async function dispatchAuditJob(auditId: string, url: string): Promise<void> {
-  if (process.env.NETLIFY === "true") {
-    const base = process.env.URL ?? process.env.DEPLOY_PRIME_URL ?? config.appUrl;
-    const res = await fetch(`${base}/.netlify/functions/audit-background`, {
+  // Local dev server: persistent process, no functions runtime — run inline.
+  if (process.env.NODE_ENV === "development") {
+    void processAuditJob(auditId, url); // never throws; failures land on the row
+    return;
+  }
+
+  const base = process.env.URL ?? process.env.DEPLOY_PRIME_URL ?? config.appUrl;
+  let res: Response;
+  try {
+    res = await fetch(`${base}/.netlify/functions/audit-background`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -145,12 +163,24 @@ export async function dispatchAuditJob(auditId: string, url: string): Promise<vo
       },
       body: JSON.stringify({ auditId, url }),
     });
-    if (res.status >= 300) {
-      throw new Error(`audit-background dispatch failed: HTTP ${res.status}`);
-    }
-  } else {
-    // processAuditJob never throws — failures land on the audit row.
+  } catch (e) {
+    throw new Error(`audit-background dispatch failed: ${(e as Error).message}`);
+  }
+
+  // AWS sets this in every Lambda runtime — if present we are serverless and
+  // must NEVER fall back to in-process, even on a 404 (a missing function
+  // bundle should fail loudly, not freeze silently).
+  const onLambda = Boolean(
+    process.env.AWS_LAMBDA_FUNCTION_NAME ?? process.env.LAMBDA_TASK_ROOT,
+  );
+  if (res.status === 404 && !onLambda) {
+    // No background function at this origin → persistent non-Netlify server
+    // (`next start`): safe to run detached in-process.
     void processAuditJob(auditId, url);
+    return;
+  }
+  if (res.status >= 300) {
+    throw new Error(`audit-background dispatch failed: HTTP ${res.status}`);
   }
 }
 
