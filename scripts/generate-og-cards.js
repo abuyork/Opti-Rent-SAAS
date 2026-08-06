@@ -40,7 +40,7 @@ const ctaCard = () => `
     <span style="font-family:'Geist Mono';font-size:11px;letter-spacing:.08em;color:${C.dove};background:${C.charcoal};border:1px solid #333;border-radius:999px;padding:5px 12px;">free</span>
     <div style="flex:1;">
       <div style="font-size:21px;font-weight:500;letter-spacing:-0.02em;color:${C.paper};">Score my listing</div>
-      <div style="font-family:'Geist Mono';font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:${C.pewter};margin-top:4px;">0&ndash;100 score &middot; about a minute</div>
+      <div style="font-family:'Geist Mono';font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:${C.pewter};margin-top:4px;">0-100 score &middot; a minute or two</div>
     </div>
     <span style="font-size:20px;color:${C.paper};">&rarr;</span>
   </div>`;
@@ -59,18 +59,18 @@ const VARIANTS = {
     kicker: "Airbnb listing intelligence",
     h1: "Your Airbnb is leaving money on the table.",
     h2: "We help you take it back.",
-    sub: "Paste your link. Free 0–100 score, an underpricing estimate, and a fix list — every item citing measured market numbers.",
+    sub: "Paste your link. Free 0-100 score, an underpricing estimate, and a fix list - every item citing measured market numbers.",
     right:
       marketCard("Bali", "26,520 villas in the comp set") +
-      marketCard("Dubai", "19,100+ listings in the comp set") +
-      marketCard("London", "26,800+ listings in the comp set") +
+      marketCard("Dubai", "19,100+ rentals in the comp set") +
+      marketCard("London", "26,800+ flats in the comp set") +
       ctaCard(),
   },
   bali: {
     kicker: "Bali listing intelligence",
     h1: "Your Airbnb is leaving money on the table.",
     h2: "We help you take it back.",
-    sub: "Free 0–100 score against 26,520 villas in the Bali comp set, with an underpricing estimate and a measured fix list.",
+    sub: "Free 0-100 score against 26,520 villas in the Bali comp set, with an underpricing estimate and a measured fix list.",
     right:
       `<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">` +
       statTile("Listing score", "68/100") +
@@ -83,20 +83,20 @@ const VARIANTS = {
     kicker: "Dubai listing intelligence",
     h1: "Your Dubai rental is leaving money on the table.",
     h2: "We help you take it back.",
-    sub: "Free 0–100 score against 19,100+ listings in the Dubai comp set, with an underpricing estimate and a measured fix list.",
+    sub: "Free 0-100 score against 19,100+ rentals in the Dubai comp set, with an underpricing estimate and a measured fix list.",
     right:
       `<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">` +
       statTile("Listing score", "74/100") +
-      statTile("Left on table", "AED 13,830/mo") +
+      statTile("Left on table", "AED 13.8K/mo") +
       statTile("Critical fixes", "2") +
-      statTile("Comp set", "6,450 apartments") +
+      statTile("Comp set", "6,450 rentals") +
       `</div>` + statCaption("A real winner from our Dubai scan"),
   },
   london: { h1Size: 41,
     kicker: "London listing intelligence",
     h1: "Your London flat is leaving money on the table.",
     h2: "We help you take it back.",
-    sub: "Free 0–100 score against 26,800+ listings in the London comp set, with an underpricing estimate and a measured fix list.",
+    sub: "Free 0-100 score against 26,800+ flats in the London comp set, with an underpricing estimate and a measured fix list.",
     right:
       `<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">` +
       statTile("Listing score", "61/100") +
