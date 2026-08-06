@@ -6,7 +6,7 @@ import { PLAYBOOKS, isPlaybookKey, playbookCompSet } from "@/lib/playbooks";
 import { SiteNav } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
 
-export const metadata = { title: "Your playbook — OptimoRent" };
+export const metadata = { title: "Your Playbook - OptimoRent" };
 
 /**
  * Post-payment delivery. Stripe's success_url lands here; we confirm the

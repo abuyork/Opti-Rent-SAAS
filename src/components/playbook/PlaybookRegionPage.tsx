@@ -91,7 +91,7 @@ export function PlaybookRegionPage({ scope }: { scope: PlaybookScope }) {
             a gap below it (Max 2026-08-06). */}
         <section id="inside" className="scroll-mt-16 border-t border-dove py-14">
           <h2 className="text-3xl font-normal tracking-[-0.025em] sm:text-4xl">
-            What is inside {book.title}
+            What's inside the {book.place} Playbook
           </h2>
           <div className="mt-10 grid gap-x-12 gap-y-6 sm:grid-cols-2">
             {PLAYBOOK_CONTENTS.map((c, i) => (
@@ -111,7 +111,7 @@ export function PlaybookRegionPage({ scope }: { scope: PlaybookScope }) {
         {/* Buy */}
         <section id="buy" className="scroll-mt-16 border-t border-dove py-14">
           <h2 className="text-3xl font-normal tracking-[-0.025em] sm:text-4xl">
-            Get {book.title}
+            Get the {book.place} Playbook
           </h2>
           <p className="mt-3 max-w-2xl text-base text-fog">{scope.buyBlurb}</p>
           <div className="mt-8 grid gap-6 sm:grid-cols-3">

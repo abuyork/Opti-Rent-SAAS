@@ -138,7 +138,7 @@ export function getLandingScope(slug: LandingScope["slug"]): LandingScope {
       },
       marketCards: null,
       previewTabs: null,
-      faqMarketsAnswer: `Your villa is scored against its own Bali region: we have run full market scans across all ${baliKeys.length} regions — ${baliKeys.map((k) => MARKETS[k].title).join(", ")} — measuring ${listings.toLocaleString("en-US")} live villas in depth.`,
+      faqMarketsAnswer: `Your villa is scored against its own Bali region: we have run full market scans across all ${baliKeys.length} regions (${baliKeys.map((k) => MARKETS[k].title).join(", ")}), measuring ${listings.toLocaleString("en-US")} live villas in depth.`,
       footerLine: `Airbnb listing audit · Bali`,
     };
   }
@@ -237,11 +237,11 @@ export function getLandingScope(slug: LandingScope["slug"]): LandingScope {
         href: "/london",
         lines: [
           compSetCardLine(["london"], "flats"),
-          "Every size class, zone 1 and beyond",
+          "Every size class, Zone 1 and beyond",
         ],
       },
     ],
-    faqMarketsAnswer: `We have run full market scans in ${marketList}. Listings elsewhere still get scored against their own comparable set; the winners section appears once we have scanned your market.`,
+    faqMarketsAnswer: `We have run full market scans in ${marketList}. Listings elsewhere still get scored against their own comp set; the winners section appears once we have scanned your market.`,
     footerLine: `Airbnb listing audit · ${marketList}`,
   };
 }

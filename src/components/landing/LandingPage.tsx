@@ -43,7 +43,7 @@ export function LandingPage({ scope }: { scope: LandingScope }) {
   ];
 
   const freeFeatures = [
-    "Listing score, 0 to 100",
+    "Listing score, 0-100",
     "Underpricing estimate per month",
     "Problem count with severity mix",
     "Locked preview of your fix list",
@@ -233,7 +233,7 @@ export function LandingPage({ scope }: { scope: LandingScope }) {
                 href="#audit"
                 className="mt-10 inline-block rounded-full px-6 py-3 text-sm font-medium text-ink shadow-[0_0_0_1px_rgba(10,10,10,0.15)] hover:bg-paper"
               >
-                Get your free score
+                Get my free score
               </a>
             </div>
             {/* Inverted so the paid tier is the one the eye lands on. */}

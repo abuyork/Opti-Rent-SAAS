@@ -81,7 +81,7 @@ const superhostTile = (b: MarketBenchmark): ProofTile => ({
 });
 
 const guestFavoriteTile = (b: MarketBenchmark): ProofTile => ({
-  label: "Guest favorite",
+  label: "Guest Favorite",
   value: `${Math.round(b.winner_guest_favorite_share * 100)}%`,
   note: "of winners",
 });
@@ -119,8 +119,8 @@ const REACH: Record<PlaybookKey, string> = {
 
 const BUY_BLURB: Record<PlaybookKey, string> = {
   bali: "The Bali book covers Bali only - a Canggu pool shot does not win in London.",
-  dubai: "The Dubai book covers Dubai only — a Marina skyline does not win in Bali.",
-  london: "The London book covers London only — a bright zone-1 living room does not win in Canggu.",
+  dubai: "The Dubai book covers Dubai only - a Marina skyline does not win in Bali.",
+  london: "The London book covers London only - a bright Zone 1 living room does not win in Canggu.",
 };
 
 export function getPlaybookScope(key: PlaybookKey): PlaybookScope {

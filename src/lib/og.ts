@@ -21,7 +21,7 @@ export function socialCard(image: "home" | "bali" | "dubai" | "london") {
           url,
           width: 2400,
           height: 1260,
-          alt: "OptimoRent — free Airbnb listing score against your market's measured comp set",
+          alt: "OptimoRent - free Airbnb listing score against your market's measured comp set",
         },
       ],
     },

@@ -103,14 +103,14 @@ export async function sendPlaybookEmail(opts: {
   const html = `
     <div style="font-family:-apple-system,Segoe UI,Roboto,sans-serif;max-width:560px;margin:0 auto;color:#0a0a0a">
       <h2 style="color:#0a0a0a;font-weight:500">${escapeHtml(opts.playbookTitle)} is yours</h2>
-      <p>Thanks for the purchase. Your ${opts.pages}-page ${escapeHtml(opts.place)} playbook is ready to download.</p>
+      <p>Thanks for the purchase. Your ${opts.pages}-page ${escapeHtml(opts.place)} Playbook is ready to download.</p>
       <p style="margin:24px 0">
         <a href="${opts.downloadUrl}"
            style="background:#0a0a0a;color:#fff;padding:12px 22px;border-radius:9999px;text-decoration:none;font-weight:500">
           Download the PDF
         </a>
       </p>
-      <p style="color:#545454;font-size:14px">This link works for 72 hours — save the file once it opens. Lost it? Just reply to this email and we resend it.</p>
+      <p style="color:#545454;font-size:14px">This link works for 72 hours, so save the file once it opens. Lost it? Just reply to this email and we'll resend it.</p>
       <p style="color:#858585;font-size:13px;margin-top:28px">
         OptimoRent · listing intelligence<br />
         Questions? Write to
@@ -128,7 +128,7 @@ export async function sendPlaybookEmail(opts: {
       body: JSON.stringify({
         from: config.email.from,
         to: [opts.to],
-        subject: `Your ${opts.place} playbook is ready`,
+        subject: `Your ${opts.place} Playbook is ready`,
         html,
       }),
     });
