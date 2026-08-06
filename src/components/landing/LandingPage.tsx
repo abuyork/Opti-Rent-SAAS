@@ -109,7 +109,9 @@ export function LandingPage({ scope }: { scope: LandingScope }) {
             {scope.heroSub}
           </p>
           {/* z-0 creates the stacking context that keeps the -z-10 glow behind
-              the form's content but above the page background. */}
+              the form's content but above the page background. scroll-mt stays
+              at 24 (not the sections' 16): this target has no border-t, so it
+              needs its own breathing room below the nav. */}
           <div
             id="audit"
             className="relative z-0 mx-auto max-w-xl scroll-mt-24 before:pointer-events-none before:absolute before:-inset-x-[160px] before:-inset-y-[88px] before:-z-10 before:bg-[radial-gradient(50%_50%_at_50%_50%,rgba(255,168,136,0.40),rgba(255,168,136,0.28)_40%,rgba(255,168,136,0.13)_65%,rgba(255,168,136,0.04)_85%,rgba(255,168,136,0)_100%)] before:blur-[20px] before:content-['']"
@@ -189,7 +191,10 @@ export function LandingPage({ scope }: { scope: LandingScope }) {
         )}
 
         {/* How it works */}
-        <section id="how-it-works" className="scroll-mt-24 border-t border-dove py-20">
+        {/* scroll-mt-16 = the nav's h-16, so anchored scrolls land this
+            section's border-t flush under the sticky nav instead of floating
+            a gap below it (Max 2026-08-06). */}
+        <section id="how-it-works" className="scroll-mt-16 border-t border-dove py-20">
           <h2 className="text-3xl font-normal tracking-[-0.025em] sm:text-4xl">
             How it works
           </h2>
@@ -205,7 +210,7 @@ export function LandingPage({ scope }: { scope: LandingScope }) {
         </section>
 
         {/* Pricing */}
-        <section id="pricing" className="scroll-mt-24 border-t border-dove py-20">
+        <section id="pricing" className="scroll-mt-16 border-t border-dove py-20">
           <h2 className="text-3xl font-normal tracking-[-0.025em] sm:text-4xl">
             Pricing
           </h2>

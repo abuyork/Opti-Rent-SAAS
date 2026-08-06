@@ -86,7 +86,10 @@ export function PlaybookRegionPage({ scope }: { scope: PlaybookScope }) {
         </section>
 
         {/* What you get */}
-        <section id="inside" className="scroll-mt-24 border-t border-dove py-14">
+        {/* scroll-mt-16 = the nav's h-16, so anchored scrolls land this
+            section's border-t flush under the sticky nav instead of floating
+            a gap below it (Max 2026-08-06). */}
+        <section id="inside" className="scroll-mt-16 border-t border-dove py-14">
           <h2 className="text-3xl font-normal tracking-[-0.025em] sm:text-4xl">
             What is inside {book.title}
           </h2>
@@ -106,7 +109,7 @@ export function PlaybookRegionPage({ scope }: { scope: PlaybookScope }) {
         </section>
 
         {/* Buy */}
-        <section id="buy" className="scroll-mt-24 border-t border-dove py-14">
+        <section id="buy" className="scroll-mt-16 border-t border-dove py-14">
           <h2 className="text-3xl font-normal tracking-[-0.025em] sm:text-4xl">
             Get {book.title}
           </h2>

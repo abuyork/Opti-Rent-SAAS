@@ -36,7 +36,7 @@ export default async function ResultPage({
         <ReportHeader subtitle="Listing intelligence" />
         <section className="mt-8">
           <h1 className="text-3xl font-normal tracking-[-0.025em] text-ink">
-            Your villa audit
+            Your listing audit
           </h1>
         </section>
         <AuditProgress auditId={audit.id} />
@@ -53,7 +53,7 @@ export default async function ResultPage({
 
       <section className="mt-8">
         <h1 className="text-3xl font-normal tracking-[-0.025em] text-ink">
-          Your villa audit
+          Your listing audit
         </h1>
         <ListingIdentity
           title={audit.listing_title}
