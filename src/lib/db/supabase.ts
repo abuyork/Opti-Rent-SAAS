@@ -83,7 +83,12 @@ export class SupabaseAuditStore implements AuditStore {
 
   async getAudit(id: string): Promise<Audit | null> {
     const { data, error } = await this.db.from("audits").select().eq("id", id).maybeSingle();
-    if (error) throw new Error(`getAudit failed: ${error.message}`);
+    if (error) {
+      // 22P02 = invalid uuid syntax. The id comes straight from the public
+      // /result and /report URLs, so a mangled link must 404, not 500.
+      if (error.code === "22P02") return null;
+      throw new Error(`getAudit failed: ${error.message}`);
+    }
     return (data as Audit) ?? null;
   }
 
