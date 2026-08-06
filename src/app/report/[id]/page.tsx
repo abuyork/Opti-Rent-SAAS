@@ -105,8 +105,14 @@ export default async function ReportPage({
         <RewritesView rewrites={audit.rewrites} />
       </section>
 
-      <div className="no-print mt-10 flex justify-center">
+      <div className="no-print mt-10 flex flex-col items-center gap-3">
         <PrintButton auto={print === "1"} />
+        <a
+          href={`/result/${audit.id}`}
+          className="text-sm text-fog underline decoration-dove underline-offset-2 hover:text-ink hover:decoration-ink"
+        >
+          Back to your report
+        </a>
       </div>
 
       <footer className="mt-12 border-t border-dove pt-4 text-center">
