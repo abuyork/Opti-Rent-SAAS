@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 import { LandingPage } from "@/components/landing/LandingPage";
 import { getLandingScope } from "@/lib/landing";
+import { socialCard } from "@/lib/og";
 
 /** Bali campaign landing page — Bali data only, no other markets mentioned. */
 export const metadata: Metadata = {
   title: "OptimoRent Bali - Your villa is leaving money on the table",
   description:
     "Paste your Airbnb villa URL and get a free listing score, an underpricing estimate against comparable Bali villas, and a fix list built from 1,500+ deep-scanned listings across 9 regions.",
+  ...socialCard("bali"),
 };
 
 export default function BaliLanding() {
