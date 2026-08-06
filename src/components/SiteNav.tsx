@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { PLAYBOOKS, PLAYBOOK_KEYS } from "@/lib/playbooks";
@@ -17,6 +20,12 @@ export interface NavLink {
  * 2026-08-03). The trigger itself deliberately navigates nowhere (Alex
  * 2026-08-03: no default playbook page from the nav — the reader must pick a
  * market). It is hidden with `showPlaybookLink={false}` on the /playbook hub.
+ *
+ * Below `sm` the links move into a burger-toggled panel (they used to be
+ * simply hidden, leaving phones with no way to reach the anchors or the
+ * playbooks). The panel is part of the sticky nav and closes on any tap, so
+ * anchor scrolls land against the collapsed 64px nav height that scroll-mt-16
+ * assumes. Client component only for that open/close state.
  */
 export function SiteNav({
   logoHref = "/",
@@ -29,6 +38,9 @@ export function SiteNav({
   cta?: { label: string; href: string };
   showPlaybookLink?: boolean;
 }) {
+  const [open, setOpen] = useState(false);
+  const hasMenu = links.length > 0 || showPlaybookLink;
+
   return (
     <nav className="sticky top-0 z-50 border-b border-dove/70 bg-paper/85 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-5xl items-center justify-between px-6">
@@ -82,15 +94,92 @@ export function SiteNav({
           )}
         </div>
 
-        {cta && (
-          <a
-            href={cta.href}
-            className="rounded-full bg-ink px-4 py-2 text-sm font-medium text-paper hover:bg-charcoal"
-          >
-            {cta.label}
-          </a>
-        )}
+        <div className="flex items-center gap-2">
+          {cta && (
+            <a
+              href={cta.href}
+              className="rounded-full bg-ink px-4 py-2 text-sm font-medium text-paper hover:bg-charcoal"
+            >
+              {cta.label}
+            </a>
+          )}
+          {hasMenu && (
+            <button
+              type="button"
+              aria-expanded={open}
+              aria-label={open ? "Close menu" : "Open menu"}
+              onClick={() => setOpen((v) => !v)}
+              className="-mr-2 flex h-9 w-9 items-center justify-center rounded-full text-ink hover:bg-cream sm:hidden"
+            >
+              <svg
+                aria-hidden
+                width="18"
+                height="18"
+                viewBox="0 0 18 18"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+              >
+                {open ? (
+                  <>
+                    <path d="M4 4l10 10" />
+                    <path d="M14 4L4 14" />
+                  </>
+                ) : (
+                  <>
+                    <path d="M2.5 5.5h13" />
+                    <path d="M2.5 12.5h13" />
+                  </>
+                )}
+              </svg>
+            </button>
+          )}
+        </div>
       </div>
+
+      {open && hasMenu && (
+        <div className="border-t border-dove/70 sm:hidden">
+          <div className="mx-auto flex max-w-5xl flex-col px-6 py-3">
+            {links.map((l) => (
+              <a
+                key={l.href}
+                href={l.href}
+                onClick={() => setOpen(false)}
+                className="py-2.5 text-sm font-medium text-fog hover:text-ink"
+              >
+                {l.label}
+              </a>
+            ))}
+            {showPlaybookLink && (
+              <>
+                <div
+                  className={`flex items-baseline gap-2 pb-1 ${
+                    links.length > 0 ? "mt-2 border-t border-dove/70 pt-3.5" : "pt-1"
+                  }`}
+                >
+                  <span className="font-mono text-[11px] uppercase tracking-[0.15em] text-pewter">
+                    Airbnb Playbook
+                  </span>
+                  <span className="font-mono text-[9px] font-medium uppercase tracking-[0.12em] text-ember">
+                    New
+                  </span>
+                </div>
+                {PLAYBOOK_KEYS.map((k) => (
+                  <Link
+                    key={k}
+                    href={`/playbook/${k}`}
+                    onClick={() => setOpen(false)}
+                    className="py-2.5 text-sm font-medium text-fog hover:text-ink"
+                  >
+                    The {PLAYBOOKS[k].place} Playbook
+                  </Link>
+                ))}
+              </>
+            )}
+          </div>
+        </div>
+      )}
     </nav>
   );
 }
