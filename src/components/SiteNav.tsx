@@ -72,7 +72,7 @@ export function SiteNav({
                 <span aria-hidden className="text-[10px] text-pewter">
                   ▾
                 </span>
-                <span className="absolute -right-5 -top-2 font-mono text-[9px] font-medium uppercase tracking-[0.12em] text-ember">
+                <span className="absolute -right-5 -top-2 font-mono text-[9px] font-medium uppercase tracking-[0.15em] text-ember">
                   New
                 </span>
               </button>
@@ -98,7 +98,7 @@ export function SiteNav({
           {cta && (
             <a
               href={cta.href}
-              className="rounded-full bg-ink px-4 py-2 text-sm font-medium text-paper hover:bg-charcoal"
+              className="rounded-full bg-ink px-4 py-2 text-sm font-medium text-paper transition-colors hover:bg-charcoal"
             >
               {cta.label}
             </a>
@@ -161,7 +161,7 @@ export function SiteNav({
                   <span className="font-mono text-[11px] uppercase tracking-[0.15em] text-pewter">
                     Airbnb Playbook
                   </span>
-                  <span className="font-mono text-[9px] font-medium uppercase tracking-[0.12em] text-ember">
+                  <span className="font-mono text-[9px] font-medium uppercase tracking-[0.15em] text-ember">
                     New
                   </span>
                 </div>

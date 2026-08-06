@@ -20,7 +20,7 @@ const SEV_EDGE: Record<Severity, string> = {
 export function SeverityTag({ severity }: { severity: Severity }) {
   return (
     <span
-      className={`inline-block rounded-full px-2.5 py-0.5 font-mono text-[11px] font-medium uppercase tracking-wide ${SEV_STYLE[severity]}`}
+      className={`inline-block rounded-full px-2.5 py-0.5 font-mono text-[11px] font-medium uppercase tracking-[0.15em] ${SEV_STYLE[severity]}`}
     >
       {severity}
     </span>

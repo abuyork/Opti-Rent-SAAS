@@ -31,7 +31,7 @@ export default async function PlaybookThanks({
         </a>{" "}
         and we will send the PDF straight back.
       </p>
-      <Link href="/playbook" className="mt-8 inline-block rounded-full bg-ink px-6 py-3 text-sm font-medium text-paper hover:bg-charcoal">
+      <Link href="/playbook" className="mt-8 inline-block rounded-full bg-ink px-6 py-3 text-sm font-medium text-paper transition-colors hover:bg-charcoal">
         Back to the playbooks
       </Link>
     </Shell>
@@ -80,7 +80,7 @@ export default async function PlaybookThanks({
       </p>
       <a
         href={href}
-        className="mt-8 inline-block rounded-full bg-ink px-6 py-3 text-sm font-medium text-paper hover:bg-charcoal"
+        className="mt-8 inline-block rounded-full bg-ink px-6 py-3 text-sm font-medium text-paper transition-colors hover:bg-charcoal"
       >
         Download the PDF
       </a>
@@ -92,7 +92,7 @@ export default async function PlaybookThanks({
         and we will resend it.
       </p>
       {!stripeEnabled() && (
-        <p className="mt-8 rounded-lg bg-sand px-4 py-2 font-mono text-[11px] uppercase tracking-wide text-ink">
+        <p className="mt-8 rounded-lg bg-sand px-4 py-2 font-mono text-[11px] uppercase tracking-[0.15em] text-ink">
           Testing mode: delivered without payment (no STRIPE_SECRET_KEY set).
         </p>
       )}

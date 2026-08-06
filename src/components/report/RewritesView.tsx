@@ -27,9 +27,9 @@ function Block({ label, before, after }: { label: string; before: string; after:
         <h4 className="font-medium text-ink">{label}</h4>
         <CopyButton text={after} />
       </div>
-      <p className="mt-3 font-mono text-[11px] uppercase tracking-wide text-pewter">Before</p>
+      <p className="mt-3 font-mono text-[11px] uppercase tracking-[0.15em] text-pewter">Before</p>
       <p className="text-sm text-fog line-through">{before}</p>
-      <p className="mt-2 font-mono text-[11px] uppercase tracking-wide text-pewter">After</p>
+      <p className="mt-2 font-mono text-[11px] uppercase tracking-[0.15em] text-pewter">After</p>
       <p className="text-sm text-ink">{after}</p>
     </div>
   );
@@ -46,7 +46,7 @@ function TitleVariantsBlock({
   return (
     <div className="pdf-block rounded-lg border border-dove p-5 text-left">
       <h4 className="font-medium text-ink">Three title options</h4>
-      <p className="mt-3 font-mono text-[11px] uppercase tracking-wide text-pewter">Before</p>
+      <p className="mt-3 font-mono text-[11px] uppercase tracking-[0.15em] text-pewter">Before</p>
       <p className="text-sm text-fog line-through">{before}</p>
       <div className="mt-3 flex flex-col gap-2">
         {variants.map((v) => (
@@ -55,7 +55,7 @@ function TitleVariantsBlock({
             className="flex items-center justify-between gap-3 rounded-lg bg-cream px-4 py-2.5"
           >
             <div className="min-w-0">
-              <span className="font-mono text-[11px] uppercase tracking-wide text-pewter">
+              <span className="font-mono text-[11px] uppercase tracking-[0.15em] text-pewter">
                 {v.tone}
               </span>
               <p className="text-sm text-ink">{v.text}</p>

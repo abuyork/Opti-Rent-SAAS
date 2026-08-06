@@ -87,7 +87,7 @@ function WinnerRow({
           <span className="shrink-0 rounded-full bg-sand px-2 py-0.5 font-mono text-[11px] font-medium text-ink">
             #{rank} · Popularity {c.viral_score}
           </span>
-          <span className="font-mono text-[11px] uppercase tracking-wide text-pewter">
+          <span className="font-mono text-[11px] uppercase tracking-[0.15em] text-pewter">
             {c.locality}
           </span>
         </div>
@@ -161,14 +161,14 @@ export function MarketEvidence({ evidence: e }: { evidence: AuditMarketEvidence 
         <p className="mb-3 font-medium text-ink">What the winners have in common</p>
         <ul className="grid grid-cols-1 gap-2 sm:grid-cols-2">
           <li>
-            <span className="font-mono text-[11px] uppercase tracking-wide text-pewter">
+            <span className="font-mono text-[11px] uppercase tracking-[0.15em] text-pewter">
               Photos{" "}
             </span>
             <b className="font-medium">{e.winner_median_photos}</b>{" "}
             <span className="text-fog">(weak listings: {e.loser_median_photos})</span>
           </li>
           <li>
-            <span className="font-mono text-[11px] uppercase tracking-wide text-pewter">
+            <span className="font-mono text-[11px] uppercase tracking-[0.15em] text-pewter">
               Description{" "}
             </span>
             <b className="font-medium">
@@ -179,7 +179,7 @@ export function MarketEvidence({ evidence: e }: { evidence: AuditMarketEvidence 
             </span>
           </li>
           <li>
-            <span className="font-mono text-[11px] uppercase tracking-wide text-pewter">
+            <span className="font-mono text-[11px] uppercase tracking-[0.15em] text-pewter">
               Title{" "}
             </span>
             around <b className="font-medium">{e.winner_median_title_chars} chars</b>
@@ -191,7 +191,7 @@ export function MarketEvidence({ evidence: e }: { evidence: AuditMarketEvidence 
             )}
           </li>
           <li>
-            <span className="font-mono text-[11px] uppercase tracking-wide text-pewter">
+            <span className="font-mono text-[11px] uppercase tracking-[0.15em] text-pewter">
               Status{" "}
             </span>
             <b className="font-medium">{pct(e.winner_superhost_share)} Superhost</b>,{" "}

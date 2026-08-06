@@ -44,7 +44,7 @@ export function ReportPreview({ scope }: { scope: LandingPreviewScope }) {
         <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-4">
           {stats.map((s) => (
             <div key={s.label} className="rounded-lg bg-cream px-3.5 py-3">
-              <div className="font-mono text-[10px] uppercase tracking-wide text-pewter">
+              <div className="font-mono text-[10px] uppercase tracking-[0.15em] text-pewter">
                 {s.label}
               </div>
               <div className="mt-1 text-lg tracking-[-0.02em] text-ink">{s.value}</div>
@@ -54,7 +54,7 @@ export function ReportPreview({ scope }: { scope: LandingPreviewScope }) {
 
         <div className="mt-3 rounded-lg border border-dove px-4 py-3">
           <div className="flex items-start gap-2">
-            <span className="inline-block rounded-full bg-sev-critical-bg px-2.5 py-0.5 font-mono text-[10px] font-medium uppercase tracking-wide text-sev-critical">
+            <span className="inline-block rounded-full bg-sev-critical-bg px-2.5 py-0.5 font-mono text-[10px] font-medium uppercase tracking-[0.15em] text-sev-critical">
               critical
             </span>
             <p className="text-xs leading-relaxed text-ink sm:text-sm">

@@ -71,7 +71,7 @@ export function StatCards({
     <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
       {cards.map((c) => (
         <div key={c.label} className="rounded-2xl bg-cream px-5 py-5">
-          <div className="font-mono text-[11px] uppercase tracking-wide text-pewter">
+          <div className="font-mono text-[11px] uppercase tracking-[0.15em] text-pewter">
             {c.label}
           </div>
           {/* text-xl + nowrap: every value measured to fit the narrowest tile

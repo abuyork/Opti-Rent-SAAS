@@ -104,7 +104,7 @@ export default function AuditForm({
           <button
             type="button"
             onClick={() => setStep("url")}
-            className="self-start font-mono text-[11px] uppercase tracking-wide text-fog hover:text-ink"
+            className="self-start font-mono text-[11px] uppercase tracking-[0.15em] text-fog hover:text-ink"
           >
             ← Change URL
           </button>

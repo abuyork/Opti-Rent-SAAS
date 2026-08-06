@@ -45,7 +45,7 @@ export default function PlaybookHub() {
             per market: what the top earners do differently, measured against the bottom
             quartile, size class by size class. Pick where you host.
           </p>
-          <p className="mt-5 font-mono text-[11px] uppercase tracking-wide text-pewter">
+          <p className="mt-5 font-mono text-[11px] uppercase tracking-[0.15em] text-pewter">
             {price} per market · One-time · PDF
           </p>
         </section>
@@ -65,7 +65,7 @@ export default function PlaybookHub() {
                     {playbookCompSet(b)} {b.noun} in the comp set
                   </p>
                 </div>
-                <p className="mt-6 font-mono text-[11px] uppercase tracking-wide text-fog group-hover:text-ink">
+                <p className="mt-6 font-mono text-[11px] uppercase tracking-[0.15em] text-fog group-hover:text-ink">
                   The {b.place} Playbook →
                 </p>
               </Link>

@@ -106,7 +106,7 @@ export default async function ResultPage({
           <section className="no-print mt-12 flex justify-center">
             <a
               href={`/report/${audit.id}?print=1`}
-              className="rounded-full bg-ink px-6 py-3 text-sm font-medium text-paper hover:bg-charcoal"
+              className="rounded-full bg-ink px-6 py-3 text-sm font-medium text-paper transition-colors hover:bg-charcoal"
             >
               Download PDF report
             </a>

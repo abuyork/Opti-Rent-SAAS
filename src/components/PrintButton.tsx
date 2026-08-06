@@ -56,7 +56,7 @@ export default function PrintButton({ auto }: { auto?: boolean }) {
     <button
       onClick={() => void print()}
       disabled={preparing}
-      className="no-print rounded-full bg-ink px-6 py-3 text-sm font-medium text-paper hover:bg-charcoal disabled:opacity-60"
+      className="no-print rounded-full bg-ink px-6 py-3 text-sm font-medium text-paper transition-colors hover:bg-charcoal disabled:opacity-60"
     >
       {preparing ? "Preparing your PDF…" : "Download or print PDF"}
     </button>

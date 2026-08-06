@@ -35,7 +35,7 @@ export default function PayButton({
       <button
         onClick={checkout}
         disabled={loading}
-        className="rounded-full bg-ink px-8 py-3 text-sm font-medium text-paper transition-colors hover:bg-charcoal disabled:opacity-60"
+        className="rounded-full bg-ink px-6 py-3 text-sm font-medium text-paper transition-colors hover:bg-charcoal disabled:opacity-60"
       >
         {loading ? "Starting checkout…" : `Unlock full report · ${priceLabel}`}
       </button>

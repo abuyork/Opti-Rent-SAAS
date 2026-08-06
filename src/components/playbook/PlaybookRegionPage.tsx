@@ -44,11 +44,11 @@ export function PlaybookRegionPage({ scope }: { scope: PlaybookScope }) {
           </p>
           <a
             href="#buy"
-            className="mt-8 inline-block rounded-full bg-ink px-7 py-3.5 text-sm font-medium text-paper hover:bg-charcoal"
+            className="mt-8 inline-block rounded-full bg-ink px-6 py-3 text-sm font-medium text-paper transition-colors hover:bg-charcoal"
           >
             Get the {book.place} Playbook · {price}
           </a>
-          <p className="mt-5 font-mono text-[11px] uppercase tracking-wide text-pewter">
+          <p className="mt-5 font-mono text-[11px] uppercase tracking-[0.15em] text-pewter">
             {scope.heroFootnote}
           </p>
         </section>
@@ -70,7 +70,7 @@ export function PlaybookRegionPage({ scope }: { scope: PlaybookScope }) {
         )}
 
         {/* The story */}
-        <section className="border-t border-dove py-14">
+        <section className="border-t border-dove py-20">
           <h2 className="text-3xl font-normal tracking-[-0.025em] sm:text-4xl">
             Why this is not another listing-tips post
           </h2>
@@ -79,7 +79,7 @@ export function PlaybookRegionPage({ scope }: { scope: PlaybookScope }) {
               <div key={s.n}>
                 <div className="font-mono text-xs text-pewter">{s.n}</div>
                 <h3 className="mt-2 text-lg font-medium">{s.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-fog">{s.body}</p>
+                <p className="mt-2 text-sm leading-relaxed text-steel">{s.body}</p>
               </div>
             ))}
           </div>
@@ -89,7 +89,7 @@ export function PlaybookRegionPage({ scope }: { scope: PlaybookScope }) {
         {/* scroll-mt-16 = the nav's h-16, so anchored scrolls land this
             section's border-t flush under the sticky nav instead of floating
             a gap below it (Max 2026-08-06). */}
-        <section id="inside" className="scroll-mt-16 border-t border-dove py-14">
+        <section id="inside" className="scroll-mt-16 border-t border-dove py-20">
           <h2 className="text-3xl font-normal tracking-[-0.025em] sm:text-4xl">
             What's inside the {book.place} Playbook
           </h2>
@@ -101,7 +101,7 @@ export function PlaybookRegionPage({ scope }: { scope: PlaybookScope }) {
                 </div>
                 <div>
                   <h3 className="text-base font-medium">{c.title}</h3>
-                  <p className="mt-1 text-sm leading-relaxed text-fog">{c.body}</p>
+                  <p className="mt-1 text-sm leading-relaxed text-steel">{c.body}</p>
                 </div>
               </div>
             ))}
@@ -109,11 +109,11 @@ export function PlaybookRegionPage({ scope }: { scope: PlaybookScope }) {
         </section>
 
         {/* Buy */}
-        <section id="buy" className="scroll-mt-16 border-t border-dove py-14">
+        <section id="buy" className="scroll-mt-16 border-t border-dove py-20">
           <h2 className="text-3xl font-normal tracking-[-0.025em] sm:text-4xl">
             Get the {book.place} Playbook
           </h2>
-          <p className="mt-3 max-w-2xl text-base text-fog">{scope.buyBlurb}</p>
+          <p className="mt-3 max-w-2xl text-base text-steel">{scope.buyBlurb}</p>
           <div className="mt-8 grid gap-6 sm:grid-cols-3">
             <div className="flex flex-col rounded-2xl bg-cream p-8 sm:col-span-2 sm:flex-row sm:items-end sm:justify-between sm:gap-8">
               <div>
@@ -159,7 +159,7 @@ export function PlaybookRegionPage({ scope }: { scope: PlaybookScope }) {
 function Contrast({ label, value, unit, note }: ProofTile) {
   return (
     <div>
-      <div className="font-mono text-[10px] uppercase tracking-wide text-pewter">{label}</div>
+      <div className="font-mono text-[10px] uppercase tracking-[0.15em] text-pewter">{label}</div>
       <div className="mt-1.5 text-3xl tracking-[-0.025em] text-ink">
         {value}
         {unit && <span className="ml-1 text-base text-fog">{unit}</span>}

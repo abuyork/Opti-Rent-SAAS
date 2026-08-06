@@ -38,6 +38,16 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* Keyboard focus for every interactive element in one place — before this,
+   only the audit form inputs had any focus treatment (pre-launch QA
+   2026-08-06). Outline follows border-radius, so pills get pill rings. */
+@layer base {
+  :where(a, button, summary, [role="button"]):focus-visible {
+    outline: 2px solid var(--color-ink);
+    outline-offset: 2px;
+  }
+}
+
 /* HTML → PDF: multi-page A4 branded report (Build Pack §7). */
 @page {
   size: A4;

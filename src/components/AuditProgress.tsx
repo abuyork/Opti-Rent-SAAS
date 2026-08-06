@@ -99,7 +99,7 @@ export default function AuditProgress({ auditId }: { auditId: string }) {
           <button
             onClick={retry}
             disabled={retrying}
-            className="rounded-full bg-ink px-6 py-3 text-sm font-medium text-paper hover:bg-charcoal disabled:opacity-60"
+            className="rounded-full bg-ink px-6 py-3 text-sm font-medium text-paper transition-colors hover:bg-charcoal disabled:opacity-60"
           >
             {retrying ? "Restarting…" : "Run it again"}
           </button>

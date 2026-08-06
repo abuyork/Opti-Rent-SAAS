@@ -117,7 +117,7 @@ export function LandingPage({ scope }: { scope: LandingScope }) {
             className="relative z-0 mx-auto max-w-xl scroll-mt-24 before:pointer-events-none before:absolute before:-inset-x-[160px] before:-inset-y-[88px] before:-z-10 before:bg-[radial-gradient(50%_50%_at_50%_50%,rgba(255,168,136,0.40),rgba(255,168,136,0.28)_40%,rgba(255,168,136,0.13)_65%,rgba(255,168,136,0.04)_85%,rgba(255,168,136,0)_100%)] before:blur-[20px] before:content-['']"
           >
             <AuditForm ctaLabel={scope.ctaLabel} scoringLine={scope.scoringLine} />
-            <p className="mt-6 font-mono text-[11px] uppercase tracking-wide text-pewter">
+            <p className="mt-6 font-mono text-[11px] uppercase tracking-[0.15em] text-pewter">
               {scope.trustLine}
             </p>
           </div>
@@ -138,7 +138,7 @@ export function LandingPage({ scope }: { scope: LandingScope }) {
                   content: (
                     <>
                       <ReportPreview scope={t.preview} />
-                      <p className="mt-4 text-center font-mono text-[11px] uppercase tracking-wide text-pewter">
+                      <p className="mt-4 text-center font-mono text-[11px] uppercase tracking-[0.15em] text-pewter">
                         {t.preview.caption}
                       </p>
                     </>
@@ -148,7 +148,7 @@ export function LandingPage({ scope }: { scope: LandingScope }) {
             ) : (
               <>
                 <ReportPreview scope={scope.preview} />
-                <p className="mt-4 text-center font-mono text-[11px] uppercase tracking-wide text-pewter">
+                <p className="mt-4 text-center font-mono text-[11px] uppercase tracking-[0.15em] text-pewter">
                   {scope.preview.caption}
                 </p>
               </>
@@ -162,7 +162,7 @@ export function LandingPage({ scope }: { scope: LandingScope }) {
             <h2 className="text-3xl font-normal tracking-[-0.025em] sm:text-4xl">
               Pick your market
             </h2>
-            <p className="mt-3 text-base text-fog">
+            <p className="mt-3 text-base text-steel">
               Every market gets its own scan. Your listing is only ever compared
               with its real neighbors.
             </p>
@@ -181,7 +181,7 @@ export function LandingPage({ scope }: { scope: LandingScope }) {
                       </p>
                     ))}
                   </div>
-                  <p className="mt-6 font-mono text-[11px] uppercase tracking-wide text-fog group-hover:text-ink">
+                  <p className="mt-6 font-mono text-[11px] uppercase tracking-[0.15em] text-fog group-hover:text-ink">
                     {c.title} listing audit →
                   </p>
                 </Link>
@@ -203,7 +203,7 @@ export function LandingPage({ scope }: { scope: LandingScope }) {
               <div key={s.n}>
                 <div className="font-mono text-xs text-pewter">{s.n}</div>
                 <h3 className="mt-2 text-lg font-medium">{s.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-fog">{s.body}</p>
+                <p className="mt-2 text-sm leading-relaxed text-steel">{s.body}</p>
               </div>
             ))}
           </div>
@@ -214,7 +214,7 @@ export function LandingPage({ scope }: { scope: LandingScope }) {
           <h2 className="text-3xl font-normal tracking-[-0.025em] sm:text-4xl">
             Pricing
           </h2>
-          <p className="mt-3 text-base text-fog">
+          <p className="mt-3 text-base text-steel">
             Start free. Pay once if the numbers convince you.
           </p>
           <div className="mt-10 grid gap-6 sm:grid-cols-2">
@@ -241,7 +241,7 @@ export function LandingPage({ scope }: { scope: LandingScope }) {
               <h3 className="text-2xl font-medium tracking-[-0.02em]">Full report</h3>
               <div className="mt-4 text-4xl tracking-[-0.025em]">
                 {priceLabel}
-                <span className="ml-2 font-mono text-xs uppercase tracking-wide text-dove">
+                <span className="ml-2 font-mono text-xs uppercase tracking-[0.15em] text-dove">
                   one-time
                 </span>
               </div>
@@ -255,7 +255,7 @@ export function LandingPage({ scope }: { scope: LandingScope }) {
               </ul>
               <a
                 href="#audit"
-                className="mt-10 inline-block rounded-full bg-paper px-6 py-3 text-sm font-medium text-ink hover:bg-dove"
+                className="mt-10 inline-block rounded-full bg-paper px-6 py-3 text-sm font-medium text-ink transition-colors hover:bg-dove"
               >
                 Start with the free score
               </a>
@@ -273,7 +273,7 @@ export function LandingPage({ scope }: { scope: LandingScope }) {
             className="group flex flex-col gap-2 py-6 sm:flex-row sm:items-baseline sm:justify-between sm:gap-8"
           >
             <p className="text-sm leading-relaxed text-fog">
-              <span className="font-mono text-[11px] uppercase tracking-[0.15em] text-ember">
+              <span className="font-mono text-[11px] font-medium uppercase tracking-[0.15em] text-ember">
                 New
               </span>{" "}
               <span className="font-medium text-ink">
@@ -284,7 +284,7 @@ export function LandingPage({ scope }: { scope: LandingScope }) {
                 ? `${book.pages} pages on what the top-earning ${book.noun} in ${book.place} do differently.`
                 : "What the top earners in your market do differently, measured size class by size class."}
             </p>
-            <span className="shrink-0 whitespace-nowrap font-mono text-[11px] uppercase tracking-wide text-fog group-hover:text-ink">
+            <span className="shrink-0 whitespace-nowrap font-mono text-[11px] uppercase tracking-[0.15em] text-fog group-hover:text-ink">
               See the playbook · {playbookPrice} →
             </span>
           </Link>
