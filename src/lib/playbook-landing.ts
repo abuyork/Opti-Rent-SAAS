@@ -118,7 +118,7 @@ const REACH: Record<PlaybookKey, string> = {
 };
 
 const BUY_BLURB: Record<PlaybookKey, string> = {
-  bali: "The Bali book covers Bali only — a Canggu pool shot does not win in London.",
+  bali: "The Bali book covers Bali only - a Canggu pool shot does not win in London.",
   dubai: "The Dubai book covers Dubai only — a Marina skyline does not win in Bali.",
   london: "The London book covers London only — a bright zone-1 living room does not win in Canggu.",
 };
@@ -130,7 +130,7 @@ export function getPlaybookScope(key: PlaybookKey): PlaybookScope {
 
   const heroSub =
     key === "bali"
-      ? `We measured ${playbookMeasured(book).toLocaleString("en-US")} live Bali villas in depth — a comp set of ${compSet} across ${book.markets.length} regions — and wrote down what separates the top earners from everyone else. ${book.pages} pages, region by region and size class by size class.`
+      ? `We measured ${playbookMeasured(book).toLocaleString("en-US")} live Bali villas in depth - a comp set of ${compSet} across ${book.markets.length} regions - and wrote down what separates the top earners from everyone else. ${book.pages} pages, region by region and size class by size class.`
       : `We benchmarked a comp set of ${compSet} live ${book.place} ${book.noun} and measured the top and the bottom of the revenue distribution in depth. ${book.pages} pages on what the top earners do differently, size class by size class.`;
 
   const story = [
