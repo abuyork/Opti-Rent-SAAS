@@ -5,6 +5,7 @@ import type {
   LeadInput,
   PaymentInput,
   PendingAuditInput,
+  RecentAuditCounts,
 } from "./store";
 
 /**
@@ -55,6 +56,7 @@ export class MemoryAuditStore implements AuditStore {
       },
       market_evidence: null,
       paid: false,
+      client_ip: input.client_ip ?? null,
     };
     store.audits.set(audit.id, audit);
     return audit;
@@ -108,5 +110,34 @@ export class MemoryAuditStore implements AuditStore {
 
   async recordPayment(input: PaymentInput): Promise<void> {
     if (input.status === "paid") await this.markAuditPaid(input.audit_id);
+  }
+
+  async findRecentCompletedByListing(
+    airroiListingId: string,
+    sinceIso: string,
+    excludeId: string,
+  ): Promise<Audit | null> {
+    const matches = [...store.audits.values()]
+      .filter(
+        (a) =>
+          a.airroi_listing_id === airroiListingId &&
+          a.status === "complete" &&
+          a.created_at >= sinceIso &&
+          a.id !== excludeId,
+      )
+      .sort((a, b) => b.created_at.localeCompare(a.created_at));
+    return matches[0] ?? null;
+  }
+
+  async countRecentAudits(
+    email: string,
+    clientIp: string | null,
+    sinceIso: string,
+  ): Promise<RecentAuditCounts> {
+    const recent = [...store.audits.values()].filter((a) => a.created_at >= sinceIso);
+    return {
+      byEmail: recent.filter((a) => a.email === email).length,
+      byIp: clientIp ? recent.filter((a) => a.client_ip === clientIp).length : 0,
+    };
   }
 }

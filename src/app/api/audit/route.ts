@@ -3,6 +3,20 @@ import { dispatchAuditJob } from "@/lib/audit";
 import { getStore } from "@/lib/db";
 import { AirRoiError } from "@/lib/airroi";
 import { resolveAirbnbListingId } from "@/lib/airroi/url";
+import { config } from "@/lib/config";
+
+/** Requester IP: Netlify's canonical header first, then the proxy chain head. */
+function clientIp(req: Request): string | null {
+  return (
+    req.headers.get("x-nf-client-connection-ip") ??
+    req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ??
+    null
+  );
+}
+
+const LIMIT_MESSAGE =
+  "You've reached today's free audit limit. Come back tomorrow, or write to " +
+  `${config.email.contact} if you manage several listings.`;
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -53,10 +67,27 @@ export async function POST(req: Request) {
 
   try {
     const store = getStore();
+
+    // Daily caps per email and per IP (each audit spends real API money).
+    // Counted in the DB so the limit holds across serverless instances.
+    const ip = clientIp(req);
+    const since = new Date(Date.now() - 24 * 3_600_000).toISOString();
+    const counts = await store.countRecentAudits(email, ip, since);
+    if (
+      counts.byEmail >= config.limits.auditsPerEmailPerDay ||
+      counts.byIp >= config.limits.auditsPerIpPerDay
+    ) {
+      console.warn(
+        `[audit] rate limit hit: email=${email} (${counts.byEmail}) ip=${ip} (${counts.byIp})`,
+      );
+      return NextResponse.json({ error: LIMIT_MESSAGE }, { status: 429 });
+    }
+
     const audit = await store.createPendingAudit({
       airbnb_url: url,
       airroi_listing_id: listingId,
       email,
+      client_ip: ip,
     });
     await store.createLead({ email, airbnb_url: url, source: "audit" });
 

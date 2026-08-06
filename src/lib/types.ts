@@ -258,6 +258,8 @@ export interface Audit {
   /** Measured Canggu-cohort evidence + winner cover examples (null off-market). */
   market_evidence: AuditMarketEvidence | null;
   paid: boolean;
+  /** Requester IP at creation (rate limiting); null when the header is absent. */
+  client_ip?: string | null;
 }
 
 /** What the FREE tier exposes (no fixes/rewrites). Build Pack §1, §4 step 6. */

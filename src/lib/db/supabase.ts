@@ -7,6 +7,7 @@ import type {
   LeadInput,
   PaymentInput,
   PendingAuditInput,
+  RecentAuditCounts,
 } from "./store";
 
 /**
@@ -30,6 +31,7 @@ export class SupabaseAuditStore implements AuditStore {
         airbnb_url: input.airbnb_url,
         airroi_listing_id: input.airroi_listing_id,
         email: input.email,
+        client_ip: input.client_ip ?? null,
         paid: false,
       })
       .select()
@@ -100,6 +102,48 @@ export class SupabaseAuditStore implements AuditStore {
       source: input.source,
     });
     if (error) throw new Error(`createLead failed: ${error.message}`);
+  }
+
+  async findRecentCompletedByListing(
+    airroiListingId: string,
+    sinceIso: string,
+    excludeId: string,
+  ): Promise<Audit | null> {
+    const { data, error } = await this.db
+      .from("audits")
+      .select()
+      .eq("airroi_listing_id", airroiListingId)
+      .eq("status", "complete")
+      .gte("created_at", sinceIso)
+      .neq("id", excludeId)
+      .order("created_at", { ascending: false })
+      .limit(1)
+      .maybeSingle();
+    if (error) throw new Error(`findRecentCompletedByListing failed: ${error.message}`);
+    return (data as Audit) ?? null;
+  }
+
+  async countRecentAudits(
+    email: string,
+    clientIp: string | null,
+    sinceIso: string,
+  ): Promise<RecentAuditCounts> {
+    const byEmailQ = this.db
+      .from("audits")
+      .select("id", { count: "exact", head: true })
+      .eq("email", email)
+      .gte("created_at", sinceIso);
+    const byIpQ = clientIp
+      ? this.db
+          .from("audits")
+          .select("id", { count: "exact", head: true })
+          .eq("client_ip", clientIp)
+          .gte("created_at", sinceIso)
+      : null;
+    const [byEmail, byIp] = await Promise.all([byEmailQ, byIpQ ?? Promise.resolve(null)]);
+    if (byEmail.error) throw new Error(`countRecentAudits failed: ${byEmail.error.message}`);
+    if (byIp?.error) throw new Error(`countRecentAudits failed: ${byIp.error.message}`);
+    return { byEmail: byEmail.count ?? 0, byIp: byIp?.count ?? 0 };
   }
 
   async recordPayment(input: PaymentInput): Promise<void> {

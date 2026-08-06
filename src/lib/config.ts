@@ -65,6 +65,19 @@ export const config = {
     publishableKey: process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY ?? "",
   },
 
+  /**
+   * Free-audit cost controls (each audit spends ~$0.55 of AirROI + Claude).
+   * Reuse: a listing scored within the window is served from the stored
+   * result instead of re-paying both APIs. Caps: per-day creation limits
+   * counted in the DB (serverless-safe). IP cap is looser than the email cap
+   * because Bali coworking/CGNAT puts many owners behind one address.
+   */
+  limits: {
+    auditReuseHours: Number(process.env.OPTIRENT_AUDIT_REUSE_HOURS ?? "24"),
+    auditsPerEmailPerDay: Number(process.env.OPTIRENT_AUDIT_EMAIL_DAILY_LIMIT ?? "5"),
+    auditsPerIpPerDay: Number(process.env.OPTIRENT_AUDIT_IP_DAILY_LIMIT ?? "10"),
+  },
+
   email: {
     // Resend (https://resend.com). Without a key, sends become logged no-ops
     // so the audit flow never depends on email being configured.

@@ -5,6 +5,14 @@ export interface PendingAuditInput {
   airbnb_url: string;
   airroi_listing_id: string | null;
   email: string;
+  /** Requester IP for rate limiting; null when the header is absent. */
+  client_ip?: string | null;
+}
+
+/** How many audits an email / IP created since `sinceIso` (rate limiting). */
+export interface RecentAuditCounts {
+  byEmail: number;
+  byIp: number;
 }
 
 /** Fills a processing row in once the background scorer finishes. */
@@ -49,4 +57,20 @@ export interface AuditStore {
   markAuditPaid(id: string): Promise<void>;
   createLead(input: LeadInput): Promise<void>;
   recordPayment(input: PaymentInput): Promise<void>;
+  /**
+   * Latest COMPLETED audit of the same listing since `sinceIso`, excluding
+   * `excludeId` (the row being processed). Powers repeat-audit reuse: serving
+   * a fresh result from the stored one skips both paid API calls.
+   */
+  findRecentCompletedByListing(
+    airroiListingId: string,
+    sinceIso: string,
+    excludeId: string,
+  ): Promise<Audit | null>;
+  /** Creation counts for rate limiting; ip null → byIp is 0. */
+  countRecentAudits(
+    email: string,
+    clientIp: string | null,
+    sinceIso: string,
+  ): Promise<RecentAuditCounts>;
 }

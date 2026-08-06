@@ -84,11 +84,53 @@ export async function runAudit(airbnbUrl: string): Promise<AuditRunResult> {
  * the pending row. Never throws — every failure lands on the row so the
  * polling UI always has something truthful to show. Shared by the dev
  * in-process runner and the Netlify background function.
+ *
+ * COST CONTROL: if the same listing already has a completed audit inside the
+ * reuse window (24h default), its result is copied instead of re-running the
+ * pipeline — a repeat audit re-paid AirROI AND Claude vision (~$0.55) in
+ * full before this. The requester still gets their own row, email, and
+ * paywall state; only the scoring work is shared.
  */
 export async function processAuditJob(auditId: string, airbnbUrl: string): Promise<void> {
   const { getStore } = await import("@/lib/db");
   const store = getStore();
   try {
+    const pending = await store.getAudit(auditId);
+    if (pending?.airroi_listing_id) {
+      const since = new Date(
+        Date.now() - config.limits.auditReuseHours * 3_600_000,
+      ).toISOString();
+      const source = await store.findRecentCompletedByListing(
+        pending.airroi_listing_id,
+        since,
+        auditId,
+      );
+      if (source) {
+        console.log(
+          `[audit] ${auditId} reusing ${source.id} (same listing scored within ${config.limits.auditReuseHours}h)`,
+        );
+        await store.completeAudit(auditId, {
+          airroi_listing_id: source.airroi_listing_id,
+          listing_title: source.listing_title,
+          listing_photo: source.listing_photo,
+          scoring: {
+            overall_score: source.overall_score,
+            category_scores: source.category_scores,
+            underpricing_idr: source.underpricing_idr,
+            comp_count: source.comp_count,
+            comp_basis: source.comp_basis,
+            problem_count: source.problem_count,
+            critical_count: source.critical_count,
+            fixes: source.fixes,
+            rewrites: source.rewrites,
+          },
+          market_evidence: source.market_evidence,
+        });
+        await sendReadyEmail(store, auditId, source.listing_title);
+        return;
+      }
+    }
+
     const { resolved, scoring, marketEvidence } = await runAudit(airbnbUrl);
     const heroPhoto =
       resolved.listing.photos.find((p) => /^https?:\/\//i.test(p)) ?? null;
@@ -99,20 +141,7 @@ export async function processAuditJob(auditId: string, airbnbUrl: string): Promi
       scoring,
       market_evidence: marketEvidence,
     });
-
-    // "Report ready" email (manager ask 2026-07-14). Fire-and-forget within the
-    // job: an email failure must never fail a completed audit.
-    const audit = await store.getAudit(auditId);
-    if (audit?.email) {
-      const { sendReportReadyEmail } = await import("@/lib/email");
-      const { config } = await import("@/lib/config");
-      await sendReportReadyEmail({
-        to: audit.email,
-        auditId,
-        listingTitle: resolved.listing.title || null,
-        includePdfLink: audit.paid || config.testingShowFullReport,
-      });
-    }
+    await sendReadyEmail(store, auditId, resolved.listing.title || null);
   } catch (e) {
     console.error(`[processAuditJob] audit ${auditId} failed:`, e);
     const { AirRoiError } = await import("@/lib/airroi");
@@ -126,6 +155,24 @@ export async function processAuditJob(auditId: string, airbnbUrl: string): Promi
       console.error(`[processAuditJob] failAudit also failed:`, persistErr);
     }
   }
+}
+
+/** "Report ready" email (manager ask 2026-07-14). Fire-and-forget within the
+ * job: an email failure must never fail a completed audit. */
+async function sendReadyEmail(
+  store: import("./db/store").AuditStore,
+  auditId: string,
+  listingTitle: string | null,
+): Promise<void> {
+  const audit = await store.getAudit(auditId);
+  if (!audit?.email) return;
+  const { sendReportReadyEmail } = await import("@/lib/email");
+  await sendReportReadyEmail({
+    to: audit.email,
+    auditId,
+    listingTitle,
+    includePdfLink: audit.paid || config.testingShowFullReport,
+  });
 }
 
 /**
