@@ -4,6 +4,7 @@ import { getStripe, stripeEnabled } from "@/lib/stripe";
 import { playbookDownloadToken, verifyPlaybookMockToken } from "@/lib/sign";
 import { PLAYBOOKS, isPlaybookKey, playbookCompSet } from "@/lib/playbooks";
 import { SiteNav } from "@/components/SiteNav";
+import { SiteFooter } from "@/components/SiteFooter";
 
 export const metadata = { title: "Your playbook — OptimoRent" };
 
@@ -107,6 +108,7 @@ function Shell({ heading, children }: { heading: string; children: React.ReactNo
         <h1 className="text-3xl font-normal tracking-[-0.025em] sm:text-4xl">{heading}</h1>
         {children}
       </main>
+      <SiteFooter line="The Airbnb Playbook · Bali, Dubai and London" />
     </div>
   );
 }
