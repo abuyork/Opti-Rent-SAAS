@@ -116,7 +116,8 @@ export default async function ResultPage({
         <section className="mt-12">
           <div className="rounded-2xl bg-cream px-8 py-6 text-center">
             <p className="text-lg font-medium text-ink">
-              {audit.problem_count} issues found, {audit.critical_count} critical.
+              {audit.problem_count} issue{audit.problem_count === 1 ? "" : "s"} found,{" "}
+              {audit.critical_count} critical.
             </p>
             <p className="mt-1 text-sm text-fog">
               Unlock the full fix list, paste-ready rewrites, and a branded PDF.

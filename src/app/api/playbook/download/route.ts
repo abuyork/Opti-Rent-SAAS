@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { config } from "@/lib/config";
 import { verifyPlaybookDownloadToken } from "@/lib/sign";
 import { PLAYBOOKS, isPlaybookKey } from "@/lib/playbooks";
 import { signedPlaybookUrl } from "@/lib/playbook-storage";
@@ -14,11 +15,20 @@ export async function GET(req: Request) {
   const market = searchParams.get("market") ?? "";
   const token = searchParams.get("token") ?? "";
 
+  // A buyer opens this link in a browser tab, so every error names the address
+  // that actually helps (matches the thanks-page copy). Download tokens expire
+  // after 72h by design; the email tells buyers to write in for a resend.
   if (!isPlaybookKey(market)) {
-    return NextResponse.json({ error: "Unknown playbook" }, { status: 404 });
+    return NextResponse.json(
+      { error: `We don't have a Playbook by that name. Write to ${config.email.contact} and we'll sort it out.` },
+      { status: 404 },
+    );
   }
   if (!verifyPlaybookDownloadToken(market, token)) {
-    return NextResponse.json({ error: "Invalid download token" }, { status: 403 });
+    return NextResponse.json(
+      { error: `This download link has expired. Write to ${config.email.contact} and we'll resend a fresh one.` },
+      { status: 403 },
+    );
   }
 
   try {
@@ -26,7 +36,7 @@ export async function GET(req: Request) {
   } catch (e) {
     console.error("[playbook/download]", e);
     return NextResponse.json(
-      { error: "Could not prepare the download. Please contact support." },
+      { error: `We couldn't prepare the download. Write to ${config.email.contact} and we'll send the PDF straight back.` },
       { status: 500 },
     );
   }

@@ -14,17 +14,28 @@ import { PLAYBOOKS, isPlaybookKey } from "@/lib/playbooks";
  * - Mock (no key): return a signed thank-you URL so the flow works keyless.
  */
 export async function POST(req: Request) {
+  // Same rule as /api/checkout: these strings render under the buy button, so
+  // they read like a product; the technical cause goes to the server log.
+  const RETRY_MSG = "We couldn't start the checkout. Refresh the page and try again.";
   let market: string;
   try {
     const body = (await req.json()) as { market?: string };
-    if (!body.market) return NextResponse.json({ error: "Missing market" }, { status: 400 });
+    if (!body.market) {
+      console.error("[/api/checkout/playbook] missing market in body");
+      return NextResponse.json({ error: RETRY_MSG }, { status: 400 });
+    }
     market = body.market;
   } catch {
-    return NextResponse.json({ error: "Invalid request body" }, { status: 400 });
+    console.error("[/api/checkout/playbook] unparseable request body");
+    return NextResponse.json({ error: RETRY_MSG }, { status: 400 });
   }
 
   if (!isPlaybookKey(market)) {
-    return NextResponse.json({ error: `No playbook for "${market}"` }, { status: 404 });
+    console.error(`[/api/checkout/playbook] unknown market: "${market}"`);
+    return NextResponse.json(
+      { error: "That Playbook isn't available." },
+      { status: 404 },
+    );
   }
   const playbook = PLAYBOOKS[market];
   const thanksUrl = `${config.appUrl}/playbook/thanks`;

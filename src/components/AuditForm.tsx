@@ -82,7 +82,7 @@ export default function AuditForm({
       ) : (
         <form onSubmit={onEmailSubmit} className="flex flex-col gap-3">
           <p className="text-left text-sm text-fog">
-            Where should we send your report? Your score shows on the next screen.
+            Where should we send your results? Your score shows on the next screen.
           </p>
           <div className="flex flex-col gap-3 sm:flex-row">
             <input

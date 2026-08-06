@@ -12,8 +12,8 @@ import { fetchAirbnbCoverUrl, reorderWithCover } from "./cover";
 
 /** Shown to owners when AirROI simply has no data for their (valid) listing. */
 const NO_DATA_MESSAGE =
-  "We don't have market data on this villa yet. That happens with newer or " +
-  "less active listings. Try another villa, or check back soon.";
+  "We don't have market data on this listing yet. That happens with newer or " +
+  "less active listings. Try another one, or check back soon.";
 
 /**
  * Live AirROI adapter (Build Pack §4 steps 2–4).

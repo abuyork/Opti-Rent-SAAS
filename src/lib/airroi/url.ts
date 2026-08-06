@@ -34,13 +34,11 @@ export function parseAirbnbListingId(input: string): string {
   const lastSeg = u.pathname.split("/").filter(Boolean).pop() ?? "";
   if (/^\d{6,}$/.test(lastSeg)) return lastSeg;
 
-  const noId =
-    "Couldn't find an Airbnb listing id in that URL. Paste the full listing link.";
-  throw new AirRoiError(noId, { userMessage: noId });
+  throw new AirRoiError(NO_ID_MESSAGE, { userMessage: NO_ID_MESSAGE });
 }
 
 const NO_ID_MESSAGE =
-  "Couldn't find an Airbnb listing id in that URL. Paste the full listing link " +
+  "Couldn't find an Airbnb listing ID in that URL. Paste the full listing link " +
   "(the one with /rooms/ in it).";
 
 /** Hosts we'll hit the network for to expand a short/vanity link. */

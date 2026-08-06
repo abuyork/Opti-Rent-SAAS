@@ -10,18 +10,32 @@ import { unlockToken } from "@/lib/sign";
  * - Mock (no key): return a signed local unlock URL so the flow works keyless.
  */
 export async function POST(req: Request) {
+  // Error strings here render verbatim under the pay button (postJson surfaces
+  // them), so they must read like a product, not a stack trace (pre-launch QA
+  // 2026-08-06). Technical detail goes to the server log only.
+  const RETRY_MSG = "We couldn't start the checkout. Refresh the page and try again.";
   let auditId: string;
   try {
     const body = (await req.json()) as { auditId?: string };
-    if (!body.auditId) return NextResponse.json({ error: "Missing auditId" }, { status: 400 });
+    if (!body.auditId) {
+      console.error("[/api/checkout] missing auditId in body");
+      return NextResponse.json({ error: RETRY_MSG }, { status: 400 });
+    }
     auditId = body.auditId;
   } catch {
-    return NextResponse.json({ error: "Invalid request body" }, { status: 400 });
+    console.error("[/api/checkout] unparseable request body");
+    return NextResponse.json({ error: RETRY_MSG }, { status: 400 });
   }
 
   const store = getStore();
   const audit = await store.getAudit(auditId);
-  if (!audit) return NextResponse.json({ error: "Audit not found" }, { status: 404 });
+  if (!audit) {
+    console.error(`[/api/checkout] audit not found: ${auditId}`);
+    return NextResponse.json(
+      { error: "We couldn't find that audit. Refresh the page and try again." },
+      { status: 404 },
+    );
+  }
 
   // Already unlocked — just send them back to the report.
   if (audit.paid) {

@@ -16,11 +16,16 @@ export async function POST(
   const { id } = await params;
   const store = getStore();
   const audit = await store.getAudit(id);
-  if (!audit) return NextResponse.json({ error: "Not found" }, { status: 404 });
+  if (!audit) {
+    return NextResponse.json(
+      { error: "We couldn't find that audit. Refresh the page and try again." },
+      { status: 404 },
+    );
+  }
 
   if (audit.status !== "failed") {
     return NextResponse.json(
-      { error: "This audit is not in a failed state." },
+      { error: "This audit doesn't need a retry - it's either finished or still running." },
       { status: 409 },
     );
   }

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import type { AuditMarketEvidence, MarketCoverExample } from "@/lib/types";
 import { formatMoney } from "@/lib/format";
+import { marketNoun } from "@/lib/nouns";
 import { getMarketScanTotal } from "@/lib/market/benchmarks";
 import { MARKETS } from "@/lib/market/markets";
 
@@ -104,7 +105,10 @@ function WinnerRow({
           {c.rating_overall != null && (
             <span>
               <b className="font-medium">{c.rating_overall}★</b>
-              <span className="text-fog"> ({c.num_reviews ?? 0} reviews)</span>
+              <span className="text-fog">
+                {" "}
+                ({c.num_reviews ?? 0} review{(c.num_reviews ?? 0) === 1 ? "" : "s"})
+              </span>
             </span>
           )}
         </div>
@@ -135,7 +139,7 @@ export function MarketEvidence({ evidence: e }: { evidence: AuditMarketEvidence 
       </h2>
       <p className="mb-4 text-sm leading-relaxed text-fog">
         {scanTotal
-          ? `We scanned ${scanTotal} live listings in ${marketTitle(e.market)}; ${e.sample_size} are ${e.cohort} like yours.`
+          ? `We scanned ${scanTotal.toLocaleString("en-US")} live ${marketNoun(e.currency)} in ${marketTitle(e.market)}; ${e.sample_size} are ${e.cohort} like yours.`
           : `Measured from ${e.sample_size} listings in your size class.`}{" "}
         These are the top earners your listing competes with.
       </p>

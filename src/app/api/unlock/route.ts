@@ -12,22 +12,46 @@ import { verifyUnlockToken } from "@/lib/sign";
  * paying user an immediate unlock without waiting on webhook delivery.
  */
 export async function GET(req: Request) {
+  // A buyer can land here in a browser tab straight from Stripe, so error
+  // strings must read like a product and say what to do about a real charge
+  // (pre-launch QA 2026-08-06). Technical detail goes to the server log.
+  const brokenLink = `This unlock link is incomplete. If you just paid, write to ${config.email.contact} and we'll unlock your report.`;
   const { searchParams } = new URL(req.url);
   const auditId = searchParams.get("audit_id");
-  if (!auditId) return NextResponse.json({ error: "Missing audit_id" }, { status: 400 });
+  if (!auditId) {
+    console.error("[/api/unlock] missing audit_id");
+    return NextResponse.json({ error: brokenLink }, { status: 400 });
+  }
 
   const store = getStore();
   const audit = await store.getAudit(auditId);
-  if (!audit) return NextResponse.json({ error: "Audit not found" }, { status: 404 });
+  if (!audit) {
+    console.error(`[/api/unlock] audit not found: ${auditId}`);
+    return NextResponse.json(
+      { error: `We couldn't find that audit. If you just paid, write to ${config.email.contact}.` },
+      { status: 404 },
+    );
+  }
 
   const resultUrl = `${config.appUrl}/result/${auditId}`;
 
   if (stripeEnabled()) {
     const sessionId = searchParams.get("session_id");
-    if (!sessionId) return NextResponse.json({ error: "Missing session_id" }, { status: 400 });
+    if (!sessionId) {
+      console.error(`[/api/unlock] missing session_id for audit ${auditId}`);
+      return NextResponse.json({ error: brokenLink }, { status: 400 });
+    }
     const session = await getStripe().checkout.sessions.retrieve(sessionId);
     if (session.payment_status !== "paid" || session.metadata?.audit_id !== auditId) {
-      return NextResponse.json({ error: "Payment not confirmed" }, { status: 402 });
+      console.error(
+        `[/api/unlock] payment not confirmed for audit ${auditId}: status=${session.payment_status}, meta=${session.metadata?.audit_id}`,
+      );
+      return NextResponse.json(
+        {
+          error: `We couldn't confirm that payment. If you were charged, forward your Stripe receipt to ${config.email.contact} and we'll unlock your report.`,
+        },
+        { status: 402 },
+      );
     }
     await store.recordPayment({
       audit_id: auditId,
@@ -39,7 +63,11 @@ export async function GET(req: Request) {
   } else {
     const token = searchParams.get("token") ?? "";
     if (!verifyUnlockToken(auditId, token)) {
-      return NextResponse.json({ error: "Invalid unlock token" }, { status: 403 });
+      console.error(`[/api/unlock] invalid mock token for audit ${auditId}`);
+      return NextResponse.json(
+        { error: "This unlock link is invalid or has expired." },
+        { status: 403 },
+      );
     }
     await store.markAuditPaid(auditId);
   }
