@@ -85,7 +85,7 @@ function WinnerRow({
       <div className="flex min-w-0 flex-1 flex-col justify-center gap-1.5 px-5 py-4">
         <div className="flex items-center gap-2.5">
           <span className="shrink-0 rounded-full bg-sand px-2 py-0.5 font-mono text-[11px] font-medium text-ink">
-            #{rank} · Popularity {c.viral_score}
+            #{rank} · Popularity {Math.round(c.viral_score)}/100
           </span>
           <span className="font-mono text-[11px] uppercase tracking-[0.15em] text-pewter">
             {c.locality}

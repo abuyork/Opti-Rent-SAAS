@@ -121,7 +121,7 @@ export default function AuditProgress({ auditId }: { auditId: string }) {
           This is taking longer than usual
         </p>
         <p className="mx-auto mt-2 max-w-md text-sm leading-relaxed text-fog">
-          Your audit is still running. Refresh this page in a minute. Your
+          Your audit is still running. Give it a moment, then refresh this page. Your
           report link stays valid.
         </p>
       </div>
@@ -135,7 +135,7 @@ export default function AuditProgress({ auditId }: { auditId: string }) {
       <div className="h-10 w-10 animate-spin rounded-full border-2 border-dove border-t-ink" />
       <p className="text-base font-medium text-ink">{stage.label}</p>
       <p className="max-w-md text-sm leading-relaxed text-fog">
-        A full audit takes about a minute. We compare your listing against the
+        A full audit takes a minute or two. We compare your listing against the
         top earners in your market, and this page updates on its own.
       </p>
     </div>

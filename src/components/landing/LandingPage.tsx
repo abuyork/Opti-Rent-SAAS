@@ -33,7 +33,7 @@ export function LandingPage({ scope }: { scope: LandingScope }) {
     {
       n: "02",
       title: "We benchmark it",
-      body: "In about a minute, AI reviews your actual photos and copy, then measures you against the top earners in your exact market and size class.",
+      body: "In a minute or two, AI reviews your actual photos and copy, then measures you against the top earners in your exact market and size class.",
     },
     {
       n: "03",

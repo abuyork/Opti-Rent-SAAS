@@ -120,7 +120,7 @@ export function getLandingScope(slug: LandingScope["slug"]): LandingScope {
       kicker: "Bali Listing Intelligence",
       heroHeadline: "Your Airbnb is leaving money on the table.",
       heroSub:
-        "Paste your Airbnb link. In about a minute you get a free listing score, an underpricing estimate against comparable villas in your region. To grow your revenue",
+        "Paste your Airbnb link. In a minute or two you get a free listing score, an underpricing estimate against comparable villas in your region. To grow your revenue",
       ctaLabel: "Score my villa",
       scoringLine: "Scoring your villa against comparable listings…",
       trustLine: trustLine(`${compSetTotal(baliKeys)} villas in the Bali comp set`),
@@ -153,7 +153,7 @@ export function getLandingScope(slug: LandingScope["slug"]): LandingScope {
       logoHref: "/",
       kicker: `${title} Listing Intelligence`,
       heroHeadline: `Your ${title} ${noun} is leaving money on the table.`,
-      heroSub: `Paste your Airbnb link. In about a minute you get a free listing score, an underpricing estimate against comparable ${title} ${compNoun}. To grow your revenue.`,
+      heroSub: `Paste your Airbnb link. In a minute or two you get a free listing score, an underpricing estimate against comparable ${title} ${compNoun}. To grow your revenue.`,
       ctaLabel: `Score my ${noun}`,
       scoringLine: `Scoring your ${noun} against comparable listings…`,
       trustLine: trustLine(`${compSetTotal([slug])} ${compNoun} in the ${title} comp set`),
@@ -194,7 +194,7 @@ export function getLandingScope(slug: LandingScope["slug"]): LandingScope {
     kicker: "Listing Intelligence",
     heroHeadline: "Your Airbnb is leaving money on the table.",
     heroSub:
-      "Paste your Airbnb link. In about a minute you get a free listing score, an underpricing estimate against comparable listings in your market. To grow your revenue.",
+      "Paste your Airbnb link. In a minute or two you get a free listing score, an underpricing estimate against comparable listings in your market. To grow your revenue.",
     ctaLabel: "Score my listing",
     scoringLine: "Scoring your listing against comparable listings…",
     trustLine: trustLine(`${compSetTotal(Object.keys(MARKETS))} listings in the comp set`),
