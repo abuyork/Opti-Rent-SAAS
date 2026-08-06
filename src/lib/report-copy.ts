@@ -1,5 +1,6 @@
 import type { AuditMarketEvidence } from "@/lib/types";
 import { MARKETS } from "@/lib/market/markets";
+import { marketNoun } from "@/lib/nouns";
 import { stripEvidenceSuffix } from "@/lib/scoring/validate";
 
 /**
@@ -23,6 +24,6 @@ export function comparedAgainstLine(
   if (!evidence) return `Compared against ${base}.`;
 
   const title = MARKETS[evidence.market]?.title ?? evidence.market;
-  const noun = (evidence.currency ?? "IDR") === "IDR" ? "villas" : "listings";
+  const noun = marketNoun(evidence.currency ?? "IDR");
   return `Compared against ${base}, and ${evidence.sample_size} ${evidence.cohort} ${noun} measured in depth in ${title}.`;
 }

@@ -32,7 +32,7 @@ export interface PlaybookScope {
   kicker: string;
   heroHeadline: string;
   heroSub: string;
-  /** "One-time · PDF · Bali only · scanned July 2026" */
+  /** "One-time · PDF · Bali only · August 2026 edition" */
   heroFootnote: string;
   /** "One page of the Bali book · Greater Canggu, 2 bedrooms" */
   proofLabel: string;
@@ -156,7 +156,7 @@ export function getPlaybookScope(key: PlaybookKey): PlaybookScope {
     kicker: book.title,
     heroHeadline: `Stop guessing what works in ${book.place}.`,
     heroSub,
-    heroFootnote: `One-time · PDF · ${book.place} only · scanned ${book.scanned}`,
+    heroFootnote: `One-time · PDF · ${book.place} only · ${book.edition} edition`,
     proofLabel: PROOF[key].label,
     proofTiles: bench ? proofTiles(key, bench) : [],
     story,

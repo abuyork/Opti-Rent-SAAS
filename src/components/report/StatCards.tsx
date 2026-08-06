@@ -1,4 +1,5 @@
 import { formatCohortTotal, formatMoneyMonthly } from "@/lib/format";
+import { marketNoun } from "@/lib/nouns";
 
 /**
  * Four summary cards mirroring the sample report header.
@@ -30,7 +31,7 @@ export function StatCards({
   /** e.g. "3BR", for the note under the comp-set card. */
   cohortLabel?: string | null;
 }) {
-  const noun = currency === "IDR" ? "villas" : "listings";
+  const noun = marketNoun(currency);
   const measured = compCount + (marketCohortSize ?? 0);
   const cards = [
     { label: "Listing score", value: `${score}/100`, note: null },

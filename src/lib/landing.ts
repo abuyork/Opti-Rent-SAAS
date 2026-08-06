@@ -147,16 +147,16 @@ export function getLandingScope(slug: LandingScope["slug"]): LandingScope {
     const title = MARKETS[slug].title;
     const listings = getMarketScanTotal(slug) ?? 0;
     const noun = slug === "dubai" ? "rental" : "flat";
-    const compNoun = slug === "dubai" ? "apartments" : "flats";
+    const compNoun = `${noun}s`;
     return {
       slug,
       logoHref: "/",
       kicker: `${title} Listing Intelligence`,
       heroHeadline: `Your ${title} ${noun} is leaving money on the table.`,
-      heroSub: `Paste your Airbnb link. In about a minute you get a free listing score, an underpricing estimate against comparable ${title} listings. To grow your revenue.`,
+      heroSub: `Paste your Airbnb link. In about a minute you get a free listing score, an underpricing estimate against comparable ${title} ${compNoun}. To grow your revenue.`,
       ctaLabel: `Score my ${noun}`,
       scoringLine: `Scoring your ${noun} against comparable listings…`,
-      trustLine: trustLine(`${compSetTotal([slug])} listings in the ${title} comp set`),
+      trustLine: trustLine(`${compSetTotal([slug])} ${compNoun} in the ${title} comp set`),
       preview: {
         marketKey: slug,
         cohort: "2BR",
@@ -177,7 +177,7 @@ export function getLandingScope(slug: LandingScope["slug"]): LandingScope {
       },
       marketCards: null,
       previewTabs: null,
-      faqMarketsAnswer: `Your listing is scored against the ${title} market: we deep-scanned ${listings} live ${title} listings across every bedroom class from 1BR to 5+BR, sampling the top and the bottom of the revenue distribution.`,
+      faqMarketsAnswer: `Your ${noun} is scored against the ${title} market: we deep-scanned ${listings} live ${title} ${compNoun} across every bedroom class from 1BR to 5+BR, sampling the top and the bottom of the revenue distribution.`,
       footerLine: `Airbnb listing audit · ${title}`,
     };
   }
@@ -228,7 +228,7 @@ export function getLandingScope(slug: LandingScope["slug"]): LandingScope {
         title: "Dubai",
         href: "/dubai",
         lines: [
-          compSetCardLine(["dubai"], "listings"),
+          compSetCardLine(["dubai"], "rentals"),
           "Every size class, Marina to the Palm",
         ],
       },
@@ -236,7 +236,7 @@ export function getLandingScope(slug: LandingScope["slug"]): LandingScope {
         title: "London",
         href: "/london",
         lines: [
-          compSetCardLine(["london"], "listings"),
+          compSetCardLine(["london"], "flats"),
           "Every size class, zone 1 and beyond",
         ],
       },

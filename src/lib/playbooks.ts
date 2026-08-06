@@ -27,8 +27,8 @@ export interface PlaybookDef {
   markets: string[];
   /** How the book is chaptered, e.g. "9 regions" or "5 size classes". */
   chapterLine: string;
-  /** Date the underlying scans were run, for the "current as of" line. */
-  scanned: string;
+  /** Edition stamp matching the PDF cover ("August 2026"); the scans behind it ran July 2026. */
+  edition: string;
 }
 
 const BALI_MARKETS = Object.values(MARKETS)
@@ -45,29 +45,29 @@ export const PLAYBOOKS: Record<PlaybookKey, PlaybookDef> = {
     pages: 28,
     markets: BALI_MARKETS,
     chapterLine: `${BALI_MARKETS.length} regions, Canggu to the Nusa islands`,
-    scanned: "July 2026",
+    edition: "August 2026",
   },
   dubai: {
     key: "dubai",
     title: "The Dubai Playbook",
     place: "Dubai",
-    noun: "listings",
+    noun: "rentals",
     file: "The-Dubai-Playbook.pdf",
     pages: 20,
     markets: ["dubai"],
     chapterLine: "5 size classes, 1BR to 5+BR",
-    scanned: "July 2026",
+    edition: "August 2026",
   },
   london: {
     key: "london",
     title: "The London Playbook",
     place: "London",
-    noun: "listings",
+    noun: "flats",
     file: "The-London-Playbook.pdf",
     pages: 21,
     markets: ["london"],
     chapterLine: "5 size classes, 1BR to 5+BR",
-    scanned: "July 2026",
+    edition: "August 2026",
   },
 };
 
