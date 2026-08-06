@@ -73,7 +73,11 @@ export function StatCards({
           <div className="font-mono text-[11px] uppercase tracking-wide text-pewter">
             {c.label}
           </div>
-          <div className="mt-1.5 text-2xl tracking-[-0.02em] text-ink">{c.value}</div>
+          {/* text-xl + nowrap: every value measured to fit the narrowest tile
+              on one line (Max 2026-08-06: "Rp 15.7M/mo" was wrapping). */}
+          <div className="mt-1.5 whitespace-nowrap text-xl tracking-[-0.02em] text-ink">
+            {c.value}
+          </div>
           {c.note && (
             <div className="mt-1 font-mono text-[10px] leading-relaxed text-pewter">
               {c.note}

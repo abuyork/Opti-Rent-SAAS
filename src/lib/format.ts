@@ -35,9 +35,20 @@ export function formatMoney(currency: string, amount: number): string {
   return `${sym}${v.toLocaleString("en-US")}`;
 }
 
-/** Monthly view of a nightly underpricing figure, in the market's currency. */
+/**
+ * Monthly view of a nightly underpricing figure, in the market's currency.
+ * Headline values must fit a stat tile on ONE line (Max 2026-08-06), so from
+ * 10,000 up non-IDR amounts compact to "AED 13.8K" the same way IDR already
+ * compacts to "Rp 15.7M". Exact figures stay in the evidence rows.
+ */
 export function formatMoneyMonthly(currency: string, nightly: number): string {
-  return `${formatMoney(currency, Math.max(0, nightly) * NIGHTS_PER_MONTH)}/mo`;
+  const monthly = Math.max(0, Math.round(nightly)) * NIGHTS_PER_MONTH;
+  if (currency !== "IDR" && monthly >= 10_000) {
+    const sym = currency === "GBP" ? "£" : `${currency} `;
+    const k = (monthly / 1_000).toFixed(1).replace(/\.0$/, "");
+    return `${sym}${k}K/mo`;
+  }
+  return `${formatMoney(currency, monthly)}/mo`;
 }
 
 /**

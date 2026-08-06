@@ -33,7 +33,7 @@ export default async function ResultPage({
   if (audit.status !== "complete") {
     return (
       <main className="mx-auto max-w-3xl px-6 py-12">
-        <ReportHeader subtitle="Listing intelligence" />
+        <ReportHeader />
         <section className="mt-8">
           <h1 className="text-3xl font-normal tracking-[-0.025em] text-ink">
             Your listing audit
@@ -49,7 +49,7 @@ export default async function ResultPage({
 
   return (
     <main className="mx-auto max-w-3xl px-6 py-12">
-      <ReportHeader subtitle="Listing intelligence" />
+      <ReportHeader />
 
       <section className="mt-8">
         <h1 className="text-3xl font-normal tracking-[-0.025em] text-ink">
@@ -138,7 +138,7 @@ export default async function ResultPage({
       )}
 
       {/* Way back into the site — the report was a dead end (Alex 2026-08-06). */}
-      <section className="mt-12 flex flex-wrap items-center justify-center gap-3">
+      <section className="no-print mt-12 flex flex-wrap items-center justify-center gap-3">
         <a
           href="/#audit"
           className="rounded-full px-6 py-3 text-sm font-medium text-ink shadow-[0_0_0_1px_rgba(10,10,10,0.15)] hover:bg-cream"

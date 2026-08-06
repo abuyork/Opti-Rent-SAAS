@@ -59,7 +59,7 @@ export default async function ReportPage({
 
   return (
     <main className="mx-auto max-w-3xl px-8 py-10">
-      <ReportHeader subtitle="Listing intelligence report" />
+      <ReportHeader />
 
       <section className="mt-8">
         <h1 className="text-3xl font-normal tracking-[-0.025em] text-ink">
