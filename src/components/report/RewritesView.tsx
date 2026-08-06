@@ -22,7 +22,7 @@ function CopyButton({ text }: { text: string }) {
 
 function Block({ label, before, after }: { label: string; before: string; after: string }) {
   return (
-    <div className="rounded-lg border border-dove p-5 text-left">
+    <div className="pdf-block rounded-lg border border-dove p-5 text-left">
       <div className="flex items-center justify-between">
         <h4 className="font-medium text-ink">{label}</h4>
         <CopyButton text={after} />
@@ -44,7 +44,7 @@ function TitleVariantsBlock({
   variants: TitleVariant[];
 }) {
   return (
-    <div className="rounded-lg border border-dove p-5 text-left">
+    <div className="pdf-block rounded-lg border border-dove p-5 text-left">
       <h4 className="font-medium text-ink">Three title options</h4>
       <p className="mt-3 font-mono text-[11px] uppercase tracking-wide text-pewter">Before</p>
       <p className="text-sm text-fog line-through">{before}</p>

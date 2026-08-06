@@ -103,7 +103,7 @@ export default async function ResultPage({
             <RewritesView rewrites={audit.rewrites} />
           </section>
 
-          <section className="mt-12 flex justify-center">
+          <section className="no-print mt-12 flex justify-center">
             <a
               href={`/report/${audit.id}?print=1`}
               className="rounded-full bg-ink px-6 py-3 text-sm font-medium text-paper hover:bg-charcoal"
@@ -128,7 +128,7 @@ export default async function ResultPage({
           </h2>
           <LockedFixPreview fixes={audit.fixes} />
 
-          <div className="mt-8 flex flex-col items-center gap-3">
+          <div className="no-print mt-8 flex flex-col items-center gap-3">
             <PayButton auditId={audit.id} priceLabel={priceLabel} />
             <p className="text-xs text-fog">
               One-time payment · We&apos;ll email your report link.

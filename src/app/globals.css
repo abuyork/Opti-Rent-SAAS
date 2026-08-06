@@ -38,7 +38,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* HTML → PDF: single-page A4 branded report (Build Pack §7). */
+/* HTML → PDF: multi-page A4 branded report (Build Pack §7). */
 @page {
   size: A4;
   margin: 14mm;
@@ -51,8 +51,20 @@ body {
   body {
     background: #ffffff;
   }
+  /* Browsers skip painting backgrounds by default, which erased the severity
+     tag colors and cream cards from the PDF (Max ask 2026-08-05). */
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
   /* Avoid splitting a fix card across pages. */
   .pdf-block {
     break-inside: avoid;
+  }
+  /* Keep section headings attached to their first block. */
+  h1,
+  h2,
+  h3 {
+    break-after: avoid;
   }
 }
