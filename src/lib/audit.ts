@@ -67,7 +67,14 @@ export async function runAudit(airbnbUrl: string): Promise<AuditRunResult> {
   const benchmark = resolved.market_key
     ? getMarketBenchmark(resolved.market_key, cohortForBeds(resolved.listing.beds))
     : null;
-  const marketEvidence = benchmark ? toAuditEvidence(benchmark) : null;
+  // listing_nightly_rate is stamped here, not in toAuditEvidence: the benchmark
+  // knows the market, only this pipeline knows the listing. See its type doc.
+  const marketEvidence = benchmark
+    ? {
+        ...toAuditEvidence(benchmark),
+        listing_nightly_rate: resolved.listing.nightly_rate ?? null,
+      }
+    : null;
 
   const scoring = await getScorer().score({
     listing: resolved.listing,

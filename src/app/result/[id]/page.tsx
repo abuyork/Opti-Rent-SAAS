@@ -76,6 +76,8 @@ export default async function ResultPage({
           marketCohortSize={audit.market_evidence?.sample_size ?? null}
           marketCohortTotal={cohortTotalFor(audit.market_evidence)}
           cohortLabel={audit.market_evidence?.cohort ?? null}
+          nightlyRate={audit.market_evidence?.listing_nightly_rate ?? null}
+          winnerNightlyRate={audit.market_evidence?.winner_median_adr_idr ?? null}
         />
       </section>
 

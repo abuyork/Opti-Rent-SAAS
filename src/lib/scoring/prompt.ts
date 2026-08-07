@@ -174,6 +174,14 @@ RULES:
   style). Never contradict the measured evidence.
 - underpricing_idr is a benchmark ESTIMATE, never a guarantee. Frame as "you
   appear priced below comparable listings", not "raise your price and earn X".
+- PRICING FIX SCOPE: when underpricing_idr computes to 0, the listing is at or
+  above its comparable set by definition, so NEVER write that it is "priced
+  below comparable listings/villas" — the report's summary card says the
+  opposite and the two must not contradict. If pricing still deserves a fix in
+  that state (the winner rate in market_evidence is well above the listing's
+  rate), frame it against the top earners and cite BOTH numbers: "top-earning
+  1BR villas here charge about Rp 4.025.086, you charge Rp 1.230.343". Keep
+  the experiment-not-guarantee framing.
 - Only claim what listing fixes influence; never promise specific earnings.
 - Every fix must cite a comp basis or a listing fact — never advice that could
   apply to any listing.

@@ -89,6 +89,9 @@ const VILLA_SERAYA: ResolvedListing = {
 
 export class MockAirRoiProvider implements AirRoiProvider {
   async resolve(airbnbUrl: string): Promise<ResolvedListing> {
-    return { ...VILLA_SERAYA, airbnb_url: airbnbUrl };
+    // Berawa IS Greater Canggu, so the mock carries the market key — without
+    // it the mock pipeline skipped the market-evidence path entirely and dev
+    // never saw the evidence panel or the winner-rate card note.
+    return { ...VILLA_SERAYA, airbnb_url: airbnbUrl, market_key: "greater-canggu" };
   }
 }

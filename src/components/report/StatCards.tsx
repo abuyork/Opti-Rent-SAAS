@@ -1,5 +1,27 @@
-import { formatCohortTotal, formatMoneyMonthly } from "@/lib/format";
+import { formatCohortTotal, formatMoney, formatMoneyMonthly } from "@/lib/format";
 import { marketNoun } from "@/lib/nouns";
+
+/**
+ * The underpricing figure is measured against the NEARBY comps (the closest
+ * 25, the whole quality spectrum), while the fix list is grounded in the
+ * cohort's top earners — so a listing can be at zero here and still carry a
+ * "winners charge more" pricing fix. Max caught the two reading as a
+ * contradiction (2026-08-07): the zero state must scope its claim to the
+ * nearby comps, and when the winner rate is meaningfully above the listing's
+ * own rate, say so in the same breath the fix list will.
+ */
+const WINNER_GAP_MIN_RATIO = 1.2;
+
+function leftOnTableNote(
+  currency: string,
+  nightlyRate: number | null,
+  winnerNightlyRate: number | null,
+): string {
+  const scoped = "at the nearby comp rate";
+  if (!nightlyRate || !winnerNightlyRate) return scoped;
+  if (winnerNightlyRate < nightlyRate * WINNER_GAP_MIN_RATIO) return scoped;
+  return `${scoped} · winners charge about ${formatMoney(currency, winnerNightlyRate)} a night`;
+}
 
 /**
  * Four summary cards mirroring the sample report header.
@@ -19,6 +41,8 @@ export function StatCards({
   marketCohortSize = null,
   marketCohortTotal = null,
   cohortLabel = null,
+  nightlyRate = null,
+  winnerNightlyRate = null,
 }: {
   score: number;
   underpricingIdr: number;
@@ -30,6 +54,10 @@ export function StatCards({
   marketCohortTotal?: number | null;
   /** e.g. "3BR", for the note under the comp-set card. */
   cohortLabel?: string | null;
+  /** The listing's own nightly rate; absent on pre-2026-08-07 audits. */
+  nightlyRate?: number | null;
+  /** Winner median nightly rate for the cohort, from market evidence. */
+  winnerNightlyRate?: number | null;
 }) {
   const noun = marketNoun(currency);
   const measured = compCount + (marketCohortSize ?? 0);
@@ -44,7 +72,7 @@ export function StatCards({
       : {
           label: "Left on table",
           value: "None",
-          note: "priced at market rate",
+          note: leftOnTableNote(currency, nightlyRate, winnerNightlyRate),
         },
     { label: "Critical fixes", value: String(criticalCount), note: null },
     // The comp set is the whole cohort in this market (manager ask 2026-07-27);

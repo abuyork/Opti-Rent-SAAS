@@ -183,6 +183,14 @@ export interface AuditMarketEvidence {
   winner_median_description_chars: number;
   loser_median_description_chars: number;
   winner_median_adr_idr: number;
+  /**
+   * The audited listing's own nightly rate, stamped in at audit time (the only
+   * moment both this and the winner rate are in hand — the audit row never
+   * stores the rate anywhere else). Lets the "Left on table: None" card say
+   * what winners charge without contradicting the fix list (Max 2026-08-07).
+   * Absent on audits scored before 2026-08-07.
+   */
+  listing_nightly_rate?: number | null;
   winner_median_occupancy: number;
   winner_superhost_share: number;
   winner_guest_favorite_share: number;
