@@ -19,6 +19,7 @@ import {
   type PlaybookKey,
 } from "@/lib/playbooks";
 import { getMarketBenchmark, type MarketBenchmark } from "@/lib/market/benchmarks";
+import { MARKETS } from "@/lib/market/markets";
 
 export interface ProofTile {
   label: string;
@@ -32,10 +33,16 @@ export interface PlaybookScope {
   kicker: string;
   heroHeadline: string;
   heroSub: string;
-  /** "One-time · PDF · Bali only · August 2026 edition" */
+  /** "One-time · PDF · Bali only · 26/27 edition" */
   heroFootnote: string;
-  /** "One page of the Bali book · Greater Canggu, 2 bedrooms" */
+  /** Mono kicker over the proof strip: "One page of the Bali book". */
   proofLabel: string;
+  /**
+   * Plain sentence under the kicker naming whose numbers these are. Without it
+   * the strip never says the big figures belong to the top earners — the old
+   * "vs N bottom quartile" notes were carrying that alone (Max 2026-08-07).
+   */
+  proofLead: string;
   /** Empty when the market's benchmark is missing — section is hidden then. */
   proofTiles: ProofTile[];
   story: { n: string; title: string; body: string }[];
@@ -49,41 +56,55 @@ export interface PlaybookScope {
 
 /** Which market's benchmark supplies a book's proof strip. Bali's book spans 9
  * regions, so it quotes its flagship region; Dubai and London are their own. */
-const PROOF: Record<PlaybookKey, { market: string; label: string }> = {
-  bali: { market: "greater-canggu", label: "One page of the Bali book · Greater Canggu, 2 bedrooms" },
-  dubai: { market: "dubai", label: "One page of the Dubai book · 2 bedrooms" },
-  london: { market: "london", label: "One page of the London book · 2 bedrooms" },
+const PROOF_MARKET: Record<PlaybookKey, string> = {
+  bali: "greater-canggu",
+  dubai: "dubai",
+  london: "london",
 };
 
+/**
+ * Tile notes are written to finish the sentence their tile starts ("PHOTOS /
+ * 43 / the bottom 25% show 14") and to use owner words for the statistics:
+ * "bottom 25%", never "bottom quartile", and no bare "winner median" — same
+ * vocabulary the report enforces in `scoring/validate.ts` ANALYST_WORDS. The
+ * lead line above the strip is what establishes these are the top earners'
+ * figures, so the notes no longer have to. Max 2026-08-07.
+ */
 const photosTile = (b: MarketBenchmark): ProofTile => ({
   label: "Photos",
   value: String(Math.round(b.winner_median_photos)),
-  note: `vs ${Math.round(b.loser_median_photos)} bottom quartile`,
+  note: `the bottom 25% show ${Math.round(b.loser_median_photos)}`,
 });
 
 const descriptionTile = (b: MarketBenchmark): ProofTile => ({
   label: "Description",
   value: Math.round(b.winner_median_description_chars).toLocaleString("en-US"),
-  unit: "chars",
-  note: `vs ${Math.round(b.loser_median_description_chars).toLocaleString("en-US")} bottom quartile`,
+  unit: "characters",
+  // A median of 0 is real in several cohorts: over half the bottom 25%
+  // came back with no description text at all. "0 characters" reads as a
+  // broken number, so say what it means instead.
+  note:
+    Math.round(b.loser_median_description_chars) === 0
+      ? "the bottom 25% write almost none"
+      : `the bottom 25% write ${Math.round(b.loser_median_description_chars).toLocaleString("en-US")}`,
 });
 
 const occupancyTile = (b: MarketBenchmark): ProofTile => ({
   label: "Occupancy",
   value: `${Math.round(b.winner_median_occupancy * 100)}%`,
-  note: "winner median",
+  note: "of their nights are booked",
 });
 
 const superhostTile = (b: MarketBenchmark): ProofTile => ({
   label: "Superhost",
   value: `${Math.round(b.winner_superhost_share * 100)}%`,
-  note: "of winners",
+  note: "of them are Superhosts",
 });
 
 const guestFavoriteTile = (b: MarketBenchmark): ProofTile => ({
   label: "Guest Favorite",
   value: `${Math.round(b.winner_guest_favorite_share * 100)}%`,
-  note: "of winners",
+  note: "of them are Guest Favorites",
 });
 
 /**
@@ -98,15 +119,16 @@ function proofTiles(key: PlaybookKey, b: MarketBenchmark): ProofTile[] {
   return [photosTile(b), descriptionTile(b), occupancyTile(b), superhostTile(b)];
 }
 
-/** Story step 03 quotes a real measured contrast from this region's benchmark. */
+/** Story step 03 quotes a real measured contrast from this region's benchmark.
+ * Same plain-words rule as the proof tiles above. */
 function numberClaim(key: PlaybookKey, place: string, b: MarketBenchmark | null): string {
   if (!b) {
-    return `"Add more photos" is worthless. A claim with the measured winner and loser numbers next to it is a decision.`;
+    return `"Add more photos" is worthless. A claim with the measured top-earner and bottom-25% numbers next to it is a decision.`;
   }
   if (key === "london") {
-    return `"Write a longer description" is worthless. "Winning London descriptions run ${Math.round(b.winner_median_description_chars).toLocaleString("en-US")} characters, the bottom quartile runs ${Math.round(b.loser_median_description_chars).toLocaleString("en-US")}" is a decision.`;
+    return `"Write a longer description" is worthless. "Top-earning London flats write ${Math.round(b.winner_median_description_chars).toLocaleString("en-US")} characters, the bottom 25% write ${Math.round(b.loser_median_description_chars).toLocaleString("en-US")}" is a decision.`;
   }
-  return `"Add more photos" is worthless. "Winners in ${place} run ${Math.round(b.winner_median_photos)} photos, the bottom quartile runs ${Math.round(b.loser_median_photos)}" is a decision.`;
+  return `"Add more photos" is worthless. "Top earners in ${place} show ${Math.round(b.winner_median_photos)} photos, the bottom 25% show ${Math.round(b.loser_median_photos)}" is a decision.`;
 }
 
 /** Where the scan reaches, in the market's own vocabulary — matches the
@@ -126,7 +148,7 @@ const BUY_BLURB: Record<PlaybookKey, string> = {
 export function getPlaybookScope(key: PlaybookKey): PlaybookScope {
   const book = PLAYBOOKS[key];
   const compSet = playbookCompSet(book);
-  const bench = getMarketBenchmark(PROOF[key].market, "2BR");
+  const bench = getMarketBenchmark(PROOF_MARKET[key], "2BR");
 
   const heroSub =
     key === "bali"
@@ -142,7 +164,7 @@ export function getPlaybookScope(key: PlaybookKey): PlaybookScope {
     {
       n: "02",
       title: "We split winners from laggards",
-      body: `Inside each bedroom class we rank ${book.place} ${book.noun} on revenue, occupancy and review quality, then compare top quartile against bottom. A tactic earns a page only if the two groups differ on it.`,
+      body: `Inside each bedroom class we rank ${book.place} ${book.noun} on revenue, occupancy and review quality, then compare the top 25% against the bottom 25%. A tactic earns a page only if the two groups differ on it.`,
     },
     {
       n: "03",
@@ -157,16 +179,18 @@ export function getPlaybookScope(key: PlaybookKey): PlaybookScope {
     heroHeadline: `Stop guessing what works in ${book.place}.`,
     heroSub,
     heroFootnote: `One-time · PDF · ${book.place} only · ${book.edition} edition`,
-    proofLabel: PROOF[key].label,
+    proofLabel: `One page of the ${book.place} book`,
+    // "2-bedroom" tracks the "2BR" cohort the benchmark above is read from.
+    proofLead: `What the top earners do · 2-bedroom ${book.noun} in ${MARKETS[PROOF_MARKET[key]].title}`,
     proofTiles: bench ? proofTiles(key, bench) : [],
     story,
     buyBlurb: BUY_BLURB[key],
     otherMarkets: PLAYBOOK_KEYS.filter((k) => k !== key).map((k) => ({
       href: `/playbook/${k}`,
-      label: PLAYBOOKS[k].place,
+      label: PLAYBOOKS[k].title,
     })),
     metaTitle: `${book.title} - what actually works in ${book.place}`,
-    metaDescription: `${book.pages} pages on what the top-earning ${book.place} ${book.noun} do differently, measured against the bottom quartile: cover photos, titles, descriptions, amenities and pricing. Built from a live scan of ${compSet} ${book.noun}.`,
+    metaDescription: `${book.pages} pages on what the top-earning ${book.place} ${book.noun} do differently, measured against the bottom 25%: cover photos, titles, descriptions, amenities and pricing. Built from a live scan of ${compSet} ${book.noun}.`,
     footerLine: `${book.title} · built from live ${book.place} data`,
   };
 }

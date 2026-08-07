@@ -3,7 +3,7 @@ import { config } from "@/lib/config";
 import { getStripe, stripeEnabled } from "@/lib/stripe";
 import { playbookDownloadToken, verifyPlaybookMockToken } from "@/lib/sign";
 import { PLAYBOOKS, isPlaybookKey, playbookCompSet } from "@/lib/playbooks";
-import { SiteNav } from "@/components/SiteNav";
+import { SiteNav, SITE_LINKS } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
 
 export const metadata = { title: "Your Playbook - OptimoRent" };
@@ -100,15 +100,24 @@ export default async function PlaybookThanks({
   );
 }
 
+/**
+ * min-h-screen + flex-1 on main: this page holds four short lines, so the
+ * footer used to land mid-viewport with dead white space under it (Max
+ * 2026-08-07). The slack now goes above the footer instead of below it.
+ */
 function Shell({ heading, children }: { heading: string; children: React.ReactNode }) {
   return (
-    <div className="text-ink">
-      <SiteNav />
-      <main className="mx-auto max-w-2xl px-6 py-24 text-center">
+    <div className="flex min-h-screen flex-col text-ink">
+      {/* The buyer lands here from Stripe with no way back into the site, so
+          this page carries the full menu, not just the playbook dropdown (Max
+          2026-08-07). The CTA also refills the right-hand slot, which is what
+          was leaving the lone dropdown stranded mid-nav. */}
+      <SiteNav links={SITE_LINKS} cta={{ label: "Score my listing", href: "/#audit" }} />
+      <main className="mx-auto w-full max-w-2xl flex-1 px-6 py-24 text-center">
         <h1 className="text-3xl font-normal tracking-[-0.025em] sm:text-4xl">{heading}</h1>
         {children}
       </main>
-      <SiteFooter line="The Airbnb Playbook · Bali, Dubai and London" />
+      <SiteFooter line="Airbnb Playbook 26/27 · Bali, Dubai and London" />
     </div>
   );
 }

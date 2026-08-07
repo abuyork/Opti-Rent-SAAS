@@ -11,6 +11,18 @@ export interface NavLink {
 }
 
 /**
+ * The main menu, for pages that have no in-page anchors of their own — the
+ * playbook download page and the 404 (Max 2026-08-07: the download page had
+ * lost the menu entirely). The landing pages pass the same labels as bare
+ * hashes so they scroll instead of navigating; the region pages and the
+ * playbook hub deliberately pass their own anchors instead.
+ */
+export const SITE_LINKS: NavLink[] = [
+  { label: "How it works", href: "/#how-it-works" },
+  { label: "Pricing", href: "/#pricing" },
+];
+
+/**
  * Sticky site nav, shared by the landing pages and the playbook pages so the
  * "New" badge and the brand mark live in one place.
  *
@@ -172,7 +184,7 @@ export function SiteNav({
                     onClick={() => setOpen(false)}
                     className="py-2.5 text-sm font-medium text-fog hover:text-ink"
                   >
-                    The {PLAYBOOKS[k].place} Playbook
+                    {PLAYBOOKS[k].place}
                   </Link>
                 ))}
               </>

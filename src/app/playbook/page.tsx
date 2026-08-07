@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { SiteNav } from "@/components/SiteNav";
+import { SiteNav, SITE_LINKS } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
 import { config } from "@/lib/config";
 import { formatUsdFromCents } from "@/lib/format";
@@ -12,9 +12,9 @@ import {
 } from "@/lib/playbooks";
 
 export const metadata: Metadata = {
-  title: "The Airbnb Playbook - pick your market",
+  title: "Airbnb Playbook 26/27 - pick your market",
   description:
-    "One book per market: what the top-earning Airbnb listings do differently, measured against the bottom quartile, per size class. Pick Bali, Dubai or London.",
+    "One book per market: what the top-earning Airbnb listings do differently, measured against the bottom 25%, per size class. Pick Bali, Dubai or London.",
 };
 
 /**
@@ -28,12 +28,19 @@ export default function PlaybookHub() {
 
   return (
     <div className="text-ink">
-      <SiteNav showPlaybookLink={false} />
+      {/* The hub has no sections of its own, so without the main menu its nav
+          is a bare logo — the same hole as the download page (Max 2026-08-07).
+          The playbook dropdown stays hidden: the reader is already on it. */}
+      <SiteNav
+        links={SITE_LINKS}
+        cta={{ label: "Score my listing", href: "/#audit" }}
+        showPlaybookLink={false}
+      />
 
       <main className="mx-auto max-w-5xl px-6">
         <section className="mx-auto max-w-3xl pt-16 pb-12 text-center sm:pt-24">
           <p className="mb-6 font-mono text-xs uppercase tracking-[0.2em] text-fog">
-            The Airbnb Playbook
+            Airbnb Playbook 26/27
           </p>
           <h1 className="text-[38px] font-normal leading-[1.05] tracking-[-0.025em] sm:text-5xl sm:leading-[1.05]">
             Stop guessing what works.
@@ -43,7 +50,7 @@ export default function PlaybookHub() {
           <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-steel">
             We scanned {measuredTotalLabel()} live Airbnb properties in depth and wrote one book
             per market: what the top earners do differently, measured against the bottom
-            quartile, size class by size class. Pick where you host.
+            25%, size class by size class. Pick where you host.
           </p>
           <p className="mt-5 font-mono text-[11px] uppercase tracking-[0.15em] text-pewter">
             {price} per market · One-time · PDF
@@ -66,7 +73,7 @@ export default function PlaybookHub() {
                   </p>
                 </div>
                 <p className="mt-6 font-mono text-[11px] uppercase tracking-[0.15em] text-fog group-hover:text-ink">
-                  The {b.place} Playbook →
+                  Airbnb Playbook 26/27 →
                 </p>
               </Link>
             ))}
@@ -74,7 +81,7 @@ export default function PlaybookHub() {
         </section>
       </main>
 
-      <SiteFooter line="The Airbnb Playbook · Bali, Dubai and London" />
+      <SiteFooter line="Airbnb Playbook 26/27 · Bali, Dubai and London" />
     </div>
   );
 }

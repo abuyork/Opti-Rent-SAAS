@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { SiteNav } from "@/components/SiteNav";
+import { SiteNav, SITE_LINKS } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
 
 export const metadata = { title: "Page not found - OptimoRent" };
@@ -11,9 +11,11 @@ export const metadata = { title: "Page not found - OptimoRent" };
  */
 export default function NotFound() {
   return (
-    <div className="text-ink">
-      <SiteNav cta={{ label: "Score my listing", href: "/" }} />
-      <main className="mx-auto max-w-2xl px-6 py-24 text-center">
+    /* Same full-height column as /playbook/thanks — short page, so without it
+       the footer floats mid-viewport (Max 2026-08-07). */
+    <div className="flex min-h-screen flex-col text-ink">
+      <SiteNav links={SITE_LINKS} cta={{ label: "Score my listing", href: "/" }} />
+      <main className="mx-auto w-full max-w-2xl flex-1 px-6 py-24 text-center">
         <p className="mb-6 font-mono text-xs uppercase tracking-[0.2em] text-fog">404</p>
         <h1 className="text-3xl font-normal tracking-[-0.025em] sm:text-4xl">
           This page does not exist.

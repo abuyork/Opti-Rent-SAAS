@@ -15,19 +15,29 @@ export type PlaybookKey = "bali" | "dubai" | "london";
 
 export interface PlaybookDef {
   key: PlaybookKey;
+  /**
+   * The product's full name, e.g. "Bali Airbnb Playbook 26/27" (Max
+   * 2026-08-07). The only place a book is named: a rename here reaches the
+   * nav, the Stripe line item, the buyer's email and the meta titles at once.
+   * The PDF covers render separately and need not match.
+   */
   title: string;
   /** Object of the sentence: "…every 2BR in **Bali**". */
   place: string;
   /** What the listings are called in this market. */
   noun: string;
-  /** Storage object name in the private `playbooks` bucket. */
+  /**
+   * Storage object name in the private `playbooks` bucket, and the filename the
+   * buyer's download is forced to. Deliberately still the pre-2026-08-07 name:
+   * renaming it means re-uploading every object under a new key (Max: don't).
+   */
   file: string;
   pages: number;
   /** Market keys whose scans feed this book. */
   markets: string[];
   /** How the book is chaptered, e.g. "9 regions" or "5 size classes". */
   chapterLine: string;
-  /** Edition stamp matching the PDF cover ("August 2026"); the scans behind it ran July 2026. */
+  /** Edition stamp; the scans behind it ran July 2026. */
   edition: string;
 }
 
@@ -38,36 +48,36 @@ const BALI_MARKETS = Object.values(MARKETS)
 export const PLAYBOOKS: Record<PlaybookKey, PlaybookDef> = {
   bali: {
     key: "bali",
-    title: "The Bali Playbook",
+    title: "Bali Airbnb Playbook 26/27",
     place: "Bali",
     noun: "villas",
     file: "The-Bali-Playbook.pdf",
     pages: 28,
     markets: BALI_MARKETS,
     chapterLine: `${BALI_MARKETS.length} regions, Canggu to the Nusa islands`,
-    edition: "August 2026",
+    edition: "26/27",
   },
   dubai: {
     key: "dubai",
-    title: "The Dubai Playbook",
+    title: "Dubai Airbnb Playbook 26/27",
     place: "Dubai",
     noun: "rentals",
     file: "The-Dubai-Playbook.pdf",
     pages: 20,
     markets: ["dubai"],
     chapterLine: "5 size classes, 1BR to 5+BR",
-    edition: "August 2026",
+    edition: "26/27",
   },
   london: {
     key: "london",
-    title: "The London Playbook",
+    title: "London Airbnb Playbook 26/27",
     place: "London",
     noun: "flats",
     file: "The-London-Playbook.pdf",
     pages: 21,
     markets: ["london"],
     chapterLine: "5 size classes, 1BR to 5+BR",
-    edition: "August 2026",
+    edition: "26/27",
   },
 };
 
@@ -114,11 +124,11 @@ export const PLAYBOOK_CONTENTS: { title: string; body: string }[] = [
   },
   {
     title: "Cover photos",
-    body: "What top earners lead with, what the bottom quartile shows instead, both named.",
+    body: "What top earners lead with, what the bottom 25% show instead, both named.",
   },
   {
     title: "Titles",
-    body: "The words that carry measured positive delta per size class, and the ones worth zero.",
+    body: "The words that measurably earn more per size class, and the ones worth nothing.",
   },
   {
     title: "Descriptions",
@@ -134,7 +144,7 @@ export const PLAYBOOK_CONTENTS: { title: string; body: string }[] = [
   },
   {
     title: "Winners versus losers, per size class",
-    body: "Photos, description length, occupancy, Superhost share: top quartile against bottom.",
+    body: "Photos, description length, occupancy, Superhost share: the top 25% against the bottom 25%.",
   },
   {
     title: "The top 10 listings in each size class",

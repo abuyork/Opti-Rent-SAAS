@@ -67,7 +67,7 @@ export function LandingPage({ scope }: { scope: LandingScope }) {
     {
       q: "What is the Playbook, and how is it different from the report?",
       a: book
-        ? `The report scores your listing. The ${book.title} is the market itself: ${book.pages} pages on what the top-earning ${book.noun} in ${book.place} do differently, measured against the bottom quartile in every size class. It is ${playbookPrice}, one-time, and it is the same research your report cites.`
+        ? `The report scores your listing. The ${book.title} is the market itself: ${book.pages} pages on what the top-earning ${book.noun} in ${book.place} do differently, measured against the bottom 25% in every size class. It is ${playbookPrice}, one-time, and it is the same research your report cites.`
         : `The report scores your listing. The Playbook is the market itself: what the top earners do differently, measured size class by size class, written up as one book per market. It is ${playbookPrice} one-time per market, and it is the same research your report cites.`,
     },
     {
@@ -267,7 +267,10 @@ export function LandingPage({ scope }: { scope: LandingScope }) {
             pricing, not a card competing with the tiers above it. Campaign
             pages deep-link to their own region's playbook page; the reader
             there has already picked a market. */}
-        <section className="border-t border-dove">
+        {/* overflow-x-clip contains the CTA glow's spill past the right edge
+            without creating a scroll container (clip, not hidden — same as the
+            hero). Vertical overflow stays visible so the glow can bleed. */}
+        <section className="overflow-x-clip border-t border-dove">
           <Link
             href={book ? `/playbook/${book.key}` : "/playbook"}
             className="group flex flex-col gap-2 py-6 sm:flex-row sm:items-baseline sm:justify-between sm:gap-8"
@@ -277,14 +280,16 @@ export function LandingPage({ scope }: { scope: LandingScope }) {
                 New
               </span>{" "}
               <span className="font-medium text-ink">
-                {book ? `The ${book.place} Playbook` : "The Airbnb Playbook"}
+                {book ? book.title : "Airbnb Playbook 26/27"}
               </span>{" "}
               ·{" "}
               {book
                 ? `${book.pages} pages on what the top-earning ${book.noun} in ${book.place} do differently.`
                 : "What the top earners in your market do differently, measured size class by size class."}
             </p>
-            <span className="shrink-0 whitespace-nowrap font-mono text-[11px] uppercase tracking-[0.15em] text-fog group-hover:text-ink">
+            {/* z-0 makes the stacking context that keeps the -z-10 glow behind
+                the label but above the page, exactly as the hero form does. */}
+            <span className="relative z-0 shrink-0 whitespace-nowrap font-mono text-[11px] uppercase tracking-[0.15em] text-ember transition-opacity before:pointer-events-none before:absolute before:-inset-x-[64px] before:-inset-y-[36px] before:-z-10 before:bg-[radial-gradient(closest-side,rgba(255,168,136,0.42),transparent)] before:blur-[24px] before:content-[''] group-hover:opacity-70">
               See the playbook · {playbookPrice} →
             </span>
           </Link>

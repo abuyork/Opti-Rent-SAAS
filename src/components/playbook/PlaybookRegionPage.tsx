@@ -46,7 +46,7 @@ export function PlaybookRegionPage({ scope }: { scope: PlaybookScope }) {
             href="#buy"
             className="mt-8 inline-block rounded-full bg-ink px-6 py-3 text-sm font-medium text-paper transition-colors hover:bg-charcoal"
           >
-            Get the {book.place} Playbook · {price}
+            Get the Playbook · {price}
           </a>
           <p className="mt-5 font-mono text-[11px] uppercase tracking-[0.15em] text-pewter">
             {scope.heroFootnote}
@@ -60,6 +60,7 @@ export function PlaybookRegionPage({ scope }: { scope: PlaybookScope }) {
               <p className="text-center font-mono text-[11px] uppercase tracking-[0.15em] text-pewter">
                 {scope.proofLabel}
               </p>
+              <p className="mt-2 text-center text-sm text-steel">{scope.proofLead}</p>
               <div className="mt-6 grid grid-cols-2 gap-6 text-center sm:grid-cols-4">
                 {scope.proofTiles.map((t) => (
                   <Contrast key={t.label} {...t} />
@@ -91,7 +92,7 @@ export function PlaybookRegionPage({ scope }: { scope: PlaybookScope }) {
             a gap below it (Max 2026-08-06). */}
         <section id="inside" className="scroll-mt-16 border-t border-dove py-20">
           <h2 className="text-3xl font-normal tracking-[-0.025em] sm:text-4xl">
-            What's inside the {book.place} Playbook
+            What's inside the Playbook
           </h2>
           <div className="mt-10 grid gap-x-12 gap-y-6 sm:grid-cols-2">
             {PLAYBOOK_CONTENTS.map((c, i) => (
@@ -111,13 +112,13 @@ export function PlaybookRegionPage({ scope }: { scope: PlaybookScope }) {
         {/* Buy */}
         <section id="buy" className="scroll-mt-16 border-t border-dove py-20">
           <h2 className="text-3xl font-normal tracking-[-0.025em] sm:text-4xl">
-            Get the {book.place} Playbook
+            Get the Playbook
           </h2>
           <p className="mt-3 max-w-2xl text-base text-steel">{scope.buyBlurb}</p>
           <div className="mt-8 grid gap-6 sm:grid-cols-3">
             <div className="flex flex-col rounded-2xl bg-cream p-8 sm:col-span-2 sm:flex-row sm:items-end sm:justify-between sm:gap-8">
               <div>
-                <h3 className="text-2xl font-medium tracking-[-0.02em]">{book.place}</h3>
+                <h3 className="text-2xl font-medium tracking-[-0.02em]">{book.title}</h3>
                 <div className="mt-3 text-4xl tracking-[-0.025em]">{price}</div>
                 <div className="mt-5 flex flex-col gap-1.5 text-sm text-steel">
                   <p>{book.pages} pages, PDF, one-time</p>
@@ -128,7 +129,7 @@ export function PlaybookRegionPage({ scope }: { scope: PlaybookScope }) {
                 </div>
               </div>
               <div className="sm:w-64">
-                <BuyPlaybookButton market={book.key} label={`Buy the ${book.place} Playbook`} />
+                <BuyPlaybookButton market={book.key} label="Buy the Playbook" />
               </div>
             </div>
             <div className="flex flex-col justify-center rounded-2xl p-8 shadow-[0_0_0_1px_rgba(10,10,10,0.08)]">
@@ -142,7 +143,7 @@ export function PlaybookRegionPage({ scope }: { scope: PlaybookScope }) {
                     href={m.href}
                     className="text-sm font-medium text-fog hover:text-ink"
                   >
-                    The {m.label} Playbook →
+                    {m.label} →
                   </Link>
                 ))}
               </div>
