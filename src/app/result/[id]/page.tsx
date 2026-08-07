@@ -138,22 +138,6 @@ export default async function ResultPage({
         </section>
       )}
 
-      {/* Way back into the site — the report was a dead end (Alex 2026-08-06). */}
-      <section className="no-print mt-12 flex flex-wrap items-center justify-center gap-3">
-        <a
-          href="/#audit"
-          className="rounded-full px-6 py-3 text-sm font-medium text-ink shadow-[0_0_0_1px_rgba(10,10,10,0.15)] hover:bg-cream"
-        >
-          Audit another listing
-        </a>
-        <a
-          href="/"
-          className="text-sm text-fog underline decoration-dove underline-offset-2 hover:text-ink hover:decoration-ink"
-        >
-          Back to OptimoRent
-        </a>
-      </section>
-
       <footer className="mt-12 border-t border-dove pt-4 text-center">
         <div className="font-mono text-[11px] uppercase tracking-[0.15em] text-pewter">
           Questions about your score?
