@@ -4,6 +4,7 @@ import { getStore } from "@/lib/db";
 import { AirRoiError } from "@/lib/airroi";
 import { resolveAirbnbListingId } from "@/lib/airroi/url";
 import { config } from "@/lib/config";
+import { isCompedEmail } from "@/lib/access";
 
 /** Requester IP: Netlify's canonical header first, then the proxy chain head. */
 function clientIp(req: Request): string | null {
@@ -70,9 +71,15 @@ export async function POST(req: Request) {
 
     // Daily caps per email and per IP (each audit spends real API money).
     // Counted in the DB so the limit holds across serverless instances.
+    // Comped emails skip both caps (Alex 2026-08-10): they are internal
+    // accounts demoing the product, and hitting "come back tomorrow" mid-demo
+    // reads as a bug. Repeat audits of one listing still reuse the stored
+    // result, so the real spend is only new listings.
     const ip = clientIp(req);
     const since = new Date(Date.now() - 24 * 3_600_000).toISOString();
-    const counts = await store.countRecentAudits(email, ip, since);
+    const counts = isCompedEmail(email)
+      ? { byEmail: 0, byIp: 0 }
+      : await store.countRecentAudits(email, ip, since);
     if (
       counts.byEmail >= config.limits.auditsPerEmailPerDay ||
       counts.byIp >= config.limits.auditsPerIpPerDay

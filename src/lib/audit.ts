@@ -8,6 +8,7 @@ import { getAirRoiProvider, AirRoiError } from "@/lib/airroi";
 import { getScorer } from "@/lib/scoring";
 import { cohortForBeds, getMarketBenchmark, toAuditEvidence } from "@/lib/market/benchmarks";
 import { config } from "@/lib/config";
+import { hasFullReportAccess } from "@/lib/access";
 
 export interface AuditRunResult {
   resolved: ResolvedListing;
@@ -178,7 +179,7 @@ async function sendReadyEmail(
     to: audit.email,
     auditId,
     listingTitle,
-    includePdfLink: audit.paid || config.testingShowFullReport,
+    includePdfLink: hasFullReportAccess(audit),
   });
 }
 

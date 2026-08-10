@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { getStore } from "@/lib/db";
 import { toFreeView } from "@/lib/audit";
+import { hasFullReportAccess } from "@/lib/access";
 
 export const dynamic = "force-dynamic";
 
@@ -23,7 +24,7 @@ export async function GET(
     error: audit.status === "failed" ? audit.error_message : null,
     free:
       audit.status === "complete"
-        ? toFreeView(audit.id, audit, audit.paid)
+        ? toFreeView(audit.id, audit, hasFullReportAccess(audit))
         : null,
   });
 }

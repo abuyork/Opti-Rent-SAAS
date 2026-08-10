@@ -2,7 +2,7 @@
 
 > A villa owner pastes their Airbnb URL and gets a free
 > score, an underpricing estimate vs. comparable villas, and a problem count.
-> They pay once ($49) to unlock the full fix list, paste-ready rewrites, and a
+> They pay once ($19) to unlock the full fix list, paste-ready rewrites, and a
 > branded PDF. STR data from **AirROI**; scoring from **Claude**.
 
 Built to the **OptimoRent Build Pack v3.0** (see [`spec/`](spec/)).

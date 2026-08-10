@@ -3,6 +3,7 @@ import { getStore } from "@/lib/db";
 import { config } from "@/lib/config";
 import { getStripe, stripeEnabled } from "@/lib/stripe";
 import { unlockToken } from "@/lib/sign";
+import { hasFullReportAccess } from "@/lib/access";
 
 /**
  * Start a one-time payment to unlock an audit (Build Pack §7).
@@ -37,8 +38,10 @@ export async function POST(req: Request) {
     );
   }
 
-  // Already unlocked — just send them back to the report.
-  if (audit.paid) {
+  // Already unlocked (paid, comped or testing) — send them back to the report
+  // instead of to Stripe. A comped reader has no pay button, but the endpoint
+  // must refuse to charge them even if one is reached some other way.
+  if (hasFullReportAccess(audit)) {
     return NextResponse.json({ url: `${config.appUrl}/result/${auditId}` });
   }
 

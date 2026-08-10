@@ -2,6 +2,7 @@ import { notFound, redirect } from "next/navigation";
 import { getStore } from "@/lib/db";
 import { config } from "@/lib/config";
 import { verifyReportToken } from "@/lib/sign";
+import { hasFullReportAccess } from "@/lib/access";
 import { ReportHeader } from "@/components/report/ReportHeader";
 import { ListingIdentity } from "@/components/report/ListingIdentity";
 import { StatCards } from "@/components/report/StatCards";
@@ -51,10 +52,9 @@ export default async function ReportPage({
   // Async flow: no PDF until the background scorer has finished.
   if (audit.status !== "complete") redirect(`/result/${id}`);
 
-  const allowed =
-    audit.paid ||
-    config.testingShowFullReport || // QA: view/print the PDF without paying
-    (t ? verifyReportToken(id, t) : false);
+  // Paid, comped, or testing-unlocked (see hasFullReportAccess) — or holding a
+  // signed report-link token from the "report ready" email.
+  const allowed = hasFullReportAccess(audit) || (t ? verifyReportToken(id, t) : false);
   if (!allowed) redirect(`/result/${id}`);
 
   return (

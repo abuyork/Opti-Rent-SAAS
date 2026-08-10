@@ -33,13 +33,16 @@ export async function POST(req: Request) {
     const session = event.data.object as {
       id: string;
       payment_status: string;
+      amount_total?: number | null;
       metadata?: { audit_id?: string };
     };
     const auditId = session.metadata?.audit_id;
     if (auditId && session.payment_status === "paid") {
+      // Amount actually charged, for the same reason as /api/unlock: a session
+      // created before a price change settles at the old price.
       await getStore().recordPayment({
         audit_id: auditId,
-        amount_usd: config.reportPriceUsdCents,
+        amount_usd: session.amount_total ?? config.reportPriceUsdCents,
         provider: "stripe",
         provider_ref: session.id,
         status: "paid",

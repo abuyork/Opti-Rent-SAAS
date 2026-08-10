@@ -1,6 +1,6 @@
 /**
  * Centralised, server-side configuration. Reads env once and exposes typed
- * values. Price is config-driven per Build Pack §7 (default $49).
+ * values. Price is config-driven per Build Pack §7 (default $19).
  */
 
 function required(name: string, value: string | undefined): string {
@@ -24,10 +24,34 @@ export const config = {
     process.env.DEPLOY_PRIME_URL ??
     "http://localhost:3000",
 
-  reportPriceUsdCents: Number(process.env.REPORT_PRICE_USD_CENTS ?? "4900"),
+  /**
+   * Price of one audit unlock, in USD cents ($49 → $19 on 2026-08-10).
+   *
+   * DEPLOY NOTE: the landing and playbook pages are statically prerendered, so
+   * the price string is baked into their HTML at BUILD time while
+   * /api/checkout reads this at REQUEST time. Changing the Netlify variable
+   * without redeploying therefore charges the new price on a site still
+   * advertising the old one. Always redeploy after an env price change; the
+   * defaults here are kept in step with the live values so a stale variable
+   * can't split the two on its own.
+   */
+  reportPriceUsdCents: Number(process.env.REPORT_PRICE_USD_CENTS ?? "1900"),
 
   /** One market playbook PDF. Sold per location, separate from the audit. */
-  playbookPriceUsdCents: Number(process.env.PLAYBOOK_PRICE_USD_CENTS ?? "2900"),
+  playbookPriceUsdCents: Number(process.env.PLAYBOOK_PRICE_USD_CENTS ?? "900"),
+
+  /**
+   * Emails that read the full report without paying (Alex 2026-08-10:
+   * max@rentlyn.com, the manager). Checked at RENDER time against the audit
+   * row's email, never written to the row: no payments row is invented, the
+   * DB keeps saying what it truthfully knows, and removing an address here
+   * re-locks their past audits. These addresses also skip the free-audit
+   * daily caps so a demo can't run into the limit message.
+   */
+  freeReportEmails: (process.env.OPTIRENT_FREE_EMAILS ?? "max@rentlyn.com")
+    .split(",")
+    .map((e) => e.trim().toLowerCase())
+    .filter(Boolean),
 
   reportLinkSecret: process.env.REPORT_LINK_SECRET ?? "dev-insecure-secret",
 

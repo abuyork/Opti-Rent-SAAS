@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { getStore } from "@/lib/db";
 import { config } from "@/lib/config";
 import { formatUsdFromCents } from "@/lib/format";
+import { hasFullReportAccess } from "@/lib/access";
 import { ReportHeader } from "@/components/report/ReportHeader";
 import { ListingIdentity } from "@/components/report/ListingIdentity";
 import { StatCards } from "@/components/report/StatCards";
@@ -45,7 +46,7 @@ export default async function ResultPage({
   }
 
   const priceLabel = formatUsdFromCents(config.reportPriceUsdCents);
-  const showFull = audit.paid || config.testingShowFullReport;
+  const showFull = hasFullReportAccess(audit);
 
   return (
     <main className="mx-auto max-w-3xl px-6 py-12">

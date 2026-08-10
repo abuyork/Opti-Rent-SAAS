@@ -53,9 +53,12 @@ export async function GET(req: Request) {
         { status: 402 },
       );
     }
+    // Record what Stripe actually charged, not today's list price: a session
+    // opened before a price change completes at the OLD amount, and the
+    // payments ledger must say what the buyer paid (price cut 2026-08-10).
     await store.recordPayment({
       audit_id: auditId,
-      amount_usd: config.reportPriceUsdCents,
+      amount_usd: session.amount_total ?? config.reportPriceUsdCents,
       provider: "stripe",
       provider_ref: session.id,
       status: "paid",
