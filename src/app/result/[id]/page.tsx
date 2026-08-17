@@ -128,7 +128,7 @@ export default async function ResultPage({
           </div>
 
           <h2 className="mt-10 mb-4 text-2xl font-normal tracking-[-0.025em] text-ink">
-            Fix list (locked)
+            Preview (fix list)
           </h2>
           <LockedFixPreview fixes={audit.fixes} />
 

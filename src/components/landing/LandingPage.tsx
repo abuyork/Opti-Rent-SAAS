@@ -46,7 +46,7 @@ export function LandingPage({ scope }: { scope: LandingScope }) {
     "Listing score, 0-100",
     "Underpricing estimate per month",
     "Problem count with severity mix",
-    "Locked preview of your fix list",
+    "Preview of your fix list",
   ];
   const paidFeatures = [
     "Full fix list, every item citing measured market numbers",
