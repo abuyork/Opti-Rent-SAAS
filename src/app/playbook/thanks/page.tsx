@@ -5,6 +5,8 @@ import { playbookDownloadToken, verifyPlaybookMockToken } from "@/lib/sign";
 import { PLAYBOOKS, isPlaybookKey, playbookCompSet } from "@/lib/playbooks";
 import { SiteNav, SITE_LINKS } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
+import TrackEvent from "@/components/TrackEvent";
+import { gaValue } from "@/lib/analytics";
 
 export const metadata = { title: "Your Playbook - OptimoRent" };
 
@@ -73,6 +75,18 @@ export default async function PlaybookThanks({
 
   return (
     <Shell heading={`${playbook.title} is yours.`}>
+      {/* Only reached once the session is confirmed paid above. The Stripe
+          session id is the transaction id, so a refresh is deduped by GA4
+          rather than counted as a second sale. */}
+      <TrackEvent
+        event="purchase"
+        params={{
+          transaction_id: sessionId ?? `mock_${market}`,
+          currency: "USD",
+          value: gaValue(config.playbookPriceUsdCents),
+          items: [{ item_id: `playbook_${market}`, item_name: playbook.title }],
+        }}
+      />
       <p className="mt-4 text-base leading-relaxed text-steel">
         {playbook.pages} pages, built from {playbookCompSet(playbook)} live {playbook.noun} in{" "}
         {playbook.place}. The download button works for the next 72 hours, so save the file

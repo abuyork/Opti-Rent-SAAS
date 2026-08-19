@@ -3,6 +3,7 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { postJson } from "@/lib/http";
+import { track } from "@/lib/analytics";
 
 type Step = "url" | "email";
 
@@ -32,6 +33,9 @@ export default function AuditForm({
       setError("Enter a valid Airbnb listing URL.");
       return;
     }
+    // Top of the funnel: a real URL was pasted. Paired with audit_submitted
+    // below, the gap between the two is the email gate's drop-off.
+    track("audit_started");
     setStep("email");
   }
 
@@ -44,6 +48,7 @@ export default function AuditForm({
         url: url.trim(),
         email: email.trim(),
       });
+      track("audit_submitted", { audit_id: data.id });
       router.push(`/result/${data.id}`);
     } catch (err) {
       setError((err as Error).message);

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { postJson } from "@/lib/http";
+import { track, gaValue } from "@/lib/analytics";
 
 /**
  * Starts a one-time Stripe Checkout for an audit (Build Pack §7). Posts to
@@ -11,9 +12,12 @@ import { postJson } from "@/lib/http";
 export default function PayButton({
   auditId,
   priceLabel,
+  priceUsdCents,
 }: {
   auditId: string;
   priceLabel: string;
+  /** Same figure as priceLabel, unformatted, so GA's value matches the charge. */
+  priceUsdCents: number;
 }) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -23,6 +27,13 @@ export default function PayButton({
     setError(null);
     try {
       const data = await postJson<{ url: string }>("/api/checkout", { auditId });
+      // Before the redirect, never after: navigation cancels the beacon.
+      track("begin_checkout", {
+        currency: "USD",
+        value: gaValue(priceUsdCents),
+        items: [{ item_id: "audit_report", item_name: "Full listing audit" }],
+        audit_id: auditId,
+      });
       window.location.href = data.url;
     } catch (e) {
       setError((e as Error).message);

@@ -13,6 +13,8 @@ import { RewritesView } from "@/components/report/RewritesView";
 import { MarketEvidence } from "@/components/report/MarketEvidence";
 import PayButton from "@/components/PayButton";
 import AuditProgress from "@/components/AuditProgress";
+import TrackEvent from "@/components/TrackEvent";
+import { gaValue } from "@/lib/analytics";
 
 export const dynamic = "force-dynamic";
 
@@ -22,10 +24,14 @@ export const metadata = { title: "Your listing audit - OptimoRent" };
 
 export default async function ResultPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ id: string }>;
+  /** purchased=1 is set only by /api/unlock's post-payment redirect. */
+  searchParams: Promise<{ purchased?: string }>;
 }) {
   const { id } = await params;
+  const { purchased } = await searchParams;
   const audit = await getStore().getAudit(id);
   if (!audit) notFound();
 
@@ -50,6 +56,22 @@ export default async function ResultPage({
 
   return (
     <main className="mx-auto max-w-3xl px-6 py-12">
+      {/* Revenue lands here, once: /api/unlock adds purchased=1 only after
+          Stripe confirms the session, so a comped or repeat view of an
+          already-unlocked report never counts as a sale. The audit id is the
+          transaction id, which is how GA4 discards a refresh. */}
+      {purchased === "1" && audit.paid && (
+        <TrackEvent
+          event="purchase"
+          params={{
+            transaction_id: audit.id,
+            currency: "USD",
+            value: gaValue(config.reportPriceUsdCents),
+            items: [{ item_id: "audit_report", item_name: "Full listing audit" }],
+          }}
+        />
+      )}
+      {!showFull && <TrackEvent event="paywall_viewed" params={{ audit_id: audit.id }} />}
       <ReportHeader />
 
       <section className="mt-8">
@@ -133,7 +155,11 @@ export default async function ResultPage({
           <LockedFixPreview fixes={audit.fixes} />
 
           <div className="no-print mt-8 flex flex-col items-center gap-3">
-            <PayButton auditId={audit.id} priceLabel={priceLabel} />
+            <PayButton
+              auditId={audit.id}
+              priceLabel={priceLabel}
+              priceUsdCents={config.reportPriceUsdCents}
+            />
             <p className="text-xs text-fog">
               One-time payment · We&apos;ll email your report link.
             </p>

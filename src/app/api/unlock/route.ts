@@ -34,6 +34,9 @@ export async function GET(req: Request) {
   }
 
   const resultUrl = `${config.appUrl}/result/${auditId}`;
+  // Same page, flagged as freshly bought so the result page can fire exactly
+  // one analytics purchase event. Cancel links keep using the plain URL.
+  const purchasedUrl = `${resultUrl}?purchased=1`;
 
   if (stripeEnabled()) {
     const sessionId = searchParams.get("session_id");
@@ -75,5 +78,5 @@ export async function GET(req: Request) {
     await store.markAuditPaid(auditId);
   }
 
-  return NextResponse.redirect(resultUrl);
+  return NextResponse.redirect(purchasedUrl);
 }

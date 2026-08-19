@@ -129,7 +129,11 @@ export function PlaybookRegionPage({ scope }: { scope: PlaybookScope }) {
                 </div>
               </div>
               <div className="sm:w-64">
-                <BuyPlaybookButton market={book.key} label="Buy the Playbook" />
+                <BuyPlaybookButton
+                  market={book.key}
+                  label="Buy the Playbook"
+                  priceUsdCents={config.playbookPriceUsdCents}
+                />
               </div>
             </div>
             <div className="flex flex-col justify-center rounded-2xl p-8 shadow-[0_0_0_1px_rgba(10,10,10,0.08)]">

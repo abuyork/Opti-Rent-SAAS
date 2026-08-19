@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Geist_Mono } from "next/font/google";
 import { config } from "@/lib/config";
 import { socialCard } from "@/lib/og";
+import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -24,6 +25,7 @@ export default function RootLayout({
         className={`${inter.variable} ${geistMono.variable} min-h-screen font-sans antialiased`}
       >
         {children}
+        <GoogleAnalytics />
       </body>
     </html>
   );

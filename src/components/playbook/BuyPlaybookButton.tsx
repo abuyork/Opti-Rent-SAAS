@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { postJson } from "@/lib/http";
+import { track, gaValue } from "@/lib/analytics";
 
 /**
  * Starts a one-time Stripe Checkout for one market playbook. Posts to
@@ -11,9 +12,12 @@ import { postJson } from "@/lib/http";
 export default function BuyPlaybookButton({
   market,
   label,
+  priceUsdCents,
 }: {
   market: string;
   label: string;
+  /** Config-driven playbook price, so GA's value follows a price change. */
+  priceUsdCents: number;
 }) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -23,6 +27,12 @@ export default function BuyPlaybookButton({
     setError(null);
     try {
       const data = await postJson<{ url: string }>("/api/checkout/playbook", { market });
+      // Before the redirect, never after: navigation cancels the beacon.
+      track("begin_checkout", {
+        currency: "USD",
+        value: gaValue(priceUsdCents),
+        items: [{ item_id: `playbook_${market}`, item_name: "Market playbook" }],
+      });
       window.location.href = data.url;
     } catch (e) {
       setError((e as Error).message);
