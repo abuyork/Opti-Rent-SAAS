@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { postJson } from "@/lib/http";
-import { track } from "@/lib/analytics";
+import { track, referralParam } from "@/lib/analytics";
 
 type Step = "url" | "email";
 
@@ -48,7 +48,7 @@ export default function AuditForm({
         url: url.trim(),
         email: email.trim(),
       });
-      track("audit_submitted", { audit_id: data.id });
+      track("audit_submitted", { audit_id: data.id, ...referralParam() });
       router.push(`/result/${data.id}`);
     } catch (err) {
       setError((err as Error).message);

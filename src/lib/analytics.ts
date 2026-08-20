@@ -8,6 +8,8 @@
  * and every track() call is a no-op, so development traffic can never reach
  * the production property.
  */
+import { REFERRAL_COOKIE, referralFromCookie } from "@/lib/ambassadors";
+
 export const GA_ID = process.env.NEXT_PUBLIC_GA_ID ?? "";
 
 declare global {
@@ -34,4 +36,17 @@ export function track(event: string, params?: Record<string, unknown>): void {
 /** Cents to the plain number GA4 expects in `value` (1900 → 19). */
 export function gaValue(usdCents: number): number {
   return Math.round(usdCents) / 100;
+}
+
+/**
+ * Ambassador referral slug from the first-party cookie (set by src/proxy.ts,
+ * non-httpOnly for exactly this read), as a spreadable event param — so GA4
+ * funnels can be segmented per ambassador. Empty object when not referred;
+ * registry-validated so a hand-edited cookie can't inject junk dimensions.
+ */
+export function referralParam(): Record<string, string> {
+  if (typeof document === "undefined") return {};
+  const match = document.cookie.match(new RegExp(`(?:^|;\\s*)${REFERRAL_COOKIE}=([^;]+)`));
+  const referral = referralFromCookie(match ? decodeURIComponent(match[1]) : null);
+  return referral ? { referral } : {};
 }

@@ -268,6 +268,12 @@ export interface Audit {
   paid: boolean;
   /** Requester IP at creation (rate limiting); null when the header is absent. */
   client_ip?: string | null;
+  /**
+   * Ambassador credited for this audit (registry slug from lib/ambassadors.ts).
+   * Stamped from the referral cookie at creation, or backfilled at checkout
+   * when the referral arrived after the audit. Null for non-referred traffic.
+   */
+  referral_ref?: string | null;
 }
 
 /** What the FREE tier exposes (no fixes/rewrites). Build Pack §1, §4 step 6. */

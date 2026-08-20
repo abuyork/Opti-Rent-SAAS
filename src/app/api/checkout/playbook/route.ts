@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server";
+import { cookies } from "next/headers";
 import { config } from "@/lib/config";
+import { REFERRAL_COOKIE, referralFromCookie } from "@/lib/ambassadors";
 import { getStripe, stripeEnabled } from "@/lib/stripe";
 import { playbookMockToken } from "@/lib/sign";
 import { PLAYBOOKS, isPlaybookKey } from "@/lib/playbooks";
@@ -47,6 +49,11 @@ export async function POST(req: Request) {
     return NextResponse.json({ url, mock: true });
   }
 
+  // Ambassador attribution: playbooks have no DB rows, so the referral slug in
+  // the session metadata IS the sales record (counted in the Stripe dashboard).
+  // Cookie stamped by src/proxy.ts, registry-validated here.
+  const referral = referralFromCookie((await cookies()).get(REFERRAL_COOKIE)?.value);
+
   const session = await getStripe().checkout.sessions.create({
     mode: "payment",
     line_items: [
@@ -62,7 +69,7 @@ export async function POST(req: Request) {
         quantity: 1,
       },
     ],
-    metadata: { playbook_market: market },
+    metadata: { playbook_market: market, ...(referral ? { referral } : {}) },
     success_url: `${thanksUrl}?market=${market}&session_id={CHECKOUT_SESSION_ID}`,
     cancel_url: `${config.appUrl}/playbook/${market}`,
   });

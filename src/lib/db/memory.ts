@@ -57,6 +57,7 @@ export class MemoryAuditStore implements AuditStore {
       market_evidence: null,
       paid: false,
       client_ip: input.client_ip ?? null,
+      referral_ref: input.referral_ref ?? null,
     };
     store.audits.set(audit.id, audit);
     return audit;
@@ -102,6 +103,11 @@ export class MemoryAuditStore implements AuditStore {
   async markAuditPaid(id: string): Promise<void> {
     const a = store.audits.get(id);
     if (a) a.paid = true;
+  }
+
+  async setAuditReferral(id: string, referralRef: string): Promise<void> {
+    const a = store.audits.get(id);
+    if (a) a.referral_ref = referralRef;
   }
 
   async createLead(_input: LeadInput): Promise<void> {

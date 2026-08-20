@@ -1,5 +1,7 @@
 import Link from "next/link";
+import { cookies } from "next/headers";
 import { config } from "@/lib/config";
+import { REFERRAL_COOKIE, referralFromCookie } from "@/lib/ambassadors";
 import { getStripe, stripeEnabled } from "@/lib/stripe";
 import { playbookDownloadToken, verifyPlaybookMockToken } from "@/lib/sign";
 import { PLAYBOOKS, isPlaybookKey, playbookCompSet } from "@/lib/playbooks";
@@ -42,6 +44,11 @@ export default async function PlaybookThanks({
   if (!isPlaybookKey(market)) return notFound;
   const playbook = PLAYBOOKS[market];
 
+  // Ambassador credited for this sale. Live: from the session metadata, the
+  // playbook sale's only record (stamped at checkout). Mock: from the cookie,
+  // so local QA exercises the same param.
+  let referral: string | null = null;
+
   let paid = false;
   if (stripeEnabled()) {
     if (!sessionId) return notFound;
@@ -50,11 +57,13 @@ export default async function PlaybookThanks({
       paid =
         session.payment_status === "paid" && session.metadata?.playbook_market === market;
       buyerEmail = session.customer_details?.email ?? null;
+      referral = referralFromCookie(session.metadata?.referral);
     } catch (e) {
       console.error("[playbook/thanks] session lookup failed", e);
     }
   } else {
     paid = verifyPlaybookMockToken(market, token ?? "");
+    referral = referralFromCookie((await cookies()).get(REFERRAL_COOKIE)?.value);
   }
   if (!paid) return notFound;
 
@@ -85,6 +94,7 @@ export default async function PlaybookThanks({
           currency: "USD",
           value: gaValue(config.playbookPriceUsdCents),
           items: [{ item_id: `playbook_${market}`, item_name: playbook.title }],
+          ...(referral ? { referral } : {}),
         }}
       />
       <p className="mt-4 text-base leading-relaxed text-steel">

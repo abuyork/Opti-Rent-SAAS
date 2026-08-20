@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server";
+import { cookies } from "next/headers";
 import { getStore } from "@/lib/db";
+import { REFERRAL_COOKIE, referralFromCookie } from "@/lib/ambassadors";
 import { config } from "@/lib/config";
 import { getStripe, stripeEnabled } from "@/lib/stripe";
 import { unlockToken } from "@/lib/sign";
@@ -47,6 +49,16 @@ export async function POST(req: Request) {
 
   const resultUrl = `${config.appUrl}/result/${auditId}`;
 
+  // Ambassador attribution: the audit row is canonical; fall back to the live
+  // cookie when the referral arrived after the audit was created (owner met
+  // the ambassador between scoring and paying), and backfill the row so SQL
+  // reporting and Stripe metadata tell the same story.
+  const cookieReferral = referralFromCookie((await cookies()).get(REFERRAL_COOKIE)?.value);
+  const referral = audit.referral_ref ?? cookieReferral;
+  if (referral && !audit.referral_ref) {
+    await store.setAuditReferral(auditId, referral);
+  }
+
   if (!stripeEnabled()) {
     // Keyless mock: signed unlock link (no real charge).
     const token = unlockToken(auditId);
@@ -71,7 +83,9 @@ export async function POST(req: Request) {
         quantity: 1,
       },
     ],
-    metadata: { audit_id: auditId },
+    // `referral` makes the ambassador visible on the payment in the Stripe
+    // dashboard (searchable/exportable), which is where payouts get counted.
+    metadata: { audit_id: auditId, ...(referral ? { referral } : {}) },
     success_url: `${config.appUrl}/api/unlock?audit_id=${auditId}&session_id={CHECKOUT_SESSION_ID}`,
     cancel_url: resultUrl,
   });

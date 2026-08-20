@@ -68,6 +68,8 @@ export default async function ResultPage({
             currency: "USD",
             value: gaValue(config.reportPriceUsdCents),
             items: [{ item_id: "audit_report", item_name: "Full listing audit" }],
+            // Ambassador credited for the sale (audits.referral_ref).
+            ...(audit.referral_ref ? { referral: audit.referral_ref } : {}),
           }}
         />
       )}

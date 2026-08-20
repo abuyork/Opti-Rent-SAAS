@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server";
+import { cookies } from "next/headers";
 import { dispatchAuditJob } from "@/lib/audit";
+import { REFERRAL_COOKIE, referralFromCookie } from "@/lib/ambassadors";
 import { getStore } from "@/lib/db";
 import { AirRoiError } from "@/lib/airroi";
 import { resolveAirbnbListingId } from "@/lib/airroi/url";
@@ -90,11 +92,17 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: LIMIT_MESSAGE }, { status: 429 });
     }
 
+    // Ambassador attribution: the referral cookie (stamped by src/proxy.ts on
+    // /bali/<slug>) rides in with the form's same-origin fetch. Validated
+    // against the registry so junk cookie values never reach the row.
+    const referral = referralFromCookie((await cookies()).get(REFERRAL_COOKIE)?.value);
+
     const audit = await store.createPendingAudit({
       airbnb_url: url,
       airroi_listing_id: listingId,
       email,
       client_ip: ip,
+      referral_ref: referral,
     });
     await store.createLead({ email, airbnb_url: url, source: "audit" });
 

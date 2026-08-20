@@ -7,6 +7,8 @@ export interface PendingAuditInput {
   email: string;
   /** Requester IP for rate limiting; null when the header is absent. */
   client_ip?: string | null;
+  /** Ambassador referral slug from the visitor's cookie; null when absent. */
+  referral_ref?: string | null;
 }
 
 /** How many audits an email / IP created since `sinceIso` (rate limiting). */
@@ -55,6 +57,12 @@ export interface AuditStore {
   markProcessing(id: string): Promise<void>;
   getAudit(id: string): Promise<Audit | null>;
   markAuditPaid(id: string): Promise<void>;
+  /**
+   * Backfill the ambassador referral on an audit created before the visitor
+   * clicked an ambassador link (checkout is the only caller; it keeps the DB
+   * and the Stripe session metadata telling the same story).
+   */
+  setAuditReferral(id: string, referralRef: string): Promise<void>;
   createLead(input: LeadInput): Promise<void>;
   recordPayment(input: PaymentInput): Promise<void>;
   /**

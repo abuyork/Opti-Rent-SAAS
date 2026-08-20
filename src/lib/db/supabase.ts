@@ -32,6 +32,7 @@ export class SupabaseAuditStore implements AuditStore {
         airroi_listing_id: input.airroi_listing_id,
         email: input.email,
         client_ip: input.client_ip ?? null,
+        referral_ref: input.referral_ref ?? null,
         paid: false,
       })
       .select()
@@ -95,6 +96,14 @@ export class SupabaseAuditStore implements AuditStore {
   async markAuditPaid(id: string): Promise<void> {
     const { error } = await this.db.from("audits").update({ paid: true }).eq("id", id);
     if (error) throw new Error(`markAuditPaid failed: ${error.message}`);
+  }
+
+  async setAuditReferral(id: string, referralRef: string): Promise<void> {
+    const { error } = await this.db
+      .from("audits")
+      .update({ referral_ref: referralRef })
+      .eq("id", id);
+    if (error) throw new Error(`setAuditReferral failed: ${error.message}`);
   }
 
   async createLead(input: LeadInput): Promise<void> {

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { postJson } from "@/lib/http";
-import { track, gaValue } from "@/lib/analytics";
+import { track, gaValue, referralParam } from "@/lib/analytics";
 
 /**
  * Starts a one-time Stripe Checkout for an audit (Build Pack §7). Posts to
@@ -33,6 +33,7 @@ export default function PayButton({
         value: gaValue(priceUsdCents),
         items: [{ item_id: "audit_report", item_name: "Full listing audit" }],
         audit_id: auditId,
+        ...referralParam(),
       });
       window.location.href = data.url;
     } catch (e) {
