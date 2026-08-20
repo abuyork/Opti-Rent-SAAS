@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { cookies } from "next/headers";
 import { config } from "@/lib/config";
-import { REFERRAL_COOKIE, referralFromCookie } from "@/lib/ambassadors";
+import { REFERRAL_COOKIE, referralCookieShape } from "@/lib/ambassadors";
+import { validReferral } from "@/lib/ambassadors-server";
 import { getStripe, stripeEnabled } from "@/lib/stripe";
 import { playbookDownloadToken, verifyPlaybookMockToken } from "@/lib/sign";
 import { PLAYBOOKS, isPlaybookKey, playbookCompSet } from "@/lib/playbooks";
@@ -57,13 +58,14 @@ export default async function PlaybookThanks({
       paid =
         session.payment_status === "paid" && session.metadata?.playbook_market === market;
       buyerEmail = session.customer_details?.email ?? null;
-      referral = referralFromCookie(session.metadata?.referral);
+      // Shape check suffices: checkout only ever stamps table-validated slugs.
+      referral = referralCookieShape(session.metadata?.referral);
     } catch (e) {
       console.error("[playbook/thanks] session lookup failed", e);
     }
   } else {
     paid = verifyPlaybookMockToken(market, token ?? "");
-    referral = referralFromCookie((await cookies()).get(REFERRAL_COOKIE)?.value);
+    referral = await validReferral((await cookies()).get(REFERRAL_COOKIE)?.value);
   }
   if (!paid) return notFound;
 

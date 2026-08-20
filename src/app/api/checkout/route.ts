@@ -1,7 +1,8 @@
 import { NextResponse } from "next/server";
 import { cookies } from "next/headers";
 import { getStore } from "@/lib/db";
-import { REFERRAL_COOKIE, referralFromCookie } from "@/lib/ambassadors";
+import { REFERRAL_COOKIE } from "@/lib/ambassadors";
+import { validReferral } from "@/lib/ambassadors-server";
 import { config } from "@/lib/config";
 import { getStripe, stripeEnabled } from "@/lib/stripe";
 import { unlockToken } from "@/lib/sign";
@@ -53,7 +54,7 @@ export async function POST(req: Request) {
   // cookie when the referral arrived after the audit was created (owner met
   // the ambassador between scoring and paying), and backfill the row so SQL
   // reporting and Stripe metadata tell the same story.
-  const cookieReferral = referralFromCookie((await cookies()).get(REFERRAL_COOKIE)?.value);
+  const cookieReferral = await validReferral((await cookies()).get(REFERRAL_COOKIE)?.value);
   const referral = audit.referral_ref ?? cookieReferral;
   if (referral && !audit.referral_ref) {
     await store.setAuditReferral(auditId, referral);

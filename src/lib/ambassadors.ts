@@ -5,19 +5,15 @@
  * referral cookie, so a later report or playbook purchase from that visitor
  * attributes to them (audits.referral_ref + Stripe session metadata.referral).
  *
- * Adding an ambassador is one line here plus a deploy — the same
- * config-in-code pattern as MARKETS and PLAYBOOKS. Slugs must be lowercase and
- * URL-safe: they appear in URLs, GA event params, the audits table and Stripe
- * metadata exactly as written here.
+ * The registry lives in the `ambassadors` Supabase table (migration 0009) so
+ * adding someone is a Table Editor row, not a deploy — see
+ * lib/ambassadors-server.ts for the lookup. This module holds only the parts
+ * that must run WITHOUT the database: the cookie contract and the slug shape
+ * check, shared by the edge proxy (no DB credentials there) and the GA client
+ * code (no DB on the client). Everything that writes attribution validates
+ * against the table, so a shape-valid-but-unknown cookie never reaches the DB,
+ * Stripe metadata, or the money events.
  */
-export interface Ambassador {
-  /** Display name, exactly as the landing kicker reads it (CSS uppercases). */
-  name: string;
-}
-
-export const AMBASSADORS: Record<string, Ambassador> = {
-  gusde: { name: "Gusde" },
-};
 
 /** First-party referral cookie. Last-touch: the newest ambassador link wins. */
 export const REFERRAL_COOKIE = "or_ref";
@@ -29,16 +25,16 @@ export const REFERRAL_COOKIE = "or_ref";
  */
 export const REFERRAL_COOKIE_MAX_AGE = 180 * 24 * 3600;
 
-export function isAmbassadorSlug(slug: string): boolean {
-  return Object.hasOwn(AMBASSADORS, slug);
-}
+/** Slug shape: lowercase letters/digits/hyphens, 2-32 chars, starts alnum.
+ * Mirrored by the ambassadors table's CHECK constraint. */
+export const AMBASSADOR_SLUG_RE = /^[a-z0-9][a-z0-9-]{1,31}$/;
 
 /**
- * Registry-validated referral slug from a cookie value or URL segment;
- * null when absent or unknown, so junk cookie values never reach the DB,
- * Stripe metadata, or GA.
+ * Shape-only normalization of a slug from a URL segment or cookie value;
+ * null when it can't be an ambassador slug. NOT a registry check — callers
+ * that stamp attribution must use validReferral() (ambassadors-server.ts).
  */
-export function referralFromCookie(value: string | null | undefined): string | null {
+export function referralCookieShape(value: string | null | undefined): string | null {
   const slug = (value ?? "").trim().toLowerCase();
-  return slug && isAmbassadorSlug(slug) ? slug : null;
+  return AMBASSADOR_SLUG_RE.test(slug) ? slug : null;
 }

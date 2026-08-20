@@ -8,7 +8,7 @@
  * and every track() call is a no-op, so development traffic can never reach
  * the production property.
  */
-import { REFERRAL_COOKIE, referralFromCookie } from "@/lib/ambassadors";
+import { REFERRAL_COOKIE, referralCookieShape } from "@/lib/ambassadors";
 
 export const GA_ID = process.env.NEXT_PUBLIC_GA_ID ?? "";
 
@@ -41,12 +41,14 @@ export function gaValue(usdCents: number): number {
 /**
  * Ambassador referral slug from the first-party cookie (set by src/proxy.ts,
  * non-httpOnly for exactly this read), as a spreadable event param — so GA4
- * funnels can be segmented per ambassador. Empty object when not referred;
- * registry-validated so a hand-edited cookie can't inject junk dimensions.
+ * funnels can be segmented per ambassador. Empty object when not referred.
+ * Shape check only: the registry lives in the DB, which the client can't
+ * reach — money attribution stays DB-validated server-side, so the worst a
+ * hand-crafted cookie can do is decorate its own GA events.
  */
 export function referralParam(): Record<string, string> {
   if (typeof document === "undefined") return {};
   const match = document.cookie.match(new RegExp(`(?:^|;\\s*)${REFERRAL_COOKIE}=([^;]+)`));
-  const referral = referralFromCookie(match ? decodeURIComponent(match[1]) : null);
+  const referral = referralCookieShape(match ? decodeURIComponent(match[1]) : null);
   return referral ? { referral } : {};
 }

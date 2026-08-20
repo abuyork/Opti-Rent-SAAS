@@ -1,7 +1,8 @@
 import { NextResponse } from "next/server";
 import { cookies } from "next/headers";
 import { config } from "@/lib/config";
-import { REFERRAL_COOKIE, referralFromCookie } from "@/lib/ambassadors";
+import { REFERRAL_COOKIE } from "@/lib/ambassadors";
+import { validReferral } from "@/lib/ambassadors-server";
 import { getStripe, stripeEnabled } from "@/lib/stripe";
 import { playbookMockToken } from "@/lib/sign";
 import { PLAYBOOKS, isPlaybookKey } from "@/lib/playbooks";
@@ -51,8 +52,8 @@ export async function POST(req: Request) {
 
   // Ambassador attribution: playbooks have no DB rows, so the referral slug in
   // the session metadata IS the sales record (counted in the Stripe dashboard).
-  // Cookie stamped by src/proxy.ts, registry-validated here.
-  const referral = referralFromCookie((await cookies()).get(REFERRAL_COOKIE)?.value);
+  // Cookie stamped by src/proxy.ts, validated against the ambassadors table.
+  const referral = await validReferral((await cookies()).get(REFERRAL_COOKIE)?.value);
 
   const session = await getStripe().checkout.sessions.create({
     mode: "payment",

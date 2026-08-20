@@ -2,17 +2,22 @@ import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { LandingPage } from "@/components/landing/LandingPage";
 import { getLandingScope } from "@/lib/landing";
-import { AMBASSADORS, isAmbassadorSlug } from "@/lib/ambassadors";
+import { getAmbassador } from "@/lib/ambassadors-server";
 import { socialCard } from "@/lib/og";
 
 /**
  * Ambassador referral landing — the Bali campaign page with the kicker swapped
  * for a personal invitation ("Gusde invites you to grow your Airbnb"; the
  * kicker's CSS uppercases it). The referral cookie itself is stamped by
- * src/proxy.ts, which matches exactly this route. Unknown slugs bounce to the
- * plain /bali page: a mistyped link still lands somewhere useful and sets
- * nothing.
+ * src/proxy.ts, which matches exactly this route.
+ *
+ * Rendered per request (not prerendered) on purpose: the name comes from the
+ * ambassadors table, so a row added in the Supabase Table Editor is live here
+ * immediately, no deploy. Unknown or retired slugs bounce to the plain /bali
+ * page: a mistyped link still lands somewhere useful.
  */
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: "OptimoRent Bali - Your villa is leaving money on the table",
   description:
@@ -22,24 +27,20 @@ export const metadata: Metadata = {
   ...socialCard("bali"),
 };
 
-export function generateStaticParams() {
-  return Object.keys(AMBASSADORS).map((ambassador) => ({ ambassador }));
-}
-
 export default async function AmbassadorLanding({
   params,
 }: {
   params: Promise<{ ambassador: string }>;
 }) {
   const { ambassador } = await params;
-  const slug = ambassador.toLowerCase();
-  if (!isAmbassadorSlug(slug)) redirect("/bali");
+  const amb = await getAmbassador(ambassador);
+  if (!amb) redirect("/bali");
   const scope = getLandingScope("bali");
   return (
     <LandingPage
       scope={{
         ...scope,
-        kicker: `${AMBASSADORS[slug].name} invites you to grow your Airbnb`,
+        kicker: `${amb.name} invites you to grow your Airbnb`,
       }}
     />
   );
